@@ -1,0 +1,50 @@
+name: Git Analyzer CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+
+jobs:
+  test-and-lint:
+    name: Test and lint
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.0
+      
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install --upgrade --upgrade-strategy eager -r requirements.txt; fi
+      
+      - name: Pytest
+        run: |
+          set -o pipefail
+          pytest . | tee pytest-output.log
+      
+      - name: Lint with flake8
+        if: always()
+        run: flake8 . --count --show-source --statistics --tee --output-file=flake-results.log
+                          
+      - uses: actions/upload-artifact@v2
+        name: Upload log files
+        if: failure()
+        with:
+          name: CI-output
+          path: |
+            ./pytest-output.log
+            ./flake-results.log
