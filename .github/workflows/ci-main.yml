@@ -38,7 +38,7 @@ jobs:
       
       - name: Lint with flake8
         if: always()
-        run: flake8 . --count --show-source --statistics --tee --output-file=flake-results.log
+        run: flake8 . --count --show-source --statistics --tee --output-file=flake-results.log --max-line-length=120
                           
       - uses: actions/upload-artifact@v2
         name: Upload log files
