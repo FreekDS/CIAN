@@ -1,6 +1,9 @@
+import os
+
 from typing import List
 
 from github import Github, Repository
+from dotenv import load_dotenv
 
 
 class CIWorkflowRun:
@@ -80,7 +83,8 @@ class GithubRepo:
 
 
 if __name__ == '__main__':
-    GithubRepo.init_github_token("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")
+    load_dotenv()
+    GithubRepo.init_github_token(os.getenv("GITHUB_TOKEN"))
 
     python_ci_testing = GithubRepo("FreekDS/python-ci-testing")
     python_ci_testing.fetch_builtin_ci_workflows()
