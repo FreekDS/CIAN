@@ -2,8 +2,9 @@ import os
 
 from typing import List
 
-from github import Github, Repository
+from github import Github, Repository, UnknownObjectException
 from dotenv import load_dotenv
+from CIDetector import detect_ci_tools
 
 
 class CIWorkflowRun:
@@ -52,6 +53,7 @@ class GithubRepo:
         self._repo: Repository = self._githubObject.get_repo(path)
         self.workflows: List[CIWorkflow] = []
         self.workflow_runs = list()
+        self.path = path
 
     def fetch_builtin_ci_workflows(self):
         gh_workflows = self._repo.get_workflows()
@@ -81,6 +83,34 @@ class GithubRepo:
             )
             self.workflows.append(new_wf)
 
+    def path_exists(self, path) -> bool:
+        if path.endswith('/'):
+            path = path[:-1]
+        try:
+            content = self._repo.get_contents(path)
+            if content:
+                return True
+        except UnknownObjectException as ex:
+            if ex.status == 404:
+                return False
+            else:
+                raise ex
+
+    def dir_empty(self, path):
+        if path.endswith('/'):
+            path = path[:-1]
+        assert self.path_exists(path), "Directory path does not exist"
+        try:
+            content = self._repo.get_contents(path)
+            while content:
+                file_content = content.pop(0)
+                if file_content.type == 'file':
+                    return False
+                print(file_content.type)
+            return True
+        except UnknownObjectException as ex:
+            pass
+
 
 if __name__ == '__main__':
     load_dotenv()
@@ -88,6 +118,7 @@ if __name__ == '__main__':
 
     python_ci_testing = GithubRepo("FreekDS/python-ci-testing")
     python_ci_testing.fetch_builtin_ci_workflows()
+    print("Detected tools:", detect_ci_tools(python_ci_testing))
 
     for wf in python_ci_testing.workflows:
         print(wf)
