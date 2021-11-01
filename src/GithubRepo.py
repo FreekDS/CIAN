@@ -116,6 +116,10 @@ if __name__ == '__main__':
     load_dotenv()
     GithubRepo.init_github_token(os.getenv("GITHUB_TOKEN"))
 
+    this = GithubRepo("FreekDS/git-ci-analyzer")
+    this.fetch_builtin_ci_workflows()
+    print("Detected tools in this repo:", detect_ci_tools(this))
+
     python_ci_testing = GithubRepo("FreekDS/python-ci-testing")
     python_ci_testing.fetch_builtin_ci_workflows()
     print("Detected tools:", detect_ci_tools(python_ci_testing))
