@@ -1,0 +1,36 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.4.0
+
+jobs:
+  test-and-lint:
+    docker:
+      - image: cimg/python:3.10.0
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Run tests
+          command: |
+            set -o pipefail
+            pytest . | tee pytest-output.log
+      - store_artifacts:
+          path: pytest-output.log
+          destination: pytest-output.log
+      - run:
+          name: Lint
+          command: flake8 . --count --show-source --statistics --tee --output-file=flake-results.log --max-line-length=120
+      - store_artifacts:
+          path: flake-results.log
+          destination: flake-results.log
+
+workflows:
+  version: 2
+  test-and-lint: 
+    jobs:
+      - test-and-lint:
+          filters:
+            branches:
+              only: main
