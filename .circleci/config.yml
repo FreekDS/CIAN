@@ -19,6 +19,8 @@ jobs:
       - store_artifacts:
           path: pytest-output.log
           destination: pytest-output.log
+      - store_test_results:
+          path: pytest-output.log
       - run:
           name: Lint
           command: flake8 . --count --show-source --statistics --tee --output-file=flake-results.log --max-line-length=120
