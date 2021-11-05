@@ -1,0 +1,21 @@
+branches:
+  only:
+    - main
+
+language: python
+python: 3.9
+
+before_install:
+  - python -m pip install --upgrade pip
+ 
+install:
+  - pip install -r requirements.txt 
+  
+jobs:
+  include:
+    - stage: "Run tests"
+      name: "Pytest"
+      script: pytest .
+    - stage: "Run flake8 linter"
+      name: "Flake8"
+      script: flake8 . --count --show-source --statistics --max-line-length=120
