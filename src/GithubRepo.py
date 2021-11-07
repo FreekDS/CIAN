@@ -114,7 +114,7 @@ class GithubRepo:
                     return False
                 print(file_content.type)
             return True
-        except UnknownObjectException as ex:
+        except UnknownObjectException:
             pass
 
 
