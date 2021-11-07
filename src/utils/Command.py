@@ -4,5 +4,5 @@ from typing import Any
 
 class Command(ABC):
     @abstractmethod
-    def execute(self) -> Any:
+    def execute(self, *args, **kwargs) -> Any:
         pass
