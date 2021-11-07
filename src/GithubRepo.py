@@ -54,8 +54,13 @@ class GithubRepo:
         self.workflows: List[CIWorkflow] = []
         self.workflow_runs = list()
         self.path = path
+        self.repo_type = "github"
+        self._fetched = False
 
     def fetch_builtin_ci_workflows(self):
+        if self._fetched:
+            return
+
         gh_workflows = self._repo.get_workflows()
 
         for wf in gh_workflows:
@@ -82,6 +87,7 @@ class GithubRepo:
                 runs
             )
             self.workflows.append(new_wf)
+        self._fetched = True
 
     def path_exists(self, path) -> bool:
         if path.endswith('/'):
