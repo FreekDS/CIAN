@@ -1,4 +1,4 @@
-from ..utils.Command import Command
+from utils.Command import Command
 
 
 class CircleCIDetector(Command):
