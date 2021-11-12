@@ -2,8 +2,9 @@ import os
 
 from typing import List
 
-from github import Github, Repository
+from github import Github, Repository, UnknownObjectException
 from dotenv import load_dotenv
+from analyzer.CIDetector import detect_ci_tools
 
 
 class CIWorkflowRun:
@@ -41,6 +42,7 @@ class CIWorkflow:
                f")"
 
 
+# TODO create generic Repo object
 class GithubRepo:
     _githubObject = Github()
 
@@ -52,8 +54,14 @@ class GithubRepo:
         self._repo: Repository = self._githubObject.get_repo(path)
         self.workflows: List[CIWorkflow] = []
         self.workflow_runs = list()
+        self.path = path
+        self.repo_type = "github"
+        self._fetched = False
 
     def fetch_builtin_ci_workflows(self):
+        if self._fetched:
+            return
+
         gh_workflows = self._repo.get_workflows()
 
         for wf in gh_workflows:
@@ -80,14 +88,48 @@ class GithubRepo:
                 runs
             )
             self.workflows.append(new_wf)
+        self._fetched = True
+
+    def path_exists(self, path) -> bool:
+        if path.endswith('/'):
+            path = path[:-1]
+        try:
+            content = self._repo.get_contents(path)
+            if content:
+                return True
+        except UnknownObjectException as ex:
+            if ex.status == 404:
+                return False
+            else:
+                raise ex
+
+    def dir_empty(self, path):
+        if path.endswith('/'):
+            path = path[:-1]
+        assert self.path_exists(path), "Directory path does not exist"
+        try:
+            content = self._repo.get_contents(path)
+            while content:
+                file_content = content.pop(0)
+                if file_content.type == 'file':
+                    return False
+                print(file_content.type)
+            return True
+        except UnknownObjectException:
+            pass
 
 
 if __name__ == '__main__':
     load_dotenv()
-    GithubRepo.init_github_token(os.getenv("GITHUB_TOKEN"))
+    GithubRepo.init_github_token(os.getenv("GH_TOKEN"))
+
+    this = GithubRepo("FreekDS/git-ci-analyzer")
+    this.fetch_builtin_ci_workflows()
+    print("Detected tools in this repo:", detect_ci_tools(this))
 
     python_ci_testing = GithubRepo("FreekDS/python-ci-testing")
     python_ci_testing.fetch_builtin_ci_workflows()
+    print("Detected tools:", detect_ci_tools(python_ci_testing))
 
     for wf in python_ci_testing.workflows:
         print(wf)

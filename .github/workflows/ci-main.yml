@@ -13,6 +13,10 @@ jobs:
   test-and-lint:
     name: Test and lint
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      CIRCLE_CI: ${{ secrets.CIRCLE_CI }}
+      TRAVIS_CI: ${{ secrets.TRAVIS_CI }}
     
     steps:
       - uses: actions/checkout@v2
