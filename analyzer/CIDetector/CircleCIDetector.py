@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+from analyzer.Repository.Repo import Repo
 from analyzer.config import CIRCLE_CI
 from analyzer.utils.Command import Command
 from typing import Union
@@ -12,7 +13,7 @@ class CircleCIDetector(Command):
             'Circle-Token': os.getenv('CIRCLE_CI')
         }
 
-    def execute(self, repo) -> Union[None or str]:
+    def execute(self, repo: Repo) -> Union[None or str]:
         provider = 'gh' if repo.repo_type == 'github' else ''
 
         slug = f'{provider}/{repo.path}'
