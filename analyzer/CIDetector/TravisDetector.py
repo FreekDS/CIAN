@@ -1,5 +1,5 @@
-from utils.Command import Command
-from config import TRAVIS_CI
+from analyzer.utils.Command import Command
+from analyzer.config import TRAVIS_CI
 import os
 import requests
 import json

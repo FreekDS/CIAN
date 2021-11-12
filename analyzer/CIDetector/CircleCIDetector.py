@@ -1,8 +1,8 @@
 import json
 import os
 import requests
-from config import CIRCLE_CI
-from utils.Command import Command
+from analyzer.config import CIRCLE_CI
+from analyzer.utils.Command import Command
 from typing import Union
 
 

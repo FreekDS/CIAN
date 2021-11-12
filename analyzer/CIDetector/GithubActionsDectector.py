@@ -1,5 +1,5 @@
-from utils.Command import Command
-from config import GH_ACTIONS
+from analyzer.utils.Command import Command
+from analyzer.config import GH_ACTIONS
 from typing import Union
 
 

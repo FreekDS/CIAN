@@ -4,7 +4,7 @@ from typing import List
 
 from github import Github, Repository, UnknownObjectException
 from dotenv import load_dotenv
-from CIDetector import detect_ci_tools
+from analyzer.CIDetector import detect_ci_tools
 
 
 class CIWorkflowRun:
@@ -42,6 +42,7 @@ class CIWorkflow:
                f")"
 
 
+# TODO create generic Repo object
 class GithubRepo:
     _githubObject = Github()
 
@@ -120,7 +121,7 @@ class GithubRepo:
 
 if __name__ == '__main__':
     load_dotenv()
-    GithubRepo.init_github_token(os.getenv("GITHUB_TOKEN"))
+    GithubRepo.init_github_token(os.getenv("GH_TOKEN"))
 
     this = GithubRepo("FreekDS/git-ci-analyzer")
     this.fetch_builtin_ci_workflows()
