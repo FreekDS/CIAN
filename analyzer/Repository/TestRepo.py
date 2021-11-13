@@ -3,6 +3,9 @@ from typing import List
 
 
 class TestRepo(Repo):
+
+    __test__ = False
+
     def __init__(self, path, existing_paths: List[str] = None, empty_dirs: List[str] = None, repo_type='test'):
         existing_paths = [] if existing_paths is None else existing_paths
         empty_dirs = [] if empty_dirs is None else empty_dirs
