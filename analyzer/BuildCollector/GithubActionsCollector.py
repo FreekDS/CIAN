@@ -1,7 +1,7 @@
 from typing import List
 
 from analyzer.Repository.GithubRepo import GithubRepo
-from analyzer.Workflow import Build
+from analyzer.Builds import Build
 from analyzer.utils.Command import Command
 
 

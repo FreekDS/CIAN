@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from analyzer.Workflow import Build
+from analyzer.Builds import Build
 from typing import List
 
 

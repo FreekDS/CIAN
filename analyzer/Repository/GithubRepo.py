@@ -3,7 +3,7 @@ import datetime
 from github import Github, UnknownObjectException
 from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
-from analyzer.Workflow import Build
+from analyzer.Builds import Build
 
 
 class GithubRepo(Repo):

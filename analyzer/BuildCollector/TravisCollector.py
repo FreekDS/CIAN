@@ -4,7 +4,7 @@ from typing import List
 import requests
 
 from analyzer.Repository.Repo import Repo
-from analyzer.Workflow.Workflow import Build
+from analyzer.Builds import Build
 from analyzer.utils.Command import Command
 import os
 
