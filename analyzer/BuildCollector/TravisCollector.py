@@ -21,7 +21,7 @@ class TravisCollector(Command):
             'User-Agent': 'Git-Ci-Analyzer/v1.0'
         }
 
-    def execute(self, *args, **kwargs) -> List[Build] or None:
+    def execute(self, *args, **kwargs) -> List[Build]:
         url = 'https://api.travis-ci.com/repo/' + self.repo.path.replace('/', '%2F') + '/builds'
         req = requests.get(url, headers=self.headers)
         if req.status_code == 200:
@@ -34,4 +34,4 @@ class TravisCollector(Command):
                 build.branch = build.branch.get('name')
                 builds.append(build)
             return builds
-        return None
+        return []

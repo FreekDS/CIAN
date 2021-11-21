@@ -10,6 +10,6 @@ class GithubActionsCollector(Command):
         super(GithubActionsCollector, self).__init__()
         self.repo = repo
 
-    def execute(self, *args, **kwargs) -> List[Build] or None:
+    def execute(self, *args, **kwargs) -> List[Build]:
         self.repo.fetch_builtin_ci()
-        return self.repo.builds if self.repo.builds else None
+        return self.repo.builds if self.repo.builds else []
