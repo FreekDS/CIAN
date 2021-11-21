@@ -9,6 +9,6 @@ class GithubActionsDetector(Command):
         if repo.repo_type == "github":
             repo.fetch_builtin_ci()
             if repo.path_exists('.github/workflows'):
-                if not repo.dir_empty('.github/workflows') and repo.workflows:
+                if not repo.dir_empty('.github/workflows') and repo.builds:
                     return GH_ACTIONS
         return None

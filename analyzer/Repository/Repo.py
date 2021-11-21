@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from analyzer.Workflow import WorkflowRun, Workflow
+from analyzer.Workflow import Build
 from typing import List
 
 
@@ -7,8 +7,7 @@ class Repo(ABC):
     def __init__(self, path, repo_type):
         self.path = path
         self.repo_type = repo_type
-        self.workflows: List[Workflow] = []
-        self.workflow_runs: List[WorkflowRun] = []
+        self.builds: List[Build] = []
 
     @abstractmethod
     def path_exists(self, path) -> bool:

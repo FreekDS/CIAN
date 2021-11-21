@@ -1,7 +1,9 @@
+import datetime
+
 from github import Github, UnknownObjectException
 from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
-from analyzer.Workflow import WorkflowRun, Workflow
+from analyzer.Workflow import Build
 
 
 class GithubRepo(Repo):
@@ -52,26 +54,23 @@ class GithubRepo(Repo):
 
         for wf in gh_workflows:
             gh_wf_runs = wf.get_runs()
-            runs = []
-            for wf_run in gh_wf_runs:
-                new_wf_run = WorkflowRun(
-                    wf_run.id,
-                    wf_run.event,
-                    wf_run.run_number,
-                    wf_run.url,
-                    wf_run.conclusion,
-                    wf_run.jobs_url,
-                    wf_run.artifacts_url
-                )
-                runs.append(new_wf_run)
 
-            new_wf = Workflow(
-                wf.name,
-                wf.id,
-                wf.state,
-                wf.created_at,
-                wf.url,
-                runs
-            )
-            self.workflows.append(new_wf)
+            for wf_run in gh_wf_runs:
+
+                timing = wf_run.timing()
+                ended_at = wf_run.created_at + datetime.timedelta(milliseconds=timing.run_duration_ms)
+
+                build = Build(
+                    state=wf_run.conclusion if wf_run.conclusion else wf_run.status,
+                    id=wf_run.id,
+                    number=wf_run.run_number,
+                    started_at=wf_run.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                    ended_at=ended_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                    duration=timing.run_duration_ms / 1000,
+                    created_by=wf_run.head_commit.committer.name,
+                    event_type=wf_run.event,
+                    branch=wf_run.head_branch,
+                )
+                self.builds.append(build)
+
         self._fetched = True
