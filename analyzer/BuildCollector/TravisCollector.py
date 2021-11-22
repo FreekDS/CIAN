@@ -32,6 +32,7 @@ class TravisCollector(Command):
                 build = Build.from_dict(raw_build, [('finished_at', 'ended_at')])
                 build.created_by = build.created_by.get('login')
                 build.branch = build.branch.get('name')
+                build.used_tool = 'TravisCI'
                 builds.append(build)
             return builds
         return []

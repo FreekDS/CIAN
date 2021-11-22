@@ -60,8 +60,16 @@ class GithubRepo(Repo):
                 timing = wf_run.timing()
                 ended_at = wf_run.created_at + datetime.timedelta(milliseconds=timing.run_duration_ms)
 
+                state = wf_run.conclusion if wf_run.conclusion else wf_run.status
+
+                # translate to match allowed values for state
+                if state == 'passed':
+                    state = 'success'
+                elif state == 'failed':
+                    state = 'failure'
+
                 build = Build(
-                    state=wf_run.conclusion if wf_run.conclusion else wf_run.status,
+                    state=state,
                     id=wf_run.id,
                     number=wf_run.run_number,
                     started_at=wf_run.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
@@ -70,6 +78,7 @@ class GithubRepo(Repo):
                     created_by=wf_run.head_commit.committer.name,
                     event_type=wf_run.event,
                     branch=wf_run.head_branch,
+                    used_tool='GitHub Actions'
                 )
                 self.builds.append(build)
 
