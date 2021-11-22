@@ -1,4 +1,4 @@
-from Builds import Build
+from analyzer.Builds import Build
 from analyzer.BuildCollector.GithubActionsCollector import GithubActionsCollector
 from analyzer.Repository.TestRepo import TestRepo
 
