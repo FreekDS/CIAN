@@ -57,9 +57,16 @@ class GithubRepo(Repo):
 
             for wf_run in gh_wf_runs:
 
-                timing = wf_run.timing()
-                print("===========> TIMING", timing)
-                ended_at = wf_run.created_at + datetime.timedelta(milliseconds=timing.run_duration_ms)
+                # TODO: workaround to fix issue with TimingData object in CI pipeline
+                # locally, no attribute error is raised. May be problem with PyGithub package on Ubuntu environment
+                try:
+                    timing = wf_run.timing()
+                    run_duration_ms = timing.run_duration_ms
+                except AttributeError as ae:
+                    print(ae)
+                    run_duration_ms = 0
+
+                ended_at = wf_run.created_at + datetime.timedelta(milliseconds=run_duration_ms)
 
                 state = wf_run.conclusion if wf_run.conclusion else wf_run.status
 
@@ -75,7 +82,7 @@ class GithubRepo(Repo):
                     number=wf_run.run_number,
                     started_at=wf_run.created_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
                     ended_at=ended_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    duration=timing.run_duration_ms / 1000,
+                    duration=run_duration_ms / 1000,
                     created_by=wf_run.head_commit.committer.name,
                     event_type=wf_run.event,
                     branch=wf_run.head_branch,
