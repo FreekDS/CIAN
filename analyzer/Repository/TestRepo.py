@@ -13,6 +13,13 @@ class TestRepo(Repo):
         self.existing_paths = existing_paths + empty_dirs
         self.empty_dirs = empty_dirs
 
+        # used to simulate fetch_builtin_ci
+        self._remote_builds = []
+
+    def set_remote_builds(self, r_builds):
+        # used to simulate fetch_builtin_ci
+        self._remote_builds = r_builds
+
     def path_exists(self, path) -> bool:
         return path in self.existing_paths
 
@@ -20,4 +27,4 @@ class TestRepo(Repo):
         return path in self.empty_dirs
 
     def fetch_builtin_ci(self):
-        """does nothing"""
+        self.builds = self._remote_builds

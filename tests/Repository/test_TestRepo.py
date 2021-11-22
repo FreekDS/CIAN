@@ -1,3 +1,4 @@
+from analyzer.Builds import Build
 from analyzer.Repository.TestRepo import TestRepo
 
 
@@ -63,3 +64,26 @@ def test_dir_empty():
 
     for path in existing_paths:
         assert not repo.dir_empty(path)
+
+
+def test_fetch_builtin_ci():
+    repo = TestRepo("username/repository")
+    r_builds = [
+        Build(
+            state='passed',
+            branch='main'
+        ),
+        Build(
+            state='failed',
+            branch='some_branch'
+        )
+    ]
+    repo.set_remote_builds(r_builds)
+
+    assert repo._remote_builds == r_builds
+    assert len(repo.builds) == 0
+
+    repo.fetch_builtin_ci()
+
+    assert len(repo.builds) == len(r_builds)
+    assert repo.builds == r_builds
