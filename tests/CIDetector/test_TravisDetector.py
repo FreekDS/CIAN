@@ -1,10 +1,8 @@
-from tests.CIDetector.TestRepo import TestRepo
+from analyzer.Repository.TestRepo import TestRepo
 from analyzer.CIDetector.TravisDetector import TravisDetector, TRAVIS_CI
-from dotenv import load_dotenv
 
 
 def test_constructor():
-    load_dotenv()
     detector = TravisDetector()
 
     auth_header = 'Authorization'
@@ -19,27 +17,24 @@ def test_constructor():
 
 
 def test_execute_happyday():
-    load_dotenv()
-    repo = TestRepo('FreekDS/git-ci-analyzer', 'github')
+    repo = TestRepo('FreekDS/git-ci-analyzer')
     detector = TravisDetector()
 
     res = detector.execute(repo)
     assert res is not None
     assert res == TRAVIS_CI
 
-# TODO: fix when TestRepo is separated from GithubRepo
-# def test_execute_non_existing_repo():
-#     load_dotenv()
-#     repo = TestRepo('doesnt-exist/repository', 'github')
-#     detector = TravisDetector()
-#     res = detector.execute(repo)
-#     assert res != TRAVIS_CI
-#     assert res is None
+
+def test_execute_non_existing_repo():
+    repo = TestRepo('doesnt-exist/repository')
+    detector = TravisDetector()
+    res = detector.execute(repo)
+    assert res != TRAVIS_CI
+    assert res is None
 
 
 def test_execute_travis_inactive():
-    load_dotenv()
-    repo = TestRepo('FreekDS/MSI-Mystic-Light-Controller', 'github')
+    repo = TestRepo('FreekDS/MSI-Mystic-Light-Controller', repo_type='github')
     detector = TravisDetector()
     res = detector.execute(repo)
     assert res != TRAVIS_CI

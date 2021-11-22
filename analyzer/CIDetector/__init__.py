@@ -2,9 +2,10 @@ from typing import List, AnyStr
 from .TravisDetector import TravisDetector
 from .GithubActionsDectector import GithubActionsDetector
 from .CircleCIDetector import CircleCIDetector
+from analyzer.Repository.Repo import Repo
 
 
-def detect_ci_tools(repo) -> List[AnyStr]:
+def detect_ci_tools(repo: Repo) -> List[AnyStr]:
 
     detectors = [
         TravisDetector(),

@@ -1,11 +1,10 @@
-from tests.CIDetector.TestRepo import TestRepo
+# from analyzer.Repository.TestRepo import TestRepo
+from analyzer.Repository.GithubRepo import GithubRepo
 from analyzer.CIDetector.GithubActionsDectector import GH_ACTIONS, GithubActionsDetector
-from dotenv import load_dotenv
 
 
 def test_execute_happyday():
-    load_dotenv()
-    repo = TestRepo('FreekDS/git-ci-analyzer', 'github')
+    repo = GithubRepo('FreekDS/git-ci-analyzer')
     detector = GithubActionsDetector()
     res = detector.execute(repo)
     assert res is not None

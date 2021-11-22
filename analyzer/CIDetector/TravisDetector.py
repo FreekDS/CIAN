@@ -1,5 +1,6 @@
 from analyzer.utils.Command import Command
 from analyzer.config import TRAVIS_CI
+from analyzer.Repository.Repo import Repo
 import os
 import requests
 import json
@@ -14,7 +15,7 @@ class TravisDetector(Command):
             'User-Agent': 'Git-Ci-Analyzer/v1.0'
         }
 
-    def execute(self, repo) -> Union[None or str]:
+    def execute(self, repo: Repo) -> Union[None or str]:
         url_com = 'https://api.travis-ci.com/repo/' + repo.path.replace('/', '%2F')
         req_com = requests.get(url_com, headers=self.headers)
         if req_com.status_code == 200:
