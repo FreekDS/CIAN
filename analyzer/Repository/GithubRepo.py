@@ -58,7 +58,7 @@ class GithubRepo(Repo):
             for wf_run in gh_wf_runs:
 
                 timing = wf_run.timing()
-                print("===========> TIMING", timing.__dict__)
+                print("===========> TIMING", timing)
                 ended_at = wf_run.created_at + datetime.timedelta(milliseconds=timing.run_duration_ms)
 
                 state = wf_run.conclusion if wf_run.conclusion else wf_run.status
