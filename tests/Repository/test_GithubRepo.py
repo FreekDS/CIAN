@@ -1,12 +1,10 @@
 import os
 import pytest
 from analyzer.Repository.GithubRepo import GithubRepo
-from dotenv import load_dotenv
 
 
 @pytest.fixture(scope='module')
 def default_repo():
-    load_dotenv()
     GithubRepo.init_github_token(os.getenv('GH_TOKEN'))
     return GithubRepo("FreekDS/git-ci-analyzer")
 

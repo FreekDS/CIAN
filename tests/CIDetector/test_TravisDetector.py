@@ -1,10 +1,8 @@
 from analyzer.Repository.TestRepo import TestRepo
 from analyzer.CIDetector.TravisDetector import TravisDetector, TRAVIS_CI
-from dotenv import load_dotenv
 
 
 def test_constructor():
-    load_dotenv()
     detector = TravisDetector()
 
     auth_header = 'Authorization'
@@ -19,7 +17,6 @@ def test_constructor():
 
 
 def test_execute_happyday():
-    load_dotenv()
     repo = TestRepo('FreekDS/git-ci-analyzer')
     detector = TravisDetector()
 
@@ -29,7 +26,6 @@ def test_execute_happyday():
 
 
 def test_execute_non_existing_repo():
-    load_dotenv()
     repo = TestRepo('doesnt-exist/repository')
     detector = TravisDetector()
     res = detector.execute(repo)
@@ -38,7 +34,6 @@ def test_execute_non_existing_repo():
 
 
 def test_execute_travis_inactive():
-    load_dotenv()
     repo = TestRepo('FreekDS/MSI-Mystic-Light-Controller', repo_type='github')
     detector = TravisDetector()
     res = detector.execute(repo)
