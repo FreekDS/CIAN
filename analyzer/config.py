@@ -3,5 +3,8 @@ CIRCLE_CI = "CircleCI"
 GH_ACTIONS = "Github Actions"
 TRAVIS_CI = "TravisCI"
 
+CI_TOOLS = [GH_ACTIONS, TRAVIS_CI, CIRCLE_CI]
+
 GH_PROVIDERS = ['github', 'gh']
 PROVIDERS = [*GH_PROVIDERS]
+

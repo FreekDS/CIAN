@@ -1,6 +1,7 @@
 import statistics
 from typing import Any, Dict
 from analyzer.utils.AnalysisCommand import AnalysisCommand
+from analyzer.config import CI_TOOLS
 
 
 class BasicAnalysis(AnalysisCommand):
@@ -35,4 +36,31 @@ class BasicAnalysis(AnalysisCommand):
         ))
 
     def execute(self) -> Dict[str, Any]:
-        pass
+        analysis = dict()
+
+        event_types = ['push', 'pull_request']
+
+        def basic_info(d, t=None):
+            d['failed_builds'] = len(self.get_failing_builds(t))
+            d['successful_builds'] = len(self.get_success_builds(t))
+            d['avg_duration'] = len(self.get_avg_duration(t))
+            return d
+
+        analysis = basic_info(analysis)
+
+        # per tool analysis
+        per_tool_analysis = dict()
+        for tool in CI_TOOLS:
+            tool_info = dict()
+            tool_info = basic_info(tool_info, tool)
+            per_tool_analysis[tool] = tool_info
+        analysis['tools'] = per_tool_analysis
+
+        # per event analysis
+        per_event_analysis = dict()
+        for event in event_types:
+            per_event_analysis[event] = len(self.get_builds_triggered_by(event))
+        analysis['builds_per_event'] = per_event_analysis
+
+        return analysis
+
