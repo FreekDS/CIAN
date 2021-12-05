@@ -14,18 +14,18 @@ class BasicAnalysis(AnalysisCommand):
     def _get_builds_from_tool(self, tool):
         return list(filter(lambda build: build.used_tool == tool, self.builds))
 
-    def _filter_state(self, state, tool=None):
+    def _filter_state(self, states: List[str], tool=None):
         builds = self._get_builds_from_tool(tool) if tool else self.builds
         return list(filter(
-            lambda build: build.state == state,
+            lambda build: build.state in states,
             builds
         ))
 
     def get_failing_builds(self, tool=None):
-        return self._filter_state('failure', tool)
+        return self._filter_state(['failure', 'failed'], tool)
 
     def get_success_builds(self, tool=None):
-        return self._filter_state('success', tool)
+        return self._filter_state(['success', 'passed'], tool)
 
     def get_avg_duration(self, tool=None):
         builds = self._get_builds_from_tool(tool) if tool else self.builds
