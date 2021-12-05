@@ -4,6 +4,7 @@ from github import Github, UnknownObjectException
 from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
+from analyzer.config import GH_ACTIONS
 
 
 class GithubRepo(Repo):
@@ -86,7 +87,7 @@ class GithubRepo(Repo):
                     created_by=wf_run.head_commit.committer.name,
                     event_type=wf_run.event,
                     branch=wf_run.head_branch,
-                    used_tool='GitHub Actions'
+                    used_tool=GH_ACTIONS
                 )
                 self.builds.append(build)
 
