@@ -1,10 +1,15 @@
 import statistics
-from typing import Any, Dict
+from typing import Any, Dict, List
+
+from Builds import Build
 from analyzer.utils.AnalysisCommand import AnalysisCommand
 from analyzer.config import CI_TOOLS
 
 
 class BasicAnalysis(AnalysisCommand):
+
+    def __init__(self, builds: List[Build]):
+        super().__init__(builds, 'basic')
 
     def _get_builds_from_tool(self, tool):
         return list(filter(lambda build: build.used_tool == tool, self.builds))
