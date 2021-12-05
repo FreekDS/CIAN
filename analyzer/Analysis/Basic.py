@@ -27,8 +27,12 @@ class BasicAnalysis(AnalysisCommand):
             return 0
         return statistics.mean(build.duration for build in builds if build.duration > 0)
 
-    def get_builds_triggered_by(self, event):
-        pass
+    def get_builds_triggered_by(self, event, tool=None):
+        builds = self._get_builds_from_tool(tool) if tool else self.builds
+        return list(filter(
+            lambda build: build.event_type == event,
+            builds
+        ))
 
     def execute(self) -> Dict[str, Any]:
         pass
