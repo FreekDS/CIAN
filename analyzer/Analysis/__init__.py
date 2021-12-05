@@ -11,3 +11,8 @@ def analyse_builds(builds):
         result = a.execute()
         analysis[a.name] = result
     return analysis
+
+
+def available_analysis():
+    return [a([]).name for a in _analyzers]
+
