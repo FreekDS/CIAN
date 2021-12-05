@@ -48,7 +48,7 @@ class BasicAnalysis(AnalysisCommand):
         def basic_info(d, t=None):
             d['failed_builds'] = len(self.get_failing_builds(t))
             d['successful_builds'] = len(self.get_success_builds(t))
-            d['avg_duration'] = len(self.get_avg_duration(t))
+            d['avg_duration'] = self.get_avg_duration(t)
             return d
 
         analysis = basic_info(analysis)
