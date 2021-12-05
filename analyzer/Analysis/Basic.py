@@ -1,3 +1,4 @@
+import statistics
 from typing import Any, Dict
 from analyzer.utils.AnalysisCommand import AnalysisCommand
 
@@ -21,7 +22,10 @@ class BasicAnalysis(AnalysisCommand):
         return self._filter_state('success', tool)
 
     def get_avg_duration(self, tool=None):
-        pass
+        builds = self._get_builds_from_tool(tool) if tool else self.builds
+        if len(builds) == 0:
+            return 0
+        return statistics.mean(build.duration for build in builds if build.duration > 0)
 
     def get_builds_triggered_by(self, event):
         pass
