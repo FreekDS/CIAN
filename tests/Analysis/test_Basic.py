@@ -19,7 +19,7 @@ def analyzer():
             used_tool=TRAVIS_CI
         ),
         Build(
-            state='success',
+            state='passed',
             id=1,
             number=1,
             duration=4,
@@ -40,7 +40,7 @@ def analyzer():
         ),
 
     ]
-    return build_examples
+    return BasicAnalysis(build_examples)
 
 
 def test_constructor():
@@ -54,11 +54,25 @@ def test_constructor():
 
 
 def test_get_builds_from_tool(analyzer):
-    pass
+    t_builds = analyzer._get_builds_from_tool(TRAVIS_CI)
+    assert len(t_builds) == 2
+    gh_builds = analyzer._get_builds_from_tool(GH_ACTIONS)
+    assert len(gh_builds) == 1
+    c_builds = analyzer._get_builds_from_tool(CIRCLE_CI)
+    assert len(c_builds) == 0
 
 
 def test_filter_state(analyzer):
-    pass
+    positive_builds = analyzer._filter_state(['success', 'passed'])
+    assert len(positive_builds) == 2
+    negative_builds = analyzer._filter_state(['failed', 'failure'])
+    assert len(negative_builds) == 1
+
+    unknown_types = analyzer._filter_state(['blabla'])
+    assert len(unknown_types) == 0
+
+    empty_types = analyzer._filter_state([])
+    assert len(empty_types) == 0
 
 
 def test_get_failing_builds(analyzer):
