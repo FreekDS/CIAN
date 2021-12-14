@@ -6,6 +6,7 @@ import requests
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.utils.Command import Command
+from analyzer.config import TRAVIS_CI
 import os
 
 
@@ -32,7 +33,7 @@ class TravisCollector(Command):
                 build = Build.from_dict(raw_build, [('finished_at', 'ended_at')])
                 build.created_by = build.created_by.get('login')
                 build.branch = build.branch.get('name')
-                build.used_tool = 'TravisCI'
+                build.used_tool = TRAVIS_CI
                 builds.append(build)
             return builds
         return []
