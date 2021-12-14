@@ -98,7 +98,14 @@ def test_get_success_builds(analyzer):
 
 
 def test_get_avg_duration(analyzer):
-    pass
+    avg_all = analyzer.get_avg_duration()
+    assert avg_all == 6
+    avg_t = analyzer.get_avg_duration(TRAVIS_CI)
+    assert avg_t == 4
+    avg_gh = analyzer.get_avg_duration(GH_ACTIONS)
+    assert avg_gh == 10
+    avg_c = analyzer.get_avg_duration(CIRCLE_CI)
+    assert avg_c == 0
 
 
 def test_get_builds_triggered_by(analyzer):
