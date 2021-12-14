@@ -1,7 +1,7 @@
 import statistics
 from typing import Any, Dict, List
 
-from Builds import Build
+from analyzer.Builds import Build
 from analyzer.utils.AnalysisCommand import AnalysisCommand
 from analyzer.config import CI_TOOLS
 
@@ -68,4 +68,3 @@ class BasicAnalysis(AnalysisCommand):
         analysis['builds_per_event'] = per_event_analysis
 
         return analysis
-

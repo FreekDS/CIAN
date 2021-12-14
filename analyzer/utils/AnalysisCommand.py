@@ -15,5 +15,3 @@ class AnalysisCommand(Command, ABC):
     @abstractmethod
     def execute(self) -> Dict[str, Any]:
         pass
-
-

@@ -15,4 +15,3 @@ def analyse_builds(builds):
 
 def available_analysis():
     return [a([]).name for a in _analyzers]
-
