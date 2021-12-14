@@ -79,9 +79,9 @@ def test_get_failing_builds(analyzer):
     failing = analyzer.get_failing_builds()
     assert len(failing) == 1
     failing_t = analyzer.get_failing_builds(TRAVIS_CI)
-    assert len(failing_t) == 1
+    assert len(failing_t) == 0
     failing_gh = analyzer.get_failing_builds(GH_ACTIONS)
-    assert len(failing_gh) == 0
+    assert len(failing_gh) == 1
     failing_c = analyzer.get_failing_builds(CIRCLE_CI)
     assert len(failing_c) == 0
 
