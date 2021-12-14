@@ -87,7 +87,14 @@ def test_get_failing_builds(analyzer):
 
 
 def test_get_success_builds(analyzer):
-    pass
+    success = analyzer.get_success_builds()
+    assert len(success) == 2
+    success_t = analyzer.get_success_builds(TRAVIS_CI)
+    assert len(success_t) == 2
+    success_gh = analyzer.get_success_builds(GH_ACTIONS)
+    assert len(success_gh) == 0
+    success_c = analyzer.get_success_builds(CIRCLE_CI)
+    assert len(success_c) == 0
 
 
 def test_get_avg_duration(analyzer):
