@@ -120,4 +120,32 @@ def test_get_builds_triggered_by(analyzer):
 
 
 def test_execute(analyzer):
-    pass
+    res = analyzer.execute()
+
+    expected = {
+        'failed_builds': 1,
+        'successful_builds': 2,
+        'avg_duration': 6,
+        'tools': {
+            'Github Actions': {
+                'failed_builds': 1,
+                'successful_builds': 0,
+                'avg_duration': 10
+            },
+            'TravisCI': {
+                'failed_builds': 0,
+                'successful_builds': 2,
+                'avg_duration': 4
+            },
+            'CircleCI': {
+                'failed_builds': 0,
+                'successful_builds': 0,
+                'avg_duration': 0
+            }
+        },
+        'builds_per_event': {
+            'push': 2,
+            'pull_request': 1
+        }
+    }
+    assert res == expected
