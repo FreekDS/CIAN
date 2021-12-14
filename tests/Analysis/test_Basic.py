@@ -76,7 +76,14 @@ def test_filter_state(analyzer):
 
 
 def test_get_failing_builds(analyzer):
-    pass
+    failing = analyzer.get_failing_builds()
+    assert len(failing) == 1
+    failing_t = analyzer.get_failing_builds(TRAVIS_CI)
+    assert len(failing_t) == 1
+    failing_gh = analyzer.get_failing_builds(GH_ACTIONS)
+    assert len(failing_gh) == 0
+    failing_c = analyzer.get_failing_builds(CIRCLE_CI)
+    assert len(failing_c) == 0
 
 
 def test_get_success_builds(analyzer):
