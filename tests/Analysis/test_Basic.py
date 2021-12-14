@@ -109,7 +109,14 @@ def test_get_avg_duration(analyzer):
 
 
 def test_get_builds_triggered_by(analyzer):
-    pass
+    triggerd_by_push = analyzer.get_builds_triggered_by('push')
+    assert len(triggerd_by_push) == 2
+    triggerd_by_pr = analyzer.get_builds_triggered_by('pull_request')
+    assert len(triggerd_by_pr) == 1
+    triggerd_by_pr_gh = analyzer.get_builds_triggered_by('pull_request', GH_ACTIONS)
+    assert len(triggerd_by_pr_gh) == 0
+    unknown_event = analyzer.get_builds_triggered_by('blabla')
+    assert len(unknown_event) == 0
 
 
 def test_execute(analyzer):
