@@ -1,5 +1,4 @@
 import os
-import json
 
 from dotenv import load_dotenv
 from analyzer.Repository.GithubRepo import GithubRepo
@@ -8,6 +7,7 @@ from analyzer.BuildCollector import collect_builds
 from analyzer.Analysis import analyse_builds
 from analyzer import parser
 from analyzer.config import GH_PROVIDERS
+from analyzer.Output.JsonOutput import JsonOutput
 
 
 if __name__ == '__main__':
@@ -40,4 +40,5 @@ if __name__ == '__main__':
         print("Detected CI tools:", detected)
         print(f"Detected {len(builds)} builds of various tools")
 
-        print(json.dumps(analyse_builds(builds), indent=4))
+        analysis = analyse_builds(builds)
+        print(JsonOutput(analysis).execute(repo.path, skip=True))
