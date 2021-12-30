@@ -3,10 +3,10 @@ from analyzer.utils.TestResultCommand import TestResultCommand
 
 class PytestResult(TestResultCommand):
 
-    def detect(self) -> bool:
+    def get_skipped_test_count(self) -> int:
         pass
 
-    def get_test_count(self):
+    def detect(self) -> bool:
         pass
 
     def get_failed_test_count(self):
