@@ -17,5 +17,9 @@ class TestResultCommand(Command):
     def get_successful_test_count(self):
         pass
 
+    @abstractmethod
+    def detect(self) -> bool:
+        pass
+
     def __init__(self, log):
         self.log = log

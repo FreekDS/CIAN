@@ -3,6 +3,9 @@ from analyzer.utils.TestResultCommand import TestResultCommand
 
 class PytestResult(TestResultCommand):
 
+    def detect(self) -> bool:
+        pass
+
     def get_test_count(self):
         pass
 
