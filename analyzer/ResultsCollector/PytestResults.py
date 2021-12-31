@@ -1,11 +1,17 @@
-from analyzer.utils.TestResultCommand import TestResultCommand
 import re
+from analyzer.utils.TestResultCommand import TestResultCommand
 
 
 class PytestResult(TestResultCommand):
 
-    def get_skipped_test_count(self) -> int:
-        pass
+    def _get_test_count_of_type(self, test_type):
+        summary = self._get_summary()
+        try:
+            tests_str = re.findall(rf'\d+ {test_type}', summary)[0]
+            test_count = int(tests_str.split(' ')[0])
+            return test_count
+        except ValueError or IndexError:
+            return 0
 
     def _get_summary(self):
         regex = r'============================= .* ============================='
@@ -29,27 +35,23 @@ class PytestResult(TestResultCommand):
         else:
             return False
 
-    def _get_test_count_of_type(self, test_type):
-        summary = self._get_summary()
-        try:
-            tests_str = re.findall(rf'\d+ {test_type}', summary)[0]
-            test_count = int(tests_str.split(' ')[0])
-            return test_count
-        except ValueError or IndexError:
-            return 0
-
     def get_failed_test_count(self):
         return self._get_test_count_of_type('failed')
 
     def get_successful_test_count(self):
         return self._get_test_count_of_type('passed')
 
+    def get_skipped_test_count(self) -> int:
+        return self._get_test_count_of_type('skipped')
+
     def execute(self):
         pass
 
 
 if __name__ == '__main__':
-    with open(r'C:\Users\Freek\Documents\School\Master-2\git-ci-analyzer\tests\data\actions_output_failed_example.txt') as f:
+    with open(
+            r'C:\Users\Freek\Documents\School\Master-2\git-ci-analyzer\tests\data\actions_output_failed_example.txt') \
+            as f:
         text = f.read()
         detector = PytestResult(text)
         detector.detect()
