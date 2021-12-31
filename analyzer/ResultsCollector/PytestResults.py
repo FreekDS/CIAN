@@ -29,7 +29,14 @@ class PytestResult(TestResultCommand):
         pass
 
     def get_successful_test_count(self):
-        pass
+        regex = r'============================= .* ============================='
+        summary = re.findall(regex, self.log)[-1]
+        try:
+            passed_str = re.findall(r'\d+ passed', summary)[0]
+            passed_count = int(passed_str.split(' ')[0])
+            return passed_count
+        except IndexError or ValueError:
+            return 0
 
     def execute(self):
         pass
@@ -40,3 +47,4 @@ if __name__ == '__main__':
         text = f.read()
         detector = PytestResult(text)
         detector.detect()
+        print(detector.get_successful_test_count())
