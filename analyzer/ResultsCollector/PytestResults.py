@@ -30,7 +30,13 @@ class PytestResult(TestResultCommand):
             return False
 
     def get_failed_test_count(self):
-        pass
+        summary = self._get_summary()
+        try:
+            failed_str = re.findall(r'\d+ failed', summary)[0]
+            failed_count = int(failed_str.split(' ')[0])
+            return failed_count
+        except IndexError or ValueError:
+            return 0
 
     def get_successful_test_count(self):
         summary = self._get_summary()
