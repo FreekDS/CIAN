@@ -21,6 +21,10 @@ class TestResultCommand(Command):
         pass
 
     @abstractmethod
+    def get_test_framework(self) -> str:
+        pass
+
+    @abstractmethod
     def detect(self) -> bool:
         pass
 

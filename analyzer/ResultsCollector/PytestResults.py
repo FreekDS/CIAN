@@ -4,6 +4,13 @@ from analyzer.utils.TestResultCommand import TestResultCommand
 
 class PytestResult(TestResultCommand):
 
+    def get_test_framework(self) -> str:
+        try:
+            pytest_version = re.search(r'pytest(-((\d+\.?)+[a-zA-E-Z0-9-]*))?', self.log)[0]
+            return pytest_version
+        except IndexError:
+            return str()
+
     def _get_test_count_of_type(self, test_type):
         summary = self._get_summary()
         try:
@@ -55,6 +62,7 @@ if __name__ == '__main__':
         text = f.read()
         detector = PytestResult(text)
         detector.detect()
+        print(detector.get_test_framework())
         print(detector.get_successful_test_count())
         print(detector.get_failed_test_count())
         print(detector.get_skipped_test_count())
