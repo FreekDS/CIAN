@@ -7,6 +7,10 @@ class PytestResult(TestResultCommand):
     def get_skipped_test_count(self) -> int:
         pass
 
+    def _get_summary(self):
+        regex = r'============================= .* ============================='
+        return re.findall(regex, self.log)[-1]
+
     def detect(self) -> bool:
         start = r'============================= test session starts =============================='
         end = r'============================= .* ============================='
@@ -29,8 +33,7 @@ class PytestResult(TestResultCommand):
         pass
 
     def get_successful_test_count(self):
-        regex = r'============================= .* ============================='
-        summary = re.findall(regex, self.log)[-1]
+        summary = self._get_summary()
         try:
             passed_str = re.findall(r'\d+ passed', summary)[0]
             passed_count = int(passed_str.split(' ')[0])
@@ -43,8 +46,10 @@ class PytestResult(TestResultCommand):
 
 
 if __name__ == '__main__':
-    with open(r'C:\Users\Freek\Documents\School\Master-2\git-ci-analyzer\tests\data\actions_output_example.txt') as f:
+    with open(r'C:\Users\Freek\Documents\School\Master-2\git-ci-analyzer\tests\data\actions_output_failed_example.txt') as f:
         text = f.read()
         detector = PytestResult(text)
         detector.detect()
         print(detector.get_successful_test_count())
+        print(detector.get_failed_test_count())
+        print(detector.get_skipped_test_count())
