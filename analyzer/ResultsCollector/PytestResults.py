@@ -29,23 +29,20 @@ class PytestResult(TestResultCommand):
         else:
             return False
 
-    def get_failed_test_count(self):
+    def _get_test_count_of_type(self, test_type):
         summary = self._get_summary()
         try:
-            failed_str = re.findall(r'\d+ failed', summary)[0]
-            failed_count = int(failed_str.split(' ')[0])
-            return failed_count
-        except IndexError or ValueError:
+            tests_str = re.findall(rf'\d+ {test_type}', summary)[0]
+            test_count = int(tests_str.split(' ')[0])
+            return test_count
+        except ValueError or IndexError:
             return 0
 
+    def get_failed_test_count(self):
+        return self._get_test_count_of_type('failed')
+
     def get_successful_test_count(self):
-        summary = self._get_summary()
-        try:
-            passed_str = re.findall(r'\d+ passed', summary)[0]
-            passed_count = int(passed_str.split(' ')[0])
-            return passed_count
-        except IndexError or ValueError:
-            return 0
+        return self._get_test_count_of_type('passed')
 
     def execute(self):
         pass
