@@ -11,14 +11,17 @@ def data(data_dir):
     return os.path.join(data_dir, 'PytestResults')
 
 
-def test_get_framework_happyday(data):
+@pytest.fixture(scope='module')
+def happy_day(data):
     with open(os.path.join(data, 'happy_day.txt'), 'r') as f1:
         with open(os.path.join(data, 'happy_day2.txt'), 'r') as f2:
-            result1 = PytestResult(f1.read())
-            result2 = PytestResult(f2.read())
+            return [f1.read(), f2.read()]
 
-            assert result1.get_test_framework() == pytest_version
-            assert result2.get_test_framework() == pytest_version
+
+def test_get_framework_happyday(happy_day):
+    for st in happy_day:
+        result = PytestResult(st)
+        assert result.get_test_framework() == pytest_version
 
 
 def test_get_framework_fail(data):
@@ -29,14 +32,10 @@ def test_get_framework_fail(data):
         assert result.get_test_framework() == str()
 
 
-def test_detect_happyday(data):
-    with open(os.path.join(data, 'happy_day.txt'), 'r') as f1:
-        with open(os.path.join(data, 'happy_day2.txt'), 'r') as f2:
-            result1 = PytestResult(f1.read())
-            result2 = PytestResult(f2.read())
-
-            assert result2.detect()
-            assert result1.detect()
+def test_detect_happyday(happy_day):
+    for st in happy_day:
+        result = PytestResult(st)
+        assert result.detect()
 
 
 def test_detect_fail(data):
