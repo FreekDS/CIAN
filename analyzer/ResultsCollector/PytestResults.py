@@ -17,7 +17,8 @@ class PytestResult(TestResultCommand):
     def _get_test_count_of_type(self, test_type):
         summary = self._get_summary()
         try:
-            tests_str = re.findall(rf'\d+ {test_type}', summary)[0]
+            tests_str = re.findall(rf'\d+ {test_type}', summary)
+            tests_str = tests_str[0]
             test_count = int(tests_str.split(' ')[0])
             return test_count
         except ValueError:
@@ -27,7 +28,12 @@ class PytestResult(TestResultCommand):
 
     def _get_summary(self):
         regex = r'=+ .* =+'
-        return re.findall(regex, self.log)[-1]
+        first_regex = r'=+ test session starts =+'
+        matches = re.findall(regex, self.log)
+        if len(matches) > 1:
+            return matches[-1] if re.match(first_regex, matches[0]) else str()
+        else:
+            return str()
 
     def detect(self) -> bool:
         found_start = re.findall('=+ test session starts =+', self.log)
