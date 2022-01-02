@@ -26,19 +26,17 @@ class PytestResult(TestResultCommand):
             return 0
 
     def _get_summary(self):
-        regex = r'============================= .* ============================='
+        regex = r'(=)+ .* (=)+'
         return re.findall(regex, self.log)[-1]
 
     def detect(self) -> bool:
-        start = r'============================= test session starts =============================='
-        end = r'============================= .* ============================='
-
-        found_start = re.findall(start, self.log)
-        possible_ends = re.findall(end, self.log)
+        found_start = re.findall('=+ test session starts =+', self.log)
+        possible_ends = re.findall('=+ .* =+', self.log)
         found_end = len(possible_ends) > 1
 
         if found_start and found_end:
             exact_end = possible_ends[-1]
+            start = found_start[0]
 
             start_i = self.log.index(start)
             end_i = self.log.index(exact_end, start_i) + len(exact_end)
