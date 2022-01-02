@@ -6,7 +6,10 @@ class PytestResult(TestResultCommand):
 
     def get_test_framework(self) -> str:
         try:
-            pytest_version = re.search(r'pytest(-((\d+\.?)+[a-zA-E-Z0-9-]*))?', self.log)[0]
+            matches = re.search(r'pytest(-((\d+\.?)+[a-zA-E-Z0-9-]*))?', self.log)
+            if matches:
+                pytest_version = matches[0]
+
             return pytest_version
         except IndexError:
             return str()
@@ -31,10 +34,11 @@ class PytestResult(TestResultCommand):
         end = r'============================= .* ============================='
 
         found_start = re.findall(start, self.log)
-        found_end = re.findall(end, self.log)
+        possible_ends = re.findall(end, self.log)
+        found_end = len(possible_ends) > 1
 
         if found_start and found_end:
-            exact_end = found_end[-1]
+            exact_end = possible_ends[-1]
 
             start_i = self.log.index(start)
             end_i = self.log.index(exact_end, start_i) + len(exact_end)
