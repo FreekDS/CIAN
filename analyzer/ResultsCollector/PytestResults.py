@@ -56,16 +56,3 @@ class PytestResult(TestResultCommand):
 
     def get_skipped_test_count(self) -> int:
         return self._get_test_count_of_type('skipped')
-
-
-if __name__ == '__main__':
-    with open(
-            r'C:\Users\Freek\Documents\School\Master-2\git-ci-analyzer\tests\data\actions_output_failed_example.txt') \
-            as f:
-        text = f.read()
-        detector = PytestResult(text)
-        detector.detect()
-        print(detector.get_test_framework())
-        print(detector.get_successful_test_count())
-        print(detector.get_failed_test_count())
-        print(detector.get_skipped_test_count())
