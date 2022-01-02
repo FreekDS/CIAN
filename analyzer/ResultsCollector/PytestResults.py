@@ -26,7 +26,7 @@ class PytestResult(TestResultCommand):
             return 0
 
     def _get_summary(self):
-        regex = r'(=)+ .* (=)+'
+        regex = r'=+ .* =+'
         return re.findall(regex, self.log)[-1]
 
     def detect(self) -> bool:
