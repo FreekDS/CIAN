@@ -17,7 +17,9 @@ class PytestResult(TestResultCommand):
             tests_str = re.findall(rf'\d+ {test_type}', summary)[0]
             test_count = int(tests_str.split(' ')[0])
             return test_count
-        except ValueError or IndexError:
+        except ValueError:
+            return 0
+        except IndexError:
             return 0
 
     def _get_summary(self):
