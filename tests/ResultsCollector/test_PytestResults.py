@@ -62,3 +62,16 @@ def test_get_failed_count(data, fail_data):
 
     failed_count('happy_day.txt', 0)
     failed_count('happy_day2.txt', 1)
+
+
+def test_get_successful_count(data, fail_data):
+    for f in fail_data:
+        assert f.get_successful_test_count() == 0
+
+    def success_count(filename, expected):
+        with open(os.path.join(data, filename), 'r') as fi:
+            happy_day1 = PytestResult(fi.read())
+            assert happy_day1.get_successful_test_count() == expected
+
+    success_count('happy_day.txt', 3)
+    success_count('happy_day2.txt', 2)
