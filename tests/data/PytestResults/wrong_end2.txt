@@ -6,4 +6,4 @@ ResultsCollector/test_PytestResults.py::test_1 PASSED                    [ 33%]
 ResultsCollector/test_PytestResults.py::test_2 PASSED                    [ 66%]
 ResultsCollector/test_PytestResults.py::test_3 PASSED                    [100%]
 
-============================== 3 possed in 0.02s ==============================
+3 passed
