@@ -9,8 +9,8 @@ class PytestResult(TestResultCommand):
             matches = re.search(r'pytest(-((\d+\.?)+[a-zA-E-Z0-9-]*))?', self.log)
             if matches:
                 pytest_version = matches[0]
-
-            return pytest_version
+                return pytest_version
+            return str()
         except IndexError:
             return str()
 
