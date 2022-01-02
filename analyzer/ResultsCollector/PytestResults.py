@@ -51,9 +51,6 @@ class PytestResult(TestResultCommand):
     def get_skipped_test_count(self) -> int:
         return self._get_test_count_of_type('skipped')
 
-    def execute(self):
-        pass
-
 
 if __name__ == '__main__':
     with open(
