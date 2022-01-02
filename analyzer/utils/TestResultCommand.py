@@ -6,7 +6,7 @@ class TestResultCommand(Command):
     __test__ = False
 
     def get_test_count(self) -> int:
-        return self.get_successful_test_count() + self.get_failed_test_count()
+        return self.get_successful_test_count() + self.get_failed_test_count() + self.get_skipped_test_count()
 
     @abstractmethod
     def get_failed_test_count(self) -> int:
