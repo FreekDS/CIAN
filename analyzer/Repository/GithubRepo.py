@@ -8,6 +8,8 @@ from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.config import GH_ACTIONS
+from analyzer.ResultsCollector import collect_test_results
+from collections import defaultdict
 
 
 class GithubRepo(Repo):
@@ -86,6 +88,13 @@ class GithubRepo(Repo):
 
             for wf_run in gh_wf_runs:
 
+                jobs = self._get_jobs(wf_run)
+                test_results = defaultdict(list)
+                for job in jobs:
+                    log = self._get_log_file(job.get('id'))
+                    tests = collect_test_results(log)
+                    test_results[job.get('name')].append(tests)
+
                 # TODO: workaround to fix issue with TimingData object in CI pipeline
                 # locally, no attribute error is raised. May be problem with PyGithub package on Ubuntu environment
                 try:
@@ -115,7 +124,8 @@ class GithubRepo(Repo):
                     created_by=wf_run.head_commit.committer.name,
                     event_type=wf_run.event,
                     branch=wf_run.head_branch,
-                    used_tool=GH_ACTIONS
+                    used_tool=GH_ACTIONS,
+                    test_results=dict(test_results)
                 )
                 self.builds.append(build)
 
