@@ -49,7 +49,8 @@ class TravisCollector(Command):
             job_name = raw_job.get('name')
             log = self.get_job_log(job.get('id'))
             tests = collect_test_results(log)
-            test_results[job_name].append(tests)
+            if tests:
+                test_results[job_name].append(tests)
         return dict(test_results)
 
     def execute(self, *args, **kwargs) -> List[Build]:
