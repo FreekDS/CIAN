@@ -31,9 +31,12 @@ if __name__ == '__main__':
             repositories.append(GithubRepo(slug))
 
     for repo in repositories:
-        print("Collecting data...\r", end='', flush=True)
+        # print("Collecting data...\r", end='', flush=True)
 
+        print("detecting...")
         detected = detect_ci_tools(repo)
+
+        print("collecting...")
         builds = collect_builds(repo)
 
         print(repo.path, "CI summary")
