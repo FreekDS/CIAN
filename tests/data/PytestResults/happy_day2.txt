@@ -1,0 +1,26 @@
+============================= test session starts =============================
+platform linux -- Python 3.10.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+collecting ... collected 4 items
+
+ResultsCollector/test_PytestResults.py::test_1
+ResultsCollector/test_PytestResults.py::test_2
+ResultsCollector/test_PytestResults.py::test_3
+ResultsCollector/test_PytestResults.py::test_4 PASSED                    [ 25%]PASSED                    [ 50%]SKIPPED                   [ 75%]
+Skipped
+FAILED                    [100%]
+ResultsCollector\test_PytestResults.py:17 (test_4)
+def test_4():
+>       assert False
+E       assert False
+
+ResultsCollector\test_PytestResults.py:19: AssertionError
+
+
+
+
+=================== 1 failed, 2 passed, 1 skipped in 0.07s ====================
+
+Process finished with exit code 1
+
+
+

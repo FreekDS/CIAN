@@ -1,0 +1,9 @@
+============================= test session does not start =============================
+platform linux -- Python 3.10.0, pytest-6.2.5, py-1.11.0, pluggy-1.0.0
+collecting ... collected 3 items
+
+ResultsCollector/test_PytestResults.py::test_1 PASSED                    [ 33%]
+ResultsCollector/test_PytestResults.py::test_2 PASSED                    [ 66%]
+ResultsCollector/test_PytestResults.py::test_3 PASSED                    [100%]
+
+============================== 3 passed in 0.02s ==============================

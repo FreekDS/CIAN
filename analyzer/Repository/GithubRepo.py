@@ -1,10 +1,15 @@
 import datetime
+import os
+import json
+import requests
 
 from github import Github, UnknownObjectException
 from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.config import GH_ACTIONS
+from analyzer.ResultsCollector import collect_test_results
+from collections import defaultdict
 
 
 class GithubRepo(Repo):
@@ -18,6 +23,8 @@ class GithubRepo(Repo):
         super().__init__(path, repo_type='github')
         self._fetched = False
         self._repo: GH_Repository = self._githubObject.get_repo(path)
+        self._base_url = 'https://api.github.com'
+        self._headers = {'Authorization': f'token {os.getenv("GH_TOKEN")}'}
 
     def path_exists(self, path) -> bool:
         if path.endswith('/'):
@@ -47,6 +54,25 @@ class GithubRepo(Repo):
         except UnknownObjectException:
             return False
 
+    def _get_jobs(self, wf_run):
+        response = requests.get(wf_run.jobs_url, headers=self._headers)
+
+        if response.status_code == 200:
+            jobs_data = json.loads(response.text)
+            return jobs_data.get('jobs', [])
+        else:
+            return []
+
+    def _get_log_file(self, job_id):
+        owner = self._repo.owner.login
+        repo = self._repo.name
+        request_url = f'{self._base_url}/repos/{owner}/{repo}/actions/jobs/{job_id}/logs'
+        response = requests.get(request_url, headers=self._headers)
+        if response.status_code == 200:
+            return str(response.text)
+        else:
+            return str()
+
     def fetch_builtin_ci(self):
         if self._fetched:
             return
@@ -56,7 +82,18 @@ class GithubRepo(Repo):
         for wf in gh_workflows:
             gh_wf_runs = wf.get_runs()
 
+            if gh_wf_runs[0].event not in ['pull_request', 'push']:
+                print('Event', gh_wf_runs[0].event, 'is not supported, skipping...')
+                continue
+
             for wf_run in gh_wf_runs:
+
+                jobs = self._get_jobs(wf_run)
+                test_results = defaultdict(list)
+                for job in jobs:
+                    log = self._get_log_file(job.get('id'))
+                    tests = collect_test_results(log)
+                    test_results[job.get('name')].append(tests)
 
                 # TODO: workaround to fix issue with TimingData object in CI pipeline
                 # locally, no attribute error is raised. May be problem with PyGithub package on Ubuntu environment
@@ -87,7 +124,8 @@ class GithubRepo(Repo):
                     created_by=wf_run.head_commit.committer.name,
                     event_type=wf_run.event,
                     branch=wf_run.head_branch,
-                    used_tool=GH_ACTIONS
+                    used_tool=GH_ACTIONS,
+                    test_results=dict(test_results)
                 )
                 self.builds.append(build)
 
