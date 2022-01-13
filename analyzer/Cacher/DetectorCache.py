@@ -3,6 +3,7 @@ import json
 
 # TODO create better caching mechanism
 # TODO add tests for cacher
+# TODO add CLI option to enable/disable cache
 
 
 def hit(filepath='detection.cache'):
