@@ -3,14 +3,15 @@ from .TravisDetector import TravisDetector
 from .GithubActionsDectector import GithubActionsDetector
 from .CircleCIDetector import CircleCIDetector
 from analyzer.Repository.Repo import Repo
-
-import analyzer.Cacher.DetectorCache as Cache
+from analyzer.Cacher.DetectorCache import DetectorCache
 
 
 def detect_ci_tools(repo: Repo, use_cache=True, create_cache=True) -> List[AnyStr]:
 
-    if use_cache and Cache.hit():
-        return Cache.restore_cache()
+    cache = DetectorCache(repo.name)
+
+    if use_cache and cache.hit():
+        return cache.restore(default=[])
 
     detectors = [
         TravisDetector(),
@@ -25,6 +26,6 @@ def detect_ci_tools(repo: Repo, use_cache=True, create_cache=True) -> List[AnySt
             tools.append(detected)
 
     if create_cache:
-        Cache.create_cache(tools)
+        cache.create(tools)
 
     return tools

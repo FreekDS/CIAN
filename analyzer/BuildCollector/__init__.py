@@ -2,15 +2,16 @@ from analyzer.Repository.Repo import Repo
 from .TravisCollector import TravisCollector
 from .GithubActionsCollector import GithubActionsCollector
 from analyzer.Builds import Build
+from analyzer.Cacher.BuildCache import BuildCache
 from typing import List
-
-import analyzer.Cacher.BuildCacher as Cache
 
 
 def collect_builds(repo: Repo, use_cache=True, create_cache=True) -> List[Build]:
 
-    if Cache.hit() and use_cache:
-        return Cache.restore_cache()
+    cache = BuildCache(repo.name)
+
+    if cache.hit() and use_cache:
+        return cache.restore(default=[])
 
     collectors = [
         GithubActionsCollector(repo),
@@ -23,6 +24,6 @@ def collect_builds(repo: Repo, use_cache=True, create_cache=True) -> List[Build]
         builds += c.execute()
 
     if create_cache:
-        Cache.create_cache(builds)
+        cache.create(builds)
 
     return builds
