@@ -31,4 +31,7 @@ class Build:
         self.test_results = test_results if test_results else dict()
 
     def __repr__(self):
-        return str(self.__dict__)
+        return str(self.dict())
+
+    def dict(self):
+        return self.__dict__
