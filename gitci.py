@@ -43,4 +43,7 @@ if __name__ == '__main__':
         print("Detected CI tools:", detected)
         print(f"Detected {len(builds)} builds of various tools")
 
-        print(json.dumps(analyse_builds(builds), indent=4))
+        analysis = analyse_builds(builds)
+        print(json.dumps(analysis, indent=4))
+        from analyzer.Output.Graphs import SeabornPlotter
+        SeabornPlotter(analysis).duration_evolution()
