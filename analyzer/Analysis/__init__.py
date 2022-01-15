@@ -1,7 +1,8 @@
 from .Basic import BasicAnalysis
+from .Evolution import EvolutionAnalysis
 
 # List of AnalysisCommand types
-_analyzers = [BasicAnalysis]
+_analyzers = [BasicAnalysis, EvolutionAnalysis]
 
 
 def analyse_builds(builds):
