@@ -58,8 +58,8 @@ class EvolutionAnalysis(AnalysisCommand):
             'duration': self.duration_over_time(),
             'tests': {
                 'all': self.tests_over_time(),
-            #     'success': self.successful_tests_over_time(),
-            #     'failed': self.failed_tests_over_time(),
-            #     'skipped': self.skipped_tests_over_time()
+                'success': self.successful_tests_over_time(),
+                'failed': self.failed_tests_over_time(),
+                'skipped': self.skipped_tests_over_time()
             }
         }
