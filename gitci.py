@@ -46,4 +46,5 @@ if __name__ == '__main__':
         analysis = analyse_builds(builds)
         print(json.dumps(analysis, indent=4))
         from analyzer.Output.Graphs import SeabornPlotter
-        SeabornPlotter(analysis).duration_evolution()
+        SeabornPlotter(repo.name, analysis).duration_evolution()
+        SeabornPlotter(repo.name, analysis).test_evolution()

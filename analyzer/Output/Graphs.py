@@ -7,8 +7,9 @@ import matplotlib.ticker as ticker
 
 
 class SeabornPlotter:
-    def __init__(self, analysis_results):
+    def __init__(self, repo_name, analysis_results):
         self.analysis_results = analysis_results
+        self.repo = repo_name
 
     def duration_evolution(self):
         sns.set_style('ticks')
@@ -20,7 +21,8 @@ class SeabornPlotter:
         ax = sns.barplot(
             x=x, y=y, palette='Blues_d'
         )
-        ax.set_title("Build duration over time")
+        plt.suptitle("Build duration over time")
+        ax.set_title(self.repo)
 
         ax.xaxis.set_major_locator(ticker.MultipleLocator(5))
         ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
@@ -30,3 +32,24 @@ class SeabornPlotter:
         ax.set(xlabel="Build number", ylabel="duration (s)")
         plt.tight_layout()
         plt.show()
+
+    def test_evolution(self):
+        # TODO: change data points to take build number rather than date
+        data = self.analysis_results.get('evolution').get('tests').get('all')
+        to_plot = list(data.items())[0][1]
+        data_points = list(to_plot.values())[0]
+
+        x = [i+1 for i in range(len(data_points))]
+        y = [item[1] for item in data_points]
+
+        ax = sns.lineplot(x=x, y=y)
+        ax.xaxis.set_major_locator(ticker.MultipleLocator(5))
+        ax.xaxis.set_minor_locator(ticker.MultipleLocator(1))
+        ax.tick_params(axis='x', which='major', length=10)
+        ax.tick_params(axis='x', which='minor', length=5)
+        ax.set(xlabel="Build number", ylabel="Test count")
+        plt.suptitle("Test count over time")
+        ax.set_title(self.repo)
+        plt.tight_layout()
+        plt.show()
+        print()
