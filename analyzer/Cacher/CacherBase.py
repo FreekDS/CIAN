@@ -4,10 +4,12 @@ import os
 
 class CacherBase:
 
+    DIR = "cache/"
+
     def __init__(self, repo_name, file_path):
         self.repo = repo_name
         self._fp_ext = file_path if file_path.endswith('.cache') else f'{file_path}.cache'
-        self.fp = f'{repo_name}-{self._fp_ext}'
+        self.fp = f'{self.DIR}{repo_name}-{self._fp_ext}'
 
     def hit(self):
         return os.path.exists(self.fp)
@@ -15,7 +17,7 @@ class CacherBase:
     def create(self, obj_to_cache, override=True):
         if not self.hit() or override:
             with open(self.fp, 'w') as cache_file:
-                cache_file.writelines(json.dumps(obj_to_cache))
+                cache_file.writelines(json.dumps(obj_to_cache, indent=2))
                 return True
         return False
 
