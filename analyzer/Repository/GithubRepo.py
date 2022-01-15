@@ -93,7 +93,8 @@ class GithubRepo(Repo):
                 for job in jobs:
                     log = self._get_log_file(job.get('id'))
                     tests = collect_test_results(log)
-                    test_results[job.get('name')].append(tests)
+                    if tests:
+                        test_results[job.get('name')].append(*tests)
 
                 # TODO: workaround to fix issue with TimingData object in CI pipeline
                 # locally, no attribute error is raised. May be problem with PyGithub package on Ubuntu environment

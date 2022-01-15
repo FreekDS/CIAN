@@ -46,11 +46,11 @@ class TravisCollector(Command):
             raw_job = self.get_job(job.get('id'))
             if not raw_job:
                 continue
-            job_name = raw_job.get('name')
+            job_name = raw_job.get('id')
             log = self.get_job_log(job.get('id'))
             tests = collect_test_results(log)
             if tests:
-                test_results[job_name].append(tests)
+                test_results[job_name].append(*tests)
         return dict(test_results)
 
     def execute(self, *args, **kwargs) -> List[Build]:
