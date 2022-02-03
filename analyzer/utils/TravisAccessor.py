@@ -50,6 +50,11 @@ class TravisAccessor:
         response = json.loads(response)
         return response.get('builds')
 
+    def get_repo(self, repo: Repo):
+        repo_name = repo.path.replace('/', '%2F')
+        resp = self._make_request('repo', repo_name)
+        return json.loads(resp)
+
     def get_job(self, job_id) -> Dict[Any]:
         response = self._make_request('job', job_id)
         return json.loads(response)
