@@ -44,7 +44,7 @@ class TravisAccessor:
             return response.text
         raise TravisAccessorError(f"Could not make request to '{url}', got response code '{response.status_code}'")
 
-    def get_builds(self, repo: Repo) -> List[Dict[Any]]:
+    def get_builds(self, repo: Repo) -> List[Dict[Any, Any]]:
         repo_name = repo.path.replace('/', '%2F')
         response = self._make_request('repo', repo_name, 'builds')
         response = json.loads(response)
@@ -55,10 +55,10 @@ class TravisAccessor:
         resp = self._make_request('repo', repo_name)
         return json.loads(resp)
 
-    def get_job(self, job_id) -> Dict[Any]:
-        response = self._make_request('job', job_id)
+    def get_job(self, job_id) -> Dict[Any, Any]:
+        response = self._make_request('job', str(job_id))
         return json.loads(response)
 
     def get_job_log(self, job_id) -> str:
-        response = self._make_request('job', job_id, 'log.txt')
+        response = self._make_request('job', str(job_id), 'log.txt')
         return response
