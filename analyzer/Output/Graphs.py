@@ -31,6 +31,7 @@ class SeabornPlotter:
         ax.tick_params(axis='x', which='minor', length=5)
         ax.set(xlabel="Build number", ylabel="duration (s)")
         plt.tight_layout()
+        plt.savefig(f'{self.repo}-duration.png')
         plt.show()
 
     def test_evolution(self):
@@ -51,5 +52,6 @@ class SeabornPlotter:
         plt.suptitle("Test count over time")
         ax.set_title(self.repo)
         plt.tight_layout()
+        plt.savefig(f'{self.repo}-tests.png')
         plt.show()
         print()
