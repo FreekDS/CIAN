@@ -29,13 +29,3 @@ def test_dir_empty(default_repo):
     assert not default_repo.dir_empty('does/not/exist/')
     assert not default_repo.dir_empty('does/not/exist')
     # Note: there are no empty directories on GitHub
-
-
-def test_fetch_builtin_ci(default_repo):
-    default_repo.fetch_builtin_ci()
-    fetched_builds = default_repo.builds
-    assert len(fetched_builds) > 0
-    default_repo.fetch_builtin_ci()
-    fetched_builds2 = default_repo.builds
-    assert len(fetched_builds2) > 0
-    assert fetched_builds2 == fetched_builds

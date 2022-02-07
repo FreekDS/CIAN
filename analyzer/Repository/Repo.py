@@ -17,7 +17,3 @@ class Repo(ABC):
     @abstractmethod
     def dir_empty(self, path) -> bool:
         pass
-
-    @abstractmethod
-    def fetch_builtin_ci(self):
-        pass
