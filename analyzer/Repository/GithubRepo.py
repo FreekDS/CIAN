@@ -3,7 +3,7 @@ import os
 import json
 import requests
 
-from github import Github, UnknownObjectException
+from github import Github
 from github import Repository as GH_Repository
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
