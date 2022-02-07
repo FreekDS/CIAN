@@ -44,7 +44,8 @@ class TravisAccessor:
         response = requests.get(url, headers=self._headers)
         if response.status_code == 200:
             return response.text
-        raise TravisAccessorError(f"Could not make request to '{url}', got response code '{response.status_code}'")
+        raise TravisAccessorError(f"Could not make request to '{url}', got response code '{response.status_code}'",
+                                  response.status_code)
 
     def get_builds(self, repo: Repo) -> List[Dict[Any, Any]]:
         repo_name = repo.path.replace('/', '%2F')
