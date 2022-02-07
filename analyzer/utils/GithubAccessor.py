@@ -1,10 +1,15 @@
 import os
 import functools
 import requests
+import json
+from typing import Dict, Any
+from analyzer.Repository.Repo import Repo
 
 
 class GithubAccessorError(Exception):
-    pass
+    def __init__(self, text, code):
+        super(GithubAccessorError, self).__init__(text)
+        self.status_code = code
 
 
 class GithubAccessor:
@@ -52,7 +57,6 @@ class GithubAccessor:
             return len(GithubAccessor.TOKENS) >= 1
         return False
 
-    @use_token
     def _make_request(self, *args: str, query: str = str()):
         endpoint = '/'.join(args)
         url = f'{self._url_base}/{endpoint}'
@@ -62,5 +66,17 @@ class GithubAccessor:
         if response.status_code == 200 or response.status_code == 201:
             return response.text
         raise GithubAccessorError(
-            f"Cannot perform GitHub request '{url}', got response {response.status_code}"
+            f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
         )
+
+    @use_token
+    def get_content(self, repo: Repo, path) -> Dict[str, Any]:
+        if path.endswith('/'):
+            path = path[:-1]
+        try:
+            data = self._make_request(repo.path, 'contents', path)
+            return json.loads(data)
+        except GithubAccessorError as e:
+            if e.status_code == 404:
+                return dict()
+            raise e
