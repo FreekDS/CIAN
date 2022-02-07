@@ -6,7 +6,9 @@ from analyzer.Repository import Repo
 
 
 class TravisAccessorError(Exception):
-    pass
+    def __init__(self, msg, status_code):
+        super(TravisAccessorError, self).__init__(msg)
+        self.status_code = status_code
 
 
 class TravisAccessor:
@@ -51,9 +53,14 @@ class TravisAccessor:
         return response.get('builds')
 
     def get_repo(self, repo: Repo):
-        repo_name = repo.path.replace('/', '%2F')
-        resp = self._make_request('repo', repo_name)
-        return json.loads(resp)
+        try:
+            repo_name = repo.path.replace('/', '%2F')
+            resp = self._make_request('repo', repo_name)
+            return json.loads(resp)
+        except TravisAccessorError as e:
+            if e.status_code == 404:
+                return dict()
+            raise e
 
     def get_job(self, job_id) -> Dict[Any, Any]:
         response = self._make_request('job', str(job_id))
