@@ -12,6 +12,8 @@ class GithubAccessorError(Exception):
         super(GithubAccessorError, self).__init__(text)
         self.status_code = code
 
+# TODO investigate caching
+
 
 class GithubAccessor:
 
