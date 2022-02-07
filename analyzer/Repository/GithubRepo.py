@@ -73,6 +73,7 @@ class GithubRepo(Repo):
         else:
             return str()
 
+    # Todo: move functionality to github collector
     def fetch_builtin_ci(self):
         if self._fetched:
             return

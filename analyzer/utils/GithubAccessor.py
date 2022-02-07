@@ -25,11 +25,6 @@ class GithubAccessor:
     def token(self):
         return self.TOKENS[self.TOKEN_PTR]
 
-    def _make_header(self):
-        return {
-            'Authorization': f'token {self.token}'
-        }
-
     @staticmethod
     def use_token(func):
         @functools.wraps(func)
@@ -39,6 +34,12 @@ class GithubAccessor:
             GithubAccessor.TOKENS %= len(GithubAccessor.TOKENS)
             return ret
         return wrapper
+
+    @use_token
+    def _make_header(self):
+        return {
+            'Authorization': f'token {self.token}'
+        }
 
     @staticmethod
     def initialize():
@@ -64,12 +65,25 @@ class GithubAccessor:
             url = f'{url}?{query}'
         response = requests.get(url, headers=self._make_header())
         if response.status_code == 200 or response.status_code == 201:
+            # With pagination
+            if 'next' in response.links.keys():
+                result = response.json()
+                while 'next' in response.links.keys():
+                    url = response.links.get('next').get('url')
+                    response = requests.get(url, headers=self._make_header())
+                    if response.status_code not in [200, 201]:
+                        raise GithubAccessorError(
+                            f"Cannot perform GitHub request '{url}', got response {response.status_code}",
+                            response.status_code
+                        )
+                    result.extend(response.json())
+                return str(result)
+            # No pagination, simply return the response text
             return response.text
         raise GithubAccessorError(
             f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
         )
 
-    @use_token
     def get_content(self, repo: Repo, path) -> Dict[str, Any]:
         if path.endswith('/'):
             path = path[:-1]
@@ -80,3 +94,16 @@ class GithubAccessor:
             if e.status_code == 404:
                 return dict()
             raise e
+
+    def get_jobs(self, repo: Repo, run_id: int) -> Dict[str, Any]:
+        try:
+            data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'jobs')
+            return json.loads(data)
+        except GithubAccessorError as e:
+            if e.status_code == 404:
+                return dict()
+            raise e
+
+    def get_job_log(self, repo: Repo, job_id: int) -> Dict[str, Any]:
+        data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
+        return json.loads(data)
