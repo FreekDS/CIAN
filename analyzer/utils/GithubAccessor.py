@@ -107,3 +107,15 @@ class GithubAccessor:
     def get_job_log(self, repo: Repo, job_id: int) -> Dict[str, Any]:
         data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
         return json.loads(data)
+
+    def get_workflows(self, repo: Repo) -> Dict[str, Any]:
+        data = self._make_request('repos', repo.path, 'actions', 'workflows')
+        return json.loads(data)
+
+    def get_workflow_runs(self, repo: Repo) -> Dict[str, Any]:
+        data = self._make_request('repos', repo.path, 'actions', 'runs')
+        return json.loads(data)
+
+    def get_workflow_run_timing(self, repo: Repo, run_id: int):
+        data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
+        return data
