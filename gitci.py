@@ -12,7 +12,6 @@ from analyzer.config import GH_PROVIDERS
 
 if __name__ == '__main__':
     load_dotenv()
-    GithubRepo.init_github_token(os.getenv('GH_TOKEN'))
 
     args = parser.parse_args()
 
