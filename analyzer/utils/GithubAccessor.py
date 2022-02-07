@@ -87,7 +87,7 @@ class GithubAccessor:
             f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
         )
 
-    def get_content(self, repo: Repo, path) -> Dict[str, Any]:
+    def get_content(self, repo: Repo, path) -> Dict[str, Any] or None:
         if path.endswith('/'):
             path = path[:-1]
         try:
@@ -95,7 +95,7 @@ class GithubAccessor:
             return json.loads(data)
         except GithubAccessorError as e:
             if e.status_code == 404:
-                return dict()
+                return None
             raise e
 
     def get_jobs(self, repo: Repo, run_id: int) -> Dict[str, Any]:

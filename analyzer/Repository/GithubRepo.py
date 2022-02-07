@@ -9,6 +9,7 @@ from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.config import GH_ACTIONS
 from analyzer.ResultsCollector import collect_test_results
+from analyzer.utils.GithubAccessor import GithubAccessor
 from collections import defaultdict
 
 
@@ -22,37 +23,22 @@ class GithubRepo(Repo):
     def __init__(self, path):
         super().__init__(path, repo_type='github')
         self._fetched = False
+        self._gh_access = GithubAccessor()
         self._repo: GH_Repository = self._githubObject.get_repo(path)
         self._base_url = 'https://api.github.com'
         self._headers = {'Authorization': f'token {os.getenv("GH_TOKEN")}'}
 
     def path_exists(self, path) -> bool:
-        if path.endswith('/'):
-            path = path[:-1]
-        try:
-            content = self._repo.get_contents(path)
-            if content:
-                return True
-        except UnknownObjectException as ex:
-            if ex.status == 404:
-                return False
-            else:
-                raise ex
+        return self._gh_access.get_content(self, path) is not None
 
     def dir_empty(self, path) -> bool:
-        if path.endswith('/'):
-            path = path[:-1]
         if not self.path_exists(path):
             return False
-        try:
-            content = self._repo.get_contents(path)
-            while content:
-                file_content = content.pop(0)
-                if file_content.type == 'file':
-                    return False
-            return True
-        except UnknownObjectException:
-            return False
+        content = self._gh_access.get_content(self, path)
+        if isinstance(content, list):
+            return len(content) == 0
+        # is not directory, return True
+        return True
 
     def _get_jobs(self, wf_run):
         response = requests.get(wf_run.jobs_url, headers=self._headers)
