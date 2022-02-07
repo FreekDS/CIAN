@@ -107,9 +107,12 @@ class GithubAccessor:
                 return dict()
             raise e
 
-    def get_job_log(self, repo: Repo, job_id: int) -> Dict[str, Any]:
-        data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
-        return json.loads(data)
+    def get_job_log(self, repo: Repo, job_id: int) -> str:
+        try:
+            data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
+            return data
+        except GithubAccessorError:
+            return str()
 
     def get_workflows(self, repo: Repo) -> Dict[str, Any]:
         data = self._make_request('repos', repo.path, 'actions', 'workflows')
@@ -121,4 +124,4 @@ class GithubAccessor:
 
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
         data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
-        return data
+        return json.loads(data)
