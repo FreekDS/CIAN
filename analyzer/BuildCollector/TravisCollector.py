@@ -20,22 +20,6 @@ class TravisCollector(Command):
         self.repo: Repo = repo
         self.travis_access = TravisAccessor()
 
-    # def get_job(self, job_id):
-    #     url = f'https://api.travis-ci.com/job/{job_id}'
-    #     response = requests.get(url, headers=self.headers)
-    #     if response.status_code == 200:
-    #         data = json.loads(response.text)
-    #         return data
-    #     return None
-
-    # def get_job_log(self, job_id):
-    #     url = f'https://api.travis-ci.com/job/{job_id}/log.txt'
-    #     response = requests.get(url, headers=self.headers)
-    #     if response.status_code == 200:
-    #         data = str(response.text)
-    #         return data
-    #     return str()
-
     def get_test_results(self, raw_build):
         test_results = defaultdict(list)
         for job in raw_build.get('jobs', []):
