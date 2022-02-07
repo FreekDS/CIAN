@@ -4,6 +4,7 @@ import requests
 import json
 from typing import Dict, Any
 from analyzer.Repository.Repo import Repo
+from analyzer.utils import merge_dicts
 
 
 class GithubAccessorError(Exception):
@@ -31,7 +32,7 @@ class GithubAccessor:
         def wrapper(self, *args, **kwargs):
             ret = func(self, *args, **kwargs)
             GithubAccessor.TOKEN_PTR += 1
-            GithubAccessor.TOKENS %= len(GithubAccessor.TOKENS)
+            GithubAccessor.TOKEN_PTR %= len(GithubAccessor.TOKENS)
             return ret
         return wrapper
 
@@ -76,8 +77,8 @@ class GithubAccessor:
                             f"Cannot perform GitHub request '{url}', got response {response.status_code}",
                             response.status_code
                         )
-                    result.extend(response.json())
-                return str(result)
+                    result = merge_dicts(result, response.json())
+                return json.dumps(result)
             # No pagination, simply return the response text
             return response.text
         raise GithubAccessorError(
@@ -88,7 +89,7 @@ class GithubAccessor:
         if path.endswith('/'):
             path = path[:-1]
         try:
-            data = self._make_request(repo.path, 'contents', path)
+            data = self._make_request('repos', repo.path, 'contents', path)
             return json.loads(data)
         except GithubAccessorError as e:
             if e.status_code == 404:
@@ -112,8 +113,8 @@ class GithubAccessor:
         data = self._make_request('repos', repo.path, 'actions', 'workflows')
         return json.loads(data)
 
-    def get_workflow_runs(self, repo: Repo) -> Dict[str, Any]:
-        data = self._make_request('repos', repo.path, 'actions', 'runs')
+    def get_workflow_runs(self, repo: Repo, query: str = str()) -> Dict[str, Any]:
+        data = self._make_request('repos', repo.path, 'actions', 'runs', query=query)
         return json.loads(data)
 
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
