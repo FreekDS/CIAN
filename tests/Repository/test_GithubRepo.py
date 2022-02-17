@@ -1,4 +1,3 @@
-import os
 import pytest
 from analyzer.Repository.GithubRepo import GithubRepo
 
