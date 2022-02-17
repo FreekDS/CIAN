@@ -9,7 +9,6 @@ def default_repo():
 
 def test_constructor(default_repo):
     assert default_repo._fetched is False
-    assert default_repo._repo is not None
     assert default_repo._githubObject is not None
 
 
