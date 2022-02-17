@@ -5,7 +5,6 @@ from analyzer.Repository.GithubRepo import GithubRepo
 
 @pytest.fixture(scope='module')
 def default_repo():
-    GithubRepo.init_github_token(os.getenv('GH_TOKEN'))
     return GithubRepo("FreekDS/git-ci-analyzer")
 
 
