@@ -14,7 +14,8 @@ jobs:
     name: Test and lint
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN_COUNT: 1
+      GH_TOKEN_1: ${{ secrets.GH_TOKEN_1 }}
       CIRCLE_CI: ${{ secrets.CIRCLE_CI }}
       TRAVIS_CI: ${{ secrets.TRAVIS_CI }}
     
