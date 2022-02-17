@@ -8,8 +8,8 @@ def default_repo():
 
 
 def test_constructor(default_repo):
-    assert default_repo._fetched is False
-    assert default_repo._githubObject is not None
+    assert default_repo._base_url == 'https://api.github.com'
+    assert default_repo._gh_access is not None
 
 
 def test_path_exists(default_repo):

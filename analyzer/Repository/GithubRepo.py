@@ -8,7 +8,6 @@ class GithubRepo(Repo):
 
     def __init__(self, path):
         super().__init__(path, repo_type='github')
-        self._fetched = False
         self._gh_access = GithubAccessor()
         self._base_url = 'https://api.github.com'
         self._headers = {'Authorization': f'token {os.getenv("GH_TOKEN")}'}
