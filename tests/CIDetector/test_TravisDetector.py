@@ -2,20 +2,6 @@ from analyzer.Repository.TestRepo import TestRepo
 from analyzer.CIDetector.TravisDetector import TravisDetector, TRAVIS_CI
 
 
-def test_constructor():
-    detector = TravisDetector()
-
-    auth_header = 'Authorization'
-    api_version_header = 'Travis-API-Version'
-    user_agent_header = 'User-Agent'
-
-    headers = [auth_header, api_version_header, user_agent_header]
-
-    for h in headers:
-        assert h in detector.headers.keys()
-        assert detector.headers.get(h) is not None
-
-
 def test_execute_happyday():
     repo = TestRepo('FreekDS/git-ci-analyzer')
     detector = TravisDetector()

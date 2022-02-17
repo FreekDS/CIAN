@@ -32,12 +32,16 @@ In order to be able to install everything, make sure the following is installed 
 1. Python 3.10 (this is the Python version where the tool is written in, it might also work with lower Python versions)
 2. pip
 3. To access private repositories, and to have a higher rate limit, the following environment variables should be set
-   > GH_TOKEN=<your_github_token> <br>
+   > GH_TOKEN_COUNT=2 <br>
+   > GH_TOKEN_1=<your_1st_github_token> <br>
+   > GH_TOKEN_2=<your_2nd_github_token <br>
    > CIRCLE_CI=<your_circleci_token> <br>
    > TRAVIS_CI=<your_travis_token>
    
    They can be set by creating a ```.env``` file. This file is loaded automatically.<br>
-   It is advised to set at least the `GH_TOKEN` as this increases the rate limit for the GitHub API signifcantly.
+   It is advised to set at least one `GH_TOKEN` as this increases the rate limit for the GitHub API significantly.
+   Any number of GitHub token can be set by increasing the value of `GH_TOKEN_COUNT` and by adding the appropriate tokens
+   using the format `GH_TOKEN_#`.
 
 ## Usage
 To view the usage of the tool, run

@@ -6,9 +6,8 @@ from typing import Union
 
 class GithubActionsDetector(Command):
     def execute(self, repo: Repo) -> Union[None or str]:
-        if repo.repo_type == "github":
-            repo.fetch_builtin_ci()
+        if repo.repo_type == 'github':
             if repo.path_exists('.github/workflows'):
-                if not repo.dir_empty('.github/workflows') and repo.builds:
+                if not repo.dir_empty('.github/workflows'):
                     return GH_ACTIONS
         return None
