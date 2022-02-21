@@ -10,5 +10,11 @@ class SlowBuild(AntiPattern):
     def average_duration_weekly(self):
         pass
 
+    def sort_chronologically(self):
+        sorted_dict = dict()
+        for wf, builds in self.builds.items():
+            pass
+        pass
+
     def detect(self):
         pass

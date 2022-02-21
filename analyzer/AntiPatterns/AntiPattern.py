@@ -10,13 +10,13 @@ class AntiPattern(ABC):
         self.name = name
 
     @staticmethod
-    def sort_by_workflow(builds):
+    def sort_by_workflow(builds) -> dict:
         per_workflow = defaultdict(list)
         for build in builds:
             per_workflow[build.workflow].append(build)
-        return per_workflow
+        return dict(per_workflow)
 
     @abstractmethod
-    def detect(self):
+    def detect(self) -> dict:
         raise NotImplementedError()
 
