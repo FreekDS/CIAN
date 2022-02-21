@@ -41,6 +41,7 @@ class SlowBuild(AntiPattern):
 
             # Builds from different tools have different names:
             results[wf]['tool'] = builds[-1].used_tool
+            results[wf]['total avg'] = sum(results[wf]["data"].values()) / len(results[wf]["data"])
 
         return results
 
