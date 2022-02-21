@@ -22,20 +22,25 @@ class SlowBuild(AntiPattern):
         builds: List[Build]
         for wf, builds in self.builds.items():
             results[wf] = dict()
+            results[wf]['data'] = dict()
             current_start_date = builds[0].start_date
             current_date_str = builds[0].started_at
             time_sum = builds[0].duration
             date_count = 1
             for build in builds[1:]:
-                if within_week(current_start_date, build.end_date):
+                if within_week(current_start_date, build.start_date):
                     time_sum += build.duration
                     date_count += 1
                 else:
-                    results[wf][current_date_str] = time_sum / date_count
+                    results[wf]['data'][current_date_str] = time_sum / date_count
                     time_sum = build.duration
                     current_date_str = build.started_at
                     current_start_date = build.start_date
                     date_count = 1
+            results[wf]['data'][current_date_str] = time_sum / date_count
+
+            # Builds from different tools have different names:
+            results[wf]['tool'] = builds[-1].used_tool
 
         return results
 
