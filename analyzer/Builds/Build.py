@@ -17,7 +17,8 @@ class Build:
         return Build(**d)
 
     def __init__(self, state=str(), id=int(), number=int(), started_at=str(), ended_at=str(), duration=int(),
-                 created_by=str(), event_type=str(), branch=str(), used_tool=str(), test_results=None, **kwargs):
+                 created_by=str(), event_type=str(), branch=str(), used_tool=str(), test_results=None, workflow=str(),
+                 **kwargs):
         self.state: str = state
         self.id: int = id
         self.number = int(number)
@@ -29,6 +30,7 @@ class Build:
         self.branch = branch
         self.used_tool = used_tool
         self.test_results = test_results if test_results else dict()
+        self.workflow = workflow
 
     def __repr__(self):
         return str(self.dict())
