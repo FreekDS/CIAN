@@ -8,16 +8,17 @@ from typing import List
 
 
 class SlowBuild(AntiPattern):
-    def __init__(self, builds: List[Build]):
+    def __init__(self, builds: List[Build], days_between=7):
         super().__init__(builds)
         self.builds = self.sort_chronologically()
+        self.days_between = days_between
 
     def average_duration_weekly(self):
         results = dict()
 
         def within_week(start_date: datetime.date, end_date: datetime.date):
             delta = end_date - start_date
-            return int(delta.days) < 7
+            return int(delta.days) < self.days_between
 
         builds: List[Build]
         for wf, builds in self.builds.items():
