@@ -15,5 +15,3 @@ class BuildCache(CacherBase):
     def restore(self, default=None):
         builds_json = super().restore(default)
         return [Build.from_dict(b) for b in builds_json]
-
-

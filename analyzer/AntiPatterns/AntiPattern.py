@@ -19,4 +19,3 @@ class AntiPattern(ABC):
     @abstractmethod
     def detect(self) -> dict:
         raise NotImplementedError()
-
