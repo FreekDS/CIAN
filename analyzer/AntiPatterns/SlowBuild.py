@@ -46,6 +46,7 @@ class SlowBuild(AntiPattern):
             results[wf]['tool'] = builds[-1].used_tool
             results[wf]['total avg'] = sum(results[wf]["data"].values()) / len(results[wf]["data"])
             results[wf]["quartiles"] = self.get_quartiles(list(results[wf]["data"].values()))
+            results[wf]["classification"] = self.classify(results[wf])
 
         return results
 
@@ -63,6 +64,37 @@ class SlowBuild(AntiPattern):
         iqr = q3 - q1
         return {
             "q1": q1, "q3": q3, 'iqr': iqr
+        }
+
+    @staticmethod
+    def classify(results_data):
+        data_points = list(results_data.get("data").items())
+        quartile_data = results_data.get('quartiles')
+
+        high_severity = list(
+            filter(
+                lambda dp: dp[1] > quartile_data.get('q3') + 1.5 * quartile_data.get('iqr'),
+                data_points
+            )
+        )
+        medium_severity = list(
+            filter(
+                lambda dp: dp[1] > quartile_data.get('q3') and dp not in high_severity,
+                data_points
+            )
+        )
+
+        high_severity = {
+            dp[0]: dp[1] for dp in high_severity
+        }
+
+        medium_severity = {
+            dp[0]: dp[1] for dp in medium_severity
+        }
+
+        return {
+            'high_severity': high_severity,
+            'medium_severity': medium_severity
         }
 
     def detect(self):
