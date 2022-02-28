@@ -6,8 +6,27 @@ from analyzer.Builds.Build import Build
 
 class BrokenRelease(AntiPattern):
 
-    def __init__(self, builds: List[Build]):
+    RELEASE_NAMES = ["main", "master"]
+
+    def __init__(self, builds: List[Build], custom_release_branches: List[str] or None=None):
         super().__init__(builds, 'BrokenRelease')
+        self.builds = self.sort_chronologically()
+        if custom_release_branches:
+            self.custom_branches = custom_release_branches
+        else:
+            self.custom_branches = []
+
+    def get_release_branch_builds(self):
+        filtered_builds = {}
+        for wf, builds in self.builds.items():
+            filtered = list(
+                filter(
+                    lambda build: build.branch in self.RELEASE_NAMES + self.custom_branches,
+                    builds
+                )
+            )
+            filtered_builds[wf] = filtered
+        return filtered_builds
 
     def detect(self) -> dict:
         pass
