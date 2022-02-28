@@ -28,6 +28,19 @@ class BrokenRelease(AntiPattern):
             filtered_builds[wf] = filtered
         return filtered_builds
 
+    @staticmethod
+    def get_failing(release_builds):
+        failing_builds = {}
+        for wf, builds in release_builds:
+            filtered = list(
+                filter(
+                    lambda build: build.state == 'failure',
+                    builds
+                )
+            )
+            failing_builds[wf] = filtered
+        return failing_builds
+
     def detect(self) -> dict:
         pass
 
