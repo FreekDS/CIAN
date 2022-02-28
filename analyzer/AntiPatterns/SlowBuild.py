@@ -50,13 +50,6 @@ class SlowBuild(AntiPattern):
 
         return results
 
-    def sort_chronologically(self):
-        sorted_dict = dict()
-        for wf, builds in self.builds.items():
-            builds.sort(key=lambda build: build.start_date)
-            sorted_dict[wf] = builds
-        return sorted_dict
-
     @staticmethod
     def get_quartiles(durations):
         data = np.array(durations)
