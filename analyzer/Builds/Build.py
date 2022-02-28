@@ -1,4 +1,5 @@
 from typing import List, Tuple
+import datetime
 
 
 class Build:
@@ -16,8 +17,21 @@ class Build:
                 d[rule[1]] = d.pop(rule[0])
         return Build(**d)
 
+    @staticmethod
+    def format_date(date):
+        return datetime.datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
+
+    @property
+    def start_date(self):
+        return self.format_date(self.started_at)
+
+    @property
+    def end_date(self):
+        return self.format_date(self.ended_at)
+
     def __init__(self, state=str(), id=int(), number=int(), started_at=str(), ended_at=str(), duration=int(),
-                 created_by=str(), event_type=str(), branch=str(), used_tool=str(), test_results=None, **kwargs):
+                 created_by=str(), event_type=str(), branch=str(), used_tool=str(), test_results=None, workflow=str(),
+                 **kwargs):
         self.state: str = state
         self.id: int = id
         self.number = int(number)
@@ -29,6 +43,7 @@ class Build:
         self.branch = branch
         self.used_tool = used_tool
         self.test_results = test_results if test_results else dict()
+        self.workflow = workflow
 
     def __repr__(self):
         return str(self.dict())

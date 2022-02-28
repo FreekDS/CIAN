@@ -36,6 +36,8 @@ class TravisCollector(Command):
             for raw_build in raw_builds:
                 build = Build.from_dict(raw_build, [('finished_at', 'ended_at')])
                 build.created_by = build.created_by.get('login')
+                build.duration *= 1000  # Convert to milliseconds
+                build.workflow = raw_build.get('repository').get('name')
                 build.branch = build.branch.get('name')
                 build.used_tool = TRAVIS_CI
                 build.test_results = self.get_test_results(raw_build)

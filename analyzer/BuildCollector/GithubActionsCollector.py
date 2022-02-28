@@ -61,7 +61,8 @@ class GithubActionsCollector(Command):
                     event_type=run.get('event'),
                     branch=run.get('head_branch'),
                     used_tool=GH_ACTIONS,
-                    test_results=dict(test_results)
+                    test_results=dict(test_results),
+                    workflow=run.get('name')
                 )
             )
         return builds
