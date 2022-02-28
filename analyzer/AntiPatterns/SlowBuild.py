@@ -4,6 +4,8 @@ from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.Builds.Build import Build
 from typing import List
 
+import numpy as np
+
 # TODO: add threshold parameters, when is a build slow?
 
 
@@ -43,6 +45,7 @@ class SlowBuild(AntiPattern):
             # Builds from different tools have different names:
             results[wf]['tool'] = builds[-1].used_tool
             results[wf]['total avg'] = sum(results[wf]["data"].values()) / len(results[wf]["data"])
+            results[wf]["quartiles"] = self.get_quartiles(list(results[wf]["data"].values()))
 
         return results
 
@@ -52,6 +55,15 @@ class SlowBuild(AntiPattern):
             builds.sort(key=lambda build: build.start_date)
             sorted_dict[wf] = builds
         return sorted_dict
+
+    @staticmethod
+    def get_quartiles(durations):
+        data = np.array(durations)
+        q1, q3 = np.percentile(data, [25, 75])
+        iqr = q3 - q1
+        return {
+            "q1": q1, "q3": q3, 'iqr': iqr
+        }
 
     def detect(self):
         return self.average_duration_weekly()
