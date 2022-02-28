@@ -5,10 +5,9 @@ from analyzer.Builds.Build import Build
 
 
 class BrokenRelease(AntiPattern):
-
     RELEASE_NAMES = ["main", "master"]
 
-    def __init__(self, builds: List[Build], custom_release_branches: List[str] or None=None):
+    def __init__(self, builds: List[Build], custom_release_branches: List[str] or None = None):
         super().__init__(builds, 'BrokenRelease')
         self.builds = self.sort_chronologically()
         if custom_release_branches:
@@ -25,13 +24,14 @@ class BrokenRelease(AntiPattern):
                     builds
                 )
             )
-            filtered_builds[wf] = filtered
+            if filtered:
+                filtered_builds[wf] = filtered
         return filtered_builds
 
     @staticmethod
     def get_failing(release_builds):
         failing_builds = {}
-        for wf, builds in release_builds:
+        for wf, builds in release_builds.items():
             filtered = list(
                 filter(
                     lambda build: build.state == 'failure',
@@ -42,5 +42,16 @@ class BrokenRelease(AntiPattern):
         return failing_builds
 
     def detect(self) -> dict:
-        pass
-
+        failing_releases = self.get_failing(self.get_release_branch_builds())
+        results = {}
+        for wf, builds in failing_releases.items():
+            results[wf] = list()
+            for build in builds:
+                results[wf].append(
+                    {
+                        'started_at': build.started_at,
+                        'used_tool': build.used_tool,
+                        'number': build.number
+                    }
+                )
+        return results
