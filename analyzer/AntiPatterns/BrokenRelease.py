@@ -45,13 +45,16 @@ class BrokenRelease(AntiPattern):
         failing_releases = self.get_failing(self.get_release_branch_builds())
         results = {}
         for wf, builds in failing_releases.items():
-            results[wf] = list()
+            results[wf] = {}
+            results[wf]['data'] = list()
             for build in builds:
-                results[wf].append(
+                results[wf]['data'].append(
                     {
                         'started_at': build.started_at,
                         'used_tool': build.used_tool,
                         'number': build.number
                     }
                 )
+            if builds:
+                results[wf]["tool"] = builds[0].used_tool
         return results
