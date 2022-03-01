@@ -114,22 +114,4 @@ class SkipFailingTests(AntiPattern):
                                           'build_date': build.started_at,
                                           'used_tool': build.used_tool
                                       }.update(detect_result))
-
-        d = {
-            'workflow': [
-                {
-                    'build_number': 0,
-                    'build_date': 'some_date',
-                    'job name': {
-                        'test_framework': {
-                            'delta_break': 0,
-                            'delta_skip': 0,
-                            'delta_run': 0,
-                            'skipped': False
-                        }
-                    },
-                    'used_tool': 'Github Actions'
-                }
-            ]
-        }
         return dict(result)
