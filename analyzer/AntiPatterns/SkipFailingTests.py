@@ -6,6 +6,7 @@ from analyzer.AntiPatterns.AntiPattern import AntiPattern
 
 
 # TODO: for now, only logs from pytest are collected!
+# TODO: test functionality!
 
 
 class SkipFailingTests(AntiPattern):
@@ -43,7 +44,7 @@ class SkipFailingTests(AntiPattern):
                 try:
                     if test_result == 'log expired':
                         continue
-                    test_result = test_result[0]    # this line can go if todo is fixed
+                    test_result = test_result[0]  # this line can go if todo is fixed
                     framework = test_result.get('framework')
 
                     # i: position of current (job, results) pair
@@ -80,7 +81,27 @@ class SkipFailingTests(AntiPattern):
         return results
 
     def detect(self) -> dict:
-
+        """
+        Detect whether skip failing tests anti pattern arises
+        :return: dict with following format:
+        {
+            'workflow': [
+                {
+                    'build_number': int,
+                    'build_date': date_str,
+                    'job name': {
+                        'test framework': {
+                            'delta_break': int,
+                            'delta_skip': int,
+                            'delta_run': int,
+                            'skipped': bool
+                        }
+                    },
+                    'used_tool': str
+                }
+            ]
+        }
+        """
         result = defaultdict(list)
 
         for wf, builds in self.builds.items():
@@ -89,9 +110,10 @@ class SkipFailingTests(AntiPattern):
                 detect_result = self.build_has_skipped(prev_build, build)
                 if detect_result:
                     result[wf].append({
-                        'build_number': build.number,
-                        'build_date': build.started_at,
-                    }.update(detect_result))
+                                          'build_number': build.number,
+                                          'build_date': build.started_at,
+                                          'used_tool': build.used_tool
+                                      }.update(detect_result))
 
         d = {
             'workflow': [
@@ -110,4 +132,4 @@ class SkipFailingTests(AntiPattern):
                 }
             ]
         }
-        return result
+        return dict(result)
