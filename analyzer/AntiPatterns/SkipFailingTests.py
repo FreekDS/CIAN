@@ -4,6 +4,9 @@ from Builds import Build
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 
 
+# TODO: for now, only logs from pytest are collected!
+
+
 class SkipFailingTests(AntiPattern):
 
     def __init__(self, builds: List[Build]):

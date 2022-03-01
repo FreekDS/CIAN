@@ -20,9 +20,15 @@ class AntiPattern(ABC):
     def detect(self) -> dict:
         raise NotImplementedError()
 
-    def sort_chronologically(self):
+    def _sort_fn(self, fn):
         sorted_dict = dict()
         for wf, builds in self.builds.items():
-            builds.sort(key=lambda build: build.start_date)
+            builds.sort(key=fn)
             sorted_dict[wf] = builds
         return sorted_dict
+
+    def sort_chronologically(self):
+        return self._sort_fn(lambda build: build.start_date)
+
+    def sort_by_number(self):
+        return self._sort_fn(lambda build: build.number)
