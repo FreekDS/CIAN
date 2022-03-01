@@ -37,7 +37,10 @@ class GithubActionsCollector(Command):
             for job in jobs.get('jobs'):
                 log = self._gh_access.get_job_log(self.repo, job.get('id'))
                 tests = collect_test_results(log)
-                test_results[job.get('name')].append(tests)
+                if not log:
+                    test_results[job.get('name')] = ["log expired"]
+                else:
+                    test_results[job.get('name')].append(tests)
 
             created_at = datetime.datetime.strptime(run.get('created_at'), '%Y-%m-%dT%H:%M:%SZ')
             ended_at = created_at + datetime.timedelta(milliseconds=timing.get('run_duration_ms', 0))

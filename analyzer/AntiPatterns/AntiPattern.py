@@ -19,3 +19,10 @@ class AntiPattern(ABC):
     @abstractmethod
     def detect(self) -> dict:
         raise NotImplementedError()
+
+    def sort_chronologically(self):
+        sorted_dict = dict()
+        for wf, builds in self.builds.items():
+            builds.sort(key=lambda build: build.start_date)
+            sorted_dict[wf] = builds
+        return sorted_dict
