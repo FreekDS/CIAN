@@ -1,3 +1,6 @@
+import datetime
+
+
 def merge_dicts(dict1, dict2):
     """
     Merge dict 2 into dict 1
@@ -13,3 +16,7 @@ def merge_dicts(dict1, dict2):
         else:
             dict1[k] = v
     return dict1
+
+
+def format_date(date):
+    return datetime.datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
