@@ -61,11 +61,11 @@ class GithubAccessor:
             return len(GithubAccessor.TOKENS) >= 1
         return False
 
-    def url_request(self, url):
+    def url_request(self, url, unfold_pagination=True):
         response = requests.get(url, headers=self._make_header())
         if response.status_code == 200 or response.status_code == 201:
             # With pagination
-            if 'next' in response.links.keys():
+            if 'next' in response.links.keys() and unfold_pagination:
                 result = response.json()
                 while 'next' in response.links.keys():
                     url = response.links.get('next').get('url')
@@ -83,12 +83,12 @@ class GithubAccessor:
             f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
         )
 
-    def _make_request(self, *args: str, query: str = str()):
+    def _make_request(self, *args: str, query: str = str(), unfold_pagination=True):
         endpoint = '/'.join(args)
         url = f'{self._url_base}/{endpoint}'
         if query:
             url = f'{url}?{query}'
-        return self.url_request(url)
+        return self.url_request(url, unfold_pagination=unfold_pagination)
 
     def get_content(self, repo: Repo, path) -> Dict[str, Any] or None:
         if path.endswith('/'):
@@ -130,8 +130,12 @@ class GithubAccessor:
         return json.loads(data)
 
     def get_last_commit(self, repo):
-        data = self._make_request('repos', repo.path, 'commits', query='per_page=1')
-        return json.loads(data)
+        data = self._make_request('repos', repo.path, 'commits', query='per_page=1&page=1', unfold_pagination=False)
+        data = json.loads(data)
+        if data:
+            return data[0]
+        else:
+            return dict()
 
     def get_branches_with_latest_commit(self, repo):
         branch_data = self._make_request('repos', repo.path, 'branches')
@@ -142,7 +146,7 @@ class GithubAccessor:
             if not commit_url:
                 continue
             commit_data = self.url_request(commit_url)
-            branch['commit'] = commit_data
+            branch['commit'] = json.loads(commit_data)
             data.append(branch)
         return data
 
