@@ -17,3 +17,7 @@ class Repo(ABC):
     @abstractmethod
     def dir_empty(self, path) -> bool:
         pass
+
+    @abstractmethod
+    def branch_information(self) -> dict:
+        pass
