@@ -5,7 +5,7 @@ from collections import defaultdict
 
 
 class AntiPattern(ABC):
-    def __init__(self, builds: List[Build], name=''):
+    def __init__(self, builds: List[Build], name='', **kwargs):
         self.builds = self.sort_by_workflow(builds)
         self.name = name
 
