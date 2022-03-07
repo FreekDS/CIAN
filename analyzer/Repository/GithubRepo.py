@@ -39,8 +39,11 @@ class GithubRepo(Repo):
             return 'main'
         return 'master'
 
-    # TODO cache branch information
-    def branch_information(self) -> dict:
+    def _branch_information(self) -> dict:
+
+        if self.branch_info:
+            return self.branch_info
+
         branch_info = dict()
         last_commit = self._gh_access.get_last_commit(self)
 
@@ -64,4 +67,6 @@ class GithubRepo(Repo):
             else:
                 branch_info[b_name]['merged'] = False
 
-        return branch_info
+        self.branch_info = branch_info
+
+        return self.branch_info
