@@ -7,7 +7,7 @@ class CacherBase:
     def __init__(self, repo_name, file_path):
         self.repo = repo_name
         self._fp_ext = file_path if file_path.endswith('.cache') else f'{file_path}.cache'
-        self.fp = f'{repo_name}-{self._fp_ext}'
+        self.fp = f'cache/{repo_name}-{self._fp_ext}'
 
     def hit(self):
         return os.path.exists(self.fp)
