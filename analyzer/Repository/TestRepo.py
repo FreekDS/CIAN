@@ -28,3 +28,6 @@ class TestRepo(Repo):
 
     def fetch_builtin_ci(self):
         self.builds = self._remote_builds
+
+    def _branch_information(self) -> dict:
+        return dict()

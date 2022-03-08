@@ -33,5 +33,7 @@ parser.add_argument('repository_slugs', nargs='+', type=repository_slug_type,
                     help='One or more repository slugs. A slug is constructed as follows:'
                          '[{provider}/]{username}/{repository_name}'
                          'The provider is optional. If none is given, the default provider is assumed (see -p)')
-parser.add_argument('-p', '---default-provider', default='github', type=provider_type,
+parser.add_argument('-p', '--default-provider', default='github', type=provider_type,
                     help=f'Default provider. Allowed values are {PROVIDERS}')
+parser.add_argument('-do', '--detect-only', action=argparse.BooleanOptionalAction,
+                    help='Only detect CI tools in the specified repositories')

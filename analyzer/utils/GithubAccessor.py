@@ -61,15 +61,11 @@ class GithubAccessor:
             return len(GithubAccessor.TOKENS) >= 1
         return False
 
-    def _make_request(self, *args: str, query: str = str()):
-        endpoint = '/'.join(args)
-        url = f'{self._url_base}/{endpoint}'
-        if query:
-            url = f'{url}?{query}'
+    def url_request(self, url, unfold_pagination=True):
         response = requests.get(url, headers=self._make_header())
         if response.status_code == 200 or response.status_code == 201:
             # With pagination
-            if 'next' in response.links.keys():
+            if 'next' in response.links.keys() and unfold_pagination:
                 result = response.json()
                 while 'next' in response.links.keys():
                     url = response.links.get('next').get('url')
@@ -86,6 +82,13 @@ class GithubAccessor:
         raise GithubAccessorError(
             f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
         )
+
+    def _make_request(self, *args: str, query: str = str(), unfold_pagination=True):
+        endpoint = '/'.join(args)
+        url = f'{self._url_base}/{endpoint}'
+        if query:
+            url = f'{url}?{query}'
+        return self.url_request(url, unfold_pagination=unfold_pagination)
 
     def get_content(self, repo: Repo, path) -> Dict[str, Any] or None:
         if path.endswith('/'):
@@ -125,3 +128,52 @@ class GithubAccessor:
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
         data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
         return json.loads(data)
+
+    def get_last_commit(self, repo):
+        data = self._make_request('repos', repo.path, 'commits', query='per_page=1&page=1', unfold_pagination=False)
+        data = json.loads(data)
+        if data:
+            return data[0]
+        else:
+            return dict()
+
+    def get_branches_with_latest_commit(self, repo):
+        branch_data = self._make_request('repos', repo.path, 'branches')
+        branch_data = json.loads(branch_data)
+        data = list()
+        for branch in branch_data:
+            commit_url = branch.get('commit', {}).get('url', None)
+            if not commit_url:
+                continue
+            commit_data = self.url_request(commit_url)
+            branch['commit'] = json.loads(commit_data)
+            data.append(branch)
+        return data
+
+    def get_closed_prs(self, repo, base_branch=None, head_branch=None):
+        query = 'state=closed'
+        if base_branch:
+            query += f'&base={base_branch}'
+        if head_branch:
+            query += f'&head={head_branch}'
+        data = self._make_request('repos', repo.path, 'pulls', query=query)
+        return json.loads(data)
+
+    def is_pr_merged(self, repo, pull_request_nr):
+        """
+        Merged pull requests get response 204, if not merged, status 404 is returned
+        :param repo: repository object
+        :param pull_request_nr: number of the pull request
+        :return: True if the pull request is merged
+        :raises: GithubAccessorError if the status is not 204 or 404
+        """
+        try:
+            _ = self._make_request('repos', repo.path, 'pulls', str(pull_request_nr), 'merge')
+            return False
+        except GithubAccessorError as e:
+            if e.status_code == 204:
+                return True
+            elif e.status_code == 404:
+                return False
+            else:
+                raise e
