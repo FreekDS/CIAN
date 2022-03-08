@@ -1,5 +1,3 @@
-import datetime
-
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.Builds.Build import Build
 from analyzer.utils import format_date
