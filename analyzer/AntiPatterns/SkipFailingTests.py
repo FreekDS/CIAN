@@ -12,7 +12,7 @@ from analyzer.AntiPatterns.AntiPattern import AntiPattern
 class SkipFailingTests(AntiPattern):
 
     def __init__(self, builds: List[Build]):
-        super().__init__(builds, 'SkipFailingTests')
+        super().__init__(builds, 'skip_failing_tests')
         self.builds = self.sort_by_number()
 
     @staticmethod

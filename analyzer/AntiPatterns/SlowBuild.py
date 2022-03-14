@@ -11,7 +11,7 @@ import numpy as np
 
 class SlowBuild(AntiPattern):
     def __init__(self, builds: List[Build], days_between=7):
-        super().__init__(builds)
+        super().__init__(builds, name='slow_build')
         self.builds = self.sort_chronologically()
         self.days_between = days_between
 
