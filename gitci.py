@@ -6,6 +6,7 @@ from analyzer.CIDetector import detect_ci_tools
 from analyzer.BuildCollector import collect_builds
 from analyzer.config import GH_PROVIDERS
 from analyzer.AntiPatterns import find_anti_patterns
+from analyzer.Output import create_images
 from analyzer import parser
 
 
@@ -52,9 +53,6 @@ if __name__ == '__main__':
 
         print("Anti patterns info:\n", json.dumps(anti_patterns, indent=2))
 
-        from analyzer.Output.AntipatternGraphics import AntipatternGraphics
-
-        outputter = AntipatternGraphics(anti_patterns, repo.name)
-        outputter.slow_builds_graphic()
+        create_images(anti_patterns, repo)
 
         # print(json.dumps(analyse_builds(builds), indent=4))
