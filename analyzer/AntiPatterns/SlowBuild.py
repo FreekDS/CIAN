@@ -6,7 +6,7 @@ from typing import List
 
 import numpy as np
 
-# TODO: add threshold parameters, when is a build slow?
+# TODO: classification is made per week, maybe it is more useful to have this per build
 
 
 class SlowBuild(AntiPattern):

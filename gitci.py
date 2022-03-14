@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from analyzer.Repository.GithubRepo import GithubRepo
 from analyzer.CIDetector import detect_ci_tools
 from analyzer.BuildCollector import collect_builds
-from analyzer.Analysis import analyse_builds
 from analyzer.config import GH_PROVIDERS
 from analyzer.AntiPatterns import find_anti_patterns
 from analyzer import parser
@@ -52,5 +51,10 @@ if __name__ == '__main__':
         print(f"Detected {len(builds)} builds of various tools")
 
         print("Anti patterns info:\n", json.dumps(anti_patterns, indent=2))
+
+        from analyzer.Output.AntipatternGraphics import AntipatternGraphics
+
+        outputter = AntipatternGraphics(anti_patterns, repo.name)
+        outputter.slow_builds_graphic()
 
         # print(json.dumps(analyse_builds(builds), indent=4))
