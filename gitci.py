@@ -5,8 +5,9 @@ from analyzer.Repository.GithubRepo import GithubRepo
 from analyzer.CIDetector import detect_ci_tools
 from analyzer.BuildCollector import collect_builds
 from analyzer.Analysis import analyse_builds
-from analyzer import parser
 from analyzer.config import GH_PROVIDERS
+from analyzer.AntiPatterns import find_anti_patterns
+from analyzer import parser
 
 
 if __name__ == '__main__':
@@ -31,14 +32,25 @@ if __name__ == '__main__':
     for repo in repositories:
         # print("Collecting data...\r", end='', flush=True)
 
-        print("detecting...")
+        print("detecting... ", end='')
         detected = detect_ci_tools(repo)
+        print("Done")
 
-        print("collecting...")
+        print("collecting...", end='')
         builds = collect_builds(repo)
+        print("Done")
+
+        print("gather branch info...", end='')
+        branch_info = repo.branch_information()
+
+        print("Detecting antipatterns... ", end='')
+        anti_patterns = find_anti_patterns(builds, branch_info)
+        print("Done")
 
         print(repo.path, "CI summary")
         print("Detected CI tools:", detected)
         print(f"Detected {len(builds)} builds of various tools")
 
-        print(json.dumps(analyse_builds(builds), indent=4))
+        print("Anti patterns info:\n", json.dumps(anti_patterns, indent=2))
+
+        # print(json.dumps(analyse_builds(builds), indent=4))
