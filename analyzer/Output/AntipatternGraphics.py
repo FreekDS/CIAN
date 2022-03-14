@@ -1,5 +1,10 @@
+import datetime
+
 from matplotlib import pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import os
+
+from utils import format_date, format_date_str
 
 
 class AntipatternGraphics:
@@ -30,3 +35,57 @@ class AntipatternGraphics:
             plt.xticks(rotation='vertical')
 
             plt.savefig(f"{self.out_path}/slow-build_{tool}.png", bbox_inches='tight')
+
+    def broken_release_graphics(self, time_between=7):
+        broken_release = self.data.get('broken_release')
+
+        for ci_workflow, wf_info in broken_release.items():
+
+            data = wf_info.get('data')
+            if not data:
+                continue
+
+            tool = wf_info.get('tool', '')
+
+            ctr = 0
+            first_date = None
+            check_until = None
+
+            weekly = dict()
+
+            for broken_build in data:
+                start_date = format_date(broken_build.get('started_at'))
+                if not first_date:
+                    first_date = start_date
+                    check_until = first_date + datetime.timedelta(days=time_between)
+
+                if start_date <= check_until:
+                    ctr += 1
+                else:
+                    weekly[format_date_str(first_date)] = ctr
+                    missed_weeks = (start_date - check_until).days // 7
+                    for _ in range(missed_weeks):
+                        first_date = first_date + datetime.timedelta(days=time_between)
+                        weekly[format_date_str(first_date)] = 0
+                    ctr = 0
+                    first_date = None
+
+            weekly[format_date_str(first_date)] = ctr
+
+            ax = plt.figure(figsize=(10, 5)).gca()
+            ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+            dates = [date.split('T')[0] for date in weekly.keys()]
+            values = list(weekly.values())
+            if not dates:
+                dates = ['none']
+                values = [0]
+
+            plt.bar(dates, values)
+            plt.plot(dates, values, '-o', color='red')
+            plt.xlabel("Start date of week")
+            plt.ylabel("Amount of failing release builds")
+            plt.xticks(rotation='vertical')
+            plt.suptitle(f"Broken Release for '{ci_workflow}'")
+            plt.title(f"Tool: '{tool}'")
+
+            plt.savefig(f"{self.out_path}/broken-release_{tool}.png", bbox_inches='tight')
