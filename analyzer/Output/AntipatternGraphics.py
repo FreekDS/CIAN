@@ -89,3 +89,8 @@ class AntipatternGraphics:
             plt.title(f"Tool: '{tool}'")
 
             plt.savefig(f"{self.out_path}/broken-release_{tool}.png", bbox_inches='tight')
+
+    def skip_failing_tests_graphics(self):
+        skip_failing_tests = self.data.get('skip_failing_tests')
+        # TODO implement if data is gathered
+        return
