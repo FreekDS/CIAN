@@ -20,3 +20,7 @@ def merge_dicts(dict1, dict2):
 
 def format_date(date):
     return datetime.datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
+
+
+def format_date_str(date: datetime.date):
+    return date.strftime('%Y-%m-%dT%H:%M:%SZ')
