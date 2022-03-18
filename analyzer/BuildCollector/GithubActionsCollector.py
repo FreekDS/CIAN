@@ -60,6 +60,25 @@ class GithubActionsCollector(Command):
             elif state == 'failed':
                 state = 'failure'
 
+            head_commit = run.get('head_commit')
+            chain_broken = False
+            name = ''
+            if not head_commit:
+                chain_broken = True
+                name = ''
+
+            committer = None
+            if not chain_broken:
+                committer = head_commit.get('committer')
+                if not committer:
+                    name = ''
+                    chain_broken = True
+
+            if not chain_broken and committer:
+                name = committer.get('name')
+                if not name:
+                    name = ''
+
             builds.append(
                 Build(
                     state=state,
@@ -68,7 +87,7 @@ class GithubActionsCollector(Command):
                     started_at=run.get('created_at'),
                     ended_at=ended_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
                     duration=timing.get('run_duration_ms', 0),
-                    created_by=run.get('head_commit').get('committer').get('name'),
+                    created_by=name,
                     event_type=run.get('event'),
                     branch=run.get('head_branch'),
                     used_tool=GH_ACTIONS,
