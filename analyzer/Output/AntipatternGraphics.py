@@ -10,8 +10,9 @@ from collections import defaultdict
 
 class AntipatternGraphics:
 
-    def __init__(self, data, repo_name, out_path='./output'):
-        self.out_path = os.path.join(out_path, repo_name)
+    def __init__(self, data, repo_name, repo_path, out_path='./output'):
+        self.out_path = os.path.join(out_path, repo_path.replace('/', '-'))
+        self.repo_path = repo_path.split('/')[0]
         os.makedirs(self.out_path, exist_ok=True)
         self.data = data
 
