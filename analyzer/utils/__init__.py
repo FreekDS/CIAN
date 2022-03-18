@@ -7,6 +7,8 @@ def merge_dicts(dict1, dict2):
     Note: dict1 is overridden
     :return: merged dict 1
     """
+    if isinstance(dict1, list) and isinstance(dict2, list):
+        return dict1 + dict2
     for k, v in dict2.items():
         if k in dict1:
             if isinstance(dict1[k], list):
@@ -19,6 +21,8 @@ def merge_dicts(dict1, dict2):
 
 
 def format_date(date):
+    if not date:
+        return datetime.datetime(1, 1, 1)
     return datetime.datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
 
 
