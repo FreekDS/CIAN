@@ -5,6 +5,7 @@ from matplotlib.ticker import MaxNLocator
 import os
 
 from utils import format_date, format_date_str
+from collections import defaultdict
 
 
 class AntipatternGraphics:
@@ -16,12 +17,18 @@ class AntipatternGraphics:
 
     def slow_builds_graphic(self):
         slow_build = self.data.get('slow_build')
+        if not slow_build:
+            return
+
+        tool_counter = defaultdict(int)
 
         for ci_workflow, wf_info in slow_build.items():
             data = wf_info.get('data')
             tool = wf_info.get('tool')
             avg = round(float(wf_info.get('total avg')) / 1000, 2)
 
+            if data.get(None) is not None:
+                del data[None]
             plt.figure(figsize=(10, 5))
             dates = [date.split('T')[0] for date in data.keys()]  # Strip time from start date
             values = [float(v) / 1000 for v in data.values()]  # Convert to seconds
@@ -34,10 +41,16 @@ class AntipatternGraphics:
             plt.title(f"Tool: '{tool}' avg duration: {avg}s")
             plt.xticks(rotation='vertical')
 
-            plt.savefig(f"{self.out_path}/slow-build_{tool}.png", bbox_inches='tight')
+            plt.savefig(f"{self.out_path}/slow-build_{tool}_{tool_counter[tool]}.png", bbox_inches='tight')
+            tool_counter[tool] += 1
+            plt.close()
 
     def broken_release_graphics(self, time_between=7):
         broken_release = self.data.get('broken_release')
+        if not broken_release:
+            return
+
+        tool_counter = defaultdict(int)
 
         for ci_workflow, wf_info in broken_release.items():
 
@@ -55,6 +68,8 @@ class AntipatternGraphics:
 
             for broken_build in data:
                 start_date = format_date(broken_build.get('started_at'))
+                if not start_date:
+                    continue
                 if not first_date:
                     first_date = start_date
                     check_until = first_date + datetime.timedelta(days=time_between)
@@ -70,7 +85,8 @@ class AntipatternGraphics:
                     ctr = 0
                     first_date = None
 
-            weekly[format_date_str(first_date)] = ctr
+            if first_date:
+                weekly[format_date_str(first_date)] = ctr
 
             ax = plt.figure(figsize=(10, 5)).gca()
             ax.yaxis.set_major_locator(MaxNLocator(integer=True))
@@ -88,7 +104,9 @@ class AntipatternGraphics:
             plt.suptitle(f"Broken Release for '{ci_workflow}'")
             plt.title(f"Tool: '{tool}'")
 
-            plt.savefig(f"{self.out_path}/broken-release_{tool}.png", bbox_inches='tight')
+            plt.savefig(f"{self.out_path}/broken-release_{tool}_{tool_counter[tool]}.png", bbox_inches='tight')
+            tool_counter[tool] += 1
+            plt.close()
 
     def skip_failing_tests_graphics(self):
         skip_failing_tests = self.data.get('skip_failing_tests')
