@@ -70,11 +70,15 @@ class GithubAccessor:
                 while 'next' in response.links.keys():
                     url = response.links.get('next').get('url')
                     response = requests.get(url, headers=self._make_header())
-                    if response.status_code not in [200, 201]:
+                    if response.status_code not in [200, 201, 502]:
                         raise GithubAccessorError(
                             f"Cannot perform GitHub request '{url}', got response {response.status_code}",
                             response.status_code
                         )
+                    elif response.status_code == 502:
+                        print("Bad gateway on ", url, "Finishing earlier....", end='')
+                        return json.dumps(result)
+
                     result = merge_dicts(result, response.json())
                 return json.dumps(result)
             # No pagination, simply return the response text
