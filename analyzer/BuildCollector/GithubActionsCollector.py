@@ -12,12 +12,12 @@ from analyzer.config import GH_ACTIONS
 
 
 class GithubActionsCollector(Command):
-    def __init__(self, repo: Repo, div_date):
+    def __init__(self, repo: Repo, from_date=None):
         super(GithubActionsCollector, self).__init__()
         self.repo = repo
         self._gh_access = GithubAccessor()
 
-        self.div_date = div_date
+        self.from_date = from_date
 
     def execute(self, *args, **kwargs) -> List[Build]:
         if self.repo.repo_type != 'github':
@@ -25,10 +25,13 @@ class GithubActionsCollector(Command):
 
         builds = list()
 
-        start_from = format_date(self.div_date) - datetime.timedelta(days=90)
-        start_from = start_from.strftime("%Y-%m-%d")
+        if self.from_date:
+            start_from = format_date(self.from_date)
+            start_from = start_from.strftime("%Y-%m-%d")
 
-        query = f"created=>{start_from}"
+            query = f"created=>{start_from}"
+        else:
+            query = None
 
         runs_json = self._gh_access.get_workflow_runs(self.repo, query)
         workflows_json = self._gh_access.get_workflows(self.repo)
