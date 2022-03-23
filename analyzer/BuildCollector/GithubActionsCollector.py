@@ -42,7 +42,7 @@ class GithubActionsCollector(Command):
 
         for run in runs_json.get('workflow_runs'):
             run_id = run.get('id')
-            timing = self._gh_access.get_workflow_run_timing(self.repo, run_id)
+            timing_data = self._gh_access.get_workflow_run_timing(self.repo, run_id)
             jobs = self._gh_access.get_jobs(self.repo, run_id)
 
             test_results = defaultdict(list)
@@ -55,7 +55,7 @@ class GithubActionsCollector(Command):
                     test_results[job.get('name')].append(tests)
 
             created_at = datetime.datetime.strptime(run.get('created_at'), '%Y-%m-%dT%H:%M:%SZ')
-            ended_at = created_at + datetime.timedelta(milliseconds=timing.get('run_duration_ms', 0))
+            ended_at = created_at + datetime.timedelta(milliseconds=timing_data.get('run_duration_ms', 0))
 
             conclusion = run.get('conclusion', None)
             state = conclusion if conclusion else run.get('status')
@@ -90,7 +90,7 @@ class GithubActionsCollector(Command):
                     number=run.get('run_number'),
                     started_at=run.get('created_at'),
                     ended_at=ended_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    duration=timing.get('run_duration_ms', 0),
+                    duration=timing_data.get('run_duration_ms', 0),
                     created_by=name,
                     event_type=run.get('event'),
                     branch=run.get('head_branch'),
