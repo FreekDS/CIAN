@@ -19,12 +19,6 @@ class GithubActionsCollector(Command):
 
         self.from_date = from_date
 
-    def batch_collect_timing(self, run_ids):
-        pass
-
-    def batch_collect_jobs(self, run_ids):
-        pass
-
     @timing
     def execute(self, *args, **kwargs) -> List[Build]:
         if self.repo.repo_type != 'github':
