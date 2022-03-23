@@ -1,4 +1,6 @@
 import datetime
+from functools import wraps
+from time import time
 
 
 def merge_dicts(dict1, dict2):
@@ -28,3 +30,15 @@ def format_date(date):
 
 def format_date_str(date: datetime.date):
     return date.strftime('%Y-%m-%dT%H:%M:%SZ')
+
+
+def timing(f):
+    @wraps(f)
+    def wrap(*args, **kw):
+        ts = time()
+        result = f(*args, **kw)
+        te = time()
+        print('func:%r args:[%r, %r] took: %2.4f sec' % (f.__name__, args, kw, te - ts))
+        return result
+
+    return wrap
