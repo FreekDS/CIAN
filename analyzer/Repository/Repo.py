@@ -22,7 +22,7 @@ class Repo(ABC):
         pass
 
     def branch_information(self, use_cache=True, create_cache=True) -> dict:
-        cache = BranchInfoCache(self.name)
+        cache = BranchInfoCache(self.path)
 
         if cache.hit() and use_cache:
             return cache.restore(default={})
