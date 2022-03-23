@@ -5,7 +5,7 @@ import json
 import math
 from typing import Dict, Any, List
 from analyzer.Repository.Repo import Repo
-from analyzer.utils import merge_dicts
+from analyzer.utils import merge_dicts, format_date
 import asyncio
 from aiohttp import ClientSession, ClientResponseError
 
@@ -171,8 +171,12 @@ class GithubAccessor:
                 'workflow_runs': runs_data
             }
 
+        def get_date(d):
+            date = format_date(d)
+            return date.strftime("%Y-%m-%d")
+
         last_wf = runs_data[-1]
-        last_created = last_wf.get('run_started_at')
+        last_created = get_date(last_wf.get('run_started_at'))
 
         run_batches = math.ceil(total_requests_to_perform / 10.0)   # 10 pages == 1000 builds
         for _ in range(run_batches):
@@ -184,7 +188,7 @@ class GithubAccessor:
             new_runs = future.result()  # TODO check if order is preserved, important for next date
 
             last_wf = new_runs[-1]
-            last_created = last_wf.get('run_started_at')
+            last_created = get_date(last_wf.get('run_started_at'))
 
             runs_data += new_runs
 
