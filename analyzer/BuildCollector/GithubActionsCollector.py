@@ -19,6 +19,12 @@ class GithubActionsCollector(Command):
 
         self.from_date = from_date
 
+    def batch_collect_timing(self, run_ids):
+        pass
+
+    def batch_collect_jobs(self, run_ids):
+        pass
+
     @timing
     def execute(self, *args, **kwargs) -> List[Build]:
         if self.repo.repo_type != 'github':
@@ -37,13 +43,20 @@ class GithubActionsCollector(Command):
         runs_json = self._gh_access.get_workflow_runs(self.repo, query)
         workflows_json = self._gh_access.get_workflows(self.repo)
         workflows = dict()
+
+        run_ids = [int(run.get('id')) for run in runs_json.get('workflow_runs')]
+
+        all_jobs_data = self._gh_access.batch_collect_jobs(self.repo, run_ids)
+        all_timings_data = self._gh_access.batch_collect_run_timing(self.repo, run_ids)
+
         for wf in workflows_json.get('workflows'):
             workflows[wf.get('id')] = wf
 
-        for run in runs_json.get('workflow_runs'):
+        for i, run in enumerate(runs_json.get('workflow_runs')):
             run_id = run.get('id')
-            timing_data = self._gh_access.get_workflow_run_timing(self.repo, run_id)
-            jobs = self._gh_access.get_jobs(self.repo, run_id)
+
+            timing_data = all_timings_data[i]
+            jobs = all_jobs_data[i]
 
             test_results = defaultdict(list)
             for job in jobs.get('jobs'):

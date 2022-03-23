@@ -3,7 +3,7 @@ import functools
 import requests
 import json
 import math
-from typing import Dict, Any
+from typing import Dict, Any, List
 from analyzer.Repository.Repo import Repo
 from analyzer.utils import merge_dicts
 import asyncio
@@ -117,6 +117,25 @@ class GithubAccessor:
                 return dict()
             raise e
 
+    def batch_collect_jobs(self, repo: Repo, run_ids: List[int]):
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._batch_collect_jobs(repo, run_ids)
+        )
+        loop.run_until_complete(future)
+        return future.result()
+
+    async def _batch_collect_jobs(self, repo: Repo, run_ids: List[int]):
+        tasks = list()
+        async with ClientSession(headers=self._make_header()) as session:
+            for run_id in run_ids:
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'repos', repo.path, 'actions', 'runs', str(run_id), 'jobs')
+                )
+                tasks.append(task)
+            results = await asyncio.gather(*tasks)
+        return results
+
     def get_job_log(self, repo: Repo, job_id: int) -> str:
         try:
             data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
@@ -201,10 +220,11 @@ class GithubAccessor:
         if query:
             url = f'{url}?{query}'
         try:
-            async with session.get(url, async_timeout=15) as response:
+            async with session.get(url, timeout=15) as response:
                 resp = await response.read()
         except ClientResponseError as e:
-            print("Client error", e.status)
+            if e.status != 404:
+                print("Client error", e.status)
             return {}
         except asyncio.TimeoutError:
             print("Timeout")
@@ -214,6 +234,25 @@ class GithubAccessor:
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
         data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
         return json.loads(data)
+
+    def batch_collect_run_timing(self, repo: Repo, run_ids: List[int]):
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._batch_collect_run_timing(repo, run_ids)
+        )
+        loop.run_until_complete(future)
+        return future.result()
+
+    async def _batch_collect_run_timing(self, repo: Repo, run_ids: List[int]):
+        tasks = list()
+        async with ClientSession(headers=self._make_header()) as session:
+            for run_id in run_ids:
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
+                )
+                tasks.append(task)
+            results = await asyncio.gather(*tasks)
+        return results
 
     def get_last_commit(self, repo):
         data = self._make_request('repos', repo.path, 'commits', query='per_page=1&page=1', unfold_pagination=False)
