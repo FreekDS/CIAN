@@ -143,6 +143,34 @@ class GithubAccessor:
         except GithubAccessorError:
             return str()
 
+    def batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._batch_collect_job_logs(repo, job_ids)
+        )
+        loop.run_until_complete(future)
+        return future.result()
+
+    async def _batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):
+        tasks = list()
+        try:
+            async with ClientSession(headers=self._make_header()) as session:
+                for job_id in job_ids:
+                    task = asyncio.ensure_future(
+                        self._make_request_async(
+                            session, 'repos', repo.path, 'actions', 'jobs', str(job_id), 'logs',
+                            as_text=True
+                        )
+                    )
+                    tasks.append(task)
+                results = await asyncio.gather(*tasks)
+        except ClientResponseError:
+            return {}
+        result_dict = {}
+        for i, log in enumerate(results):
+            result_dict[job_ids[i]] = log
+        return result_dict
+
     def get_workflows(self, repo: Repo) -> Dict[str, Any]:
         data = self._make_request('repos', repo.path, 'actions', 'workflows')
         return json.loads(data)
@@ -158,13 +186,15 @@ class GithubAccessor:
         if query:
             query += '&'
         if start_date:
-            query += f'>={start_date}&'
+            query += f'created=>={start_date}&'
         query += 'per_page=100'
-        first_response = json.loads(self._make_request('repos', repo.path, 'actions', 'runs', query=query))
+        first_response = json.loads(
+            self._make_request('repos', repo.path, 'actions', 'runs', query=query, unfold_pagination=False)
+        )
         total_count = int(first_response.get('total_count', 0))
         runs_data = first_response.get('workflow_runs')
 
-        total_requests_to_perform = max(0, math.ceil((total_count - len(runs_data)) / 100.0))
+        total_requests_to_perform = max(0, math.ceil(float(total_count - len(runs_data)) / 100.0))
         if total_requests_to_perform == 0:
             return {
                 'total_count': total_count,
@@ -218,13 +248,13 @@ class GithubAccessor:
             runs += r.get('workflow_runs', [])
         return runs
 
-    async def _make_request_async(self, session, *args: str, query: str = str()):
+    async def _make_request_async(self, session, *args: str, query: str = str(), as_text=False):
         endpoint = '/'.join(args)
         url = f'{self._url_base}/{endpoint}'
         if query:
             url = f'{url}?{query}'
         try:
-            async with session.get(url, timeout=15) as response:
+            async with session.get(url) as response:
                 resp = await response.read()
         except ClientResponseError as e:
             if e.status != 404:
@@ -233,7 +263,9 @@ class GithubAccessor:
         except asyncio.TimeoutError:
             print("Timeout")
             return {}
-        return json.loads(resp)
+        GithubAccessor.TOKEN_PTR += 1
+        GithubAccessor.TOKEN_PTR %= len(GithubAccessor.TOKENS)
+        return json.loads(resp) if not as_text else resp.decode()
 
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
         data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
