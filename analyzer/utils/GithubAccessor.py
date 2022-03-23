@@ -2,9 +2,12 @@ import os
 import functools
 import requests
 import json
+import math
 from typing import Dict, Any
 from analyzer.Repository.Repo import Repo
 from analyzer.utils import merge_dicts
+import asyncio
+from aiohttp import ClientSession, ClientResponseError
 
 
 class GithubAccessorError(Exception):
@@ -125,9 +128,88 @@ class GithubAccessor:
         data = self._make_request('repos', repo.path, 'actions', 'workflows')
         return json.loads(data)
 
-    def get_workflow_runs(self, repo: Repo, query: str = str()) -> Dict[str, Any]:
-        data = self._make_request('repos', repo.path, 'actions', 'runs', query=query)
-        return json.loads(data)
+    def get_workflow_runs(self, repo: Repo, start_date=None, query: str = str()) -> Dict[str, Any]:
+        """
+        First get total count (1 sync call), also get first 100 runs
+        while count < total_count
+            get 10 pages with 100 results (10 async calls)
+            wait for 10 th page, and get latest date
+                construct new calls
+        """
+        if query:
+            query += '&'
+        if start_date:
+            query += f'>={start_date}&'
+        query += 'per_page=100'
+        first_response = json.loads(self._make_request('repos', repo.path, 'actions', 'runs', query=query))
+        total_count = int(first_response.get('total_count', 0))
+        runs_data = first_response.get('workflow_runs')
+
+        total_requests_to_perform = max(0, math.ceil((total_count - len(runs_data)) / 100.0))
+        if total_requests_to_perform == 0:
+            return {
+                'total_count': total_count,
+                'workflow_runs': runs_data
+            }
+
+        last_wf = runs_data[-1]
+        last_created = last_wf.get('run_started_at')
+
+        run_batches = math.ceil(total_requests_to_perform / 10.0)   # 10 pages == 1000 builds
+        for _ in range(run_batches):
+            loop = asyncio.get_event_loop()
+            future = asyncio.ensure_future(
+                self._workflow_run_batch(from_date=start_date, to_date=last_created, repo_path=repo.path)
+            )
+            loop.run_until_complete(future)
+            new_runs = future.result()  # TODO check if order is preserved, important for next date
+
+            last_wf = new_runs[-1]
+            last_created = last_wf.get('run_started_at')
+
+            runs_data += new_runs
+
+        # Todo Remove possible duplicates?
+
+        return {
+            'total_count': total_count,
+            'workflow_runs': runs_data
+        }
+
+    async def _workflow_run_batch(self, from_date, to_date, repo_path):
+
+        tasks = []
+        date_range = f"{from_date}..{to_date}"
+        async with ClientSession(headers=self._make_header()) as session:
+            for i in range(10):
+                page = i + 1
+                query = f"?created={date_range}&per_page=100&page={page}"
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'repos', repo_path, 'actions', 'runs', query=query)
+                )
+                tasks.append(task)
+            responses = await asyncio.gather(*tasks)
+
+        runs = list()
+        for r in responses:
+            runs += r.get('workflow_runs', [])
+        return runs
+
+    async def _make_request_async(self, session, *args: str, query: str = str()):
+        endpoint = '/'.join(args)
+        url = f'{self._url_base}/{endpoint}'
+        if query:
+            url = f'{url}?{query}'
+        try:
+            async with session.get(url, async_timeout=15) as response:
+                resp = await response.read()
+        except ClientResponseError as e:
+            print("Client error", e.status)
+            return {}
+        except asyncio.TimeoutError:
+            print("Timeout")
+            return {}
+        return json.loads(resp)
 
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
         data = self._make_request('repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
