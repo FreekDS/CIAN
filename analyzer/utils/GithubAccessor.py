@@ -7,7 +7,7 @@ from typing import Dict, Any, List
 from analyzer.Repository.Repo import Repo
 from analyzer.utils import merge_dicts, format_date
 import asyncio
-from aiohttp import ClientSession, ClientResponseError
+from aiohttp import ClientSession, ClientResponseError, TCPConnector
 
 
 class GithubAccessorError(Exception):
@@ -44,7 +44,8 @@ class GithubAccessor:
     @use_token
     def _make_header(self):
         return {
-            'Authorization': f'token {self.token}'
+            'Authorization': f'token {self.token}',
+            'User-Agent': 'FreekDS/git-ci-analyzer'
         }
 
     @staticmethod
@@ -140,10 +141,14 @@ class GithubAccessor:
         try:
             data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
             return data
-        except GithubAccessorError:
+        except GithubAccessorError as err:
             return str()
 
     def batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):
+        log = self.get_job_log(repo, job_ids[0])
+        if 'Must have admin rights to Repository' in log:
+            print("Job logs are not available, admin rights are required")
+            return {}
         loop = asyncio.get_event_loop()
         future = asyncio.ensure_future(
             self._batch_collect_job_logs(repo, job_ids)
@@ -154,7 +159,8 @@ class GithubAccessor:
     async def _batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):
         tasks = list()
         try:
-            async with ClientSession(headers=self._make_header()) as session:
+            connector = TCPConnector(limit=20)
+            async with ClientSession(headers=self._make_header(), connector=connector) as session:
                 for job_id in job_ids:
                     task = asyncio.ensure_future(
                         self._make_request_async(
@@ -215,14 +221,17 @@ class GithubAccessor:
                 self._workflow_run_batch(from_date=start_date, to_date=last_created, repo_path=repo.path)
             )
             loop.run_until_complete(future)
-            new_runs = future.result()  # TODO check if order is preserved, important for next date
+            new_runs = future.result()
 
-            last_wf = new_runs[-1]
-            last_created = get_date(last_wf.get('run_started_at'))
+            if new_runs:
+                last_wf = new_runs[-1]
+                last_created = get_date(last_wf.get('run_started_at'))
 
-            runs_data += new_runs
+                runs_data += new_runs
 
-        # Todo Remove possible duplicates?
+        seen = set()
+        seen_add = seen.add
+        runs_data = [x for x in runs_data if not (x.get('id') in seen or seen_add(x.get('id')))]
 
         return {
             'total_count': total_count,
@@ -233,10 +242,11 @@ class GithubAccessor:
 
         tasks = []
         date_range = f"{from_date}..{to_date}"
-        async with ClientSession(headers=self._make_header()) as session:
+        conn = TCPConnector(limit=20)
+        async with ClientSession(headers=self._make_header(), connector=conn) as session:
             for i in range(10):
                 page = i + 1
-                query = f"?created={date_range}&per_page=100&page={page}"
+                query = f"per_page=100&page={page}&created={date_range}"
                 task = asyncio.ensure_future(
                     self._make_request_async(session, 'repos', repo_path, 'actions', 'runs', query=query)
                 )
@@ -246,6 +256,7 @@ class GithubAccessor:
         runs = list()
         for r in responses:
             runs += r.get('workflow_runs', [])
+        runs.sort(key=lambda run: format_date(run.get('created_at')), reverse=True)
         return runs
 
     async def _make_request_async(self, session, *args: str, query: str = str(), as_text=False):
@@ -281,7 +292,8 @@ class GithubAccessor:
 
     async def _batch_collect_run_timing(self, repo: Repo, run_ids: List[int]):
         tasks = list()
-        async with ClientSession(headers=self._make_header()) as session:
+        conn = TCPConnector(limit=20)
+        async with ClientSession(headers=self._make_header(), connector=conn) as session:
             for run_id in run_ids:
                 task = asyncio.ensure_future(
                     self._make_request_async(session, 'repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
