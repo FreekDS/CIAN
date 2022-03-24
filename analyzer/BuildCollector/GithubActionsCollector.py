@@ -56,7 +56,8 @@ class GithubActionsCollector(Command):
                 continue
             jobs = all_jobs_data[i]
             for job in jobs.get('jobs', []):
-                job_ids.append(job.get('id'))
+                if 'test' in job.get('name', '').lower():
+                    job_ids.append(job.get('id'))
 
         print(f"There are {len(job_ids)} job ids to check")
         all_job_logs = self._gh_access.batch_collect_job_logs(self.repo, job_ids)
@@ -80,7 +81,7 @@ class GithubActionsCollector(Command):
                 #     log = None
                 # else:
                 #     log = self._gh_access.get_job_log(self.repo, job.get('id'))     # TODO batch collect?
-                log = all_job_logs.get(job.get('id'))
+                log = all_job_logs.get(job.get('id'), '')
                 tests = collect_test_results(log)
                 if not log:
                     test_results[job.get('name')] = ["log expired"]
