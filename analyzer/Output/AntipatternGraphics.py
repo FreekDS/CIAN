@@ -100,6 +100,12 @@ class AntipatternGraphics:
             plt.bar(dates, values)
             plt.plot(dates, values, '-o', color='red')
             plt.xlabel("Start date of week")
+
+            import matplotlib.dates as mdates
+
+            # lc = mdates.WeekdayLocator(interval=1)
+            # plt.gca().xaxis.set_major_locator(lc)
+
             plt.ylabel("Amount of failing release builds")
             plt.xticks(rotation='vertical')
             plt.suptitle(f"Broken Release for '{ci_workflow}'")
