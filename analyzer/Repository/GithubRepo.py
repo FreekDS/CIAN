@@ -29,7 +29,6 @@ class GithubRepo(Repo):
         return True
 
     def get_last_sync(self, branch_name, main_b):
-        # TODO: check if org is correct in all cases, this probably will not work in all cases, only filter on base?
         prs = self._gh_access.get_closed_prs(self, base_branch=main_b, head_branch=f'{self.org}:{branch_name}')
         if prs:
             for p in prs:
