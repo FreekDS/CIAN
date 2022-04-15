@@ -15,8 +15,6 @@ class TextOutput:
 
         text = str()
 
-        # TODO classification printing
-
         missed_activity = late_merging.get('missed activity', {})
         branch_deviation = late_merging.get('branch deviation', {})
         unsynced_activity = late_merging.get('unsynced activity', {})
