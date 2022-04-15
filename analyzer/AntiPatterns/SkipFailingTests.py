@@ -59,7 +59,8 @@ class SkipFailingTests(AntiPattern):
                     prev_test_result = prev_test_result[0]  # this line can go if todo is fixed
 
                     # should be true by know I think
-                    # assert (framework == prev_test_result.get('framework'))   # not always true (eg when updating framework)
+                    # assert (framework == prev_test_result.get('framework'))
+                    # not always true (eg when updating framework)
 
                     delta_run = self.delta_runs(prev_test_result, test_result)
                     delta_break = self.delta_breaks(prev_test_result, test_result)
@@ -77,7 +78,7 @@ class SkipFailingTests(AntiPattern):
                             'skipped': skipped
                         }
 
-                except IndexError as IE:
+                except IndexError:
                     # print("IE", IE, "continuing...")
                     continue
 

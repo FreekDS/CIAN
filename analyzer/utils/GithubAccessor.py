@@ -146,7 +146,7 @@ class GithubAccessor:
         try:
             data = self._make_request('repos', repo.path, 'actions', 'jobs', str(job_id), 'logs')
             return data
-        except GithubAccessorError as err:
+        except GithubAccessorError:
             return str()
 
     def batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):

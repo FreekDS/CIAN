@@ -101,7 +101,7 @@ class AntipatternGraphics:
             plt.plot(dates, values, '-o', color='red')
             plt.xlabel("Start date of week")
 
-            import matplotlib.dates as mdates
+            # import matplotlib.dates as mdates
 
             # lc = mdates.WeekdayLocator(interval=1)
             # plt.gca().xaxis.set_major_locator(lc)
@@ -116,6 +116,6 @@ class AntipatternGraphics:
             plt.close()
 
     def skip_failing_tests_graphics(self):
-        skip_failing_tests = self.data.get('skip_failing_tests')
+        # skip_failing_tests = self.data.get('skip_failing_tests')
         # TODO implement if data is gathered
         return

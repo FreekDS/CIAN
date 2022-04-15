@@ -42,10 +42,7 @@ class GithubActionsCollector(Command):
         if self.from_date:
             start_from = format_date(self.from_date)
             start_from = start_from.strftime("%Y-%m-%d")
-
-            query = f"created=>{start_from}"
         else:
-            query = None
             start_from = None
 
         # TODO: filter out builds triggered on pull request?
