@@ -87,8 +87,12 @@ class GithubAccessor:
                 return json.dumps(result)
             # No pagination, simply return the response text
             return response.text
+        elif response.status_code == 502:
+            print(f"Cannot perform GitHub request '{url}', got response {response.status_code}, {response.content}")
+            return "{}"
         raise GithubAccessorError(
-            f"Cannot perform GitHub request '{url}', got response {response.status_code}", response.status_code
+            f"Cannot perform GitHub request '{url}', got response {response.status_code}, {response.content}",
+            response.status_code
         )
 
     def _make_request(self, *args: str, query: str = str(), unfold_pagination=True):
@@ -128,7 +132,8 @@ class GithubAccessor:
 
     async def _batch_collect_jobs(self, repo: Repo, run_ids: List[int]):
         tasks = list()
-        async with ClientSession(headers=self._make_header()) as session:
+        conn = TCPConnector(limit=20)
+        async with ClientSession(connector=conn) as session:
             for run_id in run_ids:
                 task = asyncio.ensure_future(
                     self._make_request_async(session, 'repos', repo.path, 'actions', 'runs', str(run_id), 'jobs')
@@ -145,6 +150,8 @@ class GithubAccessor:
             return str()
 
     def batch_collect_job_logs(self, repo: Repo, job_ids: List[int]):
+        if not job_ids:
+            return {}
         log = self.get_job_log(repo, job_ids[0])
         if 'Must have admin rights to Repository' in log:
             print("Job logs are not available, admin rights are required")
@@ -160,7 +167,7 @@ class GithubAccessor:
         tasks = list()
         try:
             connector = TCPConnector(limit=20)
-            async with ClientSession(headers=self._make_header(), connector=connector) as session:
+            async with ClientSession(connector=connector) as session:
                 for job_id in job_ids:
                     task = asyncio.ensure_future(
                         self._make_request_async(
@@ -198,7 +205,7 @@ class GithubAccessor:
             self._make_request('repos', repo.path, 'actions', 'runs', query=query, unfold_pagination=False)
         )
         total_count = int(first_response.get('total_count', 0))
-        runs_data = first_response.get('workflow_runs')
+        runs_data = first_response.get('workflow_runs', [])
 
         total_requests_to_perform = max(0, math.ceil(float(total_count - len(runs_data)) / 100.0))
         if total_requests_to_perform == 0:
@@ -233,6 +240,8 @@ class GithubAccessor:
         seen_add = seen.add
         runs_data = [x for x in runs_data if not (x.get('id') in seen or seen_add(x.get('id')))]
 
+        runs_data.sort(key=lambda run: format_date(run.get('created_at')), reverse=True)
+
         return {
             'total_count': total_count,
             'workflow_runs': runs_data
@@ -243,7 +252,7 @@ class GithubAccessor:
         tasks = []
         date_range = f"{from_date}..{to_date}"
         conn = TCPConnector(limit=20)
-        async with ClientSession(headers=self._make_header(), connector=conn) as session:
+        async with ClientSession(connector=conn) as session:
             for i in range(10):
                 page = i + 1
                 query = f"per_page=100&page={page}&created={date_range}"
@@ -265,8 +274,9 @@ class GithubAccessor:
         if query:
             url = f'{url}?{query}'
         try:
-            async with session.get(url) as response:
+            async with session.get(url, headers=self._make_header()) as response:
                 resp = await response.read()
+                await asyncio.sleep(0.5)
         except ClientResponseError as e:
             if e.status != 404:
                 print("Client error", e.status)
@@ -274,8 +284,6 @@ class GithubAccessor:
         except asyncio.TimeoutError:
             print("Timeout")
             return {}
-        GithubAccessor.TOKEN_PTR += 1
-        GithubAccessor.TOKEN_PTR %= len(GithubAccessor.TOKENS)
         return json.loads(resp) if not as_text else resp.decode()
 
     def get_workflow_run_timing(self, repo: Repo, run_id: int):
@@ -293,7 +301,7 @@ class GithubAccessor:
     async def _batch_collect_run_timing(self, repo: Repo, run_ids: List[int]):
         tasks = list()
         conn = TCPConnector(limit=20)
-        async with ClientSession(headers=self._make_header(), connector=conn) as session:
+        async with ClientSession(connector=conn) as session:
             for run_id in run_ids:
                 task = asyncio.ensure_future(
                     self._make_request_async(session, 'repos', repo.path, 'actions', 'runs', str(run_id), 'timing')
