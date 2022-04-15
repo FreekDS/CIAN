@@ -45,8 +45,6 @@ class GithubActionsCollector(Command):
         else:
             start_from = None
 
-        # TODO: filter out builds triggered on pull request?
-
         runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
         # print(f"Fetched {len(runs_json)} runs")
         workflows_json = self._gh_access.get_workflows(self.repo)
