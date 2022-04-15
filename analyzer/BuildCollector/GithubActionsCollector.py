@@ -19,6 +19,19 @@ class GithubActionsCollector(Command):
 
         self.from_date = from_date
 
+    @staticmethod
+    def calculate_timing(workflow_runs):
+        timings = list()
+        for run in workflow_runs:
+            start = format_date(run.get('created_at'))
+            if not run.get('ended_at', None):
+                end = format_date(run.get('updated_at'))
+            else:
+                end = format_date(run.get('ended_at'))
+
+            timings.append((end - start).seconds * 1000)
+        return timings
+
     @timing
     def execute(self, *args, **kwargs) -> List[Build]:
         if self.repo.repo_type != 'github':
@@ -35,6 +48,8 @@ class GithubActionsCollector(Command):
             query = None
             start_from = None
 
+        # TODO: filter out builds triggered on pull request?
+
         runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
         print(f"Fetched {len(runs_json)} runs")
         workflows_json = self._gh_access.get_workflows(self.repo)
@@ -45,7 +60,8 @@ class GithubActionsCollector(Command):
 
         all_jobs_data = self._gh_access.batch_collect_jobs(self.repo, run_ids)
         print(f"Fetched {len(all_jobs_data)} job data objects")
-        all_timings_data = self._gh_access.batch_collect_run_timing(self.repo, run_ids)
+        # all_timings_data = self._gh_access.batch_collect_run_timing(self.repo, run_ids)
+        all_timings_data = self.calculate_timing(runs_json.get('workflow_runs'))
         print(f"Fetched {len(all_timings_data)} timing objects")
 
         job_ids = list()
@@ -89,7 +105,7 @@ class GithubActionsCollector(Command):
                     test_results[job.get('name')].append(tests)
 
             created_at = datetime.datetime.strptime(run.get('created_at'), '%Y-%m-%dT%H:%M:%SZ')
-            ended_at = created_at + datetime.timedelta(milliseconds=timing_data.get('run_duration_ms', 0))
+            ended_at = created_at + datetime.timedelta(milliseconds=timing_data)
 
             conclusion = run.get('conclusion', None)
             state = conclusion if conclusion else run.get('status')
@@ -124,7 +140,7 @@ class GithubActionsCollector(Command):
                     number=run.get('run_number'),
                     started_at=run.get('created_at'),
                     ended_at=ended_at.strftime('%Y-%m-%dT%H:%M:%SZ'),
-                    duration=timing_data.get('run_duration_ms', 0),
+                    duration=timing_data,
                     created_by=name,
                     event_type=run.get('event'),
                     branch=run.get('head_branch'),
