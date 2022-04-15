@@ -12,7 +12,7 @@ from analyzer.AntiPatterns.AntiPattern import AntiPattern
 class SkipFailingTests(AntiPattern):
 
     def __init__(self, builds: List[Build]):
-        super().__init__(builds, 'SkipFailingTests')
+        super().__init__(builds, 'skip_failing_tests')
         self.builds = self.sort_by_number()
 
     @staticmethod
@@ -31,6 +31,9 @@ class SkipFailingTests(AntiPattern):
     def build_has_skipped(self, prev_build: Build, build: Build):
 
         results = {}
+
+        if not build.test_results:
+            return False
 
         same_job_count = len(prev_build.test_results.items()) == len(build.test_results.items())
         build_has_tests = len(list(build.test_results.values())[0]) > 0
@@ -56,7 +59,8 @@ class SkipFailingTests(AntiPattern):
                     prev_test_result = prev_test_result[0]  # this line can go if todo is fixed
 
                     # should be true by know I think
-                    assert (framework == prev_test_result.get('framework'))
+                    # assert (framework == prev_test_result.get('framework'))
+                    # not always true (eg when updating framework)
 
                     delta_run = self.delta_runs(prev_test_result, test_result)
                     delta_break = self.delta_breaks(prev_test_result, test_result)
@@ -74,8 +78,8 @@ class SkipFailingTests(AntiPattern):
                             'skipped': skipped
                         }
 
-                except IndexError as IE:
-                    print("IE", IE, "continuing...")
+                except IndexError:
+                    # print("IE", IE, "continuing...")
                     continue
 
         return results
@@ -109,9 +113,13 @@ class SkipFailingTests(AntiPattern):
                 prev_build = builds[i - 1]
                 detect_result = self.build_has_skipped(prev_build, build)
                 if detect_result:
-                    result[wf].append({
-                                          'build_number': build.number,
-                                          'build_date': build.started_at,
-                                          'used_tool': build.used_tool
-                                      }.update(detect_result))
+                    d = {
+                        'build_number': build.number,
+                        'build_date': build.started_at,
+                        'used_tool': build.used_tool
+                    }
+                    d.update(
+                        detect_result
+                    )
+                    result[wf].append(d)
         return dict(result)

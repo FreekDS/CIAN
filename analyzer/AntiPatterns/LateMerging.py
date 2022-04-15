@@ -9,7 +9,7 @@ import numpy as np
 class LateMerging(AntiPattern):
 
     def __init__(self, builds: List[Build], branch_info):
-        super().__init__(builds, 'Late Merging')
+        super().__init__(builds, 'late_merging')
         self.branch_info = branch_info
 
     @staticmethod

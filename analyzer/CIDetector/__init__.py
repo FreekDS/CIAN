@@ -8,7 +8,7 @@ from analyzer.Cacher.DetectorCache import DetectorCache
 
 def detect_ci_tools(repo: Repo, use_cache=True, create_cache=True) -> List[AnyStr]:
 
-    cache = DetectorCache(repo.name)
+    cache = DetectorCache(repo.path)
 
     if use_cache and cache.hit():
         return cache.restore(default=[])

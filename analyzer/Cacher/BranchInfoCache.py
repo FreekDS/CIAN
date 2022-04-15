@@ -6,5 +6,5 @@ from analyzer.Cacher.CacherBase import CacherBase
 
 class BranchInfoCache(CacherBase):
 
-    def __init__(self, repo_name):
-        super().__init__(repo_name, 'branches.cache')
+    def __init__(self, repo_path):
+        super().__init__(repo_path, 'branches.cache')

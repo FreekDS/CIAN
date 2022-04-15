@@ -6,15 +6,15 @@ from analyzer.Cacher.BuildCache import BuildCache
 from typing import List
 
 
-def collect_builds(repo: Repo, use_cache=True, create_cache=True) -> List[Build]:
+def collect_builds(repo: Repo, use_cache=True, create_cache=True, from_date=None) -> List[Build]:
 
-    cache = BuildCache(repo.name)
+    cache = BuildCache(repo.path)
 
     if cache.hit() and use_cache:
         return cache.restore(default=[])
 
     collectors = [
-        GithubActionsCollector(repo),
+        GithubActionsCollector(repo, from_date=from_date),
         TravisCollector(repo)
     ]
 
