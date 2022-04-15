@@ -102,6 +102,14 @@ class GithubAccessor:
             url = f'{url}?{query}'
         return self.url_request(url, unfold_pagination=unfold_pagination)
 
+    def get_repo_info(self, repo: Repo):
+        try:
+            data = self._make_request('repos', repo.path)
+            return json.loads(data)
+        except GithubAccessorError as ge:
+            print("Cannot fetch repo info, ", ge)
+            return {}
+
     def get_content(self, repo: Repo, path) -> Dict[str, Any] or None:
         if path.endswith('/'):
             path = path[:-1]

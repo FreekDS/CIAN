@@ -12,14 +12,25 @@ class Repo(ABC):
         self.repo_type = repo_type
         self.builds: List[Build] = []
         self.branch_info = None
+        self._default_branch = None
 
     @abstractmethod
     def path_exists(self, path) -> bool:
         pass
 
     @abstractmethod
+    def _fetch_default_branch(self):
+        pass
+
+    @abstractmethod
     def dir_empty(self, path) -> bool:
         pass
+
+    @property
+    def default_branch(self):
+        if not self._default_branch:
+            self._default_branch = self._fetch_default_branch()
+        return self._default_branch
 
     def branch_information(self, use_cache=True, create_cache=True) -> dict:
         cache = BranchInfoCache(self.path)

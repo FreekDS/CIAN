@@ -6,6 +6,10 @@ from analyzer.utils.GithubAccessor import GithubAccessor
 
 class GithubRepo(Repo):
 
+    def _fetch_default_branch(self):
+        repo_info = self._gh_access.get_repo_info(self)
+        return repo_info.get('default_branch', None)
+
     def __init__(self, path):
         super().__init__(path, repo_type='github')
         self._gh_access = GithubAccessor()

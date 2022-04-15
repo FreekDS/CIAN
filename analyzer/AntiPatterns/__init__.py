@@ -8,12 +8,12 @@ from typing import List
 from analyzer.Builds.Build import Build
 
 
-def find_anti_patterns(builds: List[Build], branch_info: dict):
+def find_anti_patterns(builds: List[Build], branch_info: dict, default_branch):
 
     detectors: List[AntiPattern] = [
         SlowBuild(builds),
         LateMerging(builds, branch_info=branch_info),
-        BrokenRelease(builds),
+        BrokenRelease(builds, default_branch=default_branch),
         SkipFailingTests(builds)
     ]
 
