@@ -48,18 +48,18 @@ class GithubActionsCollector(Command):
         # TODO: filter out builds triggered on pull request?
 
         runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
-        print(f"Fetched {len(runs_json)} runs")
+        # print(f"Fetched {len(runs_json)} runs")
         workflows_json = self._gh_access.get_workflows(self.repo)
-        print(f"Fetched {len(workflows_json)} workflows")
+        # print(f"Fetched {len(workflows_json)} workflows")
         workflows = dict()
 
         run_ids = [int(run.get('id')) for run in runs_json.get('workflow_runs')]
 
         all_jobs_data = self._gh_access.batch_collect_jobs(self.repo, run_ids)
-        print(f"Fetched {len(all_jobs_data)} job data objects")
+        # print(f"Fetched {len(all_jobs_data)} job data objects")
         # all_timings_data = self._gh_access.batch_collect_run_timing(self.repo, run_ids)
         all_timings_data = self.calculate_timing(runs_json.get('workflow_runs'))
-        print(f"Fetched {len(all_timings_data)} timing objects")
+        # print(f"Fetched {len(all_timings_data)} timing objects")
 
         job_ids = list()
         for i, run in enumerate(runs_json.get('workflow_runs')):
@@ -72,9 +72,9 @@ class GithubActionsCollector(Command):
                 if 'test' in job.get('name', '').lower():
                     job_ids.append(job.get('id'))
 
-        print(f"There are {len(job_ids)} job ids to check")
+        # print(f"There are {len(job_ids)} job ids to check")
         all_job_logs = self._gh_access.batch_collect_job_logs(self.repo, job_ids)
-        print(f"Fetched {len(all_job_logs)} job logs")
+        # print(f"Fetched {len(all_job_logs)} job logs")
 
         for wf in workflows_json.get('workflows'):
             workflows[wf.get('id')] = wf
@@ -85,15 +85,8 @@ class GithubActionsCollector(Command):
             timing_data = all_timings_data[i]
             jobs = all_jobs_data[i]
 
-            date = format_date(run.get('created_at'))
-            days_passed = (datetime.date.today() - date.date()).days
-
             test_results = defaultdict(list)
             for job in jobs.get('jobs', []):
-                # if days_passed > 90:    # GitHub only keeps jobs younger than 90 days
-                #     log = None
-                # else:
-                #     log = self._gh_access.get_job_log(self.repo, job.get('id'))     # TODO batch collect?
                 log = all_job_logs.get(job.get('id'), '')
                 tests = collect_test_results(log)
                 if not log:
