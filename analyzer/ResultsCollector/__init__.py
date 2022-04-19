@@ -1,9 +1,10 @@
 from typing import Dict, List, Any
 from analyzer.ResultsCollector.PytestResults import PytestResult
 from analyzer.ResultsCollector.CTestResults import CTestResults
+from analyzer.ResultsCollector.GTestResults import GTestResults
 
 
-result_collectors = [PytestResult, CTestResults]
+result_collectors = [PytestResult, CTestResults, GTestResults]
 
 
 def collect_test_results(log_file) -> List[Dict[str, Any]]:
