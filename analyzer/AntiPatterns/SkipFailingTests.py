@@ -5,10 +5,6 @@ from Builds import Build
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 
 
-# TODO: for now, only logs from pytest are collected!
-# TODO: test functionality!
-
-
 class SkipFailingTests(AntiPattern):
 
     def __init__(self, builds: List[Build]):
@@ -41,13 +37,12 @@ class SkipFailingTests(AntiPattern):
         if not same_job_count or not build_has_tests:
             return False
 
-        # todo: fix test results structure (it now is list of lists of objects), should be list of objects simply
         for i, (job_name, test_results) in enumerate(build.test_results.items()):
             for j, test_result in enumerate(test_results):
                 try:
                     if test_result == 'log expired':
                         continue
-                    test_result = test_result[0]  # this line can go if todo is fixed
+                    test_result = test_result[0]
                     framework = test_result.get('framework')
 
                     # i: position of current (job, results) pair
@@ -56,7 +51,7 @@ class SkipFailingTests(AntiPattern):
                     prev_test_result = list(prev_build.test_results.values())[i][j]
                     if prev_test_result == 'log expired':
                         continue
-                    prev_test_result = prev_test_result[0]  # this line can go if todo is fixed
+                    prev_test_result = prev_test_result[0]
 
                     # should be true by know I think
                     # assert (framework == prev_test_result.get('framework'))
