@@ -6,6 +6,10 @@ from analyzer.utils.GithubAccessor import GithubAccessor
 
 class GithubRepo(Repo):
 
+    def _fetch_default_branch(self):
+        repo_info = self._gh_access.get_repo_info(self)
+        return repo_info.get('default_branch', None)
+
     def __init__(self, path):
         super().__init__(path, repo_type='github')
         self._gh_access = GithubAccessor()
@@ -25,7 +29,6 @@ class GithubRepo(Repo):
         return True
 
     def get_last_sync(self, branch_name, main_b):
-        # TODO: check if org is correct in all cases, this probably will not work in all cases, only filter on base?
         prs = self._gh_access.get_closed_prs(self, base_branch=main_b, head_branch=f'{self.org}:{branch_name}')
         if prs:
             for p in prs:

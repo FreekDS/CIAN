@@ -4,6 +4,9 @@ from typing import List
 
 class TestRepo(Repo):
 
+    def _fetch_default_branch(self):
+        return "main"
+
     __test__ = False
 
     def __init__(self, path, existing_paths: List[str] = None, empty_dirs: List[str] = None, repo_type='test'):

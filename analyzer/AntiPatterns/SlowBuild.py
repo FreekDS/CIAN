@@ -6,8 +6,6 @@ from typing import List
 
 import numpy as np
 
-# TODO: classification is made per week, maybe it is more useful to have this per build
-
 
 class SlowBuild(AntiPattern):
     def __init__(self, builds: List[Build], days_between=7):
@@ -46,7 +44,7 @@ class SlowBuild(AntiPattern):
             results[wf]['tool'] = builds[-1].used_tool
             results[wf]['total avg'] = sum(results[wf]["data"].values()) / len(results[wf]["data"])
             results[wf]["quartiles"] = self.get_quartiles(list(results[wf]["data"].values()))
-            results[wf]["classification"] = self.classify(results[wf])
+            results[wf]["classification"] = self.classify(results[wf], builds)
 
         return results
 
@@ -60,29 +58,28 @@ class SlowBuild(AntiPattern):
         }
 
     @staticmethod
-    def classify(results_data):
-        data_points = list(results_data.get("data").items())
+    def classify(results_data, builds):
         quartile_data = results_data.get('quartiles')
 
         high_severity = list(
             filter(
-                lambda dp: dp[1] > quartile_data.get('q3') + 1.5 * quartile_data.get('iqr'),
-                data_points
+                lambda build: build.duration > quartile_data.get('q3') + 1.5 * quartile_data.get('iqr'),
+                builds
             )
         )
         medium_severity = list(
             filter(
-                lambda dp: dp[1] > quartile_data.get('q3') and dp not in high_severity,
-                data_points
+                lambda build: build.duration > quartile_data.get('q3') and build not in high_severity,
+                builds
             )
         )
 
         high_severity = {
-            dp[0]: dp[1] for dp in high_severity
+            build.number: build.duration for build in high_severity
         }
 
         medium_severity = {
-            dp[0]: dp[1] for dp in medium_severity
+            build.number: build.duration for build in medium_severity
         }
 
         return {

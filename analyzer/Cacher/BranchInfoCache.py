@@ -1,6 +1,5 @@
 from analyzer.Cacher.CacherBase import CacherBase
 
-# TODO add tests for cacher
 # TODO add CLI option to enable/disable cache
 
 
