@@ -62,20 +62,20 @@ parser.add_argument('repository_slugs', nargs='+', type=repository_slug_type,
                          'The provider is optional. If none is given, the default provider is assumed (see -p)')
 parser.add_argument('-p', '--default-provider', default='github', type=provider_type,
                     help=f'Default provider. Allowed values are {PROVIDERS}')
-parser.add_argument('-do', '--detect-only', action=argparse.BooleanOptionalAction, default=False,
+parser.add_argument('-do', '--detect-only', action='store_true', default=False,
                     help='Only detect CI tools in the specified repositories')
 parser.add_argument('-a', '--anti-patterns', nargs='+', type=antipattern_type,
                     help=f'Select anti-patterns to detect, allowed values are {ANTI_PATTERNS}')
-parser.add_argument('-nc', '--no-cache', action=argparse.BooleanOptionalAction, default=False,
+parser.add_argument('-nc', '--no-cache', action='store_true', default=False,
                     help='Use this flag to disable cache usage')
-parser.add_argument('-ncc', '--no-create-cache', action=argparse.BooleanOptionalAction, default=False,
+parser.add_argument('-ncc', '--no-create-cache', action='store_true', default=False,
                     help='Use this flag to disable cache creation')
 parser.add_argument('-od', '--out-dir', type=str, help='Output path')
-parser.add_argument('-v', '--verbose', action=argparse.BooleanOptionalAction, default=False,
+parser.add_argument('-v', '--verbose', action='store_true', default=False,
                     help='Provide more information in console')
 parser.add_argument('-d', '--start-date', type=start_date_type,
                     help='Date to start collecting data from, if none is provided, the latest three months are '
-                         'collected')
+                         'collected. Date should be formatted as YYYY-MM-DD')
 
 
 # GENERAL FUNCTIONS
