@@ -6,11 +6,10 @@
 ---
 
 The goal for this project is to create a command line tool that is capable of analyzing CI implementations in Git repositories.
-For the time being, the tool is capable of analyzing TravisCI builds and GitHub Actions builds. 
-CircleCI is implemented partially.
+The focus of the analysis is on CI antipatterns.
+The tool is capable of analyzing TravisCI builds and GitHub Actions builds.
 
-By default, JSON output will be generated that contains useful information such as the amount of failing builds, 
-the amount of successful builds, the average duration of each build...
+Output is generated in the form of graphs and a JSON file containing the information.
 
 ## Installation
 In order to install this tool, you have to follow the next steps
@@ -34,7 +33,7 @@ In order to be able to install everything, make sure the following is installed 
 3. To access private repositories, and to have a higher rate limit, the following environment variables should be set
    > GH_TOKEN_COUNT=2 <br>
    > GH_TOKEN_1=<your_1st_github_token> <br>
-   > GH_TOKEN_2=<your_2nd_github_token <br>
+   > GH_TOKEN_2=<your_2nd_github_token> <br>
    > CIRCLE_CI=<your_circleci_token> <br>
    > TRAVIS_CI=<your_travis_token>
    
@@ -63,8 +62,40 @@ For example, the slugs that point to this repository are the following
 
 Multiple slugs can be passed in at once. The slugs should be separated by a space.
 
-The default provider can be specified using the optional `-p` argument.
-For the moment, the allowed `-p` values are `github` and `gh`.
+Information of the other command line options are provided by using ```-h``` or ``--help``
+`````
+usage: gitci.py [-h] [-p DEFAULT_PROVIDER] [-do]
+                [-a ANTI_PATTERNS [ANTI_PATTERNS ...]] [-nc] [-ncc]
+                [-od OUT_DIR] [-v] [-d START_DATE]
+                repository_slugs [repository_slugs ...]
+
+positional arguments:
+  repository_slugs      One or more repository slugs. A slug is constructed as
+                        follows:[{provider}/]{username}/{repository_name}The
+                        provider is optional. If none is given, the default
+                        provider is assumed (see -p)
+
+options:
+  -h, --help            show this help message and exit
+  -p DEFAULT_PROVIDER, --default-provider DEFAULT_PROVIDER
+                        Default provider. Allowed values are ['github', 'gh']
+  -do, --detect-only    Only detect CI tools in the specified repositories
+  -a ANTI_PATTERNS [ANTI_PATTERNS ...], --anti-patterns ANTI_PATTERNS [ANTI_PATTERNS ...]
+                        Select anti-patterns to detect, allowed values are
+                        ['slow_build', 'broken_release', 'late_merging',
+                        'skip_failing_tests']
+  -nc, --no-cache       Use this flag to disable cache usage
+  -ncc, --no-create-cache
+                        Use this flag to disable cache creation
+  -od OUT_DIR, --out-dir OUT_DIR
+                        Output path
+  -v, --verbose         Provide more information in console
+  -d START_DATE, --start-date START_DATE
+                        Date to start collecting data from, if none is
+                        provided, the latest three months are collected. Date
+                        should be formatted as YYYY-MM-DD
+`````
+
 
 ### Examples
 
@@ -72,19 +103,19 @@ For the moment, the allowed `-p` values are `github` and `gh`.
 python gitci.py FreekDS/git-ci-analyzer
 python gitci.py gh/FreekDS/git-ci-analyzer godotengine/godot
 python gitci.py FreekDS/git-ci-analyzer -p github
+python gitci.py godotengine/godot -od C:/user/path/ -nc -ncc
+python gitci.py FreekDS/git-ci-analyzer -v -a slow_build broken_release -nc
 `````
 
 ## Features
 At the moment, the following features are present:
 1. Detect which CI tools are implemented in a repository.
-2. Perform basic analysis
-   1. Total build count
-   2. Amount of successful builds
-   3. Amount of failing builds
-   4. Average build duration
-   5. Amount of builds per event that triggered it
-   6. Information on builds for each CI tool separated
-3. Output to JSON
+2. Analyze builds to gather information on antipatterns
+   1. Slow build
+   2. Broken release branch
+   3. Late merging
+   4. Skip failing tests
+3. Output to JSON, graphs and text
 
 
 ## Tests
@@ -94,6 +125,19 @@ They are pytest based and can be executed with
 pytest .
 ````
 
+## Note About Caching
+If the tool is executed multiple times on the same repository, it uses the generated cache files by default since
+collecting data from the GitHub or Travis API is a costly operation.
+If you wish not to use the cache, the option ```-nc``` (no cache) should be used.
+Do note that as long as the `````-ncc````` (no create cache) option is not present, the cache files will be overwritten.
+
+Cache files are located under the ```cache/``` directory and can be deleted manually.
+
+## Example Output
+Repository: [pytest-dev/pytest](https://www.github.com/pytest-dev/pytest)
+
+![Broken Release](./doc/broken_release.png)
+![Slow Build](./doc/slow_build.png)
 ## License
 
 This repository is MIT licensed.
