@@ -41,9 +41,9 @@ class GithubActionsCollector(Command):
 
         if self.from_date:
             start_from = format_date(self.from_date)
-            start_from = start_from.strftime("%Y-%m-%d")
         else:
-            start_from = None
+            start_from = datetime.datetime.now() - datetime.timedelta(days=90)  # only last three months
+        start_from = start_from.strftime("%Y-%m-%d")
 
         runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
         # print(f"Fetched {len(runs_json)} runs")
