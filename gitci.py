@@ -29,7 +29,8 @@ if __name__ == '__main__':
         'use_cache': not args.no_cache,
         'create_cache': not args.no_create_cache,
         'out_dir': args.out_dir,
-        'verbose': args.verbose
+        'verbose': args.verbose,
+        'start_date': args.start_date
     }
 
     for repo in repositories:

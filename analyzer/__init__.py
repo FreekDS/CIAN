@@ -1,10 +1,12 @@
 import argparse
+import datetime
 
 from analyzer.AntiPatterns import find_anti_patterns
 from analyzer.config import PROVIDERS, ANTI_PATTERNS
 from analyzer.CIDetector import detect_ci_tools
 from analyzer.BuildCollector import collect_builds
 from analyzer.Output import create_json, create_text_files, create_images
+from analyzer.utils import format_date_str
 from time import time
 
 
@@ -44,6 +46,15 @@ def antipattern_type(a):
     )
 
 
+def start_date_type(d):
+    try:
+        d = datetime.datetime.strptime("%Y-%m-%d", d)
+        return format_date_str(d)
+    except TypeError:
+        print(f"'{d}' is not in the format YYYY-MM-DD, using no date instead...")
+        return None
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('repository_slugs', nargs='+', type=repository_slug_type,
                     help='One or more repository slugs. A slug is constructed as follows:'
@@ -59,9 +70,12 @@ parser.add_argument('-nc', '--no-cache', type=argparse.BooleanOptionalAction, de
                     help='Use this flag to disable cache usage')
 parser.add_argument('-ncc', '--no-create-cache', type=argparse.BooleanOptionalAction, default=False,
                     help='Use this flag to disable cache creation')
-parser.add_argument('-d', '--out-dir', type=str, help='Output path')
+parser.add_argument('-do', '--out-dir', type=str, help='Output path')
 parser.add_argument('-v', '--verbose', type=argparse.BooleanOptionalAction, default=False,
                     help='Provide more information in console')
+parser.add_argument('-d', '--start-date', type=start_date_type,
+                    help='Date to start collecting data from, if none is provided, the latest three months are '
+                         'collected')
 
 
 # GENERAL FUNCTIONS
