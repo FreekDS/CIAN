@@ -1,5 +1,5 @@
 import argparse
-from analyzer.config import PROVIDERS
+from analyzer.config import PROVIDERS, ANTI_PATTERNS
 
 
 def repository_slug_type(arg):
@@ -28,6 +28,14 @@ def provider_type(p):
     )
 
 
+def antipattern_type(a):
+    if a in ANTI_PATTERNS:
+        return a
+    raise argparse.ArgumentTypeError(
+        f"Unknown anti-pattern '{a}', allowed values are '{ANTI_PATTERNS}'"
+    )
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('repository_slugs', nargs='+', type=repository_slug_type,
                     help='One or more repository slugs. A slug is constructed as follows:'
@@ -37,3 +45,10 @@ parser.add_argument('-p', '--default-provider', default='github', type=provider_
                     help=f'Default provider. Allowed values are {PROVIDERS}')
 parser.add_argument('-do', '--detect-only', action=argparse.BooleanOptionalAction,
                     help='Only detect CI tools in the specified repositories')
+parser.add_argument('-a', '--anti-patterns', nargs='+', type=antipattern_type,
+                    help=f'Select anti-patterns to detect, allowed values are {ANTI_PATTERNS}')
+parser.add_argument('-nc', '--no-cache', type=argparse.BooleanOptionalAction,
+                    help='Use this flag to disable cache usage')
+parser.add_argument('-ncc', '--no-create-cache', type=argparse.BooleanOptionalAction,
+                    help='Use this flag to disable cache creation')
+parser.add_argument('-d', '--out-dir', type=str, help='Output path')
