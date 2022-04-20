@@ -4,7 +4,7 @@ from collections import defaultdict
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.utils.Command import Command
-from analyzer.utils import timing
+# from analyzer.utils import timing
 from analyzer.utils.TravisAccessor import TravisAccessor, TravisAccessorError
 from analyzer.config import TRAVIS_CI
 from analyzer.ResultsCollector import collect_test_results
@@ -30,7 +30,7 @@ class TravisCollector(Command):
                 test_results[job_name].append(tests)
         return dict(test_results)
 
-    @timing
+    # @timing
     def execute(self, *args, **kwargs) -> List[Build]:
         try:
             raw_builds = self.travis_access.get_builds(self.repo)
