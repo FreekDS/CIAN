@@ -1,7 +1,7 @@
 from typing import List
 from collections import defaultdict
 
-from Builds import Build
+from analyzer.Builds.Build import Build
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.config import SKIP_FAILING_TESTS
 
