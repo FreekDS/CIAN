@@ -15,7 +15,7 @@ def create_json(anti_pattern_data, repo, out_path='./output'):
     out_path = os.path.join(out_path, repo.path.replace('/', '-'))
     os.makedirs(out_path, exist_ok=True)
 
-    with open(f'{out_path}/anti-patterns.json') as file:
+    with open(f'{out_path}/anti-patterns.json', 'w') as file:
         file.writelines(json.dumps(anti_pattern_data, indent=2))
 
 

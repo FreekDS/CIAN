@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import os
 
-from utils import format_date, format_date_str
+from analyzer.utils import format_date, format_date_str
 from collections import defaultdict
 
 

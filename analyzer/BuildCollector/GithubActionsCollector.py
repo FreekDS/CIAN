@@ -5,7 +5,7 @@ from collections import defaultdict
 from analyzer.Repository.Repo import Repo
 from analyzer.Builds import Build
 from analyzer.utils.Command import Command
-from analyzer.utils import format_date, timing
+from analyzer.utils import format_date  # timing
 from analyzer.utils.GithubAccessor import GithubAccessor
 from analyzer.ResultsCollector import collect_test_results
 from analyzer.config import GH_ACTIONS
@@ -32,7 +32,7 @@ class GithubActionsCollector(Command):
             timings.append((end - start).seconds * 1000)
         return timings
 
-    @timing
+    # @timing
     def execute(self, *args, **kwargs) -> List[Build]:
         if self.repo.repo_type != 'github':
             return []
@@ -41,9 +41,9 @@ class GithubActionsCollector(Command):
 
         if self.from_date:
             start_from = format_date(self.from_date)
-            start_from = start_from.strftime("%Y-%m-%d")
         else:
-            start_from = None
+            start_from = datetime.datetime.now() - datetime.timedelta(days=90)  # only last three months
+        start_from = start_from.strftime("%Y-%m-%d")
 
         runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
         # print(f"Fetched {len(runs_json)} runs")

@@ -8,7 +8,7 @@ from typing import List
 from analyzer.Builds.Build import Build
 
 
-def find_anti_patterns(builds: List[Build], branch_info: dict, default_branch):
+def find_anti_patterns(builds: List[Build], branch_info: dict, default_branch, restriction=None):
 
     detectors: List[AntiPattern] = [
         SlowBuild(builds),
@@ -20,6 +20,10 @@ def find_anti_patterns(builds: List[Build], branch_info: dict, default_branch):
     result = dict()
 
     for detector in detectors:
-        result[detector.name] = detector.detect()
+        if restriction:
+            if detector.name in restriction:
+                result[detector.name] = detector.detect()
+        else:
+            result[detector.name] = detector.detect()
 
     return result
