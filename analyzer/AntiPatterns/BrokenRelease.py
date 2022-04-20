@@ -2,13 +2,14 @@ from typing import List
 
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.Builds.Build import Build
+from analyzer.config import BROKEN_RELEASE
 
 
 class BrokenRelease(AntiPattern):
     RELEASE_NAMES = ["main", "master", "my-master"]
 
     def __init__(self, builds: List[Build], custom_release_branches: List[str] or None = None, default_branch=None):
-        super().__init__(builds, 'broken_release')
+        super().__init__(builds, BROKEN_RELEASE)
         self.builds = self.sort_chronologically()
         if custom_release_branches:
             self.custom_branches = custom_release_branches

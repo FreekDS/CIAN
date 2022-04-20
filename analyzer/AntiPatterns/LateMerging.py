@@ -1,6 +1,7 @@
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.Builds.Build import Build
 from analyzer.utils import format_date
+from analyzer.config import LATE_MERGING
 from typing import List
 
 import numpy as np
@@ -9,7 +10,7 @@ import numpy as np
 class LateMerging(AntiPattern):
 
     def __init__(self, builds: List[Build], branch_info):
-        super().__init__(builds, 'late_merging')
+        super().__init__(builds, LATE_MERGING)
         self.branch_info = branch_info
 
     @staticmethod

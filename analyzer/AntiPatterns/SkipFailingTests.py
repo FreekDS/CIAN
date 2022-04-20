@@ -3,12 +3,13 @@ from collections import defaultdict
 
 from Builds import Build
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
+from analyzer.config import SKIP_FAILING_TESTS
 
 
 class SkipFailingTests(AntiPattern):
 
     def __init__(self, builds: List[Build]):
-        super().__init__(builds, 'skip_failing_tests')
+        super().__init__(builds, SKIP_FAILING_TESTS)
         self.builds = self.sort_by_number()
 
     @staticmethod

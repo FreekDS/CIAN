@@ -2,6 +2,7 @@ import datetime
 
 from analyzer.AntiPatterns.AntiPattern import AntiPattern
 from analyzer.Builds.Build import Build
+from analyzer.config import SLOW_BUILD
 from typing import List
 
 import numpy as np
@@ -9,7 +10,7 @@ import numpy as np
 
 class SlowBuild(AntiPattern):
     def __init__(self, builds: List[Build], days_between=7):
-        super().__init__(builds, name='slow_build')
+        super().__init__(builds, name=SLOW_BUILD)
         self.builds = self.sort_chronologically()
         self.days_between = days_between
 
