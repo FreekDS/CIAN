@@ -48,9 +48,9 @@ def antipattern_type(a):
 
 def start_date_type(d):
     try:
-        d = datetime.datetime.strptime("%Y-%m-%d", d)
+        d = datetime.datetime.strptime(d, "%Y-%m-%d")
         return format_date_str(d)
-    except TypeError:
+    except ValueError:
         print(f"'{d}' is not in the format YYYY-MM-DD, using no date instead...")
         return None
 
