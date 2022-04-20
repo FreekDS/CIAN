@@ -34,4 +34,5 @@ if __name__ == '__main__':
     }
 
     for repo in repositories:
-        analyze_repo(repo, **opts)
+        results = analyze_repo(repo, **opts)
+        print()
