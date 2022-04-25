@@ -75,3 +75,15 @@ def test_restore(cacher):
     assert cacher.restore(default=':)') == obj
 
     shutil.rmtree('cache')
+
+
+def test_remove(cacher):
+    if not os.path.exists('cache'):
+        os.mkdir('cache')
+    assert not cacher.remove()
+    assert cacher.create({'obj': True})
+    assert os.path.exists(cacher.fp)
+    assert cacher.remove()
+    assert not os.path.exists(cacher.fp)
+
+    shutil.rmtree('cache')
