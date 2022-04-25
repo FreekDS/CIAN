@@ -41,6 +41,14 @@ class CTestResults(TestResultCommand):
     def get_successful_test_count(self) -> int:
         return max(self.get_test_count() - self.get_failed_test_count() - self.get_skipped_test_count(), 0)
 
+    def get_test_count(self) -> int:
+        c = self._get_summary()
+        matches = re.findall(r'out of \d+', c)
+        if matches:
+            count = int(matches[-1].split(' ')[-1])
+            return count
+        return 0
+
     def get_skipped_test_count(self) -> int:
         return self.get_test_of_type('skipped')
 
