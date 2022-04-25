@@ -45,3 +45,17 @@ def test_hit(cacher):
     assert cacher.hit()
     shutil.rmtree('cache')
     assert not cacher.hit()
+
+
+def test_create(cacher):
+    if not os.path.exists('cache'):
+        os.mkdir('cache')
+    assert cacher.hit() is False
+
+    assert cacher.create({'cache_me': True})
+    assert os.path.exists(cacher.fp)
+
+    assert not cacher.create({'dont_cache_me_now': True}, override=False)
+    assert cacher.create({'cache_me_again': True})
+
+    shutil.rmtree('cache')
