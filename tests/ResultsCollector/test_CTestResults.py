@@ -29,6 +29,11 @@ def invalid(data):
     return CTestResults(text(f"{data}/no_log.txt"))
 
 
+@pytest.fixture(scope='module')
+def invalid2(data):
+    return CTestResults(text(f"{data}/invalid.txt"))
+
+
 def test_get_summary(ctest1, ctest2, invalid):
     assert invalid._get_summary() == str()
     assert ctest1._get_summary() != str()
@@ -41,3 +46,10 @@ def test_get_total_count(ctest1, ctest2, invalid):
     assert invalid.get_test_count() == 0
     assert ctest1.get_test_count() == 39
     assert ctest2.get_test_count() == 39
+
+
+def test_get_failed_count(ctest1, ctest2, invalid, invalid2):
+    assert invalid.get_failed_test_count() == 0
+    assert invalid2.get_failed_test_count() == 0
+    assert ctest1.get_failed_test_count() == 0
+    assert ctest2.get_failed_test_count() == 17
