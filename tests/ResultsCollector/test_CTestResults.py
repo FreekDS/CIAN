@@ -35,3 +35,9 @@ def test_get_summary(ctest1, ctest2, invalid):
     assert ctest2._get_summary() != str()
     assert ctest1._get_summary() == '100% tests passed, 0 tests failed out of 39\n'
     assert ctest2._get_summary() == '100% tests passed, 17 tests failed out of 39\n'
+
+
+def test_get_total_count(ctest1, ctest2, invalid):
+    assert invalid.get_test_count() == 0
+    assert ctest1.get_test_count() == 39
+    assert ctest2.get_test_count() == 39
