@@ -25,7 +25,7 @@ class CTestResults(TestResultCommand):
 
     def get_test_of_type(self, t_type):
         s = self._get_summary()
-        s = s.split(',')[1:-1]
+        s = s.split(', ')[1:]
         for test_type in s:
             if t_type in test_type:
                 i = test_type.split(' ')[0]
