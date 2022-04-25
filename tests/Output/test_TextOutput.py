@@ -66,6 +66,13 @@ def late_merging_data_hd(antipattern_data_hd):
     return antipattern_data_hd
 
 
+@pytest.fixture(scope='module')
+def late_merging_data_some_missing(late_merging_data_hd):
+    del late_merging_data_hd[LATE_MERGING]['classification']
+    del late_merging_data_hd[LATE_MERGING]['branch deviation']
+    return late_merging_data_hd
+
+
 def test_constructor(antipattern_data_hd):
     t_out = TextOutput(
         antipattern_data_hd,
@@ -96,6 +103,25 @@ def test_create_late_merging(late_merging_data_hd, res_dir):
 
     with open(f'{t_out.out_path}/summary_late_merging.txt') as gen_f:
         with open(f'{res_dir}/summary_late_merging_ref.txt') as ref_f:
+            assert gen_f.readlines() == ref_f.readlines()
+
+    shutil.rmtree('./some_output')
+    assert not os.path.exists(f'{t_out.out_path}/summary_late_merging.txt')
+
+
+def test_create_late_merging_some_missing(late_merging_data_some_missing, res_dir):
+    t_out = TextOutput(
+        late_merging_data_some_missing,
+        'some/repo-path',
+        out_path='./some_output'
+    )
+
+    t_out.create_late_merging()
+
+    assert os.path.exists(f'{t_out.out_path}/summary_late_merging.txt')
+
+    with open(f'{t_out.out_path}/summary_late_merging.txt') as gen_f:
+        with open(f'{res_dir}/summary_late_merging_ref2.txt') as ref_f:
             assert gen_f.readlines() == ref_f.readlines()
 
     shutil.rmtree('./some_output')
