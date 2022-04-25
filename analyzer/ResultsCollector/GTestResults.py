@@ -18,7 +18,7 @@ class GTestResults(TestResultCommand):
         return self.get_tests_of_type('FAILED')
 
     def get_successful_test_count(self) -> int:
-        return max(self.total_count() - self.get_failed_test_count() - self.get_successful_test_count(), 0)
+        return max(self.total_count() - self.get_failed_test_count() - self.get_skipped_test_count(), 0)
 
     def get_skipped_test_count(self) -> int:
         return self.get_tests_of_type('PASSED')
