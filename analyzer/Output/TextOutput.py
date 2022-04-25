@@ -29,10 +29,10 @@ class TextOutput:
             ma_classification = classification.get('missed activity', {})
             text += "MEDIUM SEVERITY\n"
             for branch in ma_classification.get('medium_severity', []):
-                text += f"Branch {branch}, {missed_activity.get('branch')} seconds\n"
+                text += f"Branch {branch}, {missed_activity.get(branch)} seconds\n"
                 text += "HIGH SEVERITY\n"
             for branch in ma_classification.get('high_severity', []):
-                text += f"Branch {branch}, {missed_activity.get('branch')} seconds\n"
+                text += f"Branch {branch}, {missed_activity.get(branch)} seconds\n"
 
         if branch_deviation:
             avg_deviation = sum(branch_deviation.values()) / float(len(list(branch_deviation.values())))
@@ -59,16 +59,16 @@ class TextOutput:
             text += f"Average unsynced: {avg_unsynced} days\n"
             for branch, value in unsynced_activity.items():
                 if value > avg_unsynced:
-                    text += f"Branch {branch} is unsynced with {value} days, {value - avg_unsynced} more than" \
+                    text += f"Branch {branch} is unsynced with {value} days, {value - avg_unsynced} more than " \
                             f"average\n"
         if classification:
             ua_classification = classification.get('unsynced activity', {})
             text += "MEDIUM SEVERITY\n"
             for branch in ua_classification.get('medium_severity', []):
-                text += f"Branch {branch}, {unsynced_activity.get(branch)} days"
+                text += f"Branch {branch}, {unsynced_activity.get(branch)} days\n"
             text += "HIGH SEVERITY\n"
             for branch in ua_classification.get('high_severity'):
-                text += f"Branch {branch}, {unsynced_activity.get(branch)} days"
+                text += f"Branch {branch}, {unsynced_activity.get(branch)} days\n"
 
         with open(f'{self.out_path}/summary_late_merging.txt', 'w') as out:
             out.write(text)
