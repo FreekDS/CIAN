@@ -40,3 +40,10 @@ def test_get_framework(gtest1, gtest2, invalid, invalid2):
     assert gtest2.get_test_framework() == 'GoogleTest'
     assert invalid.get_test_framework() == 'GoogleTest'
     assert invalid2.get_test_framework() == 'GoogleTest'
+
+
+def test_get_failed_tests(gtest1, gtest2, invalid, invalid2):
+    assert gtest1.get_failed_test_count() == 0
+    assert gtest2.get_failed_test_count() == 1
+    assert invalid.get_failed_test_count() == 0
+    assert invalid2.get_failed_test_count() == 0
