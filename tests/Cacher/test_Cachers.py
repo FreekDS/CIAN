@@ -2,7 +2,12 @@ import os
 import shutil
 
 import pytest
+
+from analyzer.Builds.Build import Build
 from analyzer.Cacher.CacherBase import CacherBase
+from analyzer.Cacher.BuildCache import BuildCache
+from analyzer.Cacher.DetectorCache import DetectorCache
+from analyzer.Cacher.BranchInfoCache import BranchInfoCache
 
 
 @pytest.fixture(scope='module')
@@ -89,3 +94,31 @@ def test_remove(cacher):
     assert not os.path.exists(cacher.fp)
 
     shutil.rmtree('cache-t')
+
+
+def test_detector_cache():
+    dc = DetectorCache(
+        'repo'
+    )
+    assert dc.fp.endswith('detection.cache')
+
+
+def test_branch_info_cache():
+    bic = BranchInfoCache('repo')
+    assert bic.fp.endswith('branches.cache')
+
+
+def test_build_cache():
+
+    if not os.path.exists('cache-t'):
+        os.mkdir('cache-t')
+
+    bc = BuildCache('repo', test=True)
+    assert bc.fp.endswith('builds.cache')
+
+    builds = [Build('success'), Build('failure')]
+
+    assert bc.create(builds)
+    assert bc.restore() == builds
+    assert bc.remove()
+
