@@ -59,3 +59,19 @@ def test_create(cacher):
     assert cacher.create({'cache_me_again': True})
 
     shutil.rmtree('cache')
+
+
+def test_restore(cacher):
+    if not os.path.exists('cache'):
+        os.mkdir('cache')
+
+    obj = {'cache_me': True}
+
+    assert cacher.restore() is None
+    assert cacher.restore(default=':(') == ':('
+
+    assert cacher.create(obj)
+    assert cacher.restore() == obj
+    assert cacher.restore(default=':)') == obj
+
+    shutil.rmtree('cache')
