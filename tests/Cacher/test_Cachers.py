@@ -65,7 +65,7 @@ def test_create(cacher):
     assert not cacher.create({'dont_cache_me_now': True}, override=False)
     assert cacher.create({'cache_me_again': True})
 
-    shutil.rmtree('cache')
+    shutil.rmtree('cache-t')
 
 
 def test_restore(cacher):
