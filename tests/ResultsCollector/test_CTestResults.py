@@ -66,3 +66,10 @@ def test_detect(ctest1, ctest2, invalid, invalid2):
     assert ctest2.detect()
     assert invalid2.detect()
     assert not invalid.detect()
+
+
+def test_get_framework(ctest1, ctest2, invalid, invalid2):
+    assert ctest1.get_test_framework() == 'ctest'
+    assert ctest2.get_test_framework() == 'ctest'
+    assert invalid.get_test_framework() == 'ctest'
+    assert invalid2.get_test_framework() == 'ctest'
