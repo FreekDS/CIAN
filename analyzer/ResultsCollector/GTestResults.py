@@ -31,10 +31,7 @@ class GTestResults(TestResultCommand):
         count = 0
         for m in all_test_matches:
             tests_c = m.split(' ')[1]
-            try:
-                count += int(tests_c)
-            except ValueError:
-                continue
+            count += int(tests_c)
         return count
 
     def detect(self) -> bool:
