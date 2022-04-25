@@ -47,3 +47,11 @@ def test_get_failed_tests(gtest1, gtest2, invalid, invalid2):
     assert gtest2.get_failed_test_count() == 1
     assert invalid.get_failed_test_count() == 0
     assert invalid2.get_failed_test_count() == 0
+
+
+def test_get_skipped_tests(gtest1, gtest2, invalid, invalid2):
+    assert gtest1.get_skipped_test_count() == 8
+    assert gtest2.get_skipped_test_count() == 8
+    assert invalid.get_failed_test_count() == 0
+    assert invalid2.get_failed_test_count() == 0
+
