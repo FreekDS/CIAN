@@ -20,6 +20,11 @@ def junit_1(data):
 
 
 @pytest.fixture(scope='module')
+def junit_2(data):
+    return JUnitResults(text(f"{data}/log_example2.txt"))
+
+
+@pytest.fixture(scope='module')
 def junit_no_log(data):
     return JUnitResults(text(f"{data}/no_log.txt"))
 
@@ -37,3 +42,9 @@ def test_get_framework(junit_1):
 def test_detect(junit_1, junit_no_log):
     assert junit_1.detect()
     assert not junit_no_log.detect()
+
+
+def test_successful_count(junit_1, junit_2, junit_no_log):
+    assert junit_no_log.get_successful_test_count() == 0
+    assert junit_1.get_successful_test_count() == 1519
+    assert junit_2.get_successful_test_count() == 1409
