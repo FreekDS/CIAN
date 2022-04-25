@@ -6,11 +6,11 @@ class GTestResults(TestResultCommand):
     # Can be tests with qmk/qmk_firmware (workflow unittest)
 
     def get_tests_of_type(self, test_type):
-        regex = fr"[ {test_type} ] \d+ test"
+        regex = fr"\[  {test_type}  \] \d+ test"
         matches = re.findall(regex, self.log)
         count = 0
         for m in matches:
-            c = m.split(' ')[3].strip()
+            c = m.split(f'[  {test_type}  ]')[-1].strip().split(' ')[0]
             count += int(c)
         return count
 
