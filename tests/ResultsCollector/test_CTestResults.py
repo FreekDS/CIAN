@@ -59,3 +59,10 @@ def test_get_skipped_count(ctest1, ctest2, invalid):
     assert invalid.get_skipped_test_count() == 0
     assert ctest1.get_skipped_test_count() == 0
     assert ctest2.get_skipped_test_count() == 0
+
+
+def test_detect(ctest1, ctest2, invalid, invalid2):
+    assert ctest1.detect()
+    assert ctest2.detect()
+    assert invalid2.detect()
+    assert not invalid.detect()
