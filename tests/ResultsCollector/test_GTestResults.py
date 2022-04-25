@@ -55,3 +55,10 @@ def test_get_skipped_tests(gtest1, gtest2, invalid, invalid2):
     assert invalid.get_failed_test_count() == 0
     assert invalid2.get_failed_test_count() == 0
 
+
+def test_get_success_tests(gtest1, gtest2, invalid, invalid2):
+    assert gtest1.get_successful_test_count() == 61
+    assert gtest2.get_successful_test_count() == 60
+    assert invalid.get_successful_test_count() == 0
+    assert invalid2.get_successful_test_count() == 61
+
