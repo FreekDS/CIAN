@@ -12,17 +12,6 @@ class CTestResults(TestResultCommand):
         else:
             return str()
 
-    def total_count(self):
-        s = self._get_summary()
-        matches = re.findall(r'\d+ tests failed out of \d+', s)
-        if matches:
-            i = matches[0].split(' ')[-1].strip()
-            try:
-                return int(i)
-            except ValueError:
-                return 0
-        return 0
-
     def get_test_of_type(self, t_type):
         s = self._get_summary()
         s = s.split(', ')[1:]
