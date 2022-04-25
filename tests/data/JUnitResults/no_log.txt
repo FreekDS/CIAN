@@ -1,1 +1,1 @@
-this is no junit log, nono, this is just a file yesyes :)
+this is no test log, nono, this is just a file yesyes :)
