@@ -112,7 +112,9 @@ class SkipFailingTests(AntiPattern):
                     d = {
                         'build_number': build.number,
                         'build_date': build.started_at,
-                        'used_tool': build.used_tool
+                        'used_tool': build.used_tool,
+                        'build_id': build.id,
+                        'prev_build_id': prev_build.id
                     }
                     d.update(
                         detect_result
