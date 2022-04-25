@@ -53,7 +53,7 @@ class TextOutput:
                 text += f"Branch {branch}, {branch_deviation.get(branch)} days\n"
 
         if unsynced_activity:
-            avg_unsynced = sum(unsynced_activity.values()) / float(len(list(branch_deviation.values())))
+            avg_unsynced = sum(unsynced_activity.values()) / float(len(list(unsynced_activity.values())))
 
             text += "\nUnsynced activity\n=========================\n"
             text += f"Average unsynced: {avg_unsynced} days\n"
