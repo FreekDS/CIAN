@@ -17,6 +17,8 @@ def merge_dicts(dict1, dict2):
                 dict1[k].extend(v)
             elif isinstance(dict1[k], dict):
                 dict1[k] = merge_dicts(dict1[k], v)
+            else:
+                dict1[k] = v
         else:
             dict1[k] = v
     return dict1
