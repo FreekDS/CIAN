@@ -1,4 +1,16 @@
+import os
+import shutil
+
+import pytest
 from analyzer.Cacher.CacherBase import CacherBase
+
+
+@pytest.fixture(scope='module')
+def cacher():
+    return CacherBase(
+        'repo',
+        'file'
+    )
 
 
 def test_ctor():
@@ -23,3 +35,13 @@ def test_ctor():
     )
 
     assert cb.fp == 'cache/some-repo-path-some-file.cache'
+
+
+def test_hit(cacher):
+    assert cacher.hit() is False
+    os.mkdir('cache')
+    with open(cacher.fp, 'w') as f:
+        f.write("\n")
+    assert cacher.hit()
+    shutil.rmtree('cache')
+    assert not cacher.hit()
