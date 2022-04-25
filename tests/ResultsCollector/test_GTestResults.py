@@ -62,3 +62,10 @@ def test_get_success_tests(gtest1, gtest2, invalid, invalid2):
     assert invalid.get_successful_test_count() == 0
     assert invalid2.get_successful_test_count() == 61
 
+
+def test_get_total_count(gtest1, gtest2, invalid, invalid2):
+    assert gtest1.total_count() == 69
+    assert gtest2.total_count() == 69
+    assert invalid.total_count() == 0
+    assert invalid2.total_count() == 69
+
