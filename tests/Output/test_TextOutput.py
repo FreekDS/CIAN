@@ -126,3 +126,33 @@ def test_create_late_merging_some_missing(late_merging_data_some_missing, res_di
 
     shutil.rmtree('./some_output')
     assert not os.path.exists(f'{t_out.out_path}/summary_late_merging.txt')
+
+
+def test_create_slow_build():
+    t_out = TextOutput(
+        {},
+        'some/repo-path',
+        out_path='./some_output'
+    )
+    t_out.create_slow_build()
+    # TODO: implement function further if required
+
+
+def test_create_skip_failing_tests():
+    t_out = TextOutput(
+        {},
+        'some/repo-path',
+        out_path='./some_output'
+    )
+    t_out.create_skip_failing_tests()
+    # TODO: implement function further if required
+
+
+def test_create_broken_release():
+    t_out = TextOutput(
+        {},
+        'some/repo-path',
+        out_path='./some_output'
+    )
+    t_out.create_broken_release()
+    # TODO: implement function further if required
