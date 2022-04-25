@@ -69,3 +69,9 @@ def test_get_total_count(gtest1, gtest2, invalid, invalid2):
     assert invalid.total_count() == 0
     assert invalid2.total_count() == 69
 
+
+def test_detect(gtest1, gtest2, invalid, invalid2):
+    assert gtest1.detect()
+    assert gtest2.detect()
+    assert not invalid.detect()
+    assert not invalid2.detect()

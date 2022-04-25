@@ -789,7 +789,7 @@
 2022-04-25T10:21:48.5481705Z Making test [1msequencer[0m                                                                                          [32;01m[OK][0m
 2022-04-25T10:21:48.5497635Z Testing [1mauto_shift[0m
 2022-04-25T10:21:48.5513862Z [==========] Running 2 tests from 1 test suite.
-2022-04-25T10:21:48.5514810Z [----------] Global test environment set-up.
+2022-04-25T10:21:48.5514810Z [----------] Global tist environment set-up.
 2022-04-25T10:21:48.5516975Z [----------] 2 tests from AutoShift
 2022-04-25T10:21:48.5517412Z [ RUN      ] AutoShift.key_release_before_timeout
 2022-04-25T10:21:48.5519487Z [       OK ] AutoShift.key_release_before_timeout (0 ms)
@@ -797,13 +797,13 @@
 2022-04-25T10:21:48.5520654Z [       OK ] AutoShift.key_release_after_timeout (0 ms)
 2022-04-25T10:21:48.5522760Z [----------] 2 tests from AutoShift (0 ms total)
 2022-04-25T10:21:48.5523109Z 
-2022-04-25T10:21:48.5523658Z [----------] Global test environment tear-down
+2022-04-25T10:21:48.5523658Z [----------] Global tist environment tear-down
 2022-04-25T10:21:48.5524098Z [==========] 2 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:48.5524692Z [  PASSED  ] 2 tests.
 2022-04-25T10:21:48.5524997Z 
 2022-04-25T10:21:48.5530234Z Testing [1mbasic[0m
 2022-04-25T10:21:48.5546732Z [==========] Running 49 tests from 5 test suites.
-2022-04-25T10:21:48.5547468Z [----------] Global test environment set-up.
+2022-04-25T10:21:48.5547468Z [----------] Global tist environment set-up.
 2022-04-25T10:21:48.5549407Z [----------] 16 tests from ActionLayer
 2022-04-25T10:21:48.5549846Z [ RUN      ] ActionLayer.LayerStateDBG
 2022-04-25T10:21:48.5551665Z [       OK ] ActionLayer.LayerStateDBG (0 ms)
@@ -935,7 +935,7 @@
 2022-04-25T10:21:48.5679802Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7 (0 ms)
 2022-04-25T10:21:48.5680563Z [----------] 16 tests from OneShotModifierTests/OneShotParametrizedTestFixture (4 ms total)
 2022-04-25T10:21:48.5681039Z 
-2022-04-25T10:21:48.5681243Z [----------] Global test environment tear-down
+2022-04-25T10:21:48.5681243Z [----------] Global tist environment tear-down
 2022-04-25T10:21:48.5681535Z [==========] 49 tests from 5 test suites ran. (12 ms total)
 2022-04-25T10:21:48.5681768Z [  PASSED  ] 43 tests.
 2022-04-25T10:21:48.5682005Z [  SKIPPED ] 6 tests, listed below:
@@ -948,7 +948,7 @@
 2022-04-25T10:21:48.5686096Z 
 2022-04-25T10:21:48.5686737Z Testing [1mdebounce_asym_eager_defer_pk[0m
 2022-04-25T10:21:48.5700047Z [==========] Running 21 tests from 1 test suite.
-2022-04-25T10:21:48.5700439Z [----------] Global test environment set-up.
+2022-04-25T10:21:48.5700439Z [----------] Global tist environment set-up.
 2022-04-25T10:21:48.5700756Z [----------] 21 tests from DebounceTest
 2022-04-25T10:21:48.5701021Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:48.6712744Z [       OK ] DebounceTest.OneKeyShort1 (100 ms)
@@ -994,13 +994,13 @@
 2022-04-25T10:21:50.0910194Z [       OK ] DebounceTest.OneKeyDelayedScan8 (26 ms)
 2022-04-25T10:21:50.0910984Z [----------] 21 tests from DebounceTest (1520 ms total)
 2022-04-25T10:21:50.0911194Z 
-2022-04-25T10:21:50.0911420Z [----------] Global test environment tear-down
+2022-04-25T10:21:50.0911420Z [----------] Global tist environment tear-down
 2022-04-25T10:21:50.0911740Z [==========] 21 tests from 1 test suite ran. (1520 ms total)
 2022-04-25T10:21:50.0912027Z [  PASSED  ] 21 tests.
 2022-04-25T10:21:50.0912179Z 
 2022-04-25T10:21:50.0917023Z Testing [1mdebounce_sym_defer_g[0m
 2022-04-25T10:21:50.0930795Z [==========] Running 15 tests from 1 test suite.
-2022-04-25T10:21:50.0931226Z [----------] Global test environment set-up.
+2022-04-25T10:21:50.0931226Z [----------] Global tist environment set-up.
 2022-04-25T10:21:50.0931618Z [----------] 15 tests from DebounceTest
 2022-04-25T10:21:50.0931933Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:50.1456277Z [       OK ] DebounceTest.OneKeyShort1 (52 ms)
@@ -1034,13 +1034,13 @@
 2022-04-25T10:21:50.7776854Z [       OK ] DebounceTest.OneKeyDelayedScan4 (26 ms)
 2022-04-25T10:21:50.7777589Z [----------] 15 tests from DebounceTest (684 ms total)
 2022-04-25T10:21:50.7777792Z 
-2022-04-25T10:21:50.7778000Z [----------] Global test environment tear-down
+2022-04-25T10:21:50.7778000Z [----------] Global tist environment tear-down
 2022-04-25T10:21:50.7778330Z [==========] 15 tests from 1 test suite ran. (684 ms total)
 2022-04-25T10:21:50.7778617Z [  PASSED  ] 15 tests.
 2022-04-25T10:21:50.7778769Z 
 2022-04-25T10:21:50.7783811Z Testing [1mdebounce_sym_defer_pk[0m
 2022-04-25T10:21:50.7799091Z [==========] Running 15 tests from 1 test suite.
-2022-04-25T10:21:50.7799536Z [----------] Global test environment set-up.
+2022-04-25T10:21:50.7799536Z [----------] Global tist environment set-up.
 2022-04-25T10:21:50.7799876Z [----------] 15 tests from DebounceTest
 2022-04-25T10:21:50.7800133Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:50.8304645Z [       OK ] DebounceTest.OneKeyShort1 (50 ms)
@@ -1074,13 +1074,13 @@
 2022-04-25T10:21:51.4341625Z [       OK ] DebounceTest.OneKeyDelayedScan4 (25 ms)
 2022-04-25T10:21:51.4346370Z [----------] 15 tests from DebounceTest (653 ms total)
 2022-04-25T10:21:51.4346599Z 
-2022-04-25T10:21:51.4346868Z [----------] Global test environment tear-down
+2022-04-25T10:21:51.4346868Z [----------] Global tist environment tear-down
 2022-04-25T10:21:51.4347203Z [==========] 15 tests from 1 test suite ran. (653 ms total)
 2022-04-25T10:21:51.4347477Z [  PASSED  ] 15 tests.
 2022-04-25T10:21:51.4347631Z 
 2022-04-25T10:21:51.4347844Z Testing [1mdebounce_sym_defer_pr[0m
 2022-04-25T10:21:51.4361752Z [==========] Running 15 tests from 1 test suite.
-2022-04-25T10:21:51.4362189Z [----------] Global test environment set-up.
+2022-04-25T10:21:51.4362189Z [----------] Global tist environment set-up.
 2022-04-25T10:21:51.4362569Z [----------] 15 tests from DebounceTest
 2022-04-25T10:21:51.4362873Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:51.4996679Z [       OK ] DebounceTest.OneKeyShort1 (63 ms)
@@ -1114,13 +1114,13 @@
 2022-04-25T10:21:52.2529782Z [       OK ] DebounceTest.OneKeyDelayedScan4 (31 ms)
 2022-04-25T10:21:52.2534654Z [----------] 15 tests from DebounceTest (816 ms total)
 2022-04-25T10:21:52.2534895Z 
-2022-04-25T10:21:52.2535117Z [----------] Global test environment tear-down
+2022-04-25T10:21:52.2535117Z [----------] Global tist environment tear-down
 2022-04-25T10:21:52.2535456Z [==========] 15 tests from 1 test suite ran. (816 ms total)
 2022-04-25T10:21:52.2535746Z [  PASSED  ] 15 tests.
 2022-04-25T10:21:52.2535902Z 
 2022-04-25T10:21:52.2536113Z Testing [1mdebounce_sym_eager_pk[0m
 2022-04-25T10:21:52.2549517Z [==========] Running 16 tests from 1 test suite.
-2022-04-25T10:21:52.2549988Z [----------] Global test environment set-up.
+2022-04-25T10:21:52.2549988Z [----------] Global tist environment set-up.
 2022-04-25T10:21:52.2550369Z [----------] 16 tests from DebounceTest
 2022-04-25T10:21:52.2550658Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:52.3612212Z [       OK ] DebounceTest.OneKeyShort1 (105 ms)
@@ -1156,13 +1156,13 @@
 2022-04-25T10:21:53.6335870Z [       OK ] DebounceTest.OneKeyDelayedScan6 (53 ms)
 2022-04-25T10:21:53.6336630Z [----------] 16 tests from DebounceTest (1378 ms total)
 2022-04-25T10:21:53.6336828Z 
-2022-04-25T10:21:53.6337060Z [----------] Global test environment tear-down
+2022-04-25T10:21:53.6337060Z [----------] Global tist environment tear-down
 2022-04-25T10:21:53.6337391Z [==========] 16 tests from 1 test suite ran. (1378 ms total)
 2022-04-25T10:21:53.6337656Z [  PASSED  ] 16 tests.
 2022-04-25T10:21:53.6337804Z 
 2022-04-25T10:21:53.6341410Z Testing [1mdebounce_sym_eager_pr[0m
 2022-04-25T10:21:53.6354781Z [==========] Running 19 tests from 1 test suite.
-2022-04-25T10:21:53.6355206Z [----------] Global test environment set-up.
+2022-04-25T10:21:53.6355206Z [----------] Global tist environment set-up.
 2022-04-25T10:21:53.6355554Z [----------] 19 tests from DebounceTest
 2022-04-25T10:21:53.6355851Z [ RUN      ] DebounceTest.OneKeyShort1
 2022-04-25T10:21:53.6972287Z [       OK ] DebounceTest.OneKeyShort1 (61 ms)
@@ -1204,13 +1204,13 @@
 2022-04-25T10:21:54.6192316Z [       OK ] DebounceTest.OneKeyDelayedScan6 (30 ms)
 2022-04-25T10:21:54.6195704Z [----------] 19 tests from DebounceTest (983 ms total)
 2022-04-25T10:21:54.6196118Z 
-2022-04-25T10:21:54.6200541Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6200541Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6201446Z [==========] 19 tests from 1 test suite ran. (983 ms total)
 2022-04-25T10:21:54.6203963Z [  PASSED  ] 19 tests.
 2022-04-25T10:21:54.6204275Z 
 2022-04-25T10:21:54.6206850Z Testing [1mdefault_mod_tap[0m
 2022-04-25T10:21:54.6235367Z [==========] Running 6 tests from 1 test suite.
-2022-04-25T10:21:54.6239447Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6239447Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6239912Z [----------] 6 tests from DefaultTapHold
 2022-04-25T10:21:54.6240283Z [ RUN      ] DefaultTapHold.tap_regular_key_while_mod_tap_key_is_held
 2022-04-25T10:21:54.6240711Z [       OK ] DefaultTapHold.tap_regular_key_while_mod_tap_key_is_held (0 ms)
@@ -1230,7 +1230,7 @@
 2022-04-25T10:21:54.6246572Z [       OK ] DefaultTapHold.tap_and_hold_mod_tap_hold_key (0 ms)
 2022-04-25T10:21:54.6247032Z [----------] 6 tests from DefaultTapHold (1 ms total)
 2022-04-25T10:21:54.6247235Z 
-2022-04-25T10:21:54.6247450Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6247450Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6247761Z [==========] 6 tests from 1 test suite ran. (1 ms total)
 2022-04-25T10:21:54.6248037Z [  PASSED  ] 4 tests.
 2022-04-25T10:21:54.6248298Z [  SKIPPED ] 2 tests, listed below:
@@ -1239,7 +1239,7 @@
 2022-04-25T10:21:54.6262827Z 
 2022-04-25T10:21:54.6263137Z Testing [1meeprom_stm32_large[0m
 2022-04-25T10:21:54.6263437Z [==========] Running 14 tests from 1 test suite.
-2022-04-25T10:21:54.6267432Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6267432Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6267842Z [----------] 14 tests from EepromStm32Test
 2022-04-25T10:21:54.6268149Z [ RUN      ] EepromStm32Test.TestErase
 2022-04-25T10:21:54.6268458Z [       OK ] EepromStm32Test.TestErase (0 ms)
@@ -1271,13 +1271,13 @@
 2022-04-25T10:21:54.6284959Z [       OK ] EepromStm32Test.TestCompaction (0 ms)
 2022-04-25T10:21:54.6285437Z [----------] 14 tests from EepromStm32Test (0 ms total)
 2022-04-25T10:21:54.6285618Z 
-2022-04-25T10:21:54.6285811Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6285811Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6286080Z [==========] 14 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6287311Z [  PASSED  ] 14 tests.
 2022-04-25T10:21:54.6287647Z 
 2022-04-25T10:21:54.6287873Z Testing [1meeprom_stm32_tiny[0m
 2022-04-25T10:21:54.6288138Z [==========] Running 14 tests from 1 test suite.
-2022-04-25T10:21:54.6288463Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6288463Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6288802Z [----------] 14 tests from EepromStm32Test
 2022-04-25T10:21:54.6289071Z [ RUN      ] EepromStm32Test.TestErase
 2022-04-25T10:21:54.6289345Z [       OK ] EepromStm32Test.TestErase (0 ms)
@@ -1309,13 +1309,13 @@
 2022-04-25T10:21:54.6297639Z [       OK ] EepromStm32Test.TestCompaction (0 ms)
 2022-04-25T10:21:54.6298037Z [----------] 14 tests from EepromStm32Test (0 ms total)
 2022-04-25T10:21:54.6298213Z 
-2022-04-25T10:21:54.6298401Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6298401Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6298672Z [==========] 14 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6300924Z [  PASSED  ] 14 tests.
 2022-04-25T10:21:54.6301831Z 
 2022-04-25T10:21:54.6302047Z Testing [1mencoder[0m
 2022-04-25T10:21:54.6303020Z [==========] Running 6 tests from 1 test suite.
-2022-04-25T10:21:54.6303368Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6303368Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6303694Z [----------] 6 tests from EncoderTest
 2022-04-25T10:21:54.6303954Z [ RUN      ] EncoderTest.TestInit
 2022-04-25T10:21:54.6304206Z [       OK ] EncoderTest.TestInit (0 ms)
@@ -1331,14 +1331,14 @@
 2022-04-25T10:21:54.6307141Z [       OK ] EncoderTest.TestHalfway (0 ms)
 2022-04-25T10:21:54.6313271Z [----------] 6 tests from EncoderTest (0 ms total)
 2022-04-25T10:21:54.6313470Z 
-2022-04-25T10:21:54.6313723Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6313723Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6314004Z [==========] 6 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6314256Z [  PASSED  ] 6 tests.
 2022-04-25T10:21:54.6314388Z 
 2022-04-25T10:21:54.6314587Z Testing [1mencoder_split_left_eq_right[0m
 2022-04-25T10:21:54.6325110Z ignoring update on right hand (3,CW)
 2022-04-25T10:21:54.6325417Z [==========] Running 5 tests from 1 test suite.
-2022-04-25T10:21:54.6326935Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6326935Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6328643Z [----------] 5 tests from EncoderSplitTestLeftEqRight
 2022-04-25T10:21:54.6348000Z ignoring update on right hand (3,CW)
 2022-04-25T10:21:54.6348344Z [ RUN      ] EncoderSplitTestLeftEqRight.TestInitLeft
@@ -1354,13 +1354,13 @@
 2022-04-25T10:21:54.6383186Z [       OK ] EncoderSplitTestLeftEqRight.TestMultipleEncodersRightReceived (0 ms)
 2022-04-25T10:21:54.6383816Z [----------] 5 tests from EncoderSplitTestLeftEqRight (0 ms total)
 2022-04-25T10:21:54.6384015Z 
-2022-04-25T10:21:54.6384208Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6384208Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6384493Z [==========] 5 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6384736Z [  PASSED  ] 5 tests.
 2022-04-25T10:21:54.6384868Z 
 2022-04-25T10:21:54.6385223Z Testing [1mencoder_split_left_gt_right[0m
 2022-04-25T10:21:54.6385501Z [==========] Running 5 tests from 1 test suite.
-2022-04-25T10:21:54.6385918Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6385918Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6386320Z [----------] 5 tests from EncoderSplitTestLeftGreaterThanRight
 2022-04-25T10:21:54.6386725Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestInitLeft
 2022-04-25T10:21:54.6387157Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestInitLeft (0 ms)
@@ -1374,13 +1374,13 @@
 2022-04-25T10:21:54.6391210Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestMultipleEncodersRightReceived (0 ms)
 2022-04-25T10:21:54.6391819Z [----------] 5 tests from EncoderSplitTestLeftGreaterThanRight (0 ms total)
 2022-04-25T10:21:54.6392058Z 
-2022-04-25T10:21:54.6392246Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6392246Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6392531Z [==========] 5 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6392758Z [  PASSED  ] 5 tests.
 2022-04-25T10:21:54.6392886Z 
 2022-04-25T10:21:54.6393066Z Testing [1mencoder_split_left_lt_right[0m
 2022-04-25T10:21:54.6393331Z [==========] Running 5 tests from 1 test suite.
-2022-04-25T10:21:54.6393659Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6393659Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6394040Z [----------] 5 tests from EncoderSplitTestLeftLessThanRight
 2022-04-25T10:21:54.6394424Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestInitLeft
 2022-04-25T10:21:54.6394842Z [       OK ] EncoderSplitTestLeftLessThanRight.TestInitLeft (0 ms)
@@ -1394,14 +1394,14 @@
 2022-04-25T10:21:54.6398654Z [       OK ] EncoderSplitTestLeftLessThanRight.TestMultipleEncodersRightReceived (0 ms)
 2022-04-25T10:21:54.6399241Z [----------] 5 tests from EncoderSplitTestLeftLessThanRight (0 ms total)
 2022-04-25T10:21:54.6399468Z 
-2022-04-25T10:21:54.6399657Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6399657Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6399929Z [==========] 5 tests from 1 test suite ran. (1 ms total)
 2022-04-25T10:21:54.6400166Z [  PASSED  ] 5 tests.
 2022-04-25T10:21:54.6400297Z 
 2022-04-25T10:21:54.6427213Z ignoring update on right hand (1,CW)
 2022-04-25T10:21:54.6427641Z Testing [1mencoder_split_no_left[0m
 2022-04-25T10:21:54.6433948Z [==========] Running 5 tests from 1 test suite.
-2022-04-25T10:21:54.6434352Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6434352Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6434713Z [----------] 5 tests from EncoderSplitTestNoLeft
 2022-04-25T10:21:54.6435034Z [ RUN      ] EncoderSplitTestNoLeft.TestInitLeft
 2022-04-25T10:21:54.6435383Z [       OK ] EncoderSplitTestNoLeft.TestInitLeft (0 ms)
@@ -1415,13 +1415,13 @@
 2022-04-25T10:21:54.6438878Z [       OK ] EncoderSplitTestNoLeft.TestMultipleEncodersRightReceived (0 ms)
 2022-04-25T10:21:54.6439389Z [----------] 5 tests from EncoderSplitTestNoLeft (0 ms total)
 2022-04-25T10:21:54.6439584Z 
-2022-04-25T10:21:54.6439774Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6439774Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6440063Z [==========] 5 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6440289Z [  PASSED  ] 5 tests.
 2022-04-25T10:21:54.6440422Z 
 2022-04-25T10:21:54.6440589Z Testing [1mencoder_split_no_right[0m
 2022-04-25T10:21:54.6447536Z [==========] Running 5 tests from 1 test suite.
-2022-04-25T10:21:54.6447946Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6447946Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6448330Z [----------] 5 tests from EncoderSplitTestNoRight
 2022-04-25T10:21:54.6448655Z [ RUN      ] EncoderSplitTestNoRight.TestInitLeft
 2022-04-25T10:21:54.6448989Z [       OK ] EncoderSplitTestNoRight.TestInitLeft (0 ms)
@@ -1435,13 +1435,13 @@
 2022-04-25T10:21:54.6453671Z [       OK ] EncoderSplitTestNoRight.TestMultipleEncodersRightReceived (0 ms)
 2022-04-25T10:21:54.6454229Z [----------] 5 tests from EncoderSplitTestNoRight (0 ms total)
 2022-04-25T10:21:54.6454416Z 
-2022-04-25T10:21:54.6454607Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6454607Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6454892Z [==========] 5 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6455140Z [  PASSED  ] 5 tests.
 2022-04-25T10:21:54.6455272Z 
 2022-04-25T10:21:54.6456563Z Testing [1mignore_mod_tap_interrupt[0m
 2022-04-25T10:21:54.6474696Z [==========] Running 3 tests from 1 test suite.
-2022-04-25T10:21:54.6475109Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6475109Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6475479Z [----------] 3 tests from IgnoreModTapInterrupt
 2022-04-25T10:21:54.6475819Z [ RUN      ] IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held
 2022-04-25T10:21:54.6476219Z [       OK ] IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held (0 ms)
@@ -1451,13 +1451,13 @@
 2022-04-25T10:21:54.6480219Z [       OK ] IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held (0 ms)
 2022-04-25T10:21:54.6480745Z [----------] 3 tests from IgnoreModTapInterrupt (0 ms total)
 2022-04-25T10:21:54.6482044Z 
-2022-04-25T10:21:54.6482247Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6482247Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6482541Z [==========] 3 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6482788Z [  PASSED  ] 3 tests.
 2022-04-25T10:21:54.6482919Z 
 2022-04-25T10:21:54.6483084Z Testing [1mpermissive_hold[0m
 2022-04-25T10:21:54.6521862Z [==========] Running 11 tests from 2 test suites.
-2022-04-25T10:21:54.6522299Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6522299Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6522640Z [----------] 3 tests from PermissiveHold
 2022-04-25T10:21:54.6523143Z [ RUN      ] PermissiveHold.tap_regular_key_while_mod_tap_key_is_held
 2022-04-25T10:21:54.6523585Z [       OK ] PermissiveHold.tap_regular_key_while_mod_tap_key_is_held (0 ms)
@@ -1486,13 +1486,13 @@
 2022-04-25T10:21:54.6554841Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7 (0 ms)
 2022-04-25T10:21:54.6555628Z [----------] 8 tests from OneShotModifierTests/OneShotParametrizedTestFixture (1 ms total)
 2022-04-25T10:21:54.6555881Z 
-2022-04-25T10:21:54.6556077Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6556077Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6556351Z [==========] 11 tests from 2 test suites ran. (2 ms total)
 2022-04-25T10:21:54.6556594Z [  PASSED  ] 11 tests.
 2022-04-25T10:21:54.6556725Z 
 2022-04-25T10:21:54.6556963Z Testing [1mpermissive_hold_ignore_mod_tap_interrupt[0m
 2022-04-25T10:21:54.6557251Z [==========] Running 3 tests from 1 test suite.
-2022-04-25T10:21:54.6557567Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6557567Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6557964Z [----------] 3 tests from PermissiveHold_IgnoreModTapInterrupt
 2022-04-25T10:21:54.6558360Z [ RUN      ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held
 2022-04-25T10:21:54.6558779Z [       OK ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held (0 ms)
@@ -1502,13 +1502,13 @@
 2022-04-25T10:21:54.6561762Z [       OK ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held (0 ms)
 2022-04-25T10:21:54.6562371Z [----------] 3 tests from PermissiveHold_IgnoreModTapInterrupt (0 ms total)
 2022-04-25T10:21:54.6562632Z 
-2022-04-25T10:21:54.6562808Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6562808Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6563167Z [==========] 3 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6563500Z [  PASSED  ] 3 tests.
 2022-04-25T10:21:54.6563700Z 
 2022-04-25T10:21:54.6563901Z Testing [1mretro_tapping[0m
 2022-04-25T10:21:54.6579701Z [==========] Running 3 tests from 2 test suites.
-2022-04-25T10:21:54.6580282Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6580282Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6580695Z [----------] 1 test from RetroTapping
 2022-04-25T10:21:54.6583912Z [ RUN      ] RetroTapping.tap_and_hold_mod_tap_hold_key
 2022-04-25T10:21:54.6584374Z [       OK ] RetroTapping.tap_and_hold_mod_tap_hold_key (0 ms)
@@ -1521,13 +1521,13 @@
 2022-04-25T10:21:54.6586880Z [       OK ] Tapping.ANewTapWithinTappingTermIsBuggy (0 ms)
 2022-04-25T10:21:54.6587350Z [----------] 2 tests from Tapping (0 ms total)
 2022-04-25T10:21:54.6587568Z 
-2022-04-25T10:21:54.6587825Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6587825Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6588142Z [==========] 3 tests from 2 test suites ran. (0 ms total)
 2022-04-25T10:21:54.6588461Z [  PASSED  ] 3 tests.
 2022-04-25T10:21:54.6588647Z 
 2022-04-25T10:21:54.6588829Z Testing [1msequencer[0m
 2022-04-25T10:21:54.6602449Z [==========] Running 41 tests from 1 test suite.
-2022-04-25T10:21:54.6602910Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6602910Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6606599Z [----------] 41 tests from SequencerTest
 2022-04-25T10:21:54.6606992Z [ RUN      ] SequencerTest.TestOffByDefault
 2022-04-25T10:21:54.6607416Z [       OK ] SequencerTest.TestOffByDefault (0 ms)
@@ -1613,13 +1613,13 @@
 2022-04-25T10:21:54.6720379Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldLoopOnceSequenceIsOver (0 ms)
 2022-04-25T10:21:54.6721216Z [----------] 41 tests from SequencerTest (0 ms total)
 2022-04-25T10:21:54.6721400Z 
-2022-04-25T10:21:54.6721597Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6721597Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6721883Z [==========] 41 tests from 1 test suite ran. (0 ms total)
 2022-04-25T10:21:54.6722113Z [  PASSED  ] 41 tests.
 2022-04-25T10:21:54.6722246Z 
 2022-04-25T10:21:54.6722444Z Testing [1mtapping_force_hold[0m
 2022-04-25T10:21:54.6722704Z [==========] Running 6 tests from 2 test suites.
-2022-04-25T10:21:54.6723033Z [----------] Global test environment set-up.
+2022-04-25T10:21:54.6723033Z [----------] Global tist environment set-up.
 2022-04-25T10:21:54.6723339Z [----------] 1 test from ActionLayer
 2022-04-25T10:21:54.6723679Z [ RUN      ] ActionLayer.LayerTapToggleWithToggleWithKeypress
 2022-04-25T10:21:54.6724111Z [       OK ] ActionLayer.LayerTapToggleWithToggleWithKeypress (0 ms)
@@ -1638,7 +1638,7 @@
 2022-04-25T10:21:54.6728402Z [       OK ] TappingForceHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time (0 ms)
 2022-04-25T10:21:54.6729009Z [----------] 5 tests from TappingForceHold (1 ms total)
 2022-04-25T10:21:54.6729265Z 
-2022-04-25T10:21:54.6729462Z [----------] Global test environment tear-down
+2022-04-25T10:21:54.6729462Z [----------] Global tist environment tear-down
 2022-04-25T10:21:54.6729741Z [==========] 6 tests from 2 test suites ran. (1 ms total)
 2022-04-25T10:21:54.6729985Z [  PASSED  ] 6 tests.
 2022-04-25T10:21:54.6730116Z 
