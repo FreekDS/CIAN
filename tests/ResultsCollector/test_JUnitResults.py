@@ -29,3 +29,6 @@ def test_get_summary(junit_1, junit_no_log):
     assert junit_1.get_summary() == 'Tests run: 1546, Failures: 0, Errors: 0, Skipped: 27'
     assert junit_no_log.get_summary() == str()
 
+
+def test_get_framework(junit_1):
+    assert junit_1.get_test_framework() == 'JUnit'
