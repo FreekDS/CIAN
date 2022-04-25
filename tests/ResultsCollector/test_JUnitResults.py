@@ -54,3 +54,9 @@ def test_skipped_count(junit_1, junit_2, junit_no_log):
     assert junit_no_log.get_skipped_test_count() == 0
     assert junit_1.get_skipped_test_count() == 27
     assert junit_2.get_skipped_test_count() == 27
+
+
+def test_failed_count(junit_1, junit_2, junit_no_log):
+    assert junit_no_log.get_failed_test_count() == 0
+    assert junit_1.get_failed_test_count() == 0
+    assert junit_2.get_failed_test_count() == 110
