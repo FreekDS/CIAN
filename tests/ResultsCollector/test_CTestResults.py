@@ -55,6 +55,13 @@ def test_get_failed_count(ctest1, ctest2, invalid, invalid2):
     assert ctest2.get_failed_test_count() == 17
 
 
+def test_get_successful_count(ctest1, ctest2, invalid, invalid2):
+    assert invalid.get_successful_test_count() == 0
+    assert invalid2.get_successful_test_count() == 39
+    assert ctest1.get_successful_test_count() == 39
+    assert ctest2.get_successful_test_count() == 22
+
+
 def test_get_skipped_count(ctest1, ctest2, invalid):
     assert invalid.get_skipped_test_count() == 0
     assert ctest1.get_skipped_test_count() == 0
