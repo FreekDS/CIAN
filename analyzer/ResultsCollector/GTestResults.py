@@ -11,10 +11,7 @@ class GTestResults(TestResultCommand):
         count = 0
         for m in matches:
             c = m.split(' ')[3].strip()
-            try:
-                count += int(c)
-            except ValueError:
-                continue
+            count += int(c)
         return count
 
     def get_failed_test_count(self) -> int:
