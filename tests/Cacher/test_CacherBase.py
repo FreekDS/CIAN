@@ -9,7 +9,8 @@ from analyzer.Cacher.CacherBase import CacherBase
 def cacher():
     return CacherBase(
         'repo',
-        'file'
+        'file',
+        test=True
     )
 
 
@@ -39,17 +40,18 @@ def test_ctor():
 
 def test_hit(cacher):
     assert cacher.hit() is False
-    os.mkdir('cache')
+    if not os.path.exists('cache-t'):
+        os.mkdir('cache-t')
     with open(cacher.fp, 'w') as f:
         f.write("\n")
     assert cacher.hit()
-    shutil.rmtree('cache')
+    shutil.rmtree('cache-t')
     assert not cacher.hit()
 
 
 def test_create(cacher):
-    if not os.path.exists('cache'):
-        os.mkdir('cache')
+    if not os.path.exists('cache-t'):
+        os.mkdir('cache-t')
     assert cacher.hit() is False
 
     assert cacher.create({'cache_me': True})
@@ -62,8 +64,8 @@ def test_create(cacher):
 
 
 def test_restore(cacher):
-    if not os.path.exists('cache'):
-        os.mkdir('cache')
+    if not os.path.exists('cache-t'):
+        os.mkdir('cache-t')
 
     obj = {'cache_me': True}
 
@@ -74,16 +76,16 @@ def test_restore(cacher):
     assert cacher.restore() == obj
     assert cacher.restore(default=':)') == obj
 
-    shutil.rmtree('cache')
+    shutil.rmtree('cache-t')
 
 
 def test_remove(cacher):
-    if not os.path.exists('cache'):
-        os.mkdir('cache')
+    if not os.path.exists('cache-t'):
+        os.mkdir('cache-t')
     assert not cacher.remove()
     assert cacher.create({'obj': True})
     assert os.path.exists(cacher.fp)
     assert cacher.remove()
     assert not os.path.exists(cacher.fp)
 
-    shutil.rmtree('cache')
+    shutil.rmtree('cache-t')
