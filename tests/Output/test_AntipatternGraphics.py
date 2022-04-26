@@ -34,3 +34,9 @@ def test_create_broken_release(broken_release_hd):
     assert file_count == 2
 
     shutil.rmtree('./t-out')
+
+
+def test_create_skip_failing_tests():
+    g = AntipatternGraphics({}, 'repo', 'some-path', './t-out')
+    shutil.rmtree('./t-out')
+    # TODO: create test if required
