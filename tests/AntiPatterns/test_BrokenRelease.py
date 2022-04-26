@@ -49,3 +49,35 @@ def test_failing_builds():
     assert len(s[wf1]) == 4
     assert len(s[wf2]) == 2
     assert len(s[wf3]) == 0
+
+
+def test_get_release_builds():
+    wf1 = "wf1"
+    wf2 = "wf2"
+    builds = [
+        Build(branch='main', state='failure', workflow=wf1),
+        Build(branch='main', state='cool', workflow=wf1),
+        Build(branch='main', state='unknown', workflow=wf1),
+        Build(branch='master', state='failure', workflow=wf1),
+        Build(branch='other_branch', state='failure', workflow=wf1),
+
+        Build(branch='main', state='failure', workflow=wf2),
+        Build(branch='main', state='success', workflow=wf2),
+        Build(branch='main', state='failure', workflow=wf2),
+        Build(branch='master', state='failure', workflow=wf2),
+        Build(branch='other_branch', state='failure', workflow=wf2),
+        Build(branch='other_branch', state='failure', workflow=wf2),
+        Build(branch='other_branch2', state='failure', workflow=wf2)
+    ]
+
+    br = BrokenRelease(builds)
+    bs = br.get_release_branch_builds()
+
+    assert len(bs[wf1]) == 4
+    assert len(bs[wf2]) == 4
+
+    br = BrokenRelease(builds, default_branch='other_branch')
+    bs = br.get_release_branch_builds()
+
+    assert len(bs[wf1]) == 5
+    assert len(bs[wf2]) == 6
