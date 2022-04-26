@@ -2,7 +2,7 @@ import os
 import shutil
 
 from analyzer.Output.AntipatternGraphics import AntipatternGraphics
-from tests.Output import slow_build_hd, antipattern_data_hd
+from tests.Output import slow_build_hd, antipattern_data_hd, broken_release_hd
 
 
 def test_constructor():
@@ -21,6 +21,15 @@ def test_constructor():
 def test_create_slow_build(slow_build_hd):
     g = AntipatternGraphics(slow_build_hd, 'repo', 'some-path', './t-out')
     g.slow_builds_graphic()
+    file_count = len(os.listdir(g.out_path))
+    assert file_count == 2
+
+    shutil.rmtree('./t-out')
+
+
+def test_create_broken_release(broken_release_hd):
+    g = AntipatternGraphics(broken_release_hd, 'repo', 'some-path', './t-out')
+    g.broken_release_graphics()
     file_count = len(os.listdir(g.out_path))
     assert file_count == 2
 
