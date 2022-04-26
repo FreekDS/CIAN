@@ -1,5 +1,26 @@
+import pytest
+
 from analyzer.AntiPatterns.BrokenRelease import BrokenRelease, BROKEN_RELEASE
 from analyzer.Builds.Build import Build
+
+
+@pytest.fixture(scope='module')
+def builds():
+    return [
+        Build(branch='main', state='failure', workflow="wf1"),
+        Build(branch='main', state='cool', workflow="wf1"),
+        Build(branch='main', state='unknown', workflow="wf1"),
+        Build(branch='master', state='failure', workflow="wf1"),
+        Build(branch='other_branch', state='failure', workflow="wf1"),
+
+        Build(branch='main', state='failure', workflow="wf2"),
+        Build(branch='main', state='success', workflow="wf2"),
+        Build(branch='main', state='failure', workflow="wf2"),
+        Build(branch='master', state='failure', workflow="wf2"),
+        Build(branch='other_branch', state='failure', workflow="wf2"),
+        Build(branch='other_branch', state='failure', workflow="wf2"),
+        Build(branch='other_branch2', state='failure', workflow="wf2")
+    ]
 
 
 def test_constructor():
@@ -51,24 +72,9 @@ def test_failing_builds():
     assert len(s[wf3]) == 0
 
 
-def test_get_release_builds():
+def test_get_release_builds(builds):
     wf1 = "wf1"
     wf2 = "wf2"
-    builds = [
-        Build(branch='main', state='failure', workflow=wf1),
-        Build(branch='main', state='cool', workflow=wf1),
-        Build(branch='main', state='unknown', workflow=wf1),
-        Build(branch='master', state='failure', workflow=wf1),
-        Build(branch='other_branch', state='failure', workflow=wf1),
-
-        Build(branch='main', state='failure', workflow=wf2),
-        Build(branch='main', state='success', workflow=wf2),
-        Build(branch='main', state='failure', workflow=wf2),
-        Build(branch='master', state='failure', workflow=wf2),
-        Build(branch='other_branch', state='failure', workflow=wf2),
-        Build(branch='other_branch', state='failure', workflow=wf2),
-        Build(branch='other_branch2', state='failure', workflow=wf2)
-    ]
 
     br = BrokenRelease(builds)
     bs = br.get_release_branch_builds()
@@ -81,3 +87,12 @@ def test_get_release_builds():
 
     assert len(bs[wf1]) == 5
     assert len(bs[wf2]) == 6
+
+
+def test_detect(builds):
+    br = BrokenRelease(builds)
+    d = br.detect()
+
+    assert len(d.items()) == 2
+    assert len(d['wf1'].get('data', [])) == 2
+    assert len(d['wf2'].get('data', [])) == 3
