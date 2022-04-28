@@ -63,14 +63,14 @@ class LateMerging(AntiPattern):
 
             results[metric]['medium_severity'] = list(
                 filter(
-                    lambda key: q3 < branches_info[key] <= q3 + 1.5 * iqr,
+                    lambda key: q3 < abs(branches_info[key]) <= q3 + 1.5 * iqr,
                     branches_info
                 )
             )
 
             results[metric]['high_severity'] = list(
                 filter(
-                    lambda key: branches_info[key] > q3 + 1.5 * iqr,
+                    lambda key: abs(branches_info[key]) > q3 + 1.5 * iqr,
                     branches_info
                 )
             )
