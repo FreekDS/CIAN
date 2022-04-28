@@ -59,5 +59,17 @@ def test_branch_deviation():
 
 def test_unsynced_activity():
     b_info = {
-
+        'last_commit': "2000-08-17T10:05:17Z",
+        "merged": True,
+        "sync": "2000-07-17T10:05:17Z"
     }
+
+    assert LateMerging.unsynced_activity(b_info) == 31
+
+    b_info['merged'] = False
+
+    assert LateMerging.unsynced_activity(b_info) == 0
+
+    b_info["last_commit"] = "unknown"
+
+    assert LateMerging.unsynced_activity(b_info) == 0
