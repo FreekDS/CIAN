@@ -9,7 +9,6 @@ def test_constructor():
 
 
 def test_missed_activity():
-
     t_lo = "1999-08-17T14:05:17Z"
     b_info = {
         'merged': True,
@@ -73,3 +72,37 @@ def test_unsynced_activity():
     b_info["last_commit"] = "unknown"
 
     assert LateMerging.unsynced_activity(b_info) == 0
+
+
+def test_classify():
+    b_results = {
+        'metric1': {
+            'branch1': 5,
+            'branch2': -5,
+            'branch3': 0,
+            'branch4': 1000,
+            'branch5': -1000,
+            'branch6': 17,
+            'branch7': -17
+        },
+        'metric2': {
+            'branch1': 5,
+            'branch2': -5,
+            'branch3': 0,
+            'branch4': 1000,
+            'branch5': -1000,
+            'branch6': 17,
+            'branch7': -17
+        }
+    }
+
+    assert LateMerging.classify(b_results) == {
+        'metric1': {
+            'medium_severity': ['branch6', 'branch7'],
+            'high_severity': ['branch4', 'branch5']
+        },
+        'metric2': {
+            'medium_severity': ['branch6', 'branch7'],
+            'high_severity': ['branch4', 'branch5']
+        }
+    }
