@@ -5,6 +5,9 @@ from analyzer.Output.TextOutput import TextOutput
 from tests.Output import antipattern_data_hd, late_merging_data_hd, late_merging_data_some_missing
 
 
+_ = (antipattern_data_hd, late_merging_data_hd, late_merging_data_some_missing)
+
+
 @pytest.fixture(scope='module')
 def res_dir(data_dir):
     return os.path.join(data_dir, 'Output')

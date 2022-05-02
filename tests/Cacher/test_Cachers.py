@@ -123,4 +123,3 @@ def test_build_cache():
     assert bc.remove()
 
     shutil.rmtree('cache-t')
-

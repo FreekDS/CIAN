@@ -66,6 +66,6 @@ def test_merge_dicts():
     assert merged.get('dict_in_both', {}).get('also_in_d2') == 'ho'
     assert merged.get('dict_in_both', {}).get('not_in_d2') == 'jep'
     assert merged.get('dict_in_both', {}).get('not_in_d1') == 'jop'
-    assert merged.get('dict_in_both', {}).get('list') == ['a','b','c','d']
+    assert merged.get('dict_in_both', {}).get('list') == ['a', 'b', 'c', 'd']
     assert merged.get('dict_in_both', {}).get('dicte', {}).get('more_nesting') is True
     assert merged.get('dict_in_both', {}).get('dicte', {}).get('a') == 'a'

@@ -5,6 +5,9 @@ from analyzer.Output.AntipatternGraphics import AntipatternGraphics
 from tests.Output import slow_build_hd, antipattern_data_hd, broken_release_hd
 
 
+_ = (slow_build_hd, antipattern_data_hd, broken_release_hd)
+
+
 def test_constructor():
     expected_path = os.path.join('./t-out', 'some-path')
     g = AntipatternGraphics(
@@ -37,6 +40,6 @@ def test_create_broken_release(broken_release_hd):
 
 
 def test_create_skip_failing_tests():
-    g = AntipatternGraphics({}, 'repo', 'some-path', './t-out')
+    _ = AntipatternGraphics({}, 'repo', 'some-path', './t-out')
     shutil.rmtree('./t-out')
     # TODO: create test if required
