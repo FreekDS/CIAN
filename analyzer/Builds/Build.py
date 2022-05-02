@@ -46,3 +46,6 @@ class Build:
 
     def dict(self):
         return self.__dict__
+
+    def __eq__(self, other):
+        return vars(self) == vars(other)

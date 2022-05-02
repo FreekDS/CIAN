@@ -12,20 +12,9 @@ class CTestResults(TestResultCommand):
         else:
             return str()
 
-    def total_count(self):
-        s = self._get_summary()
-        matches = re.findall(r'\d+ tests failed out of \d+', s)
-        if matches:
-            i = matches[0].split(' ')[-1].strip()
-            try:
-                return int(i)
-            except ValueError:
-                return 0
-        return 0
-
     def get_test_of_type(self, t_type):
         s = self._get_summary()
-        s = s.split(',')[1:-1]
+        s = s.split(', ')[1:]
         for test_type in s:
             if t_type in test_type:
                 i = test_type.split(' ')[0]
@@ -40,6 +29,14 @@ class CTestResults(TestResultCommand):
 
     def get_successful_test_count(self) -> int:
         return max(self.get_test_count() - self.get_failed_test_count() - self.get_skipped_test_count(), 0)
+
+    def get_test_count(self) -> int:
+        c = self._get_summary()
+        matches = re.findall(r'out of \d+', c)
+        if matches:
+            count = int(matches[-1].split(' ')[-1])
+            return count
+        return 0
 
     def get_skipped_test_count(self) -> int:
         return self.get_test_of_type('skipped')

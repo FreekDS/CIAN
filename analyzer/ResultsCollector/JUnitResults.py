@@ -16,25 +16,16 @@ class JUnitResults(TestResultCommand):
         error_matches = re.findall(r'Errors: \d+', s)
 
         if failure_matches:
-            try:
-                count += int(failure_matches[0].split(' ')[-1])
-            except ValueError:
-                pass
+            count += int(failure_matches[0].split(' ')[-1])
         if error_matches:
-            try:
-                count += int(error_matches[0].split(' ')[-1])
-            except ValueError:
-                pass
+            count += int(error_matches[0].split(' ')[-1])
         return count
 
     def total_test_count(self):
         s = self.get_summary()
         total_matches = re.findall(r'Tests run: \d+', s)
         if total_matches:
-            try:
-                return int(total_matches[0].split(' ')[-1])
-            except ValueError:
-                return 0
+            return int(total_matches[0].split(' ')[-1])
         return 0
 
     def get_successful_test_count(self) -> int:
@@ -44,10 +35,7 @@ class JUnitResults(TestResultCommand):
         s = self.get_summary()
         skipped_matches = re.findall(r'Skipped: \d+', s)
         if skipped_matches:
-            try:
-                return int(skipped_matches[0].split(' ')[-1])
-            except ValueError:
-                return 0
+            return int(skipped_matches[0].split(' ')[-1])
         return 0
 
     def get_test_framework(self) -> str:

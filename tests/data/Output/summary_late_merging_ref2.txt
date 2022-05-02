@@ -1,0 +1,11 @@
+Missed Activity
+=========================
+Branch branch2 has 58748 days of missed activity!
+Branch branch3 has -1 days of missed activity!
+Branch branch4 has 1 days of missed activity!
+Branch branch5 has -20 days of missed activity!
+
+Unsynced activity
+=========================
+Average unsynced: 211.0 days
+Branch branch5 is unsynced with 1000 days, 789.0 more than average

@@ -4,11 +4,13 @@ import os
 
 class CacherBase:
 
-    def __init__(self, repo_path, file_path):
+    def __init__(self, repo_path, file_path, test=False):
         repo_path = repo_path.replace('/', '-')
+        file_path = file_path.replace('/', '-')
         self.repo = repo_path
         self._fp_ext = file_path if file_path.endswith('.cache') else f'{file_path}.cache'
-        self.fp = f'cache/{repo_path}-{self._fp_ext}'
+        dr = 'cache-t' if test else 'cache'
+        self.fp = f'{dr}/{repo_path}-{self._fp_ext}'
 
     def hit(self):
         return os.path.exists(self.fp)

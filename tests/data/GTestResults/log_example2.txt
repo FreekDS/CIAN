@@ -1,0 +1,1767 @@
+2022-04-17T01:47:51.5924543Z Requested labels: ubuntu-latest
+2022-04-17T01:47:51.5924590Z Job defined at: qmk/qmk_firmware/.github/workflows/unit_test.yml@refs/pull/15699/merge
+2022-04-17T01:47:51.5924611Z Waiting for a runner to pick up this job...
+2022-04-17T01:47:52.0908056Z Job is waiting for a hosted runner to come online.
+2022-04-17T01:47:55.5814017Z Job is about to start running on the hosted runner: GitHub Actions 3 (hosted)
+2022-04-17T01:47:57.9702155Z Current runner version: '2.289.2'
+2022-04-17T01:47:57.9729009Z ##[group]Operating System
+2022-04-17T01:47:57.9729552Z Ubuntu
+2022-04-17T01:47:57.9729854Z 20.04.4
+2022-04-17T01:47:57.9730213Z LTS
+2022-04-17T01:47:57.9730538Z ##[endgroup]
+2022-04-17T01:47:57.9730887Z ##[group]Virtual Environment
+2022-04-17T01:47:57.9731228Z Environment: ubuntu-20.04
+2022-04-17T01:47:57.9731830Z Version: 20220410.2
+2022-04-17T01:47:57.9732453Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu20/20220410.2/images/linux/Ubuntu2004-Readme.md
+2022-04-17T01:47:57.9733102Z Image Release: https://github.com/actions/virtual-environments/releases/tag/ubuntu20%2F20220410.2
+2022-04-17T01:47:57.9733584Z ##[endgroup]
+2022-04-17T01:47:57.9733957Z ##[group]Virtual Environment Provisioner
+2022-04-17T01:47:57.9734391Z 1.0.0.0-main-20220325-1
+2022-04-17T01:47:57.9734680Z ##[endgroup]
+2022-04-17T01:47:57.9735662Z ##[group]GITHUB_TOKEN Permissions
+2022-04-17T01:47:57.9736307Z Actions: read
+2022-04-17T01:47:57.9736834Z Checks: read
+2022-04-17T01:47:57.9737167Z Contents: read
+2022-04-17T01:47:57.9737504Z Deployments: read
+2022-04-17T01:47:57.9737795Z Discussions: read
+2022-04-17T01:47:57.9738191Z Issues: read
+2022-04-17T01:47:57.9738508Z Metadata: read
+2022-04-17T01:47:57.9738823Z Packages: read
+2022-04-17T01:47:57.9739139Z Pages: read
+2022-04-17T01:47:57.9739476Z PullRequests: read
+2022-04-17T01:47:57.9739828Z RepositoryProjects: read
+2022-04-17T01:47:57.9740202Z SecurityEvents: read
+2022-04-17T01:47:57.9740541Z Statuses: read
+2022-04-17T01:47:57.9740815Z ##[endgroup]
+2022-04-17T01:47:57.9744426Z Secret source: None
+2022-04-17T01:47:57.9745017Z Prepare workflow directory
+2022-04-17T01:47:58.0790206Z Prepare all required actions
+2022-04-17T01:47:58.0973165Z Getting action download info
+2022-04-17T01:47:58.3015256Z Download action repository 'actions/checkout@v2' (SHA:f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb)
+2022-04-17T01:47:58.8238242Z ##[group]Checking docker version
+2022-04-17T01:47:58.8255308Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2022-04-17T01:47:58.9875735Z '1.41'
+2022-04-17T01:47:58.9942857Z Docker daemon API version: '1.41'
+2022-04-17T01:47:58.9943330Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2022-04-17T01:47:59.0355346Z '1.41'
+2022-04-17T01:47:59.0357464Z Docker client API version: '1.41'
+2022-04-17T01:47:59.0363188Z ##[endgroup]
+2022-04-17T01:47:59.0363561Z ##[group]Clean up resources from previous jobs
+2022-04-17T01:47:59.0369541Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=2bcf09"
+2022-04-17T01:47:59.0719781Z ##[command]/usr/bin/docker network prune --force --filter "label=2bcf09"
+2022-04-17T01:47:59.1039317Z ##[endgroup]
+2022-04-17T01:47:59.1039685Z ##[group]Create local container network
+2022-04-17T01:47:59.1050478Z ##[command]/usr/bin/docker network create --label 2bcf09 github_network_fd46c74314d2476a86e0e23f0e065d5f
+2022-04-17T01:47:59.1757698Z 286a0e9cb75d0cc80bafedab07e317ade9933c4ed9abf78c77216faea902a97e
+2022-04-17T01:47:59.1781302Z ##[endgroup]
+2022-04-17T01:47:59.1909697Z ##[group]Starting job container
+2022-04-17T01:47:59.1926071Z ##[command]/usr/bin/docker pull qmkfm/base_container
+2022-04-17T01:47:59.2216023Z Using default tag: latest
+2022-04-17T01:47:59.5193941Z latest: Pulling from qmkfm/base_container
+2022-04-17T01:47:59.5207030Z c229119241af: Pulling fs layer
+2022-04-17T01:47:59.5209469Z eeb91889cb55: Pulling fs layer
+2022-04-17T01:47:59.5211863Z 9e434b5ef72a: Pulling fs layer
+2022-04-17T01:47:59.5214124Z b9b66e206364: Pulling fs layer
+2022-04-17T01:47:59.5217663Z 5737bddfecfd: Pulling fs layer
+2022-04-17T01:47:59.5226068Z b9b66e206364: Waiting
+2022-04-17T01:47:59.5226719Z 5737bddfecfd: Waiting
+2022-04-17T01:48:00.0107756Z c229119241af: Verifying Checksum
+2022-04-17T01:48:00.0108413Z c229119241af: Download complete
+2022-04-17T01:48:00.2750767Z 9e434b5ef72a: Verifying Checksum
+2022-04-17T01:48:00.2771185Z 9e434b5ef72a: Download complete
+2022-04-17T01:48:00.3041475Z b9b66e206364: Verifying Checksum
+2022-04-17T01:48:00.3041992Z b9b66e206364: Download complete
+2022-04-17T01:48:00.5634612Z 5737bddfecfd: Verifying Checksum
+2022-04-17T01:48:00.5641350Z 5737bddfecfd: Download complete
+2022-04-17T01:48:01.8986606Z c229119241af: Pull complete
+2022-04-17T01:48:03.3735199Z eeb91889cb55: Download complete
+2022-04-17T01:48:20.6498923Z eeb91889cb55: Pull complete
+2022-04-17T01:48:23.3932297Z 9e434b5ef72a: Pull complete
+2022-04-17T01:48:23.8872092Z b9b66e206364: Pull complete
+2022-04-17T01:48:24.2910441Z 5737bddfecfd: Pull complete
+2022-04-17T01:48:24.2966215Z Digest: sha256:6e988b6caee67fa9e10f5dad6684f08d2cf187137b9f97f08019235fcc0cb6c0
+2022-04-17T01:48:24.2983678Z Status: Downloaded newer image for qmkfm/base_container:latest
+2022-04-17T01:48:24.2988529Z docker.io/qmkfm/base_container:latest
+2022-04-17T01:48:24.3095652Z ##[command]/usr/bin/docker create --name f2c4b1c182bf4519ac3e5010984a31b4_qmkfmbase_container_009906 --label 2bcf09 --workdir /__w/qmk_firmware/qmk_firmware --network github_network_fd46c74314d2476a86e0e23f0e065d5f  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.289.2/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" qmkfm/base_container "-f" "/dev/null"
+2022-04-17T01:48:24.3581914Z 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:48:24.3613305Z ##[command]/usr/bin/docker start 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:48:24.7179632Z 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:48:24.7205159Z ##[command]/usr/bin/docker ps --all --filter id=79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2022-04-17T01:48:24.7499846Z 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773 Up Less than a second
+2022-04-17T01:48:24.7526711Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:48:24.7798428Z HOME=/github/home
+2022-04-17T01:48:24.7799066Z GITHUB_ACTIONS=true
+2022-04-17T01:48:24.7799362Z CI=true
+2022-04-17T01:48:24.7799707Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2022-04-17T01:48:24.7800042Z QMK_HOME=/qmk_firmware
+2022-04-17T01:48:24.7830468Z ##[endgroup]
+2022-04-17T01:48:24.7830814Z ##[group]Waiting for all services to be ready
+2022-04-17T01:48:24.7832528Z ##[endgroup]
+2022-04-17T01:48:24.8232586Z ##[group]Run actions/checkout@v2
+2022-04-17T01:48:24.8232862Z with:
+2022-04-17T01:48:24.8233069Z   submodules: recursive
+2022-04-17T01:48:24.8233287Z   repository: qmk/qmk_firmware
+2022-04-17T01:48:24.8233673Z   token: ***
+2022-04-17T01:48:24.8233881Z   ssh-strict: true
+2022-04-17T01:48:24.8234126Z   persist-credentials: true
+2022-04-17T01:48:24.8234349Z   clean: true
+2022-04-17T01:48:24.8234544Z   fetch-depth: 1
+2022-04-17T01:48:24.8234729Z   lfs: false
+2022-04-17T01:48:24.8234923Z ##[endgroup]
+2022-04-17T01:48:24.8364505Z ##[command]/usr/bin/docker exec  79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773 sh -c "cat /etc/*release | grep ^ID"
+2022-04-17T01:48:25.2787027Z Syncing repository: qmk/qmk_firmware
+2022-04-17T01:48:25.2788678Z ##[group]Getting Git version info
+2022-04-17T01:48:25.2789192Z Working directory is '/__w/qmk_firmware/qmk_firmware'
+2022-04-17T01:48:25.2789682Z [command]/usr/bin/git version
+2022-04-17T01:48:25.2789896Z git version 2.30.2
+2022-04-17T01:48:25.2798622Z ##[endgroup]
+2022-04-17T01:48:25.2821463Z Temporarily overriding HOME='/__w/_temp/c369906d-c2c7-46c0-8d40-f7fb0efa2d16' before making global git config changes
+2022-04-17T01:48:25.2821924Z Adding working directory to the temporary git global config as a safe directory
+2022-04-17T01:48:25.2825537Z [command]/usr/bin/git config --global --add safe.directory /__w/qmk_firmware/qmk_firmware
+2022-04-17T01:48:25.2923638Z Deleting the contents of '/__w/qmk_firmware/qmk_firmware'
+2022-04-17T01:48:25.2924738Z ##[group]Initializing the repository
+2022-04-17T01:48:25.2925061Z [command]/usr/bin/git init /__w/qmk_firmware/qmk_firmware
+2022-04-17T01:48:25.2925506Z hint: Using 'master' as the name for the initial branch. This default branch name
+2022-04-17T01:48:25.2925883Z hint: is subject to change. To configure the initial branch name to use in all
+2022-04-17T01:48:25.2926251Z hint: of your new repositories, which will suppress this warning, call:
+2022-04-17T01:48:25.2939901Z hint: 
+2022-04-17T01:48:25.2940314Z hint: 	git config --global init.defaultBranch <name>
+2022-04-17T01:48:25.2940566Z hint: 
+2022-04-17T01:48:25.2940919Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2022-04-17T01:48:25.2941365Z hint: 'development'. The just-created branch can be renamed via this command:
+2022-04-17T01:48:25.2941657Z hint: 
+2022-04-17T01:48:25.2941913Z hint: 	git branch -m <name>
+2022-04-17T01:48:25.2942211Z Initialized empty Git repository in /__w/qmk_firmware/qmk_firmware/.git/
+2022-04-17T01:48:25.2942595Z [command]/usr/bin/git remote add origin https://github.com/qmk/qmk_firmware
+2022-04-17T01:48:25.3005117Z ##[endgroup]
+2022-04-17T01:48:25.3005579Z ##[group]Disabling automatic garbage collection
+2022-04-17T01:48:25.3012096Z [command]/usr/bin/git config --local gc.auto 0
+2022-04-17T01:48:25.3042994Z ##[endgroup]
+2022-04-17T01:48:25.3043421Z ##[group]Setting up auth
+2022-04-17T01:48:25.3053622Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2022-04-17T01:48:25.3086699Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2022-04-17T01:48:25.3327159Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2022-04-17T01:48:25.3358430Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2022-04-17T01:48:25.3600616Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2022-04-17T01:48:25.3647276Z ##[endgroup]
+2022-04-17T01:48:25.3647691Z ##[group]Fetching the repository
+2022-04-17T01:48:25.3658838Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +45e25c8ebed91e633a70b63a20aac3f6618acb70:refs/remotes/pull/15699/merge
+2022-04-17T01:48:25.7959304Z remote: Enumerating objects: 40156, done.        
+2022-04-17T01:48:25.7998287Z remote: Counting objects:   0% (1/40156)        
+2022-04-17T01:48:25.7998767Z remote: Counting objects:   1% (402/40156)        
+2022-04-17T01:48:25.7999084Z remote: Counting objects:   2% (804/40156)        
+2022-04-17T01:48:25.7999729Z remote: Counting objects:   3% (1205/40156)        
+2022-04-17T01:48:25.8000954Z remote: Counting objects:   4% (1607/40156)        
+2022-04-17T01:48:25.8009874Z remote: Counting objects:   5% (2008/40156)        
+2022-04-17T01:48:25.8010879Z remote: Counting objects:   6% (2410/40156)        
+2022-04-17T01:48:25.8011205Z remote: Counting objects:   7% (2811/40156)        
+2022-04-17T01:48:25.8011645Z remote: Counting objects:   8% (3213/40156)        
+2022-04-17T01:48:25.8047443Z remote: Counting objects:   9% (3615/40156)        
+2022-04-17T01:48:25.8047811Z remote: Counting objects:  10% (4016/40156)        
+2022-04-17T01:48:25.8058818Z remote: Counting objects:  11% (4418/40156)        
+2022-04-17T01:48:25.8062106Z remote: Counting objects:  12% (4819/40156)        
+2022-04-17T01:48:25.8066147Z remote: Counting objects:  13% (5221/40156)        
+2022-04-17T01:48:25.8067492Z remote: Counting objects:  14% (5622/40156)        
+2022-04-17T01:48:25.8068793Z remote: Counting objects:  15% (6024/40156)        
+2022-04-17T01:48:25.8078628Z remote: Counting objects:  16% (6425/40156)        
+2022-04-17T01:48:25.8078917Z remote: Counting objects:  17% (6827/40156)        
+2022-04-17T01:48:25.8079535Z remote: Counting objects:  18% (7229/40156)        
+2022-04-17T01:48:25.8080029Z remote: Counting objects:  19% (7630/40156)        
+2022-04-17T01:48:25.8080304Z remote: Counting objects:  20% (8032/40156)        
+2022-04-17T01:48:25.8080570Z remote: Counting objects:  21% (8433/40156)        
+2022-04-17T01:48:25.8080820Z remote: Counting objects:  22% (8835/40156)        
+2022-04-17T01:48:25.8081086Z remote: Counting objects:  23% (9236/40156)        
+2022-04-17T01:48:25.8081375Z remote: Counting objects:  24% (9638/40156)        
+2022-04-17T01:48:25.8081632Z remote: Counting objects:  25% (10039/40156)        
+2022-04-17T01:48:25.8081903Z remote: Counting objects:  26% (10441/40156)        
+2022-04-17T01:48:25.8082172Z remote: Counting objects:  27% (10843/40156)        
+2022-04-17T01:48:25.8082436Z remote: Counting objects:  28% (11244/40156)        
+2022-04-17T01:48:25.8082703Z remote: Counting objects:  29% (11646/40156)        
+2022-04-17T01:48:25.8082972Z remote: Counting objects:  30% (12047/40156)        
+2022-04-17T01:48:25.8185728Z remote: Counting objects:  31% (12449/40156)        
+2022-04-17T01:48:25.8186845Z remote: Counting objects:  32% (12850/40156)        
+2022-04-17T01:48:25.8187126Z remote: Counting objects:  33% (13252/40156)        
+2022-04-17T01:48:25.8187395Z remote: Counting objects:  34% (13654/40156)        
+2022-04-17T01:48:25.8187650Z remote: Counting objects:  35% (14055/40156)        
+2022-04-17T01:48:25.8187973Z remote: Counting objects:  36% (14457/40156)        
+2022-04-17T01:48:25.8188244Z remote: Counting objects:  37% (14858/40156)        
+2022-04-17T01:48:25.8189123Z remote: Counting objects:  38% (15260/40156)        
+2022-04-17T01:48:25.8189395Z remote: Counting objects:  39% (15661/40156)        
+2022-04-17T01:48:25.8189660Z remote: Counting objects:  40% (16063/40156)        
+2022-04-17T01:48:25.8189932Z remote: Counting objects:  41% (16464/40156)        
+2022-04-17T01:48:25.8190179Z remote: Counting objects:  42% (16866/40156)        
+2022-04-17T01:48:25.8190446Z remote: Counting objects:  43% (17268/40156)        
+2022-04-17T01:48:25.8190711Z remote: Counting objects:  44% (17669/40156)        
+2022-04-17T01:48:25.8191539Z remote: Counting objects:  45% (18071/40156)        
+2022-04-17T01:48:25.8191806Z remote: Counting objects:  46% (18472/40156)        
+2022-04-17T01:48:25.8192067Z remote: Counting objects:  47% (18874/40156)        
+2022-04-17T01:48:25.8192557Z remote: Counting objects:  48% (19275/40156)        
+2022-04-17T01:48:25.8192990Z remote: Counting objects:  49% (19677/40156)        
+2022-04-17T01:48:25.8193262Z remote: Counting objects:  50% (20078/40156)        
+2022-04-17T01:48:25.8193524Z remote: Counting objects:  51% (20480/40156)        
+2022-04-17T01:48:25.8193775Z remote: Counting objects:  52% (20882/40156)        
+2022-04-17T01:48:25.8194044Z remote: Counting objects:  53% (21283/40156)        
+2022-04-17T01:48:25.8194308Z remote: Counting objects:  54% (21685/40156)        
+2022-04-17T01:48:25.8194554Z remote: Counting objects:  55% (22086/40156)        
+2022-04-17T01:48:25.8194818Z remote: Counting objects:  56% (22488/40156)        
+2022-04-17T01:48:25.8195080Z remote: Counting objects:  57% (22889/40156)        
+2022-04-17T01:48:25.8195328Z remote: Counting objects:  58% (23291/40156)        
+2022-04-17T01:48:25.8195588Z remote: Counting objects:  59% (23693/40156)        
+2022-04-17T01:48:25.8195847Z remote: Counting objects:  60% (24094/40156)        
+2022-04-17T01:48:25.8196097Z remote: Counting objects:  61% (24496/40156)        
+2022-04-17T01:48:25.8198611Z remote: Counting objects:  62% (24897/40156)        
+2022-04-17T01:48:25.8199034Z remote: Counting objects:  63% (25299/40156)        
+2022-04-17T01:48:25.8199369Z remote: Counting objects:  64% (25700/40156)        
+2022-04-17T01:48:25.8199819Z remote: Counting objects:  65% (26102/40156)        
+2022-04-17T01:48:25.8200237Z remote: Counting objects:  66% (26503/40156)        
+2022-04-17T01:48:25.8200630Z remote: Counting objects:  67% (26905/40156)        
+2022-04-17T01:48:25.8203080Z remote: Counting objects:  68% (27307/40156)        
+2022-04-17T01:48:25.8203351Z remote: Counting objects:  69% (27708/40156)        
+2022-04-17T01:48:25.8203748Z remote: Counting objects:  70% (28110/40156)        
+2022-04-17T01:48:25.8204013Z remote: Counting objects:  71% (28511/40156)        
+2022-04-17T01:48:25.8204264Z remote: Counting objects:  72% (28913/40156)        
+2022-04-17T01:48:25.8205157Z remote: Counting objects:  73% (29314/40156)        
+2022-04-17T01:48:25.8205447Z remote: Counting objects:  74% (29716/40156)        
+2022-04-17T01:48:25.8205714Z remote: Counting objects:  75% (30117/40156)        
+2022-04-17T01:48:25.8205962Z remote: Counting objects:  76% (30519/40156)        
+2022-04-17T01:48:25.8206222Z remote: Counting objects:  77% (30921/40156)        
+2022-04-17T01:48:25.8206488Z remote: Counting objects:  78% (31322/40156)        
+2022-04-17T01:48:25.8206736Z remote: Counting objects:  79% (31724/40156)        
+2022-04-17T01:48:25.8206996Z remote: Counting objects:  80% (32125/40156)        
+2022-04-17T01:48:25.8207259Z remote: Counting objects:  81% (32527/40156)        
+2022-04-17T01:48:25.8207504Z remote: Counting objects:  82% (32928/40156)        
+2022-04-17T01:48:25.8207764Z remote: Counting objects:  83% (33330/40156)        
+2022-04-17T01:48:25.8208024Z remote: Counting objects:  84% (33732/40156)        
+2022-04-17T01:48:25.8208271Z remote: Counting objects:  85% (34133/40156)        
+2022-04-17T01:48:25.8208533Z remote: Counting objects:  86% (34535/40156)        
+2022-04-17T01:48:25.8208793Z remote: Counting objects:  87% (34936/40156)        
+2022-04-17T01:48:25.8209070Z remote: Counting objects:  88% (35338/40156)        
+2022-04-17T01:48:25.8209319Z remote: Counting objects:  89% (35739/40156)        
+2022-04-17T01:48:25.8210467Z remote: Counting objects:  90% (36141/40156)        
+2022-04-17T01:48:25.8210743Z remote: Counting objects:  91% (36542/40156)        
+2022-04-17T01:48:25.8210993Z remote: Counting objects:  92% (36944/40156)        
+2022-04-17T01:48:25.8211255Z remote: Counting objects:  93% (37346/40156)        
+2022-04-17T01:48:25.8211663Z remote: Counting objects:  94% (37747/40156)        
+2022-04-17T01:48:25.8211926Z remote: Counting objects:  95% (38149/40156)        
+2022-04-17T01:48:25.8212173Z remote: Counting objects:  96% (38550/40156)        
+2022-04-17T01:48:25.8212443Z remote: Counting objects:  97% (38952/40156)        
+2022-04-17T01:48:25.8212708Z remote: Counting objects:  98% (39353/40156)        
+2022-04-17T01:48:25.8221364Z remote: Counting objects:  99% (39755/40156)        
+2022-04-17T01:48:25.8222443Z remote: Counting objects: 100% (40156/40156)        
+2022-04-17T01:48:25.8222733Z remote: Counting objects: 100% (40156/40156), done.        
+2022-04-17T01:48:25.8489864Z remote: Compressing objects:   0% (1/24768)        
+2022-04-17T01:48:25.8686592Z remote: Compressing objects:   1% (248/24768)        
+2022-04-17T01:48:25.8977465Z remote: Compressing objects:   2% (496/24768)        
+2022-04-17T01:48:25.9168049Z remote: Compressing objects:   3% (744/24768)        
+2022-04-17T01:48:25.9368649Z remote: Compressing objects:   4% (991/24768)        
+2022-04-17T01:48:25.9401896Z remote: Compressing objects:   5% (1239/24768)        
+2022-04-17T01:48:25.9433740Z remote: Compressing objects:   6% (1487/24768)        
+2022-04-17T01:48:25.9461618Z remote: Compressing objects:   7% (1734/24768)        
+2022-04-17T01:48:25.9493080Z remote: Compressing objects:   8% (1982/24768)        
+2022-04-17T01:48:25.9538482Z remote: Compressing objects:   9% (2230/24768)        
+2022-04-17T01:48:25.9779189Z remote: Compressing objects:  10% (2477/24768)        
+2022-04-17T01:48:26.0034770Z remote: Compressing objects:  11% (2725/24768)        
+2022-04-17T01:48:26.0093534Z remote: Compressing objects:  12% (2973/24768)        
+2022-04-17T01:48:26.0094226Z remote: Compressing objects:  13% (3220/24768)        
+2022-04-17T01:48:26.0114738Z remote: Compressing objects:  14% (3468/24768)        
+2022-04-17T01:48:26.0165305Z remote: Compressing objects:  15% (3716/24768)        
+2022-04-17T01:48:26.0188422Z remote: Compressing objects:  16% (3963/24768)        
+2022-04-17T01:48:26.0219949Z remote: Compressing objects:  17% (4211/24768)        
+2022-04-17T01:48:26.0248546Z remote: Compressing objects:  18% (4459/24768)        
+2022-04-17T01:48:26.0283826Z remote: Compressing objects:  19% (4706/24768)        
+2022-04-17T01:48:26.0307742Z remote: Compressing objects:  20% (4954/24768)        
+2022-04-17T01:48:26.0383139Z remote: Compressing objects:  21% (5202/24768)        
+2022-04-17T01:48:26.0383924Z remote: Compressing objects:  22% (5449/24768)        
+2022-04-17T01:48:26.0454159Z remote: Compressing objects:  23% (5697/24768)        
+2022-04-17T01:48:26.0544592Z remote: Compressing objects:  24% (5945/24768)        
+2022-04-17T01:48:26.0671221Z remote: Compressing objects:  25% (6192/24768)        
+2022-04-17T01:48:26.0766653Z remote: Compressing objects:  26% (6440/24768)        
+2022-04-17T01:48:26.0865016Z remote: Compressing objects:  27% (6688/24768)        
+2022-04-17T01:48:26.0959292Z remote: Compressing objects:  28% (6936/24768)        
+2022-04-17T01:48:26.1104979Z remote: Compressing objects:  29% (7183/24768)        
+2022-04-17T01:48:26.1249780Z remote: Compressing objects:  30% (7431/24768)        
+2022-04-17T01:48:26.1348194Z remote: Compressing objects:  31% (7679/24768)        
+2022-04-17T01:48:26.1489609Z remote: Compressing objects:  32% (7926/24768)        
+2022-04-17T01:48:26.1697972Z remote: Compressing objects:  33% (8174/24768)        
+2022-04-17T01:48:26.1789221Z remote: Compressing objects:  34% (8422/24768)        
+2022-04-17T01:48:26.1960064Z remote: Compressing objects:  35% (8669/24768)        
+2022-04-17T01:48:26.2209297Z remote: Compressing objects:  36% (8917/24768)        
+2022-04-17T01:48:26.2365627Z remote: Compressing objects:  37% (9165/24768)        
+2022-04-17T01:48:26.2500216Z remote: Compressing objects:  38% (9412/24768)        
+2022-04-17T01:48:26.2602412Z remote: Compressing objects:  39% (9660/24768)        
+2022-04-17T01:48:26.2749870Z remote: Compressing objects:  40% (9908/24768)        
+2022-04-17T01:48:26.3083107Z remote: Compressing objects:  41% (10155/24768)        
+2022-04-17T01:48:26.3232275Z remote: Compressing objects:  42% (10403/24768)        
+2022-04-17T01:48:26.3407795Z remote: Compressing objects:  43% (10651/24768)        
+2022-04-17T01:48:26.3561554Z remote: Compressing objects:  44% (10898/24768)        
+2022-04-17T01:48:26.3730542Z remote: Compressing objects:  45% (11146/24768)        
+2022-04-17T01:48:26.4416267Z remote: Compressing objects:  46% (11394/24768)        
+2022-04-17T01:48:26.4813403Z remote: Compressing objects:  47% (11641/24768)        
+2022-04-17T01:48:26.5115504Z remote: Compressing objects:  48% (11889/24768)        
+2022-04-17T01:48:26.5344390Z remote: Compressing objects:  49% (12137/24768)        
+2022-04-17T01:48:26.5462283Z remote: Compressing objects:  50% (12384/24768)        
+2022-04-17T01:48:26.5622679Z remote: Compressing objects:  51% (12632/24768)        
+2022-04-17T01:48:26.5718174Z remote: Compressing objects:  52% (12880/24768)        
+2022-04-17T01:48:26.5808962Z remote: Compressing objects:  53% (13128/24768)        
+2022-04-17T01:48:26.5965722Z remote: Compressing objects:  54% (13375/24768)        
+2022-04-17T01:48:26.6124405Z remote: Compressing objects:  55% (13623/24768)        
+2022-04-17T01:48:26.6550062Z remote: Compressing objects:  56% (13871/24768)        
+2022-04-17T01:48:26.6652780Z remote: Compressing objects:  57% (14118/24768)        
+2022-04-17T01:48:26.6831807Z remote: Compressing objects:  58% (14366/24768)        
+2022-04-17T01:48:26.6994791Z remote: Compressing objects:  59% (14614/24768)        
+2022-04-17T01:48:26.7171982Z remote: Compressing objects:  60% (14861/24768)        
+2022-04-17T01:48:26.7308569Z remote: Compressing objects:  61% (15109/24768)        
+2022-04-17T01:48:26.7356073Z remote: Compressing objects:  62% (15357/24768)        
+2022-04-17T01:48:26.7360354Z remote: Compressing objects:  63% (15604/24768)        
+2022-04-17T01:48:26.7369064Z remote: Compressing objects:  64% (15852/24768)        
+2022-04-17T01:48:26.7369424Z remote: Compressing objects:  65% (16100/24768)        
+2022-04-17T01:48:26.7369738Z remote: Compressing objects:  66% (16347/24768)        
+2022-04-17T01:48:26.7373193Z remote: Compressing objects:  67% (16595/24768)        
+2022-04-17T01:48:26.7375629Z remote: Compressing objects:  68% (16843/24768)        
+2022-04-17T01:48:26.7379765Z remote: Compressing objects:  69% (17090/24768)        
+2022-04-17T01:48:26.7380357Z remote: Compressing objects:  70% (17338/24768)        
+2022-04-17T01:48:26.7381684Z remote: Compressing objects:  71% (17586/24768)        
+2022-04-17T01:48:26.7382092Z remote: Compressing objects:  72% (17833/24768)        
+2022-04-17T01:48:26.7382399Z remote: Compressing objects:  73% (18081/24768)        
+2022-04-17T01:48:26.7382729Z remote: Compressing objects:  74% (18329/24768)        
+2022-04-17T01:48:26.7387059Z remote: Compressing objects:  75% (18576/24768)        
+2022-04-17T01:48:26.7403808Z remote: Compressing objects:  76% (18824/24768)        
+2022-04-17T01:48:26.7404307Z remote: Compressing objects:  77% (19072/24768)        
+2022-04-17T01:48:26.7414911Z remote: Compressing objects:  78% (19320/24768)        
+2022-04-17T01:48:26.7422714Z remote: Compressing objects:  79% (19567/24768)        
+2022-04-17T01:48:26.7435095Z remote: Compressing objects:  80% (19815/24768)        
+2022-04-17T01:48:26.7435620Z remote: Compressing objects:  81% (20063/24768)        
+2022-04-17T01:48:26.7448087Z remote: Compressing objects:  82% (20310/24768)        
+2022-04-17T01:48:26.7453126Z remote: Compressing objects:  83% (20558/24768)        
+2022-04-17T01:48:26.7464547Z remote: Compressing objects:  84% (20806/24768)        
+2022-04-17T01:48:26.7471415Z remote: Compressing objects:  85% (21053/24768)        
+2022-04-17T01:48:26.7485755Z remote: Compressing objects:  86% (21301/24768)        
+2022-04-17T01:48:26.7492678Z remote: Compressing objects:  87% (21549/24768)        
+2022-04-17T01:48:26.7504249Z remote: Compressing objects:  88% (21796/24768)        
+2022-04-17T01:48:26.7504558Z remote: Compressing objects:  89% (22044/24768)        
+2022-04-17T01:48:26.7504842Z remote: Compressing objects:  90% (22292/24768)        
+2022-04-17T01:48:26.7505111Z remote: Compressing objects:  91% (22539/24768)        
+2022-04-17T01:48:26.7505389Z remote: Compressing objects:  92% (22787/24768)        
+2022-04-17T01:48:26.7518603Z remote: Compressing objects:  93% (23035/24768)        
+2022-04-17T01:48:26.7530648Z remote: Compressing objects:  94% (23282/24768)        
+2022-04-17T01:48:26.7548476Z remote: Compressing objects:  95% (23530/24768)        
+2022-04-17T01:48:26.7566048Z remote: Compressing objects:  96% (23778/24768)        
+2022-04-17T01:48:26.7591488Z remote: Compressing objects:  97% (24025/24768)        
+2022-04-17T01:48:26.7605732Z remote: Compressing objects:  98% (24273/24768)        
+2022-04-17T01:48:26.7630368Z remote: Compressing objects:  99% (24521/24768)        
+2022-04-17T01:48:26.7630967Z remote: Compressing objects: 100% (24768/24768)        
+2022-04-17T01:48:26.7631307Z remote: Compressing objects: 100% (24768/24768), done.        
+2022-04-17T01:48:26.8241165Z Receiving objects:   0% (1/40156)
+2022-04-17T01:48:26.8387182Z Receiving objects:   1% (402/40156)
+2022-04-17T01:48:26.8454319Z Receiving objects:   2% (804/40156)
+2022-04-17T01:48:26.8515582Z Receiving objects:   3% (1205/40156)
+2022-04-17T01:48:26.8579668Z Receiving objects:   4% (1607/40156)
+2022-04-17T01:48:26.8634113Z Receiving objects:   5% (2008/40156)
+2022-04-17T01:48:26.8693308Z Receiving objects:   6% (2410/40156)
+2022-04-17T01:48:26.8754779Z Receiving objects:   7% (2811/40156)
+2022-04-17T01:48:26.8827264Z Receiving objects:   8% (3213/40156)
+2022-04-17T01:48:26.8903903Z Receiving objects:   9% (3615/40156)
+2022-04-17T01:48:26.8959187Z Receiving objects:  10% (4016/40156)
+2022-04-17T01:48:26.9019823Z Receiving objects:  11% (4418/40156)
+2022-04-17T01:48:26.9070257Z Receiving objects:  12% (4819/40156)
+2022-04-17T01:48:26.9121670Z Receiving objects:  13% (5221/40156)
+2022-04-17T01:48:26.9176108Z Receiving objects:  14% (5622/40156)
+2022-04-17T01:48:26.9235380Z Receiving objects:  15% (6024/40156)
+2022-04-17T01:48:26.9301134Z Receiving objects:  16% (6425/40156)
+2022-04-17T01:48:26.9361901Z Receiving objects:  17% (6827/40156)
+2022-04-17T01:48:26.9452753Z Receiving objects:  18% (7229/40156)
+2022-04-17T01:48:26.9497863Z Receiving objects:  19% (7630/40156)
+2022-04-17T01:48:26.9565871Z Receiving objects:  20% (8032/40156)
+2022-04-17T01:48:26.9620115Z Receiving objects:  21% (8433/40156)
+2022-04-17T01:48:26.9698747Z Receiving objects:  22% (8835/40156)
+2022-04-17T01:48:26.9759561Z Receiving objects:  23% (9236/40156)
+2022-04-17T01:48:26.9837949Z Receiving objects:  24% (9638/40156)
+2022-04-17T01:48:26.9904123Z Receiving objects:  25% (10039/40156)
+2022-04-17T01:48:26.9950540Z Receiving objects:  26% (10441/40156)
+2022-04-17T01:48:27.0003199Z Receiving objects:  27% (10843/40156)
+2022-04-17T01:48:27.0048864Z Receiving objects:  28% (11244/40156)
+2022-04-17T01:48:27.0218376Z Receiving objects:  29% (11646/40156)
+2022-04-17T01:48:27.0277966Z Receiving objects:  30% (12047/40156)
+2022-04-17T01:48:27.0348893Z Receiving objects:  31% (12449/40156)
+2022-04-17T01:48:27.0402245Z Receiving objects:  32% (12850/40156)
+2022-04-17T01:48:27.0452457Z Receiving objects:  33% (13252/40156)
+2022-04-17T01:48:27.0512977Z Receiving objects:  34% (13654/40156)
+2022-04-17T01:48:27.0560299Z Receiving objects:  35% (14055/40156)
+2022-04-17T01:48:27.0612043Z Receiving objects:  36% (14457/40156)
+2022-04-17T01:48:27.0655692Z Receiving objects:  37% (14858/40156)
+2022-04-17T01:48:27.0707995Z Receiving objects:  38% (15260/40156)
+2022-04-17T01:48:27.0862652Z Receiving objects:  39% (15661/40156)
+2022-04-17T01:48:27.0919463Z Receiving objects:  40% (16063/40156)
+2022-04-17T01:48:27.0978707Z Receiving objects:  41% (16464/40156)
+2022-04-17T01:48:27.1047817Z Receiving objects:  42% (16866/40156)
+2022-04-17T01:48:27.1101560Z Receiving objects:  43% (17268/40156)
+2022-04-17T01:48:27.1142258Z Receiving objects:  44% (17669/40156)
+2022-04-17T01:48:27.1195976Z Receiving objects:  45% (18071/40156)
+2022-04-17T01:48:27.1257492Z Receiving objects:  46% (18472/40156)
+2022-04-17T01:48:27.1324258Z Receiving objects:  47% (18874/40156)
+2022-04-17T01:48:27.1396721Z Receiving objects:  48% (19275/40156)
+2022-04-17T01:48:27.1445155Z Receiving objects:  49% (19677/40156)
+2022-04-17T01:48:27.1508775Z Receiving objects:  50% (20078/40156)
+2022-04-17T01:48:27.1554167Z Receiving objects:  51% (20480/40156)
+2022-04-17T01:48:27.1620359Z Receiving objects:  52% (20882/40156)
+2022-04-17T01:48:27.1661955Z Receiving objects:  53% (21283/40156)
+2022-04-17T01:48:27.1755191Z Receiving objects:  54% (21685/40156)
+2022-04-17T01:48:27.1802515Z Receiving objects:  55% (22086/40156)
+2022-04-17T01:48:27.1864554Z Receiving objects:  56% (22488/40156)
+2022-04-17T01:48:27.1931295Z Receiving objects:  57% (22889/40156)
+2022-04-17T01:48:27.1976842Z Receiving objects:  58% (23291/40156)
+2022-04-17T01:48:27.2020927Z Receiving objects:  59% (23693/40156)
+2022-04-17T01:48:27.2065895Z Receiving objects:  60% (24094/40156)
+2022-04-17T01:48:27.2115976Z Receiving objects:  61% (24496/40156)
+2022-04-17T01:48:27.2155656Z Receiving objects:  62% (24897/40156)
+2022-04-17T01:48:27.2206805Z Receiving objects:  63% (25299/40156)
+2022-04-17T01:48:27.2245742Z Receiving objects:  64% (25700/40156)
+2022-04-17T01:48:27.2302462Z Receiving objects:  65% (26102/40156)
+2022-04-17T01:48:27.2346578Z Receiving objects:  66% (26503/40156)
+2022-04-17T01:48:27.2445936Z Receiving objects:  67% (26905/40156)
+2022-04-17T01:48:27.2535577Z Receiving objects:  68% (27307/40156)
+2022-04-17T01:48:27.2674492Z Receiving objects:  69% (27708/40156)
+2022-04-17T01:48:27.2724583Z Receiving objects:  70% (28110/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.2792059Z Receiving objects:  71% (28511/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.2829015Z Receiving objects:  72% (28913/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.2868853Z Receiving objects:  73% (29314/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.2945790Z Receiving objects:  74% (29716/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3006507Z Receiving objects:  75% (30117/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3055229Z Receiving objects:  76% (30519/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3128713Z Receiving objects:  77% (30921/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3177416Z Receiving objects:  78% (31322/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3250716Z Receiving objects:  79% (31724/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3304226Z Receiving objects:  80% (32125/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3345349Z Receiving objects:  81% (32527/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3441943Z Receiving objects:  82% (32928/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3494560Z Receiving objects:  83% (33330/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3535087Z Receiving objects:  84% (33732/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3569079Z Receiving objects:  85% (34133/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3619290Z Receiving objects:  86% (34535/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3661750Z Receiving objects:  87% (34936/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3707720Z Receiving objects:  88% (35338/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3769576Z Receiving objects:  89% (35739/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3817297Z Receiving objects:  90% (36141/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.3900788Z Receiving objects:  91% (36542/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.4042012Z Receiving objects:  92% (36944/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.4071840Z Receiving objects:  93% (37346/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.4430590Z Receiving objects:  94% (37747/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.4567481Z Receiving objects:  95% (38149/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.4718284Z Receiving objects:  96% (38550/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.5291622Z Receiving objects:  97% (38952/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.5425951Z Receiving objects:  98% (39353/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.5511046Z Receiving objects:  99% (39755/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.5511883Z remote: Total 40156 (delta 13295), reused 35767 (delta 11240), pack-reused 0
+2022-04-17T01:48:27.5533624Z Receiving objects: 100% (40156/40156), 12.68 MiB | 25.36 MiB/s
+2022-04-17T01:48:27.5534024Z Receiving objects: 100% (40156/40156), 22.52 MiB | 28.64 MiB/s, done.
+2022-04-17T01:48:27.5583566Z Resolving deltas:   0% (0/13295)
+2022-04-17T01:48:27.5600922Z Resolving deltas:   1% (133/13295)
+2022-04-17T01:48:27.5617704Z Resolving deltas:   2% (266/13295)
+2022-04-17T01:48:27.5634497Z Resolving deltas:   3% (399/13295)
+2022-04-17T01:48:27.5648626Z Resolving deltas:   4% (532/13295)
+2022-04-17T01:48:27.5655572Z Resolving deltas:   5% (665/13295)
+2022-04-17T01:48:27.5667089Z Resolving deltas:   6% (798/13295)
+2022-04-17T01:48:27.5673897Z Resolving deltas:   7% (931/13295)
+2022-04-17T01:48:27.5681900Z Resolving deltas:   8% (1064/13295)
+2022-04-17T01:48:27.5690492Z Resolving deltas:   9% (1197/13295)
+2022-04-17T01:48:27.5705628Z Resolving deltas:  10% (1330/13295)
+2022-04-17T01:48:27.5722571Z Resolving deltas:  11% (1463/13295)
+2022-04-17T01:48:27.5740448Z Resolving deltas:  12% (1596/13295)
+2022-04-17T01:48:27.5754072Z Resolving deltas:  13% (1729/13295)
+2022-04-17T01:48:27.5762835Z Resolving deltas:  14% (1862/13295)
+2022-04-17T01:48:27.5778334Z Resolving deltas:  15% (1995/13295)
+2022-04-17T01:48:27.5787280Z Resolving deltas:  16% (2128/13295)
+2022-04-17T01:48:27.5799042Z Resolving deltas:  17% (2261/13295)
+2022-04-17T01:48:27.5806663Z Resolving deltas:  18% (2394/13295)
+2022-04-17T01:48:27.5813425Z Resolving deltas:  19% (2527/13295)
+2022-04-17T01:48:27.5829613Z Resolving deltas:  20% (2659/13295)
+2022-04-17T01:48:27.5840972Z Resolving deltas:  21% (2792/13295)
+2022-04-17T01:48:27.5859454Z Resolving deltas:  22% (2925/13295)
+2022-04-17T01:48:27.5867985Z Resolving deltas:  23% (3058/13295)
+2022-04-17T01:48:27.5884709Z Resolving deltas:  24% (3191/13295)
+2022-04-17T01:48:27.5895218Z Resolving deltas:  25% (3324/13295)
+2022-04-17T01:48:27.5909992Z Resolving deltas:  26% (3457/13295)
+2022-04-17T01:48:27.5923338Z Resolving deltas:  27% (3590/13295)
+2022-04-17T01:48:27.5933971Z Resolving deltas:  28% (3723/13295)
+2022-04-17T01:48:27.5941343Z Resolving deltas:  29% (3856/13295)
+2022-04-17T01:48:27.5953077Z Resolving deltas:  30% (3989/13295)
+2022-04-17T01:48:27.5969550Z Resolving deltas:  31% (4122/13295)
+2022-04-17T01:48:27.6001730Z Resolving deltas:  32% (4255/13295)
+2022-04-17T01:48:27.6024236Z Resolving deltas:  33% (4388/13295)
+2022-04-17T01:48:27.6041876Z Resolving deltas:  34% (4521/13295)
+2022-04-17T01:48:27.6060410Z Resolving deltas:  35% (4654/13295)
+2022-04-17T01:48:27.6076040Z Resolving deltas:  36% (4787/13295)
+2022-04-17T01:48:27.6093359Z Resolving deltas:  37% (4920/13295)
+2022-04-17T01:48:27.6113086Z Resolving deltas:  38% (5053/13295)
+2022-04-17T01:48:27.6130930Z Resolving deltas:  39% (5186/13295)
+2022-04-17T01:48:27.6152187Z Resolving deltas:  40% (5318/13295)
+2022-04-17T01:48:27.6165476Z Resolving deltas:  41% (5451/13295)
+2022-04-17T01:48:27.6181152Z Resolving deltas:  42% (5584/13295)
+2022-04-17T01:48:27.6195660Z Resolving deltas:  43% (5717/13295)
+2022-04-17T01:48:27.6218377Z Resolving deltas:  44% (5850/13295)
+2022-04-17T01:48:27.6232618Z Resolving deltas:  45% (5983/13295)
+2022-04-17T01:48:27.6247806Z Resolving deltas:  46% (6116/13295)
+2022-04-17T01:48:27.6267472Z Resolving deltas:  47% (6249/13295)
+2022-04-17T01:48:27.6287900Z Resolving deltas:  48% (6382/13295)
+2022-04-17T01:48:27.6305912Z Resolving deltas:  49% (6515/13295)
+2022-04-17T01:48:27.6322544Z Resolving deltas:  50% (6648/13295)
+2022-04-17T01:48:27.6339452Z Resolving deltas:  51% (6781/13295)
+2022-04-17T01:48:27.6356550Z Resolving deltas:  52% (6914/13295)
+2022-04-17T01:48:27.6381472Z Resolving deltas:  53% (7047/13295)
+2022-04-17T01:48:27.6398755Z Resolving deltas:  54% (7180/13295)
+2022-04-17T01:48:27.6417449Z Resolving deltas:  55% (7313/13295)
+2022-04-17T01:48:27.6441018Z Resolving deltas:  56% (7446/13295)
+2022-04-17T01:48:27.6459999Z Resolving deltas:  57% (7579/13295)
+2022-04-17T01:48:27.6479990Z Resolving deltas:  58% (7712/13295)
+2022-04-17T01:48:27.6501111Z Resolving deltas:  59% (7845/13295)
+2022-04-17T01:48:27.6518186Z Resolving deltas:  60% (7977/13295)
+2022-04-17T01:48:27.6538768Z Resolving deltas:  61% (8110/13295)
+2022-04-17T01:48:27.6556963Z Resolving deltas:  62% (8243/13295)
+2022-04-17T01:48:27.6575992Z Resolving deltas:  63% (8376/13295)
+2022-04-17T01:48:27.6595096Z Resolving deltas:  64% (8509/13295)
+2022-04-17T01:48:27.6612997Z Resolving deltas:  65% (8642/13295)
+2022-04-17T01:48:27.6628367Z Resolving deltas:  66% (8775/13295)
+2022-04-17T01:48:27.6646758Z Resolving deltas:  67% (8908/13295)
+2022-04-17T01:48:27.6666245Z Resolving deltas:  68% (9041/13295)
+2022-04-17T01:48:27.6689442Z Resolving deltas:  69% (9174/13295)
+2022-04-17T01:48:27.6708336Z Resolving deltas:  70% (9307/13295)
+2022-04-17T01:48:27.6726090Z Resolving deltas:  71% (9440/13295)
+2022-04-17T01:48:27.6746643Z Resolving deltas:  72% (9573/13295)
+2022-04-17T01:48:27.6765949Z Resolving deltas:  73% (9706/13295)
+2022-04-17T01:48:27.6783469Z Resolving deltas:  74% (9839/13295)
+2022-04-17T01:48:27.6800229Z Resolving deltas:  75% (9972/13295)
+2022-04-17T01:48:27.6841273Z Resolving deltas:  76% (10105/13295)
+2022-04-17T01:48:27.6866617Z Resolving deltas:  77% (10238/13295)
+2022-04-17T01:48:27.6885427Z Resolving deltas:  78% (10371/13295)
+2022-04-17T01:48:27.6905333Z Resolving deltas:  79% (10504/13295)
+2022-04-17T01:48:27.6927802Z Resolving deltas:  80% (10636/13295)
+2022-04-17T01:48:27.6953064Z Resolving deltas:  81% (10769/13295)
+2022-04-17T01:48:27.6976068Z Resolving deltas:  82% (10902/13295)
+2022-04-17T01:48:27.6996103Z Resolving deltas:  83% (11035/13295)
+2022-04-17T01:48:27.7016386Z Resolving deltas:  84% (11168/13295)
+2022-04-17T01:48:27.7052282Z Resolving deltas:  85% (11301/13295)
+2022-04-17T01:48:27.7076522Z Resolving deltas:  86% (11434/13295)
+2022-04-17T01:48:27.7105276Z Resolving deltas:  87% (11567/13295)
+2022-04-17T01:48:27.7133041Z Resolving deltas:  88% (11700/13295)
+2022-04-17T01:48:27.7152206Z Resolving deltas:  89% (11833/13295)
+2022-04-17T01:48:27.7175798Z Resolving deltas:  90% (11966/13295)
+2022-04-17T01:48:27.7199475Z Resolving deltas:  91% (12099/13295)
+2022-04-17T01:48:27.7231831Z Resolving deltas:  92% (12232/13295)
+2022-04-17T01:48:27.7254732Z Resolving deltas:  93% (12365/13295)
+2022-04-17T01:48:27.7292254Z Resolving deltas:  94% (12498/13295)
+2022-04-17T01:48:27.7318370Z Resolving deltas:  95% (12631/13295)
+2022-04-17T01:48:27.7349248Z Resolving deltas:  96% (12764/13295)
+2022-04-17T01:48:27.7386096Z Resolving deltas:  97% (12897/13295)
+2022-04-17T01:48:27.7416026Z Resolving deltas:  98% (13030/13295)
+2022-04-17T01:48:27.7441192Z Resolving deltas:  99% (13163/13295)
+2022-04-17T01:48:27.7447819Z Resolving deltas: 100% (13295/13295)
+2022-04-17T01:48:27.7448162Z Resolving deltas: 100% (13295/13295), done.
+2022-04-17T01:48:27.8115631Z From https://github.com/qmk/qmk_firmware
+2022-04-17T01:48:27.8116561Z  * [new ref]           45e25c8ebed91e633a70b63a20aac3f6618acb70 -> pull/15699/merge
+2022-04-17T01:48:27.8178989Z ##[endgroup]
+2022-04-17T01:48:27.8179657Z ##[group]Determining the checkout info
+2022-04-17T01:48:27.8181540Z ##[endgroup]
+2022-04-17T01:48:27.8188323Z ##[group]Checking out the ref
+2022-04-17T01:48:27.8189164Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/15699/merge
+2022-04-17T01:48:28.8585647Z Updating files:  65% (21328/32363)
+2022-04-17T01:48:28.8744715Z Updating files:  66% (21360/32363)
+2022-04-17T01:48:28.8896646Z Updating files:  67% (21684/32363)
+2022-04-17T01:48:28.9040571Z Updating files:  68% (22007/32363)
+2022-04-17T01:48:28.9171367Z Updating files:  69% (22331/32363)
+2022-04-17T01:48:28.9309270Z Updating files:  70% (22655/32363)
+2022-04-17T01:48:28.9457691Z Updating files:  71% (22978/32363)
+2022-04-17T01:48:28.9593352Z Updating files:  72% (23302/32363)
+2022-04-17T01:48:28.9737168Z Updating files:  73% (23625/32363)
+2022-04-17T01:48:28.9874081Z Updating files:  74% (23949/32363)
+2022-04-17T01:48:29.0043903Z Updating files:  75% (24273/32363)
+2022-04-17T01:48:29.0187614Z Updating files:  76% (24596/32363)
+2022-04-17T01:48:29.0337706Z Updating files:  77% (24920/32363)
+2022-04-17T01:48:29.0478400Z Updating files:  78% (25244/32363)
+2022-04-17T01:48:29.0635049Z Updating files:  79% (25567/32363)
+2022-04-17T01:48:29.0796224Z Updating files:  80% (25891/32363)
+2022-04-17T01:48:29.0934757Z Updating files:  81% (26215/32363)
+2022-04-17T01:48:29.1095157Z Updating files:  82% (26538/32363)
+2022-04-17T01:48:29.1231537Z Updating files:  83% (26862/32363)
+2022-04-17T01:48:29.1354504Z Updating files:  84% (27185/32363)
+2022-04-17T01:48:29.1499158Z Updating files:  85% (27509/32363)
+2022-04-17T01:48:29.1772554Z Updating files:  86% (27833/32363)
+2022-04-17T01:48:29.1772837Z Updating files:  87% (28156/32363)
+2022-04-17T01:48:29.1907111Z Updating files:  88% (28480/32363)
+2022-04-17T01:48:29.2044481Z Updating files:  89% (28804/32363)
+2022-04-17T01:48:29.2181417Z Updating files:  90% (29127/32363)
+2022-04-17T01:48:29.2390816Z Updating files:  91% (29451/32363)
+2022-04-17T01:48:29.2535587Z Updating files:  92% (29774/32363)
+2022-04-17T01:48:29.2784009Z Updating files:  93% (30098/32363)
+2022-04-17T01:48:29.2991554Z Updating files:  94% (30422/32363)
+2022-04-17T01:48:29.3151378Z Updating files:  95% (30745/32363)
+2022-04-17T01:48:29.3302650Z Updating files:  96% (31069/32363)
+2022-04-17T01:48:29.3541058Z Updating files:  97% (31393/32363)
+2022-04-17T01:48:29.3673519Z Updating files:  98% (31716/32363)
+2022-04-17T01:48:29.3825361Z Updating files:  99% (32040/32363)
+2022-04-17T01:48:29.3825622Z Updating files: 100% (32363/32363)
+2022-04-17T01:48:29.3825881Z Updating files: 100% (32363/32363), done.
+2022-04-17T01:48:29.4396516Z Note: switching to 'refs/remotes/pull/15699/merge'.
+2022-04-17T01:48:29.4396749Z 
+2022-04-17T01:48:29.4397067Z You are in 'detached HEAD' state. You can look around, make experimental
+2022-04-17T01:48:29.4397478Z changes and commit them, and you can discard any commits you make in this
+2022-04-17T01:48:29.4397887Z state without impacting any branches by switching back to a branch.
+2022-04-17T01:48:29.4398116Z 
+2022-04-17T01:48:29.4398312Z If you want to create a new branch to retain commits you create, you may
+2022-04-17T01:48:29.4398792Z do so (now or later) by using -c with the switch command. Example:
+2022-04-17T01:48:29.4399005Z 
+2022-04-17T01:48:29.4399201Z   git switch -c <new-branch-name>
+2022-04-17T01:48:29.4399380Z 
+2022-04-17T01:48:29.4399500Z Or undo this operation with:
+2022-04-17T01:48:29.4399678Z 
+2022-04-17T01:48:29.4399773Z   git switch -
+2022-04-17T01:48:29.4399900Z 
+2022-04-17T01:48:29.4400107Z Turn off this advice by setting config variable advice.detachedHead to false
+2022-04-17T01:48:29.4400349Z 
+2022-04-17T01:48:29.4400601Z HEAD is now at 45e25c8e Merge 488a2fe4abaa9b0411007282fa34cedb1dbfb0de into d9583292581ed7b8182ce4f828e2fe4fba22e161
+2022-04-17T01:48:29.4444409Z ##[endgroup]
+2022-04-17T01:48:29.4444979Z ##[group]Setting up auth for fetching submodules
+2022-04-17T01:48:29.4445733Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2022-04-17T01:48:29.4478529Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2022-04-17T01:48:29.4501391Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2022-04-17T01:48:29.4535112Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-25358678@github.com:
+2022-04-17T01:48:29.4566467Z ##[endgroup]
+2022-04-17T01:48:29.4566875Z ##[group]Fetching submodules
+2022-04-17T01:48:29.4573022Z [command]/usr/bin/git submodule sync --recursive
+2022-04-17T01:48:29.4863187Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2022-04-17T01:48:29.5144544Z Submodule 'lib/chibios' (https://github.com/qmk/ChibiOS) registered for path 'lib/chibios'
+2022-04-17T01:48:29.5149621Z Submodule 'lib/chibios-contrib' (https://github.com/qmk/ChibiOS-Contrib) registered for path 'lib/chibios-contrib'
+2022-04-17T01:48:29.5154830Z Submodule 'lib/googletest' (https://github.com/qmk/googletest) registered for path 'lib/googletest'
+2022-04-17T01:48:29.5160593Z Submodule 'lib/lufa' (https://github.com/qmk/lufa) registered for path 'lib/lufa'
+2022-04-17T01:48:29.5166112Z Submodule 'lib/printf' (https://github.com/qmk/printf) registered for path 'lib/printf'
+2022-04-17T01:48:29.5171782Z Submodule 'lib/vusb' (https://github.com/qmk/v-usb) registered for path 'lib/vusb'
+2022-04-17T01:48:29.5269905Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/chibios'...
+2022-04-17T01:48:33.2485156Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/chibios-contrib'...
+2022-04-17T01:48:34.3547995Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/googletest'...
+2022-04-17T01:48:34.8859824Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/lufa'...
+2022-04-17T01:48:35.6049072Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/printf'...
+2022-04-17T01:48:35.8990347Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/vusb'...
+2022-04-17T01:48:39.3295855Z From https://github.com/qmk/ChibiOS
+2022-04-17T01:48:39.3296605Z  * branch            257302333c31f1f710800c2b97acf3550de043e1 -> FETCH_HEAD
+2022-04-17T01:48:40.2126167Z Submodule path 'lib/chibios': checked out '257302333c31f1f710800c2b97acf3550de043e1'
+2022-04-17T01:48:40.8879536Z From https://github.com/qmk/ChibiOS-Contrib
+2022-04-17T01:48:40.8880070Z  * branch            ff1c6ec90cfc250d81e6f29a0d60a4faf2afb46d -> FETCH_HEAD
+2022-04-17T01:48:41.0598325Z Submodule path 'lib/chibios-contrib': checked out 'ff1c6ec90cfc250d81e6f29a0d60a4faf2afb46d'
+2022-04-17T01:48:41.0647704Z Submodule 'ext/mcux-sdk' (https://github.com/NXPmicro/mcux-sdk) registered for path 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:48:41.0694416Z Cloning into '/__w/qmk_firmware/qmk_firmware/lib/chibios-contrib/ext/mcux-sdk'...
+2022-04-17T01:48:59.7355637Z From https://github.com/NXPmicro/mcux-sdk
+2022-04-17T01:48:59.7356809Z  * branch            102c27d7cc2aaac87c133702e7829a105e0cb433 -> FETCH_HEAD
+2022-04-17T01:49:01.1254695Z Submodule path 'lib/chibios-contrib/ext/mcux-sdk': checked out '102c27d7cc2aaac87c133702e7829a105e0cb433'
+2022-04-17T01:49:01.8735632Z From https://github.com/qmk/googletest
+2022-04-17T01:49:01.8736654Z  * branch            e2239ee6043f73722e7aa812a459f54a28552929 -> FETCH_HEAD
+2022-04-17T01:49:01.9213465Z Submodule path 'lib/googletest': checked out 'e2239ee6043f73722e7aa812a459f54a28552929'
+2022-04-17T01:49:02.5482333Z From https://github.com/qmk/lufa
+2022-04-17T01:49:02.5483185Z  * branch            19a5d533f02a7b46eeadca99cc9699659cef7a60 -> FETCH_HEAD
+2022-04-17T01:49:02.6527684Z Submodule path 'lib/lufa': checked out '19a5d533f02a7b46eeadca99cc9699659cef7a60'
+2022-04-17T01:49:02.6969672Z Submodule path 'lib/printf': checked out 'd3b984684bb8a8bdc48cc7a1abecb93ce59bbe3e'
+2022-04-17T01:49:02.7431279Z Submodule path 'lib/vusb': checked out 'bdb53e4c043d089279d9891b68bea77614cb97ee'
+2022-04-17T01:49:02.7491805Z [command]/usr/bin/git submodule foreach --recursive git config --local gc.auto 0
+2022-04-17T01:49:02.7768235Z Entering 'lib/chibios'
+2022-04-17T01:49:02.7815456Z Entering 'lib/chibios-contrib'
+2022-04-17T01:49:02.7854719Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:49:02.7904519Z Entering 'lib/googletest'
+2022-04-17T01:49:02.7940575Z Entering 'lib/lufa'
+2022-04-17T01:49:02.7979989Z Entering 'lib/printf'
+2022-04-17T01:49:02.8015313Z Entering 'lib/vusb'
+2022-04-17T01:49:02.8061802Z ##[endgroup]
+2022-04-17T01:49:02.8062274Z ##[group]Persisting credentials for submodules
+2022-04-17T01:49:02.8072279Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :
+2022-04-17T01:49:02.8358879Z Entering 'lib/chibios'
+2022-04-17T01:49:02.8407781Z Entering 'lib/chibios-contrib'
+2022-04-17T01:49:02.8446974Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:49:02.8496364Z Entering 'lib/googletest'
+2022-04-17T01:49:02.8532920Z Entering 'lib/lufa'
+2022-04-17T01:49:02.8570661Z Entering 'lib/printf'
+2022-04-17T01:49:02.8605643Z Entering 'lib/vusb'
+2022-04-17T01:49:02.8655449Z [command]/usr/bin/git submodule foreach --recursive git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url
+2022-04-17T01:49:02.8937223Z Entering 'lib/chibios'
+2022-04-17T01:49:02.8967376Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/chibios/config	remote.origin.url
+2022-04-17T01:49:02.8998108Z Entering 'lib/chibios-contrib'
+2022-04-17T01:49:02.9028630Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/chibios-contrib/config	remote.origin.url
+2022-04-17T01:49:02.9050547Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:49:02.9083360Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/chibios-contrib/modules/ext/mcux-sdk/config	remote.origin.url
+2022-04-17T01:49:02.9117588Z Entering 'lib/googletest'
+2022-04-17T01:49:02.9147936Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/googletest/config	remote.origin.url
+2022-04-17T01:49:02.9167479Z Entering 'lib/lufa'
+2022-04-17T01:49:02.9197992Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/lufa/config	remote.origin.url
+2022-04-17T01:49:02.9219331Z Entering 'lib/printf'
+2022-04-17T01:49:02.9248158Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/printf/config	remote.origin.url
+2022-04-17T01:49:02.9267739Z Entering 'lib/vusb'
+2022-04-17T01:49:02.9300229Z file:/__w/qmk_firmware/qmk_firmware/.git/modules/lib/vusb/config	remote.origin.url
+2022-04-17T01:49:02.9382145Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2022-04-17T01:49:02.9671965Z Entering 'lib/chibios'
+2022-04-17T01:49:02.9720020Z Entering 'lib/chibios-contrib'
+2022-04-17T01:49:02.9760302Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:49:02.9810714Z Entering 'lib/googletest'
+2022-04-17T01:49:02.9849674Z Entering 'lib/lufa'
+2022-04-17T01:49:02.9888871Z Entering 'lib/printf'
+2022-04-17T01:49:02.9923661Z Entering 'lib/vusb'
+2022-04-17T01:49:02.9972488Z [command]/usr/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'org-25358678@github.com:'
+2022-04-17T01:49:03.0246612Z Entering 'lib/chibios'
+2022-04-17T01:49:03.0293118Z Entering 'lib/chibios-contrib'
+2022-04-17T01:49:03.0333450Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:49:03.0384666Z Entering 'lib/googletest'
+2022-04-17T01:49:03.0420585Z Entering 'lib/lufa'
+2022-04-17T01:49:03.0461130Z Entering 'lib/printf'
+2022-04-17T01:49:03.0498483Z Entering 'lib/vusb'
+2022-04-17T01:49:03.0545131Z ##[endgroup]
+2022-04-17T01:49:03.0586195Z [command]/usr/bin/git log -1 --format='%H'
+2022-04-17T01:49:03.0614961Z '45e25c8ebed91e633a70b63a20aac3f6618acb70'
+2022-04-17T01:49:03.0983399Z ##[group]Run pip3 install -r requirements-dev.txt
+2022-04-17T01:49:03.0983781Z [36;1mpip3 install -r requirements-dev.txt[0m
+2022-04-17T01:49:03.0987282Z shell: sh -e {0}
+2022-04-17T01:49:03.0987513Z ##[endgroup]
+2022-04-17T01:49:03.5561994Z WARNING: The directory '/github/home/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+2022-04-17T01:49:03.6273293Z Requirement already satisfied: appdirs in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 2)) (1.4.4)
+2022-04-17T01:49:03.6277681Z Requirement already satisfied: argcomplete in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 3)) (2.0.0)
+2022-04-17T01:49:03.6282809Z Requirement already satisfied: colorama in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 4)) (0.4.4)
+2022-04-17T01:49:03.6287972Z Requirement already satisfied: hid in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 5)) (1.0.5)
+2022-04-17T01:49:03.6293280Z Requirement already satisfied: hjson in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 6)) (3.0.2)
+2022-04-17T01:49:03.6301483Z Requirement already satisfied: jsonschema>=4 in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 7)) (4.4.0)
+2022-04-17T01:49:03.6310542Z Requirement already satisfied: milc>=1.4.2 in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 8)) (1.6.6)
+2022-04-17T01:49:03.6315791Z Requirement already satisfied: pygments in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 9)) (2.11.2)
+2022-04-17T01:49:03.6320917Z Requirement already satisfied: pyusb in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 10)) (1.2.1)
+2022-04-17T01:49:03.6326230Z Requirement already satisfied: qmk-dotty-dict in /usr/local/lib/python3.9/dist-packages (from -r requirements.txt (line 11)) (1.3.0.post1)
+2022-04-17T01:49:03.9343885Z Collecting pillow
+2022-04-17T01:49:03.9771982Z   Downloading Pillow-9.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+2022-04-17T01:49:04.0204801Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 111.3 MB/s eta 0:00:00
+2022-04-17T01:49:04.0354000Z Requirement already satisfied: nose2 in /usr/local/lib/python3.9/dist-packages (from -r requirements-dev.txt (line 5)) (0.11.0)
+2022-04-17T01:49:04.0833122Z Collecting flake8
+2022-04-17T01:49:04.1318250Z   Downloading flake8-4.0.1-py2.py3-none-any.whl (64 kB)
+2022-04-17T01:49:04.1350900Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.1/64.1 KB 240.2 MB/s eta 0:00:00
+2022-04-17T01:49:04.1562681Z Collecting pep8-naming
+2022-04-17T01:49:04.1644751Z   Downloading pep8_naming-0.12.1-py2.py3-none-any.whl (8.9 kB)
+2022-04-17T01:49:04.1896102Z Collecting pyflakes
+2022-04-17T01:49:04.1973203Z   Downloading pyflakes-2.4.0-py2.py3-none-any.whl (69 kB)
+2022-04-17T01:49:04.2001897Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.7/69.7 KB 243.1 MB/s eta 0:00:00
+2022-04-17T01:49:04.2021493Z Requirement already satisfied: yapf in /usr/local/lib/python3.9/dist-packages (from -r requirements-dev.txt (line 9)) (0.32.0)
+2022-04-17T01:49:04.2257294Z Requirement already satisfied: attrs>=17.4.0 in /usr/local/lib/python3.9/dist-packages (from jsonschema>=4->-r requirements.txt (line 7)) (21.4.0)
+2022-04-17T01:49:04.2266401Z Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,>=0.14.0 in /usr/local/lib/python3.9/dist-packages (from jsonschema>=4->-r requirements.txt (line 7)) (0.18.1)
+2022-04-17T01:49:04.2297364Z Requirement already satisfied: spinners in /usr/local/lib/python3.9/dist-packages (from milc>=1.4.2->-r requirements.txt (line 8)) (0.0.24)
+2022-04-17T01:49:04.2303966Z Requirement already satisfied: halo in /usr/local/lib/python3.9/dist-packages (from milc>=1.4.2->-r requirements.txt (line 8)) (0.0.31)
+2022-04-17T01:49:04.2512705Z Requirement already satisfied: coverage>=4.4.1 in /usr/local/lib/python3.9/dist-packages (from nose2->-r requirements-dev.txt (line 5)) (6.3.2)
+2022-04-17T01:49:04.2519378Z Requirement already satisfied: six>=1.7 in /usr/local/lib/python3.9/dist-packages (from nose2->-r requirements-dev.txt (line 5)) (1.16.0)
+2022-04-17T01:49:04.2769328Z Collecting pycodestyle<2.9.0,>=2.8.0
+2022-04-17T01:49:04.2839953Z   Downloading pycodestyle-2.8.0-py2.py3-none-any.whl (42 kB)
+2022-04-17T01:49:04.2862873Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 KB 208.6 MB/s eta 0:00:00
+2022-04-17T01:49:04.3041774Z Collecting mccabe<0.7.0,>=0.6.0
+2022-04-17T01:49:04.3120373Z   Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+2022-04-17T01:49:04.3290484Z Collecting flake8-polyfill<2,>=1.0.2
+2022-04-17T01:49:04.3361526Z   Downloading flake8_polyfill-1.0.2-py2.py3-none-any.whl (7.3 kB)
+2022-04-17T01:49:04.3899162Z Requirement already satisfied: log-symbols>=0.0.14 in /usr/local/lib/python3.9/dist-packages (from halo->milc>=1.4.2->-r requirements.txt (line 8)) (0.0.14)
+2022-04-17T01:49:04.3907596Z Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.9/dist-packages (from halo->milc>=1.4.2->-r requirements.txt (line 8)) (1.1.0)
+2022-04-17T01:49:04.4773894Z Installing collected packages: mccabe, pyflakes, pycodestyle, pillow, flake8, flake8-polyfill, pep8-naming
+2022-04-17T01:49:04.8768035Z WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+2022-04-17T01:49:04.8768975Z Successfully installed flake8-4.0.1 flake8-polyfill-1.0.2 mccabe-0.6.1 pep8-naming-0.12.1 pillow-9.1.0 pycodestyle-2.8.0 pyflakes-2.4.0
+2022-04-17T01:49:05.0520584Z ##[group]Run make test:all
+2022-04-17T01:49:05.0520854Z [36;1mmake test:all[0m
+2022-04-17T01:49:05.0521115Z shell: sh -e {0}
+2022-04-17T01:49:05.0521323Z ##[endgroup]
+2022-04-17T01:49:24.3032489Z Making test [1mauto_shift[0m                                                                                         [32;01m[OK][0m
+2022-04-17T01:49:33.8217713Z Making test [1mautocorrect[0m                                                                                        [33;01m[WARNINGS][0m
+2022-04-17T01:49:33.8218916Z [01m[Kquantum/process_keycode/process_autocorrect.c:17:13:[m[K [01;36m[Knote: [m[K'[01m[K#pragma message: Warning! Autocorrect is using the default library![m[K'
+2022-04-17T01:49:33.8219693Z    17 | #    pragma [01;36m[Kmessage[m[K "Warning! Autocorrect is using the default library!"
+2022-04-17T01:49:33.8220232Z       |             [01;36m[K^~~~~~~[m[K
+2022-04-17T01:49:49.8437039Z Making test [1mbasic[0m                                                                                              [32;01m[OK][0m
+2022-04-17T01:49:59.5831670Z Making test [1mdefault_mod_tap[0m                                                                                    [32;01m[OK][0m
+2022-04-17T01:50:09.2946108Z Making test [1mignore_mod_tap_interrupt[0m                                                                           [32;01m[OK][0m
+2022-04-17T01:50:21.1642411Z Making test [1mpermissive_hold[0m                                                                                    [32;01m[OK][0m
+2022-04-17T01:50:30.7880618Z Making test [1mpermissive_hold_ignore_mod_tap_interrupt[0m                                                           [32;01m[OK][0m
+2022-04-17T01:50:41.9623657Z Making test [1mretro_tapping[0m                                                                                      [32;01m[OK][0m
+2022-04-17T01:50:53.2824733Z Making test [1mtapping_force_hold[0m                                                                                 [32;01m[OK][0m
+2022-04-17T01:50:56.9099397Z Making test [1mdebounce_asym_eager_defer_pk[0m                                                                       [32;01m[OK][0m
+2022-04-17T01:51:00.4277471Z Making test [1mdebounce_sym_defer_g[0m                                                                               [32;01m[OK][0m
+2022-04-17T01:51:03.9488823Z Making test [1mdebounce_sym_defer_pk[0m                                                                              [32;01m[OK][0m
+2022-04-17T01:51:07.4814895Z Making test [1mdebounce_sym_defer_pr[0m                                                                              [32;01m[OK][0m
+2022-04-17T01:51:11.0034388Z Making test [1mdebounce_sym_eager_pk[0m                                                                              [32;01m[OK][0m
+2022-04-17T01:51:14.5744316Z Making test [1mdebounce_sym_eager_pr[0m                                                                              [32;01m[OK][0m
+2022-04-17T01:51:17.4748432Z Making test [1meeprom_stm32_large[0m                                                                                 [32;01m[OK][0m
+2022-04-17T01:51:20.3944649Z Making test [1meeprom_stm32_tiny[0m                                                                                  [32;01m[OK][0m
+2022-04-17T01:51:22.8991465Z Making test [1mencoder[0m                                                                                            [32;01m[OK][0m
+2022-04-17T01:51:25.4058858Z Making test [1mencoder_split_left_eq_right[0m                                                                        [32;01m[OK][0m
+2022-04-17T01:51:27.9233677Z Making test [1mencoder_split_left_gt_right[0m                                                                        [32;01m[OK][0m
+2022-04-17T01:51:30.4319145Z Making test [1mencoder_split_left_lt_right[0m                                                                        [32;01m[OK][0m
+2022-04-17T01:51:32.8847874Z Making test [1mencoder_split_no_left[0m                                                                              [32;01m[OK][0m
+2022-04-17T01:51:35.3433495Z Making test [1mencoder_split_no_right[0m                                                                             [32;01m[OK][0m
+2022-04-17T01:51:38.4721378Z Making test [1msequencer[0m                                                                                          [32;01m[OK][0m
+2022-04-17T01:51:38.4738425Z Testing [1mauto_shift[0m
+2022-04-17T01:51:38.4751781Z [==========] Running 2 tests from 1 test suite.
+2022-04-17T01:51:38.4752590Z [----------] Global test environment set-up.
+2022-04-17T01:51:38.4761922Z [----------] 2 tests from AutoShift
+2022-04-17T01:51:38.4762880Z [ RUN      ] AutoShift.key_release_before_timeout
+2022-04-17T01:51:38.4763244Z [       OK ] AutoShift.key_release_before_timeout (0 ms)
+2022-04-17T01:51:38.4763552Z [ RUN      ] AutoShift.key_release_after_timeout
+2022-04-17T01:51:38.4764081Z [       OK ] AutoShift.key_release_after_timeout (0 ms)
+2022-04-17T01:51:38.4764572Z [----------] 2 tests from AutoShift (0 ms total)
+2022-04-17T01:51:38.4764747Z 
+2022-04-17T01:51:38.4764942Z [----------] Global test environment tear-down
+2022-04-17T01:51:38.4765239Z [==========] 2 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:38.4765479Z [  PASSED  ] 2 tests.
+2022-04-17T01:51:38.4765613Z 
+2022-04-17T01:51:38.4774340Z Testing [1mautocorrect[0m
+2022-04-17T01:51:38.4796930Z [==========] Running 1 test from 1 test suite.
+2022-04-17T01:51:38.4797371Z [----------] Global test environment set-up.
+2022-04-17T01:51:38.4797685Z [----------] 1 test from KeyPress
+2022-04-17T01:51:38.4797959Z [ RUN      ] KeyPress.fales_to_false_autocorrect
+2022-04-17T01:51:38.4798260Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4798666Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4799064Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys (9)
+2022-04-17T01:51:38.4799339Z )
+2022-04-17T01:51:38.4799541Z          Expected: to be never called
+2022-04-17T01:51:38.4799886Z            Actual: called once - over-saturated and active
+2022-04-17T01:51:38.4800192Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4800598Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4800948Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4801217Z )
+2022-04-17T01:51:38.4801418Z          Expected: to be never called
+2022-04-17T01:51:38.4801761Z            Actual: called twice - over-saturated and active
+2022-04-17T01:51:38.4802064Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4802468Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4802808Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys (15)
+2022-04-17T01:51:38.4803083Z )
+2022-04-17T01:51:38.4803290Z          Expected: to be never called
+2022-04-17T01:51:38.4803872Z            Actual: called 3 times - over-saturated and active
+2022-04-17T01:51:38.4809187Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4809686Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4810940Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4811200Z )
+2022-04-17T01:51:38.4811719Z          Expected: to be never called
+2022-04-17T01:51:38.4812125Z            Actual: called 4 times - over-saturated and active
+2022-04-17T01:51:38.4812420Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4812832Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4813192Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys (22)
+2022-04-17T01:51:38.4813475Z )
+2022-04-17T01:51:38.4813664Z          Expected: to be never called
+2022-04-17T01:51:38.4814726Z            Actual: called 5 times - over-saturated and active
+2022-04-17T01:51:38.4815048Z tests/autocorrect/test_autocorrect.cpp:36: Failure
+2022-04-17T01:51:38.4815465Z Mock function called more times than expected - returning directly.
+2022-04-17T01:51:38.4815826Z     Function call: send_keyboard_mock(@0x55e7a0406918 Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4816099Z )
+2022-04-17T01:51:38.4816288Z          Expected: to be never called
+2022-04-17T01:51:38.4816648Z            Actual: called 6 times - over-saturated and active
+2022-04-17T01:51:38.4816985Z KeyPress.fales_to_false_autocorrect failed!
+2022-04-17T01:51:38.4817322Z [ INFO     ] TestFixture setup-up start.
+2022-04-17T01:51:38.4817629Z [ INFO     ] TestFixture setup-up end.
+2022-04-17T01:51:38.4817884Z [ TRACE    ] Key pressed:  (0,0)
+2022-04-17T01:51:38.4818147Z [ TRACE    ] Keyboard Report: Mods (0) Keys (9)
+2022-04-17T01:51:38.4818478Z [ TRACE    ] Key released: (0,0)
+2022-04-17T01:51:38.4818716Z [ TRACE    ] Key pressed:  (1,0)
+2022-04-17T01:51:38.4818972Z [ TRACE    ] Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4819208Z [ TRACE    ] Key released: (1,0)
+2022-04-17T01:51:38.4819448Z [ TRACE    ] Key pressed:  (2,0)
+2022-04-17T01:51:38.4819704Z [ TRACE    ] Keyboard Report: Mods (0) Keys (15)
+2022-04-17T01:51:38.4819942Z [ TRACE    ] Key released: (2,0)
+2022-04-17T01:51:38.4820172Z [ TRACE    ] Key pressed:  (3,0)
+2022-04-17T01:51:38.4820423Z [ TRACE    ] Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4820656Z [ TRACE    ] Key released: (3,0)
+2022-04-17T01:51:38.4820888Z [ TRACE    ] Key pressed:  (4,0)
+2022-04-17T01:51:38.4821146Z [ TRACE    ] Keyboard Report: Mods (0) Keys (22)
+2022-04-17T01:51:38.4821381Z [ TRACE    ] Key released: (4,0)
+2022-04-17T01:51:38.4821629Z [ TRACE    ] Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4821959Z [ INFO     ] TestFixture clean-up start.
+2022-04-17T01:51:38.4822275Z [ INFO     ] TestFixture clean-up end.
+2022-04-17T01:51:38.4822550Z tests/autocorrect/test_autocorrect.cpp:59: Failure
+2022-04-17T01:51:38.4823169Z Actual function call count doesn't match EXPECT_CALL(driver, send_keyboard_mock(KeyboardReport(KC_F, KC_A, KC_L, KC_E, KC_S, KC_BACKSPACE, KC_BACKSPACE, KC_S, KC_E)))...
+2022-04-17T01:51:38.4823576Z          Expected: to be called once
+2022-04-17T01:51:38.4823909Z            Actual: never called - unsatisfied and active
+2022-04-17T01:51:38.4824225Z [  FAIL]ED   KeyPress.fales_to_false_autocorrect (1 ms)
+2022-04-17T01:51:38.4824583Z [----------] 1 test from KeyPress (1 ms total)
+2022-04-17T01:51:38.4824748Z 
+2022-04-17T01:51:38.4824924Z [----------] Global test environment tear-down
+2022-04-17T01:51:38.4825204Z [==========] 1 test from 1 test suite ran. (2 ms total)
+2022-04-17T01:51:38.4825444Z [  PASSED  ] 0 tests.
+2022-04-17T01:51:38.4825670Z [  FAILED  ] 1 test, listed below:
+2022-04-17T01:51:38.4825922Z [  FAILED  ] KeyPress.fales_to_false_autocorrect
+2022-04-17T01:51:38.4826094Z 
+2022-04-17T01:51:38.4826173Z  1 FAILED TEST
+2022-04-17T01:51:38.4826298Z 
+2022-04-17T01:51:38.4857236Z Testing [1mbasic[0m
+2022-04-17T01:51:38.4857732Z [==========] Running 49 tests from 5 test suites.
+2022-04-17T01:51:38.4858514Z [----------] Global test environment set-up.
+2022-04-17T01:51:38.4859021Z [----------] 16 tests from ActionLayer
+2022-04-17T01:51:38.4859675Z [ RUN      ] ActionLayer.LayerStateDBG
+2022-04-17T01:51:38.4860116Z [       OK ] ActionLayer.LayerStateDBG (0 ms)
+2022-04-17T01:51:38.4860736Z [ RUN      ] ActionLayer.LayerStateSet
+2022-04-17T01:51:38.4896064Z [       OK ] ActionLayer.LayerStateSet (0 ms)
+2022-04-17T01:51:38.4896740Z [ RUN      ] ActionLayer.LayerStateIs
+2022-04-17T01:51:38.4898603Z [       OK ] ActionLayer.LayerStateIs (0 ms)
+2022-04-17T01:51:38.4899059Z [ RUN      ] ActionLayer.LayerStateCmp
+2022-04-17T01:51:38.4900838Z [       OK ] ActionLayer.LayerStateCmp (0 ms)
+2022-04-17T01:51:38.4901290Z [ RUN      ] ActionLayer.LayerClear
+2022-04-17T01:51:38.4905625Z [       OK ] ActionLayer.LayerClear (0 ms)
+2022-04-17T01:51:38.4906341Z [ RUN      ] ActionLayer.LayerMove
+2022-04-17T01:51:38.4908199Z [       OK ] ActionLayer.LayerMove (0 ms)
+2022-04-17T01:51:38.4908626Z [ RUN      ] ActionLayer.LayerOn
+2022-04-17T01:51:38.4910363Z [       OK ] ActionLayer.LayerOn (0 ms)
+2022-04-17T01:51:38.4910770Z [ RUN      ] ActionLayer.LayerOff
+2022-04-17T01:51:38.4912624Z [       OK ] ActionLayer.LayerOff (0 ms)
+2022-04-17T01:51:38.4913285Z [ RUN      ] ActionLayer.MomentaryLayerDoesNothing
+2022-04-17T01:51:38.4914819Z [       OK ] ActionLayer.MomentaryLayerDoesNothing (0 ms)
+2022-04-17T01:51:38.4915614Z [ RUN      ] ActionLayer.MomentaryLayerWithKeypress
+2022-04-17T01:51:38.4916926Z [       OK ] ActionLayer.MomentaryLayerWithKeypress (0 ms)
+2022-04-17T01:51:38.4917960Z [ RUN      ] ActionLayer.ToggleLayerDoesNothing
+2022-04-17T01:51:38.4918419Z tests/basic/test_action_layer.cpp:183: Skipped
+2022-04-17T01:51:38.4920382Z TODO: Toggle layer does not activate the expected layer on key press but on release.
+2022-04-17T01:51:38.4922249Z [  SKIPPED ] ActionLayer.ToggleLayerDoesNothing (0 ms)
+2022-04-17T01:51:38.4923091Z [ RUN      ] ActionLayer.ToggleLayerUpAndDown
+2022-04-17T01:51:38.4924327Z tests/basic/test_action_layer.cpp:206: Skipped
+2022-04-17T01:51:38.4925377Z TODO: Toggle layer does not activate the expected layer on key press but on release.
+2022-04-17T01:51:38.4925907Z [  SKIPPED ] ActionLayer.ToggleLayerUpAndDown (0 ms)
+2022-04-17T01:51:38.4927704Z [ RUN      ] ActionLayer.LayerTapToggleDoesNothing
+2022-04-17T01:51:38.4928164Z tests/basic/test_action_layer.cpp:242: Skipped
+2022-04-17T01:51:38.4929954Z TODO: Tap toggle layer does not activate the expected layer on key press.
+2022-04-17T01:51:38.4930492Z [  SKIPPED ] ActionLayer.LayerTapToggleDoesNothing (0 ms)
+2022-04-17T01:51:38.4931199Z [ RUN      ] ActionLayer.LayerTapToggleWithKeypress
+2022-04-17T01:51:38.4933354Z tests/basic/test_action_layer.cpp:264: Skipped
+2022-04-17T01:51:38.4933846Z TODO: Tap toggle layer does not activate the expected layer on key press.
+2022-04-17T01:51:38.4935737Z [  SKIPPED ] ActionLayer.LayerTapToggleWithKeypress (0 ms)
+2022-04-17T01:51:38.4937110Z [ RUN      ] ActionLayer.LayerTapToggleWithToggleWithKeypress
+2022-04-17T01:51:38.4938124Z tests/basic/test_action_layer.cpp:300: Skipped
+2022-04-17T01:51:38.4939448Z TODO: Tap toggle layer does not activate the expected layer on key press.
+2022-04-17T01:51:38.4940548Z [  SKIPPED ] ActionLayer.LayerTapToggleWithToggleWithKeypress (0 ms)
+2022-04-17T01:51:38.4942245Z [ RUN      ] ActionLayer.LayerTapReleasedBeforeKeypressReleaseWithModifiers
+2022-04-17T01:51:38.4943091Z tests/basic/test_action_layer.cpp:363: Skipped
+2022-04-17T01:51:38.4945022Z TODO: Modifiers are erroneously discarded on layer changes, although a key that introduced the modifier is still held.
+2022-04-17T01:51:38.4946722Z [  SKIPPED ] ActionLayer.LayerTapReleasedBeforeKeypressReleaseWithModifiers (0 ms)
+2022-04-17T01:51:38.4947758Z [----------] 16 tests from ActionLayer (4 ms total)
+2022-04-17T01:51:38.4949503Z 
+2022-04-17T01:51:38.4949883Z [----------] 12 tests from KeyPress
+2022-04-17T01:51:38.4951760Z [ RUN      ] KeyPress.SendKeyboardIsNotCalledWhenNoKeyIsPressed
+2022-04-17T01:51:38.4952371Z [       OK ] KeyPress.SendKeyboardIsNotCalledWhenNoKeyIsPressed (0 ms)
+2022-04-17T01:51:38.4954223Z [ RUN      ] KeyPress.CorrectKeyIsReportedWhenPressed
+2022-04-17T01:51:38.4954837Z [       OK ] KeyPress.CorrectKeyIsReportedWhenPressed (0 ms)
+2022-04-17T01:51:38.4956654Z [ RUN      ] KeyPress.ANonMappedKeyDoesNothing
+2022-04-17T01:51:38.4957145Z [       OK ] KeyPress.ANonMappedKeyDoesNothing (0 ms)
+2022-04-17T01:51:38.4959032Z [ RUN      ] KeyPress.CorrectKeysAreReportedWhenTwoKeysArePressed
+2022-04-17T01:51:38.4959666Z [       OK ] KeyPress.CorrectKeysAreReportedWhenTwoKeysArePressed (0 ms)
+2022-04-17T01:51:38.4961525Z [ RUN      ] KeyPress.LeftShiftIsReportedCorrectly
+2022-04-17T01:51:38.4962051Z [       OK ] KeyPress.LeftShiftIsReportedCorrectly (0 ms)
+2022-04-17T01:51:38.4963856Z [ RUN      ] KeyPress.PressLeftShiftAndControl
+2022-04-17T01:51:38.4964513Z [       OK ] KeyPress.PressLeftShiftAndControl (0 ms)
+2022-04-17T01:51:38.4966467Z [ RUN      ] KeyPress.LeftAndRightShiftCanBePressedAtTheSameTime
+2022-04-17T01:51:38.4967870Z [       OK ] KeyPress.LeftAndRightShiftCanBePressedAtTheSameTime (0 ms)
+2022-04-17T01:51:38.4969010Z [ RUN      ] KeyPress.RightShiftLeftControlAndCharWithTheSameKey
+2022-04-17T01:51:38.4970694Z [       OK ] KeyPress.RightShiftLeftControlAndCharWithTheSameKey (0 ms)
+2022-04-17T01:51:38.4975166Z [ RUN      ] KeyPress.PressPlusEqualReleaseBeforePress
+2022-04-17T01:51:38.4975762Z [       OK ] KeyPress.PressPlusEqualReleaseBeforePress (0 ms)
+2022-04-17T01:51:38.4976532Z [ RUN      ] KeyPress.PressPlusEqualDontReleaseBeforePress
+2022-04-17T01:51:38.4977093Z [       OK ] KeyPress.PressPlusEqualDontReleaseBeforePress (0 ms)
+2022-04-17T01:51:38.4977831Z [ RUN      ] KeyPress.PressEqualPlusReleaseBeforePress
+2022-04-17T01:51:38.4978368Z [       OK ] KeyPress.PressEqualPlusReleaseBeforePress (0 ms)
+2022-04-17T01:51:38.4979293Z [ RUN      ] KeyPress.PressEqualPlusDontReleaseBeforePress
+2022-04-17T01:51:38.4980622Z [       OK ] KeyPress.PressEqualPlusDontReleaseBeforePress (0 ms)
+2022-04-17T01:51:38.4981116Z [----------] 12 tests from KeyPress (2 ms total)
+2022-04-17T01:51:38.4981289Z 
+2022-04-17T01:51:38.4981432Z [----------] 2 tests from OneShot
+2022-04-17T01:51:38.4981759Z [ RUN      ] OneShot.OSMWithoutAdditionalKeypressDoesNothing
+2022-04-17T01:51:38.4981981Z 
+2022-04-17T01:51:38.4982065Z GMOCK WARNING:
+2022-04-17T01:51:38.4982384Z Uninteresting mock function call - returning directly.
+2022-04-17T01:51:38.4982730Z     Function call: send_keyboard_mock(@0x55f0feb5e918 Keyboard Report: Mods (0) Keys ()
+2022-04-17T01:51:38.4983005Z )
+2022-04-17T01:51:38.4983822Z NOTE: You can safely ignore the above warning unless this call should not happen.  Do not suppress it by blindly adding an EXPECT_CALL() if you don't mean to enforce the call.  See https://github.com/google/googletest/blob/master/docs/gmock_cook_book.md#knowing-when-to-expect for details.
+2022-04-17T01:51:38.4984510Z [       OK ] OneShot.OSMWithoutAdditionalKeypressDoesNothing (0 ms)
+2022-04-17T01:51:38.4984874Z [ RUN      ] OneShot.OSLWithAdditionalKeypress
+2022-04-17T01:51:38.4985211Z [       OK ] OneShot.OSLWithAdditionalKeypress (0 ms)
+2022-04-17T01:51:38.4985586Z [----------] 2 tests from OneShot (0 ms total)
+2022-04-17T01:51:38.4985745Z 
+2022-04-17T01:51:38.4985885Z [----------] 3 tests from Tapping
+2022-04-17T01:51:38.4986148Z [ RUN      ] Tapping.TapA_SHFT_T_KeyReportsKey
+2022-04-17T01:51:38.4986442Z [       OK ] Tapping.TapA_SHFT_T_KeyReportsKey (0 ms)
+2022-04-17T01:51:38.4986728Z [ RUN      ] Tapping.HoldA_SHFT_T_KeyReportsShift
+2022-04-17T01:51:38.4987037Z [       OK ] Tapping.HoldA_SHFT_T_KeyReportsShift (0 ms)
+2022-04-17T01:51:38.4987371Z [ RUN      ] Tapping.ANewTapWithinTappingTermIsBuggy
+2022-04-17T01:51:38.4987739Z [       OK ] Tapping.ANewTapWithinTappingTermIsBuggy (0 ms)
+2022-04-17T01:51:38.4988113Z [----------] 3 tests from Tapping (0 ms total)
+2022-04-17T01:51:38.4988278Z 
+2022-04-17T01:51:38.4988571Z [----------] 16 tests from OneShotModifierTests/OneShotParametrizedTestFixture
+2022-04-17T01:51:38.4989074Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/0
+2022-04-17T01:51:38.4989674Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/0 (0 ms)
+2022-04-17T01:51:38.4990241Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/1
+2022-04-17T01:51:38.4990809Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/1 (0 ms)
+2022-04-17T01:51:38.4991374Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/2
+2022-04-17T01:51:38.4991924Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/2 (0 ms)
+2022-04-17T01:51:38.4992487Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/3
+2022-04-17T01:51:38.4993166Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/3 (0 ms)
+2022-04-17T01:51:38.4993718Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/4
+2022-04-17T01:51:38.4994278Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/4 (0 ms)
+2022-04-17T01:51:38.4995137Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/5
+2022-04-17T01:51:38.4995698Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/5 (0 ms)
+2022-04-17T01:51:38.4996245Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/6
+2022-04-17T01:51:38.4996804Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/6 (0 ms)
+2022-04-17T01:51:38.4997358Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/7
+2022-04-17T01:51:38.4998017Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMWithAdditionalKeypress/7 (0 ms)
+2022-04-17T01:51:38.5003968Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/0
+2022-04-17T01:51:38.5005406Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/0 (0 ms)
+2022-04-17T01:51:38.5006257Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/1
+2022-04-17T01:51:38.5007088Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/1 (0 ms)
+2022-04-17T01:51:38.5007918Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/2
+2022-04-17T01:51:38.5008754Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/2 (0 ms)
+2022-04-17T01:51:38.5010104Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/3
+2022-04-17T01:51:38.5010961Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/3 (0 ms)
+2022-04-17T01:51:38.5011989Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/4
+2022-04-17T01:51:38.5012821Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/4 (0 ms)
+2022-04-17T01:51:38.5013648Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/5
+2022-04-17T01:51:38.5014460Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/5 (0 ms)
+2022-04-17T01:51:38.5015388Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/6
+2022-04-17T01:51:38.5016247Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/6 (0 ms)
+2022-04-17T01:51:38.5017084Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7
+2022-04-17T01:51:38.5017894Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7 (0 ms)
+2022-04-17T01:51:38.5018814Z [----------] 16 tests from OneShotModifierTests/OneShotParametrizedTestFixture (3 ms total)
+2022-04-17T01:51:38.5019076Z 
+2022-04-17T01:51:38.5019407Z [----------] Global test environment tear-down
+2022-04-17T01:51:38.5019703Z [==========] 49 tests from 5 test suites ran. (12 ms total)
+2022-04-17T01:51:38.5020062Z [  PASSED  ] 43 tests.
+2022-04-17T01:51:38.5020301Z [  SKIPPED ] 6 tests, listed below:
+2022-04-17T01:51:38.5020598Z [  SKIPPED ] ActionLayer.ToggleLayerDoesNothing
+2022-04-17T01:51:38.5021029Z [  SKIPPED ] ActionLayer.ToggleLayerUpAndDown
+2022-04-17T01:51:38.5021366Z [  SKIPPED ] ActionLayer.LayerTapToggleDoesNothing
+2022-04-17T01:51:38.5021838Z [  SKIPPED ] ActionLayer.LayerTapToggleWithKeypress
+2022-04-17T01:51:38.5022508Z [  SKIPPED ] ActionLayer.LayerTapToggleWithToggleWithKeypress
+2022-04-17T01:51:38.5023130Z [  SKIPPED ] ActionLayer.LayerTapReleasedBeforeKeypressReleaseWithModifiers
+2022-04-17T01:51:38.5023434Z 
+2022-04-17T01:51:38.5024378Z Testing [1mdebounce_asym_eager_defer_pk[0m
+2022-04-17T01:51:38.5026937Z [==========] Running 21 tests from 1 test suite.
+2022-04-17T01:51:38.5027307Z [----------] Global test environment set-up.
+2022-04-17T01:51:38.5027637Z [----------] 21 tests from DebounceTest
+2022-04-17T01:51:38.5027909Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:38.6022720Z [       OK ] DebounceTest.OneKeyShort1 (100 ms)
+2022-04-17T01:51:38.6023105Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:38.7029113Z [       OK ] DebounceTest.OneKeyShort2 (100 ms)
+2022-04-17T01:51:38.7029492Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:38.8035956Z [       OK ] DebounceTest.OneKeyShort3 (100 ms)
+2022-04-17T01:51:38.8036803Z [ RUN      ] DebounceTest.OneKeyShort4
+2022-04-17T01:51:38.9042693Z [       OK ] DebounceTest.OneKeyShort4 (100 ms)
+2022-04-17T01:51:38.9043072Z [ RUN      ] DebounceTest.OneKeyShort5
+2022-04-17T01:51:39.0048733Z [       OK ] DebounceTest.OneKeyShort5 (100 ms)
+2022-04-17T01:51:39.0049120Z [ RUN      ] DebounceTest.OneKeyShort6
+2022-04-17T01:51:39.1054523Z [       OK ] DebounceTest.OneKeyShort6 (100 ms)
+2022-04-17T01:51:39.1054963Z [ RUN      ] DebounceTest.OneKeyShort7
+2022-04-17T01:51:39.2056764Z [       OK ] DebounceTest.OneKeyShort7 (100 ms)
+2022-04-17T01:51:39.2057141Z [ RUN      ] DebounceTest.OneKeyShort8
+2022-04-17T01:51:39.3059798Z [       OK ] DebounceTest.OneKeyShort8 (100 ms)
+2022-04-17T01:51:39.3060169Z [ RUN      ] DebounceTest.OneKeyShort9
+2022-04-17T01:51:39.3582361Z [       OK ] DebounceTest.OneKeyShort9 (52 ms)
+2022-04-17T01:51:39.3582727Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:39.4588367Z [       OK ] DebounceTest.OneKeyBouncing1 (100 ms)
+2022-04-17T01:51:39.4588804Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:39.5589432Z [       OK ] DebounceTest.OneKeyBouncing2 (100 ms)
+2022-04-17T01:51:39.5589856Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:39.6592366Z [       OK ] DebounceTest.OneKeyLong (100 ms)
+2022-04-17T01:51:39.6592728Z [ RUN      ] DebounceTest.TwoKeysShort
+2022-04-17T01:51:39.7596849Z [       OK ] DebounceTest.TwoKeysShort (100 ms)
+2022-04-17T01:51:39.7597248Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:39.7857157Z [       OK ] DebounceTest.OneKeyDelayedScan1 (26 ms)
+2022-04-17T01:51:39.7857553Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:39.8117203Z [       OK ] DebounceTest.OneKeyDelayedScan2 (26 ms)
+2022-04-17T01:51:39.8117605Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:39.8378376Z [       OK ] DebounceTest.OneKeyDelayedScan3 (26 ms)
+2022-04-17T01:51:39.8378763Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:39.8639799Z [       OK ] DebounceTest.OneKeyDelayedScan4 (26 ms)
+2022-04-17T01:51:39.8640240Z [ RUN      ] DebounceTest.OneKeyDelayedScan5
+2022-04-17T01:51:39.9142477Z [       OK ] DebounceTest.OneKeyDelayedScan5 (50 ms)
+2022-04-17T01:51:39.9142883Z [ RUN      ] DebounceTest.OneKeyDelayedScan6
+2022-04-17T01:51:39.9648929Z [       OK ] DebounceTest.OneKeyDelayedScan6 (50 ms)
+2022-04-17T01:51:39.9649318Z [ RUN      ] DebounceTest.OneKeyDelayedScan7
+2022-04-17T01:51:39.9908758Z [       OK ] DebounceTest.OneKeyDelayedScan7 (25 ms)
+2022-04-17T01:51:39.9909154Z [ RUN      ] DebounceTest.OneKeyDelayedScan8
+2022-04-17T01:51:40.0170626Z [       OK ] DebounceTest.OneKeyDelayedScan8 (26 ms)
+2022-04-17T01:51:40.0171519Z [----------] 21 tests from DebounceTest (1515 ms total)
+2022-04-17T01:51:40.0171832Z 
+2022-04-17T01:51:40.0172069Z [----------] Global test environment tear-down
+2022-04-17T01:51:40.0172401Z [==========] 21 tests from 1 test suite ran. (1515 ms total)
+2022-04-17T01:51:40.0172672Z [  PASSED  ] 21 tests.
+2022-04-17T01:51:40.0172842Z 
+2022-04-17T01:51:40.0178940Z Testing [1mdebounce_sym_defer_g[0m
+2022-04-17T01:51:40.0192840Z [==========] Running 15 tests from 1 test suite.
+2022-04-17T01:51:40.0193305Z [----------] Global test environment set-up.
+2022-04-17T01:51:40.0193669Z [----------] 15 tests from DebounceTest
+2022-04-17T01:51:40.0193976Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:40.0721692Z [       OK ] DebounceTest.OneKeyShort1 (52 ms)
+2022-04-17T01:51:40.0722046Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:40.1250244Z [       OK ] DebounceTest.OneKeyShort2 (52 ms)
+2022-04-17T01:51:40.1250611Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:40.1780924Z [       OK ] DebounceTest.OneKeyShort3 (53 ms)
+2022-04-17T01:51:40.1781329Z [ RUN      ] DebounceTest.OneKeyTooQuick1
+2022-04-17T01:51:40.2307011Z [       OK ] DebounceTest.OneKeyTooQuick1 (52 ms)
+2022-04-17T01:51:40.2307409Z [ RUN      ] DebounceTest.OneKeyTooQuick2
+2022-04-17T01:51:40.2833163Z [       OK ] DebounceTest.OneKeyTooQuick2 (52 ms)
+2022-04-17T01:51:40.2833924Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:40.3360460Z [       OK ] DebounceTest.OneKeyBouncing1 (52 ms)
+2022-04-17T01:51:40.3360839Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:40.3885753Z [       OK ] DebounceTest.OneKeyBouncing2 (52 ms)
+2022-04-17T01:51:40.3886126Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:40.4416371Z [       OK ] DebounceTest.OneKeyLong (53 ms)
+2022-04-17T01:51:40.4416719Z [ RUN      ] DebounceTest.TwoKeysShort
+2022-04-17T01:51:40.4942319Z [       OK ] DebounceTest.TwoKeysShort (52 ms)
+2022-04-17T01:51:40.4942720Z [ RUN      ] DebounceTest.TwoKeysSimultaneous1
+2022-04-17T01:51:40.5470538Z [       OK ] DebounceTest.TwoKeysSimultaneous1 (52 ms)
+2022-04-17T01:51:40.5480780Z [ RUN      ] DebounceTest.TwoKeysSimultaneous2
+2022-04-17T01:51:40.6003220Z [       OK ] DebounceTest.TwoKeysSimultaneous2 (52 ms)
+2022-04-17T01:51:40.6003674Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:40.6271858Z [       OK ] DebounceTest.OneKeyDelayedScan1 (26 ms)
+2022-04-17T01:51:40.6272319Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:40.6532667Z [       OK ] DebounceTest.OneKeyDelayedScan2 (26 ms)
+2022-04-17T01:51:40.6533069Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:40.6802175Z [       OK ] DebounceTest.OneKeyDelayedScan3 (26 ms)
+2022-04-17T01:51:40.6802559Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:40.7069294Z [       OK ] DebounceTest.OneKeyDelayedScan4 (26 ms)
+2022-04-17T01:51:40.7070043Z [----------] 15 tests from DebounceTest (687 ms total)
+2022-04-17T01:51:40.7070252Z 
+2022-04-17T01:51:40.7070467Z [----------] Global test environment tear-down
+2022-04-17T01:51:40.7070803Z [==========] 15 tests from 1 test suite ran. (687 ms total)
+2022-04-17T01:51:40.7071089Z [  PASSED  ] 15 tests.
+2022-04-17T01:51:40.7071242Z 
+2022-04-17T01:51:40.7074685Z Testing [1mdebounce_sym_defer_pk[0m
+2022-04-17T01:51:40.7090843Z [==========] Running 15 tests from 1 test suite.
+2022-04-17T01:51:40.7091324Z [----------] Global test environment set-up.
+2022-04-17T01:51:40.7091928Z [----------] 15 tests from DebounceTest
+2022-04-17T01:51:40.7092222Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:40.7597805Z [       OK ] DebounceTest.OneKeyShort1 (50 ms)
+2022-04-17T01:51:40.7598185Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:40.8100246Z [       OK ] DebounceTest.OneKeyShort2 (50 ms)
+2022-04-17T01:51:40.8100586Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:40.8606378Z [       OK ] DebounceTest.OneKeyShort3 (50 ms)
+2022-04-17T01:51:40.8606771Z [ RUN      ] DebounceTest.OneKeyTooQuick1
+2022-04-17T01:51:40.9107400Z [       OK ] DebounceTest.OneKeyTooQuick1 (50 ms)
+2022-04-17T01:51:40.9107802Z [ RUN      ] DebounceTest.OneKeyTooQuick2
+2022-04-17T01:51:40.9609068Z [       OK ] DebounceTest.OneKeyTooQuick2 (50 ms)
+2022-04-17T01:51:40.9609446Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:41.0110399Z [       OK ] DebounceTest.OneKeyBouncing1 (50 ms)
+2022-04-17T01:51:41.0110802Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:41.0614589Z [       OK ] DebounceTest.OneKeyBouncing2 (50 ms)
+2022-04-17T01:51:41.0614944Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:41.1116432Z [       OK ] DebounceTest.OneKeyLong (50 ms)
+2022-04-17T01:51:41.1116794Z [ RUN      ] DebounceTest.TwoKeysShort
+2022-04-17T01:51:41.1618731Z [       OK ] DebounceTest.TwoKeysShort (50 ms)
+2022-04-17T01:51:41.1619136Z [ RUN      ] DebounceTest.TwoKeysSimultaneous1
+2022-04-17T01:51:41.2120221Z [       OK ] DebounceTest.TwoKeysSimultaneous1 (50 ms)
+2022-04-17T01:51:41.2120637Z [ RUN      ] DebounceTest.TwoKeysSimultaneous2
+2022-04-17T01:51:41.2622473Z [       OK ] DebounceTest.TwoKeysSimultaneous2 (50 ms)
+2022-04-17T01:51:41.2622879Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:41.2873562Z [       OK ] DebounceTest.OneKeyDelayedScan1 (25 ms)
+2022-04-17T01:51:41.2873957Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:41.3125238Z [       OK ] DebounceTest.OneKeyDelayedScan2 (25 ms)
+2022-04-17T01:51:41.3126025Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:41.3378129Z [       OK ] DebounceTest.OneKeyDelayedScan3 (25 ms)
+2022-04-17T01:51:41.3378513Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:41.3631911Z [       OK ] DebounceTest.OneKeyDelayedScan4 (25 ms)
+2022-04-17T01:51:41.3632658Z [----------] 15 tests from DebounceTest (653 ms total)
+2022-04-17T01:51:41.3632868Z 
+2022-04-17T01:51:41.3633079Z [----------] Global test environment tear-down
+2022-04-17T01:51:41.3633409Z [==========] 15 tests from 1 test suite ran. (653 ms total)
+2022-04-17T01:51:41.3633710Z [  PASSED  ] 15 tests.
+2022-04-17T01:51:41.3633861Z 
+2022-04-17T01:51:41.3637311Z Testing [1mdebounce_sym_defer_pr[0m
+2022-04-17T01:51:41.3652881Z [==========] Running 15 tests from 1 test suite.
+2022-04-17T01:51:41.3653282Z [----------] Global test environment set-up.
+2022-04-17T01:51:41.3653615Z [----------] 15 tests from DebounceTest
+2022-04-17T01:51:41.3653871Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:41.4281491Z [       OK ] DebounceTest.OneKeyShort1 (62 ms)
+2022-04-17T01:51:41.4281886Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:41.4904637Z [       OK ] DebounceTest.OneKeyShort2 (62 ms)
+2022-04-17T01:51:41.4905032Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:41.5529366Z [       OK ] DebounceTest.OneKeyShort3 (62 ms)
+2022-04-17T01:51:41.5529742Z [ RUN      ] DebounceTest.OneKeyTooQuick1
+2022-04-17T01:51:41.6152326Z [       OK ] DebounceTest.OneKeyTooQuick1 (62 ms)
+2022-04-17T01:51:41.6152748Z [ RUN      ] DebounceTest.OneKeyTooQuick2
+2022-04-17T01:51:41.6770269Z [       OK ] DebounceTest.OneKeyTooQuick2 (61 ms)
+2022-04-17T01:51:41.6770658Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:41.7393348Z [       OK ] DebounceTest.OneKeyBouncing1 (62 ms)
+2022-04-17T01:51:41.7393747Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:41.8018600Z [       OK ] DebounceTest.OneKeyBouncing2 (62 ms)
+2022-04-17T01:51:41.8019002Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:41.8643812Z [       OK ] DebounceTest.OneKeyLong (62 ms)
+2022-04-17T01:51:41.8644194Z [ RUN      ] DebounceTest.TwoKeysShort
+2022-04-17T01:51:41.9270332Z [       OK ] DebounceTest.TwoKeysShort (62 ms)
+2022-04-17T01:51:41.9270770Z [ RUN      ] DebounceTest.TwoKeysSimultaneous1
+2022-04-17T01:51:41.9897228Z [       OK ] DebounceTest.TwoKeysSimultaneous1 (62 ms)
+2022-04-17T01:51:41.9897664Z [ RUN      ] DebounceTest.TwoKeysSimultaneous2
+2022-04-17T01:51:42.0525542Z [       OK ] DebounceTest.TwoKeysSimultaneous2 (62 ms)
+2022-04-17T01:51:42.0525948Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:42.0840178Z [       OK ] DebounceTest.OneKeyDelayedScan1 (31 ms)
+2022-04-17T01:51:42.0840569Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:42.1153597Z [       OK ] DebounceTest.OneKeyDelayedScan2 (31 ms)
+2022-04-17T01:51:42.1154008Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:42.1467691Z [       OK ] DebounceTest.OneKeyDelayedScan3 (31 ms)
+2022-04-17T01:51:42.1468459Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:42.1781356Z [       OK ] DebounceTest.OneKeyDelayedScan4 (31 ms)
+2022-04-17T01:51:42.1782102Z [----------] 15 tests from DebounceTest (812 ms total)
+2022-04-17T01:51:42.1782311Z 
+2022-04-17T01:51:42.1782523Z [----------] Global test environment tear-down
+2022-04-17T01:51:42.1782858Z [==========] 15 tests from 1 test suite ran. (812 ms total)
+2022-04-17T01:51:42.1783143Z [  PASSED  ] 15 tests.
+2022-04-17T01:51:42.1783294Z 
+2022-04-17T01:51:42.1787023Z Testing [1mdebounce_sym_eager_pk[0m
+2022-04-17T01:51:42.1803265Z [==========] Running 16 tests from 1 test suite.
+2022-04-17T01:51:42.1803718Z [----------] Global test environment set-up.
+2022-04-17T01:51:42.1804095Z [----------] 16 tests from DebounceTest
+2022-04-17T01:51:42.1804387Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:42.2863873Z [       OK ] DebounceTest.OneKeyShort1 (105 ms)
+2022-04-17T01:51:42.2864263Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:42.3920847Z [       OK ] DebounceTest.OneKeyShort2 (105 ms)
+2022-04-17T01:51:42.3921283Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:42.4978552Z [       OK ] DebounceTest.OneKeyShort3 (105 ms)
+2022-04-17T01:51:42.4978982Z [ RUN      ] DebounceTest.OneKeyShort4
+2022-04-17T01:51:42.6036866Z [       OK ] DebounceTest.OneKeyShort4 (105 ms)
+2022-04-17T01:51:42.6037253Z [ RUN      ] DebounceTest.OneKeyShort5
+2022-04-17T01:51:42.7095405Z [       OK ] DebounceTest.OneKeyShort5 (105 ms)
+2022-04-17T01:51:42.7095787Z [ RUN      ] DebounceTest.OneKeyShort6
+2022-04-17T01:51:42.8152905Z [       OK ] DebounceTest.OneKeyShort6 (105 ms)
+2022-04-17T01:51:42.8153311Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:42.9211819Z [       OK ] DebounceTest.OneKeyBouncing1 (105 ms)
+2022-04-17T01:51:42.9212221Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:43.0270750Z [       OK ] DebounceTest.OneKeyBouncing2 (105 ms)
+2022-04-17T01:51:43.0271152Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:43.1329393Z [       OK ] DebounceTest.OneKeyLong (105 ms)
+2022-04-17T01:51:43.1329781Z [ RUN      ] DebounceTest.TwoKeysShort
+2022-04-17T01:51:43.2389545Z [       OK ] DebounceTest.TwoKeysShort (106 ms)
+2022-04-17T01:51:43.2389937Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:43.2918457Z [       OK ] DebounceTest.OneKeyDelayedScan1 (52 ms)
+2022-04-17T01:51:43.2918877Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:43.3445398Z [       OK ] DebounceTest.OneKeyDelayedScan2 (52 ms)
+2022-04-17T01:51:43.3445873Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:43.3973763Z [       OK ] DebounceTest.OneKeyDelayedScan3 (52 ms)
+2022-04-17T01:51:43.3974192Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:43.4502295Z [       OK ] DebounceTest.OneKeyDelayedScan4 (52 ms)
+2022-04-17T01:51:43.4502736Z [ RUN      ] DebounceTest.OneKeyDelayedScan5
+2022-04-17T01:51:43.5032304Z [       OK ] DebounceTest.OneKeyDelayedScan5 (52 ms)
+2022-04-17T01:51:43.5032748Z [ RUN      ] DebounceTest.OneKeyDelayedScan6
+2022-04-17T01:51:43.5562901Z [       OK ] DebounceTest.OneKeyDelayedScan6 (52 ms)
+2022-04-17T01:51:43.5563700Z [----------] 16 tests from DebounceTest (1375 ms total)
+2022-04-17T01:51:43.5563912Z 
+2022-04-17T01:51:43.5564147Z [----------] Global test environment tear-down
+2022-04-17T01:51:43.5564472Z [==========] 16 tests from 1 test suite ran. (1375 ms total)
+2022-04-17T01:51:43.5564765Z [  PASSED  ] 16 tests.
+2022-04-17T01:51:43.5564917Z 
+2022-04-17T01:51:43.5569827Z Testing [1mdebounce_sym_eager_pr[0m
+2022-04-17T01:51:43.5583631Z [==========] Running 19 tests from 1 test suite.
+2022-04-17T01:51:43.5584107Z [----------] Global test environment set-up.
+2022-04-17T01:51:43.5584494Z [----------] 19 tests from DebounceTest
+2022-04-17T01:51:43.5584790Z [ RUN      ] DebounceTest.OneKeyShort1
+2022-04-17T01:51:43.6199559Z [       OK ] DebounceTest.OneKeyShort1 (61 ms)
+2022-04-17T01:51:43.6199958Z [ RUN      ] DebounceTest.OneKeyShort2
+2022-04-17T01:51:43.6809858Z [       OK ] DebounceTest.OneKeyShort2 (61 ms)
+2022-04-17T01:51:43.6810593Z [ RUN      ] DebounceTest.OneKeyShort3
+2022-04-17T01:51:43.7421959Z [       OK ] DebounceTest.OneKeyShort3 (61 ms)
+2022-04-17T01:51:43.7422344Z [ RUN      ] DebounceTest.OneKeyShort4
+2022-04-17T01:51:43.8035523Z [       OK ] DebounceTest.OneKeyShort4 (61 ms)
+2022-04-17T01:51:43.8035878Z [ RUN      ] DebounceTest.OneKeyShort5
+2022-04-17T01:51:43.8646486Z [       OK ] DebounceTest.OneKeyShort5 (61 ms)
+2022-04-17T01:51:43.8646850Z [ RUN      ] DebounceTest.OneKeyShort6
+2022-04-17T01:51:43.9256873Z [       OK ] DebounceTest.OneKeyShort6 (61 ms)
+2022-04-17T01:51:43.9257245Z [ RUN      ] DebounceTest.OneKeyBouncing1
+2022-04-17T01:51:43.9868766Z [       OK ] DebounceTest.OneKeyBouncing1 (61 ms)
+2022-04-17T01:51:43.9869140Z [ RUN      ] DebounceTest.OneKeyBouncing2
+2022-04-17T01:51:44.0481024Z [       OK ] DebounceTest.OneKeyBouncing2 (61 ms)
+2022-04-17T01:51:44.0481396Z [ RUN      ] DebounceTest.OneKeyLong
+2022-04-17T01:51:44.1094204Z [       OK ] DebounceTest.OneKeyLong (61 ms)
+2022-04-17T01:51:44.1094706Z [ RUN      ] DebounceTest.TwoRowsShort
+2022-04-17T01:51:44.1707833Z [       OK ] DebounceTest.TwoRowsShort (61 ms)
+2022-04-17T01:51:44.1708220Z [ RUN      ] DebounceTest.TwoKeysOverlap
+2022-04-17T01:51:44.2322461Z [       OK ] DebounceTest.TwoKeysOverlap (61 ms)
+2022-04-17T01:51:44.2326410Z [ RUN      ] DebounceTest.TwoKeysSimultaneous1
+2022-04-17T01:51:44.2935233Z [       OK ] DebounceTest.TwoKeysSimultaneous1 (61 ms)
+2022-04-17T01:51:44.2935834Z [ RUN      ] DebounceTest.TwoKeysSimultaneous2
+2022-04-17T01:51:44.3545772Z [       OK ] DebounceTest.TwoKeysSimultaneous2 (61 ms)
+2022-04-17T01:51:44.3546379Z [ RUN      ] DebounceTest.OneKeyDelayedScan1
+2022-04-17T01:51:44.3850764Z [       OK ] DebounceTest.OneKeyDelayedScan1 (30 ms)
+2022-04-17T01:51:44.3851377Z [ RUN      ] DebounceTest.OneKeyDelayedScan2
+2022-04-17T01:51:44.4156871Z [       OK ] DebounceTest.OneKeyDelayedScan2 (30 ms)
+2022-04-17T01:51:44.4157496Z [ RUN      ] DebounceTest.OneKeyDelayedScan3
+2022-04-17T01:51:44.4462678Z [       OK ] DebounceTest.OneKeyDelayedScan3 (30 ms)
+2022-04-17T01:51:44.4463338Z [ RUN      ] DebounceTest.OneKeyDelayedScan4
+2022-04-17T01:51:44.4767134Z [       OK ] DebounceTest.OneKeyDelayedScan4 (30 ms)
+2022-04-17T01:51:44.4767749Z [ RUN      ] DebounceTest.OneKeyDelayedScan5
+2022-04-17T01:51:44.5071444Z [       OK ] DebounceTest.OneKeyDelayedScan5 (30 ms)
+2022-04-17T01:51:44.5072072Z [ RUN      ] DebounceTest.OneKeyDelayedScan6
+2022-04-17T01:51:44.5378169Z [       OK ] DebounceTest.OneKeyDelayedScan6 (30 ms)
+2022-04-17T01:51:44.5379454Z [----------] 19 tests from DebounceTest (979 ms total)
+2022-04-17T01:51:44.5379870Z 
+2022-04-17T01:51:44.5380503Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5381023Z [==========] 19 tests from 1 test suite ran. (979 ms total)
+2022-04-17T01:51:44.5381721Z [  PASSED  ] 19 tests.
+2022-04-17T01:51:44.5382101Z 
+2022-04-17T01:51:44.5386428Z Testing [1mdefault_mod_tap[0m
+2022-04-17T01:51:44.5400685Z [==========] Running 6 tests from 1 test suite.
+2022-04-17T01:51:44.5401415Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5403392Z [----------] 6 tests from DefaultTapHold
+2022-04-17T01:51:44.5403924Z [ RUN      ] DefaultTapHold.tap_regular_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5405894Z [       OK ] DefaultTapHold.tap_regular_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5406468Z [ RUN      ] DefaultTapHold.tap_mod_tap_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5408432Z [       OK ] DefaultTapHold.tap_mod_tap_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5408995Z [ RUN      ] DefaultTapHold.tap_regular_key_while_layer_tap_key_is_held
+2022-04-17T01:51:44.5410978Z [       OK ] DefaultTapHold.tap_regular_key_while_layer_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5412835Z [ RUN      ] DefaultTapHold.tap_mod_tap_hold_key_two_times
+2022-04-17T01:51:44.5413769Z tests/tap_hold_configurations/default_mod_tap/test_tap_hold.cpp:143: Skipped
+2022-04-17T01:51:44.5415824Z TODO:Holding a modtap key results in out of bounds access to the keymap, this is a bug in QMK.
+2022-04-17T01:51:44.5417970Z [  SKIPPED ] DefaultTapHold.tap_mod_tap_hold_key_two_times (0 ms)
+2022-04-17T01:51:44.5418538Z [ RUN      ] DefaultTapHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time
+2022-04-17T01:51:44.5419282Z tests/tap_hold_configurations/default_mod_tap/test_tap_hold.cpp:178: Skipped
+2022-04-17T01:51:44.5419810Z TODO:Holding a modtap key results in out of bounds access to the keymap, this is a bug in QMK.
+2022-04-17T01:51:44.5420587Z [  SKIPPED ] DefaultTapHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time (0 ms)
+2022-04-17T01:51:44.5421098Z [ RUN      ] DefaultTapHold.tap_and_hold_mod_tap_hold_key
+2022-04-17T01:51:44.5421755Z [       OK ] DefaultTapHold.tap_and_hold_mod_tap_hold_key (0 ms)
+2022-04-17T01:51:44.5422378Z [----------] 6 tests from DefaultTapHold (1 ms total)
+2022-04-17T01:51:44.5424247Z 
+2022-04-17T01:51:44.5424653Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5425529Z [==========] 6 tests from 1 test suite ran. (1 ms total)
+2022-04-17T01:51:44.5425927Z [  PASSED  ] 4 tests.
+2022-04-17T01:51:44.5426477Z [  SKIPPED ] 2 tests, listed below:
+2022-04-17T01:51:44.5426908Z [  SKIPPED ] DefaultTapHold.tap_mod_tap_hold_key_two_times
+2022-04-17T01:51:44.5427606Z [  SKIPPED ] DefaultTapHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time
+2022-04-17T01:51:44.5427961Z 
+2022-04-17T01:51:44.5428507Z Testing [1meeprom_stm32_large[0m
+2022-04-17T01:51:44.5441638Z [==========] Running 14 tests from 1 test suite.
+2022-04-17T01:51:44.5443609Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5444157Z [----------] 14 tests from EepromStm32Test
+2022-04-17T01:51:44.5444773Z [ RUN      ] EepromStm32Test.TestErase
+2022-04-17T01:51:44.5445209Z [       OK ] EepromStm32Test.TestErase (0 ms)
+2022-04-17T01:51:44.5445837Z [ RUN      ] EepromStm32Test.TestReadGarbage
+2022-04-17T01:51:44.5446340Z [       OK ] EepromStm32Test.TestReadGarbage (0 ms)
+2022-04-17T01:51:44.5446999Z [ RUN      ] EepromStm32Test.TestWriteBadAddress
+2022-04-17T01:51:44.5447482Z [       OK ] EepromStm32Test.TestWriteBadAddress (0 ms)
+2022-04-17T01:51:44.5449346Z [ RUN      ] EepromStm32Test.TestReadBadAddress
+2022-04-17T01:51:44.5450301Z [       OK ] EepromStm32Test.TestReadBadAddress (0 ms)
+2022-04-17T01:51:44.5450765Z [ RUN      ] EepromStm32Test.TestReadByte
+2022-04-17T01:51:44.5451480Z [       OK ] EepromStm32Test.TestReadByte (0 ms)
+2022-04-17T01:51:44.5451935Z [ RUN      ] EepromStm32Test.TestWriteByte
+2022-04-17T01:51:44.5452553Z [       OK ] EepromStm32Test.TestWriteByte (0 ms)
+2022-04-17T01:51:44.5453006Z [ RUN      ] EepromStm32Test.TestByteRoundTrip
+2022-04-17T01:51:44.5453664Z [       OK ] EepromStm32Test.TestByteRoundTrip (0 ms)
+2022-04-17T01:51:44.5454110Z [ RUN      ] EepromStm32Test.TestReadWord
+2022-04-17T01:51:44.5454718Z [       OK ] EepromStm32Test.TestReadWord (0 ms)
+2022-04-17T01:51:44.5455155Z [ RUN      ] EepromStm32Test.TestWriteWord
+2022-04-17T01:51:44.5455788Z [       OK ] EepromStm32Test.TestWriteWord (0 ms)
+2022-04-17T01:51:44.5456231Z [ RUN      ] EepromStm32Test.TestWordRoundTrip
+2022-04-17T01:51:44.5456884Z [       OK ] EepromStm32Test.TestWordRoundTrip (0 ms)
+2022-04-17T01:51:44.5457350Z [ RUN      ] EepromStm32Test.TestByteWordBoundary
+2022-04-17T01:51:44.5458016Z [       OK ] EepromStm32Test.TestByteWordBoundary (0 ms)
+2022-04-17T01:51:44.5458471Z [ RUN      ] EepromStm32Test.TestDWordRoundTrip
+2022-04-17T01:51:44.5459143Z [       OK ] EepromStm32Test.TestDWordRoundTrip (0 ms)
+2022-04-17T01:51:44.5459609Z [ RUN      ] EepromStm32Test.TestBlockRoundTrip
+2022-04-17T01:51:44.5464053Z [       OK ] EepromStm32Test.TestBlockRoundTrip (0 ms)
+2022-04-17T01:51:44.5464774Z [ RUN      ] EepromStm32Test.TestCompaction
+2022-04-17T01:51:44.5465100Z [       OK ] EepromStm32Test.TestCompaction (0 ms)
+2022-04-17T01:51:44.5465562Z [----------] 14 tests from EepromStm32Test (0 ms total)
+2022-04-17T01:51:44.5465745Z 
+2022-04-17T01:51:44.5465935Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5466389Z [==========] 14 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5466647Z [  PASSED  ] 14 tests.
+2022-04-17T01:51:44.5466786Z 
+2022-04-17T01:51:44.5466950Z Testing [1meeprom_stm32_tiny[0m
+2022-04-17T01:51:44.5467193Z [==========] Running 14 tests from 1 test suite.
+2022-04-17T01:51:44.5467524Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5467865Z [----------] 14 tests from EepromStm32Test
+2022-04-17T01:51:44.5468121Z [ RUN      ] EepromStm32Test.TestErase
+2022-04-17T01:51:44.5468405Z [       OK ] EepromStm32Test.TestErase (0 ms)
+2022-04-17T01:51:44.5468701Z [ RUN      ] EepromStm32Test.TestReadGarbage
+2022-04-17T01:51:44.5470167Z [       OK ] EepromStm32Test.TestReadGarbage (0 ms)
+2022-04-17T01:51:44.5470633Z [ RUN      ] EepromStm32Test.TestWriteBadAddress
+2022-04-17T01:51:44.5470980Z [       OK ] EepromStm32Test.TestWriteBadAddress (0 ms)
+2022-04-17T01:51:44.5471310Z [ RUN      ] EepromStm32Test.TestReadBadAddress
+2022-04-17T01:51:44.5471760Z [       OK ] EepromStm32Test.TestReadBadAddress (0 ms)
+2022-04-17T01:51:44.5472072Z [ RUN      ] EepromStm32Test.TestReadByte
+2022-04-17T01:51:44.5472368Z [       OK ] EepromStm32Test.TestReadByte (0 ms)
+2022-04-17T01:51:44.5472648Z [ RUN      ] EepromStm32Test.TestWriteByte
+2022-04-17T01:51:44.5472947Z [       OK ] EepromStm32Test.TestWriteByte (0 ms)
+2022-04-17T01:51:44.5473257Z [ RUN      ] EepromStm32Test.TestByteRoundTrip
+2022-04-17T01:51:44.5473568Z [       OK ] EepromStm32Test.TestByteRoundTrip (0 ms)
+2022-04-17T01:51:44.5473872Z [ RUN      ] EepromStm32Test.TestReadWord
+2022-04-17T01:51:44.5474163Z [       OK ] EepromStm32Test.TestReadWord (0 ms)
+2022-04-17T01:51:44.5474441Z [ RUN      ] EepromStm32Test.TestWriteWord
+2022-04-17T01:51:44.5474735Z [       OK ] EepromStm32Test.TestWriteWord (0 ms)
+2022-04-17T01:51:44.5475039Z [ RUN      ] EepromStm32Test.TestWordRoundTrip
+2022-04-17T01:51:44.5475344Z [       OK ] EepromStm32Test.TestWordRoundTrip (0 ms)
+2022-04-17T01:51:44.5475670Z [ RUN      ] EepromStm32Test.TestByteWordBoundary
+2022-04-17T01:51:44.5476011Z [       OK ] EepromStm32Test.TestByteWordBoundary (0 ms)
+2022-04-17T01:51:44.5476340Z [ RUN      ] EepromStm32Test.TestDWordRoundTrip
+2022-04-17T01:51:44.5476652Z [       OK ] EepromStm32Test.TestDWordRoundTrip (0 ms)
+2022-04-17T01:51:44.5476973Z [ RUN      ] EepromStm32Test.TestBlockRoundTrip
+2022-04-17T01:51:44.5477298Z [       OK ] EepromStm32Test.TestBlockRoundTrip (0 ms)
+2022-04-17T01:51:44.5477596Z [ RUN      ] EepromStm32Test.TestCompaction
+2022-04-17T01:51:44.5477903Z [       OK ] EepromStm32Test.TestCompaction (0 ms)
+2022-04-17T01:51:44.5478344Z [----------] 14 tests from EepromStm32Test (0 ms total)
+2022-04-17T01:51:44.5478525Z 
+2022-04-17T01:51:44.5478701Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5478987Z [==========] 14 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5479237Z [  PASSED  ] 14 tests.
+2022-04-17T01:51:44.5479914Z 
+2022-04-17T01:51:44.5480067Z Testing [1mencoder[0m
+2022-04-17T01:51:44.5484285Z [==========] Running 6 tests from 1 test suite.
+2022-04-17T01:51:44.5484708Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5485039Z [----------] 6 tests from EncoderTest
+2022-04-17T01:51:44.5485282Z [ RUN      ] EncoderTest.TestInit
+2022-04-17T01:51:44.5485546Z [       OK ] EncoderTest.TestInit (0 ms)
+2022-04-17T01:51:44.5485826Z [ RUN      ] EncoderTest.TestOneClockwise
+2022-04-17T01:51:44.5486112Z [       OK ] EncoderTest.TestOneClockwise (0 ms)
+2022-04-17T01:51:44.5486428Z [ RUN      ] EncoderTest.TestOneCounterClockwise
+2022-04-17T01:51:44.5486765Z [       OK ] EncoderTest.TestOneCounterClockwise (0 ms)
+2022-04-17T01:51:44.5487095Z [ RUN      ] EncoderTest.TestTwoClockwiseOneCC
+2022-04-17T01:51:44.5487408Z [       OK ] EncoderTest.TestTwoClockwiseOneCC (0 ms)
+2022-04-17T01:51:44.5487705Z [ RUN      ] EncoderTest.TestNoEarly
+2022-04-17T01:51:44.5487982Z [       OK ] EncoderTest.TestNoEarly (0 ms)
+2022-04-17T01:51:44.5488240Z [ RUN      ] EncoderTest.TestHalfway
+2022-04-17T01:51:44.5488518Z [       OK ] EncoderTest.TestHalfway (0 ms)
+2022-04-17T01:51:44.5490615Z [----------] 6 tests from EncoderTest (0 ms total)
+2022-04-17T01:51:44.5490803Z 
+2022-04-17T01:51:44.5490984Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5491271Z [==========] 6 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5491697Z [  PASSED  ] 6 tests.
+2022-04-17T01:51:44.5491831Z 
+2022-04-17T01:51:44.5492438Z Testing [1mencoder_split_left_eq_right[0m
+2022-04-17T01:51:44.5505302Z ignoring update on right hand (3,CW)
+2022-04-17T01:51:44.5505608Z [==========] Running 5 tests from 1 test suite.
+2022-04-17T01:51:44.5506003Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5506377Z [----------] 5 tests from EncoderSplitTestLeftEqRight
+2022-04-17T01:51:44.5506731Z [ RUN      ] EncoderSplitTestLeftEqRight.TestInitLeft
+2022-04-17T01:51:44.5507111Z [       OK ] EncoderSplitTestLeftEqRight.TestInitLeft (0 ms)
+2022-04-17T01:51:44.5507491Z [ RUN      ] EncoderSplitTestLeftEqRight.TestInitRight
+2022-04-17T01:51:44.5508023Z [       OK ] EncoderSplitTestLeftEqRight.TestInitRight (0 ms)
+2022-04-17T01:51:44.5508428Z [ RUN      ] EncoderSplitTestLeftEqRight.TestOneClockwiseLeft
+2022-04-17T01:51:44.5508860Z [       OK ] EncoderSplitTestLeftEqRight.TestOneClockwiseLeft (0 ms)
+2022-04-17T01:51:44.5509291Z [ RUN      ] EncoderSplitTestLeftEqRight.TestOneClockwiseRightSent
+2022-04-17T01:51:44.5509755Z [       OK ] EncoderSplitTestLeftEqRight.TestOneClockwiseRightSent (0 ms)
+2022-04-17T01:51:44.5511480Z [ RUN      ] EncoderSplitTestLeftEqRight.TestMultipleEncodersRightReceived
+2022-04-17T01:51:44.5512019Z [       OK ] EncoderSplitTestLeftEqRight.TestMultipleEncodersRightReceived (0 ms)
+2022-04-17T01:51:44.5512608Z [----------] 5 tests from EncoderSplitTestLeftEqRight (0 ms total)
+2022-04-17T01:51:44.5512829Z 
+2022-04-17T01:51:44.5513021Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5513308Z [==========] 5 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5513545Z [  PASSED  ] 5 tests.
+2022-04-17T01:51:44.5514153Z 
+2022-04-17T01:51:44.5514356Z Testing [1mencoder_split_left_gt_right[0m
+2022-04-17T01:51:44.5525837Z ignoring update on right hand (3,CW)
+2022-04-17T01:51:44.5526183Z [==========] Running 5 tests from 1 test suite.
+2022-04-17T01:51:44.5527594Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5528020Z [----------] 5 tests from EncoderSplitTestLeftGreaterThanRight
+2022-04-17T01:51:44.5528414Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestInitLeft
+2022-04-17T01:51:44.5528851Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestInitLeft (0 ms)
+2022-04-17T01:51:44.5529295Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestInitRight
+2022-04-17T01:51:44.5529722Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestInitRight (0 ms)
+2022-04-17T01:51:44.5530186Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestOneClockwiseLeft
+2022-04-17T01:51:44.5530685Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestOneClockwiseLeft (0 ms)
+2022-04-17T01:51:44.5531203Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestOneClockwiseRightSent
+2022-04-17T01:51:44.5533477Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestOneClockwiseRightSent (0 ms)
+2022-04-17T01:51:44.5534061Z [ RUN      ] EncoderSplitTestLeftGreaterThanRight.TestMultipleEncodersRightReceived
+2022-04-17T01:51:44.5534676Z [       OK ] EncoderSplitTestLeftGreaterThanRight.TestMultipleEncodersRightReceived (0 ms)
+2022-04-17T01:51:44.5535330Z [----------] 5 tests from EncoderSplitTestLeftGreaterThanRight (0 ms total)
+2022-04-17T01:51:44.5535577Z 
+2022-04-17T01:51:44.5535768Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5536058Z [==========] 5 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5536291Z [  PASSED  ] 5 tests.
+2022-04-17T01:51:44.5536426Z 
+2022-04-17T01:51:44.5537022Z Testing [1mencoder_split_left_lt_right[0m
+2022-04-17T01:51:44.5548342Z ignoring update on right hand (3,CW)
+2022-04-17T01:51:44.5548625Z [==========] Running 5 tests from 1 test suite.
+2022-04-17T01:51:44.5549412Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5550586Z [----------] 5 tests from EncoderSplitTestLeftLessThanRight
+2022-04-17T01:51:44.5550979Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestInitLeft
+2022-04-17T01:51:44.5551382Z [       OK ] EncoderSplitTestLeftLessThanRight.TestInitLeft (0 ms)
+2022-04-17T01:51:44.5551803Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestInitRight
+2022-04-17T01:51:44.5552222Z [       OK ] EncoderSplitTestLeftLessThanRight.TestInitRight (0 ms)
+2022-04-17T01:51:44.5552663Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestOneClockwiseLeft
+2022-04-17T01:51:44.5554766Z [       OK ] EncoderSplitTestLeftLessThanRight.TestOneClockwiseLeft (0 ms)
+2022-04-17T01:51:44.5555314Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestOneClockwiseRightSent
+2022-04-17T01:51:44.5555830Z [       OK ] EncoderSplitTestLeftLessThanRight.TestOneClockwiseRightSent (0 ms)
+2022-04-17T01:51:44.5556362Z [ RUN      ] EncoderSplitTestLeftLessThanRight.TestMultipleEncodersRightReceived
+2022-04-17T01:51:44.5557097Z [       OK ] EncoderSplitTestLeftLessThanRight.TestMultipleEncodersRightReceived (0 ms)
+2022-04-17T01:51:44.5557748Z [----------] 5 tests from EncoderSplitTestLeftLessThanRight (0 ms total)
+2022-04-17T01:51:44.5557982Z 
+2022-04-17T01:51:44.5558173Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5558448Z [==========] 5 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5558692Z [  PASSED  ] 5 tests.
+2022-04-17T01:51:44.5558830Z 
+2022-04-17T01:51:44.5559406Z Testing [1mencoder_split_no_left[0m
+2022-04-17T01:51:44.5569115Z ignoring update on right hand (1,CW)
+2022-04-17T01:51:44.5569473Z [==========] Running 5 tests from 1 test suite.
+2022-04-17T01:51:44.5570143Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5571261Z [----------] 5 tests from EncoderSplitTestNoLeft
+2022-04-17T01:51:44.5571770Z [ RUN      ] EncoderSplitTestNoLeft.TestInitLeft
+2022-04-17T01:51:44.5572128Z [       OK ] EncoderSplitTestNoLeft.TestInitLeft (0 ms)
+2022-04-17T01:51:44.5572483Z [ RUN      ] EncoderSplitTestNoLeft.TestInitRight
+2022-04-17T01:51:44.5572821Z [       OK ] EncoderSplitTestNoLeft.TestInitRight (0 ms)
+2022-04-17T01:51:44.5573193Z [ RUN      ] EncoderSplitTestNoLeft.TestOneClockwiseLeft
+2022-04-17T01:51:44.5573587Z [       OK ] EncoderSplitTestNoLeft.TestOneClockwiseLeft (0 ms)
+2022-04-17T01:51:44.5573981Z [ RUN      ] EncoderSplitTestNoLeft.TestOneClockwiseRightSent
+2022-04-17T01:51:44.5576073Z [       OK ] EncoderSplitTestNoLeft.TestOneClockwiseRightSent (0 ms)
+2022-04-17T01:51:44.5576544Z [ RUN      ] EncoderSplitTestNoLeft.TestMultipleEncodersRightReceived
+2022-04-17T01:51:44.5577026Z [       OK ] EncoderSplitTestNoLeft.TestMultipleEncodersRightReceived (0 ms)
+2022-04-17T01:51:44.5577583Z [----------] 5 tests from EncoderSplitTestNoLeft (0 ms total)
+2022-04-17T01:51:44.5577786Z 
+2022-04-17T01:51:44.5577977Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5578274Z [==========] 5 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5578510Z [  PASSED  ] 5 tests.
+2022-04-17T01:51:44.5578640Z 
+2022-04-17T01:51:44.5579202Z Testing [1mencoder_split_no_right[0m
+2022-04-17T01:51:44.5589228Z [==========] Running 5 tests from 1 test suite.
+2022-04-17T01:51:44.5589633Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5589990Z [----------] 5 tests from EncoderSplitTestNoRight
+2022-04-17T01:51:44.5590317Z [ RUN      ] EncoderSplitTestNoRight.TestInitLeft
+2022-04-17T01:51:44.5590669Z [       OK ] EncoderSplitTestNoRight.TestInitLeft (0 ms)
+2022-04-17T01:51:44.5591006Z [ RUN      ] EncoderSplitTestNoRight.TestInitRight
+2022-04-17T01:51:44.5591361Z [       OK ] EncoderSplitTestNoRight.TestInitRight (0 ms)
+2022-04-17T01:51:44.5591744Z [ RUN      ] EncoderSplitTestNoRight.TestOneClockwiseLeft
+2022-04-17T01:51:44.5592131Z [       OK ] EncoderSplitTestNoRight.TestOneClockwiseLeft (0 ms)
+2022-04-17T01:51:44.5592547Z [ RUN      ] EncoderSplitTestNoRight.TestOneClockwiseRightSent
+2022-04-17T01:51:44.5593145Z [       OK ] EncoderSplitTestNoRight.TestOneClockwiseRightSent (0 ms)
+2022-04-17T01:51:44.5593604Z [ RUN      ] EncoderSplitTestNoRight.TestMultipleEncodersRightReceived
+2022-04-17T01:51:44.5595776Z [       OK ] EncoderSplitTestNoRight.TestMultipleEncodersRightReceived (0 ms)
+2022-04-17T01:51:44.5596504Z [----------] 5 tests from EncoderSplitTestNoRight (0 ms total)
+2022-04-17T01:51:44.5596771Z 
+2022-04-17T01:51:44.5597005Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5597487Z [==========] 5 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5597809Z [  PASSED  ] 5 tests.
+2022-04-17T01:51:44.5597929Z 
+2022-04-17T01:51:44.5598579Z Testing [1mignore_mod_tap_interrupt[0m
+2022-04-17T01:51:44.5607633Z [==========] Running 3 tests from 1 test suite.
+2022-04-17T01:51:44.5608138Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5610212Z [----------] 3 tests from IgnoreModTapInterrupt
+2022-04-17T01:51:44.5610795Z [ RUN      ] IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5613079Z [       OK ] IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5613578Z [ RUN      ] IgnoreModTapInterrupt.tap_mod_tap_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5614000Z [       OK ] IgnoreModTapInterrupt.tap_mod_tap_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5614548Z [ RUN      ] IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held
+2022-04-17T01:51:44.5618660Z [       OK ] IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5619295Z [----------] 3 tests from IgnoreModTapInterrupt (0 ms total)
+2022-04-17T01:51:44.5619483Z 
+2022-04-17T01:51:44.5619718Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5620168Z [==========] 3 tests from 1 test suite ran. (1 ms total)
+2022-04-17T01:51:44.5620490Z [  PASSED  ] 3 tests.
+2022-04-17T01:51:44.5620658Z 
+2022-04-17T01:51:44.5624998Z Testing [1mpermissive_hold[0m
+2022-04-17T01:51:44.5637188Z [==========] Running 11 tests from 2 test suites.
+2022-04-17T01:51:44.5637673Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5639777Z [----------] 3 tests from PermissiveHold
+2022-04-17T01:51:44.5640137Z [ RUN      ] PermissiveHold.tap_regular_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5642254Z [       OK ] PermissiveHold.tap_regular_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5642708Z [ RUN      ] PermissiveHold.tap_mod_tap_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5644551Z [       OK ] PermissiveHold.tap_mod_tap_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5645106Z [ RUN      ] PermissiveHold.tap_regular_key_while_layer_tap_key_is_held
+2022-04-17T01:51:44.5647263Z [       OK ] PermissiveHold.tap_regular_key_while_layer_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5647909Z [----------] 3 tests from PermissiveHold (0 ms total)
+2022-04-17T01:51:44.5649570Z 
+2022-04-17T01:51:44.5650056Z [----------] 8 tests from OneShotModifierTests/OneShotParametrizedTestFixture
+2022-04-17T01:51:44.5652027Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/0
+2022-04-17T01:51:44.5652849Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/0 (0 ms)
+2022-04-17T01:51:44.5654797Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/1
+2022-04-17T01:51:44.5657235Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/1 (0 ms)
+2022-04-17T01:51:44.5659608Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/2
+2022-04-17T01:51:44.5661516Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/2 (0 ms)
+2022-04-17T01:51:44.5662461Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/3
+2022-04-17T01:51:44.5665454Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/3 (0 ms)
+2022-04-17T01:51:44.5666385Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/4
+2022-04-17T01:51:44.5667194Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/4 (0 ms)
+2022-04-17T01:51:44.5667929Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/5
+2022-04-17T01:51:44.5669222Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/5 (0 ms)
+2022-04-17T01:51:44.5670001Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/6
+2022-04-17T01:51:44.5672475Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/6 (0 ms)
+2022-04-17T01:51:44.5673404Z [ RUN      ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7
+2022-04-17T01:51:44.5674138Z [       OK ] OneShotModifierTests/OneShotParametrizedTestFixture.OSMAsRegularModifierWithAdditionalKeypress/7 (0 ms)
+2022-04-17T01:51:44.5674967Z [----------] 8 tests from OneShotModifierTests/OneShotParametrizedTestFixture (1 ms total)
+2022-04-17T01:51:44.5675280Z 
+2022-04-17T01:51:44.5675572Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5675890Z [==========] 11 tests from 2 test suites ran. (2 ms total)
+2022-04-17T01:51:44.5676215Z [  PASSED  ] 11 tests.
+2022-04-17T01:51:44.5676392Z 
+2022-04-17T01:51:44.5677083Z Testing [1mpermissive_hold_ignore_mod_tap_interrupt[0m
+2022-04-17T01:51:44.5684209Z [==========] Running 3 tests from 1 test suite.
+2022-04-17T01:51:44.5686299Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5686921Z [----------] 3 tests from PermissiveHold_IgnoreModTapInterrupt
+2022-04-17T01:51:44.5688592Z [ RUN      ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5690838Z [       OK ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5693055Z [ RUN      ] PermissiveHold_IgnoreModTapInterrupt.tap_mod_tap_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5693584Z [       OK ] PermissiveHold_IgnoreModTapInterrupt.tap_mod_tap_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5694099Z [ RUN      ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held
+2022-04-17T01:51:44.5694565Z [       OK ] PermissiveHold_IgnoreModTapInterrupt.tap_regular_key_while_layer_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5695229Z [----------] 3 tests from PermissiveHold_IgnoreModTapInterrupt (0 ms total)
+2022-04-17T01:51:44.5732743Z 
+2022-04-17T01:51:44.5733058Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5733369Z [==========] 3 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5733629Z [  PASSED  ] 3 tests.
+2022-04-17T01:51:44.5734353Z 
+2022-04-17T01:51:44.5734533Z Testing [1mretro_tapping[0m
+2022-04-17T01:51:44.5734782Z [==========] Running 3 tests from 2 test suites.
+2022-04-17T01:51:44.5735123Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5735449Z [----------] 1 test from RetroTapping
+2022-04-17T01:51:44.5735722Z [ RUN      ] RetroTapping.tap_and_hold_mod_tap_hold_key
+2022-04-17T01:51:44.5736042Z [       OK ] RetroTapping.tap_and_hold_mod_tap_hold_key (0 ms)
+2022-04-17T01:51:44.5736421Z [----------] 1 test from RetroTapping (0 ms total)
+2022-04-17T01:51:44.5736596Z 
+2022-04-17T01:51:44.5736752Z [----------] 2 tests from Tapping
+2022-04-17T01:51:44.5737011Z [ RUN      ] Tapping.HoldA_SHFT_T_KeyReportsShift
+2022-04-17T01:51:44.5737320Z [       OK ] Tapping.HoldA_SHFT_T_KeyReportsShift (0 ms)
+2022-04-17T01:51:44.5737656Z [ RUN      ] Tapping.ANewTapWithinTappingTermIsBuggy
+2022-04-17T01:51:44.5743091Z [       OK ] Tapping.ANewTapWithinTappingTermIsBuggy (0 ms)
+2022-04-17T01:51:44.5743771Z [----------] 2 tests from Tapping (0 ms total)
+2022-04-17T01:51:44.5743948Z 
+2022-04-17T01:51:44.5744144Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5744419Z [==========] 3 tests from 2 test suites ran. (0 ms total)
+2022-04-17T01:51:44.5744667Z [  PASSED  ] 3 tests.
+2022-04-17T01:51:44.5744798Z 
+2022-04-17T01:51:44.5744942Z Testing [1msequencer[0m
+2022-04-17T01:51:44.5745923Z [==========] Running 41 tests from 1 test suite.
+2022-04-17T01:51:44.5746272Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5746590Z [----------] 41 tests from SequencerTest
+2022-04-17T01:51:44.5746873Z [ RUN      ] SequencerTest.TestOffByDefault
+2022-04-17T01:51:44.5747191Z [       OK ] SequencerTest.TestOffByDefault (0 ms)
+2022-04-17T01:51:44.5749160Z [ RUN      ] SequencerTest.TestOn
+2022-04-17T01:51:44.5749437Z [       OK ] SequencerTest.TestOn (0 ms)
+2022-04-17T01:51:44.5749699Z [ RUN      ] SequencerTest.TestOff
+2022-04-17T01:51:44.5750102Z [       OK ] SequencerTest.TestOff (0 ms)
+2022-04-17T01:51:44.5750386Z [ RUN      ] SequencerTest.TestToggle
+2022-04-17T01:51:44.5750671Z [       OK ] SequencerTest.TestToggle (0 ms)
+2022-04-17T01:51:44.5750982Z [ RUN      ] SequencerTest.TestNoActiveTrackByDefault
+2022-04-17T01:51:44.5751353Z [       OK ] SequencerTest.TestNoActiveTrackByDefault (0 ms)
+2022-04-17T01:51:44.5751700Z [ RUN      ] SequencerTest.TestGetActiveTracks
+2022-04-17T01:51:44.5752011Z [       OK ] SequencerTest.TestGetActiveTracks (0 ms)
+2022-04-17T01:51:44.5752370Z [ RUN      ] SequencerTest.TestGetActiveTracksOutOfBound
+2022-04-17T01:51:44.5752760Z [       OK ] SequencerTest.TestGetActiveTracksOutOfBound (0 ms)
+2022-04-17T01:51:44.5753137Z [ RUN      ] SequencerTest.TestToggleTrackActivation
+2022-04-17T01:51:44.5753489Z [       OK ] SequencerTest.TestToggleTrackActivation (0 ms)
+2022-04-17T01:51:44.5753869Z [ RUN      ] SequencerTest.TestToggleSingleTrackActivation
+2022-04-17T01:51:44.5754268Z [       OK ] SequencerTest.TestToggleSingleTrackActivation (0 ms)
+2022-04-17T01:51:44.5754627Z [ RUN      ] SequencerTest.TestStepOffByDefault
+2022-04-17T01:51:44.5755040Z [       OK ] SequencerTest.TestStepOffByDefault (0 ms)
+2022-04-17T01:51:44.5755410Z [ RUN      ] SequencerTest.TestIsStepOffWithNoActiveTracks
+2022-04-17T01:51:44.5755796Z [       OK ] SequencerTest.TestIsStepOffWithNoActiveTracks (0 ms)
+2022-04-17T01:51:44.5756208Z [ RUN      ] SequencerTest.TestIsStepOffWithGivenActiveTracks
+2022-04-17T01:51:44.5756628Z [       OK ] SequencerTest.TestIsStepOffWithGivenActiveTracks (0 ms)
+2022-04-17T01:51:44.5757046Z [ RUN      ] SequencerTest.TestIsStepOnWithGivenActiveTracks
+2022-04-17T01:51:44.5757450Z [       OK ] SequencerTest.TestIsStepOnWithGivenActiveTracks (0 ms)
+2022-04-17T01:51:44.5757842Z [ RUN      ] SequencerTest.TestIsStepOffForGivenTrack
+2022-04-17T01:51:44.5758209Z [       OK ] SequencerTest.TestIsStepOffForGivenTrack (0 ms)
+2022-04-17T01:51:44.5758561Z [ RUN      ] SequencerTest.TestIsStepOnForGivenTrack
+2022-04-17T01:51:44.5758930Z [       OK ] SequencerTest.TestIsStepOnForGivenTrack (0 ms)
+2022-04-17T01:51:44.5760467Z [ RUN      ] SequencerTest.TestSetStepOn
+2022-04-17T01:51:44.5760883Z [       OK ] SequencerTest.TestSetStepOn (0 ms)
+2022-04-17T01:51:44.5761190Z [ RUN      ] SequencerTest.TestSetStepOff
+2022-04-17T01:51:44.5761493Z [       OK ] SequencerTest.TestSetStepOff (0 ms)
+2022-04-17T01:51:44.5761787Z [ RUN      ] SequencerTest.TestToggleStepOff
+2022-04-17T01:51:44.5763124Z [       OK ] SequencerTest.TestToggleStepOff (0 ms)
+2022-04-17T01:51:44.5763577Z [ RUN      ] SequencerTest.TestToggleStepOn
+2022-04-17T01:51:44.5763890Z [       OK ] SequencerTest.TestToggleStepOn (0 ms)
+2022-04-17T01:51:44.5764188Z [ RUN      ] SequencerTest.TestSetAllStepsOn
+2022-04-17T01:51:44.5764504Z [       OK ] SequencerTest.TestSetAllStepsOn (0 ms)
+2022-04-17T01:51:44.5765822Z [ RUN      ] SequencerTest.TestSetAllStepsOff
+2022-04-17T01:51:44.5766273Z [       OK ] SequencerTest.TestSetAllStepsOff (0 ms)
+2022-04-17T01:51:44.5766597Z [ RUN      ] SequencerTest.TestSetTempoZero
+2022-04-17T01:51:44.5767875Z [       OK ] SequencerTest.TestSetTempoZero (0 ms)
+2022-04-17T01:51:44.5768397Z [ RUN      ] SequencerTest.TestIncreaseTempoMax
+2022-04-17T01:51:44.5768878Z [       OK ] SequencerTest.TestIncreaseTempoMax (0 ms)
+2022-04-17T01:51:44.5769259Z [ RUN      ] SequencerTest.TestSetResolutionLowerBound
+2022-04-17T01:51:44.5770653Z [       OK ] SequencerTest.TestSetResolutionLowerBound (0 ms)
+2022-04-17T01:51:44.5771034Z [ RUN      ] SequencerTest.TestSetResolutionUpperBound
+2022-04-17T01:51:44.5771588Z [       OK ] SequencerTest.TestSetResolutionUpperBound (0 ms)
+2022-04-17T01:51:44.5771942Z [ RUN      ] SequencerTest.TestGetBeatDuration
+2022-04-17T01:51:44.5772254Z [       OK ] SequencerTest.TestGetBeatDuration (0 ms)
+2022-04-17T01:51:44.5772584Z [ RUN      ] SequencerTest.TestGetStepDuration60
+2022-04-17T01:51:44.5773931Z [       OK ] SequencerTest.TestGetStepDuration60 (0 ms)
+2022-04-17T01:51:44.5774401Z [ RUN      ] SequencerTest.TestGetStepDuration120
+2022-04-17T01:51:44.5774893Z [       OK ] SequencerTest.TestGetStepDuration120 (0 ms)
+2022-04-17T01:51:44.5776388Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldAttackFirstTrackOfFirstStep
+2022-04-17T01:51:44.5778116Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldAttackFirstTrackOfFirstStep (0 ms)
+2022-04-17T01:51:44.5778828Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldAttackSecondTrackAfterFirstTrackOfFirstStep
+2022-04-17T01:51:44.5779596Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldAttackSecondTrackAfterFirstTrackOfFirstStep (0 ms)
+2022-04-17T01:51:44.5780303Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldNotAttackInactiveTrackFirstStep
+2022-04-17T01:51:44.5780936Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldNotAttackInactiveTrackFirstStep (0 ms)
+2022-04-17T01:51:44.5781641Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldAttackThirdTrackAfterSecondTrackOfFirstStep
+2022-04-17T01:51:44.5782412Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldAttackThirdTrackAfterSecondTrackOfFirstStep (0 ms)
+2022-04-17T01:51:44.5783257Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldEnterReleasePhaseAfterLastTrackHasBeenProcessedFirstStep
+2022-04-17T01:51:44.5786697Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldEnterReleasePhaseAfterLastTrackHasBeenProcessedFirstStep (0 ms)
+2022-04-17T01:51:44.5787686Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldReleaseBackwards
+2022-04-17T01:51:44.5788355Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldReleaseBackwards (0 ms)
+2022-04-17T01:51:44.5789218Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldNotReleaseInactiveTrackFirstStep
+2022-04-17T01:51:44.5789894Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldNotReleaseInactiveTrackFirstStep (0 ms)
+2022-04-17T01:51:44.5796407Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldReleaseFirstTrackFirstStep
+2022-04-17T01:51:44.5797121Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldReleaseFirstTrackFirstStep (0 ms)
+2022-04-17T01:51:44.5797730Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldEnterPausePhaseAfterRelease
+2022-04-17T01:51:44.5800159Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldEnterPausePhaseAfterRelease (0 ms)
+2022-04-17T01:51:44.5800859Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldProcessFirstTrackOfSecondStepAfterPause
+2022-04-17T01:51:44.5804890Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldProcessFirstTrackOfSecondStepAfterPause (0 ms)
+2022-04-17T01:51:44.5806253Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldProcessSecondTrackTooEarly
+2022-04-17T01:51:44.5807223Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldProcessSecondTrackTooEarly (0 ms)
+2022-04-17T01:51:44.5808230Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldProcessSecondTrackOnTime
+2022-04-17T01:51:44.5812787Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldProcessSecondTrackOnTime (0 ms)
+2022-04-17T01:51:44.5815015Z [ RUN      ] SequencerTest.TestMatrixScanSequencerShouldLoopOnceSequenceIsOver
+2022-04-17T01:51:44.5817670Z [       OK ] SequencerTest.TestMatrixScanSequencerShouldLoopOnceSequenceIsOver (0 ms)
+2022-04-17T01:51:44.5820086Z [----------] 41 tests from SequencerTest (0 ms total)
+2022-04-17T01:51:44.5820295Z 
+2022-04-17T01:51:44.5822279Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5822728Z [==========] 41 tests from 1 test suite ran. (0 ms total)
+2022-04-17T01:51:44.5822998Z [  PASSED  ] 41 tests.
+2022-04-17T01:51:44.5823120Z 
+2022-04-17T01:51:44.5823477Z make: *** [Makefile:415: test:all] Error 1
+2022-04-17T01:51:44.5825029Z Testing [1mtapping_force_hold[0m
+2022-04-17T01:51:44.5825423Z [==========] Running 6 tests from 2 test suites.
+2022-04-17T01:51:44.5825773Z [----------] Global test environment set-up.
+2022-04-17T01:51:44.5826099Z [----------] 1 test from ActionLayer
+2022-04-17T01:51:44.5826448Z [ RUN      ] ActionLayer.LayerTapToggleWithToggleWithKeypress
+2022-04-17T01:51:44.5827065Z [       OK ] ActionLayer.LayerTapToggleWithToggleWithKeypress (0 ms)
+2022-04-17T01:51:44.5827496Z [----------] 1 test from ActionLayer (0 ms total)
+2022-04-17T01:51:44.5827670Z 
+2022-04-17T01:51:44.5827852Z [----------] 5 tests from TappingForceHold
+2022-04-17T01:51:44.5828174Z [ RUN      ] TappingForceHold.tap_regular_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5828528Z [       OK ] TappingForceHold.tap_regular_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5828895Z [ RUN      ] TappingForceHold.tap_mod_tap_key_while_mod_tap_key_is_held
+2022-04-17T01:51:44.5829259Z [       OK ] TappingForceHold.tap_mod_tap_key_while_mod_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5829621Z [ RUN      ] TappingForceHold.tap_regular_key_while_layer_tap_key_is_held
+2022-04-17T01:51:44.5829977Z [       OK ] TappingForceHold.tap_regular_key_while_layer_tap_key_is_held (0 ms)
+2022-04-17T01:51:44.5830326Z [ RUN      ] TappingForceHold.tap_mod_tap_hold_key_two_times
+2022-04-17T01:51:44.5830661Z [       OK ] TappingForceHold.tap_mod_tap_hold_key_two_times (0 ms)
+2022-04-17T01:51:44.5831009Z [ RUN      ] TappingForceHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time
+2022-04-17T01:51:44.5831390Z [       OK ] TappingForceHold.tap_mod_tap_hold_key_twice_and_hold_on_second_time (0 ms)
+2022-04-17T01:51:44.5831821Z [----------] 5 tests from TappingForceHold (1 ms total)
+2022-04-17T01:51:44.5832001Z 
+2022-04-17T01:51:44.5832178Z [----------] Global test environment tear-down
+2022-04-17T01:51:44.5832462Z [==========] 6 tests from 2 test suites ran. (1 ms total)
+2022-04-17T01:51:44.5832708Z [  PASSED  ] 6 tests.
+2022-04-17T01:51:44.5832840Z 
+2022-04-17T01:51:44.5832992Z [31;01mMake finished with errors
+2022-04-17T01:51:44.5843107Z [0m
+2022-04-17T01:51:44.5855486Z ##[error]Process completed with exit code 2.
+2022-04-17T01:51:44.5914882Z Post job cleanup.
+2022-04-17T01:51:44.5917720Z ##[command]/usr/bin/docker exec  79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773 sh -c "cat /etc/*release | grep ^ID"
+2022-04-17T01:51:44.9096699Z [command]/usr/bin/git version
+2022-04-17T01:51:44.9096965Z git version 2.30.2
+2022-04-17T01:51:44.9157190Z Temporarily overriding HOME='/__w/_temp/edf90600-b657-4c65-88b0-a9fcf1c25396' before making global git config changes
+2022-04-17T01:51:44.9159633Z Adding working directory to the temporary git global config as a safe directory
+2022-04-17T01:51:44.9160336Z [command]/usr/bin/git config --global --add safe.directory /__w/qmk_firmware/qmk_firmware
+2022-04-17T01:51:44.9198388Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2022-04-17T01:51:44.9226898Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2022-04-17T01:51:44.9529923Z Entering 'lib/chibios'
+2022-04-17T01:51:44.9577341Z Entering 'lib/chibios-contrib'
+2022-04-17T01:51:44.9615181Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:51:44.9664928Z Entering 'lib/googletest'
+2022-04-17T01:51:44.9700440Z Entering 'lib/lufa'
+2022-04-17T01:51:44.9737762Z Entering 'lib/printf'
+2022-04-17T01:51:44.9771897Z Entering 'lib/vusb'
+2022-04-17T01:51:44.9819064Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2022-04-17T01:51:44.9846234Z http.https://github.com/.extraheader
+2022-04-17T01:51:44.9856231Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2022-04-17T01:51:44.9887970Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2022-04-17T01:51:45.0167882Z Entering 'lib/chibios'
+2022-04-17T01:51:45.0187671Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0229106Z Entering 'lib/chibios-contrib'
+2022-04-17T01:51:45.0247393Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0279988Z Entering 'lib/chibios-contrib/ext/mcux-sdk'
+2022-04-17T01:51:45.0300556Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0343878Z Entering 'lib/googletest'
+2022-04-17T01:51:45.0363078Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0394468Z Entering 'lib/lufa'
+2022-04-17T01:51:45.0412827Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0444878Z Entering 'lib/printf'
+2022-04-17T01:51:45.0463473Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0493189Z Entering 'lib/vusb'
+2022-04-17T01:51:45.0511640Z http.https://github.com/.extraheader
+2022-04-17T01:51:45.0818853Z Stop and remove container: f2c4b1c182bf4519ac3e5010984a31b4_qmkfmbase_container_009906
+2022-04-17T01:51:45.0824589Z ##[command]/usr/bin/docker rm --force 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:51:45.3615509Z 79761cd3aee558d1f07d6d80f98154c2f1383f707e75231ba9106ddb45911773
+2022-04-17T01:51:45.3652931Z Remove container network: github_network_fd46c74314d2476a86e0e23f0e065d5f
+2022-04-17T01:51:45.3658403Z ##[command]/usr/bin/docker network rm github_network_fd46c74314d2476a86e0e23f0e065d5f
+2022-04-17T01:51:45.4701306Z github_network_fd46c74314d2476a86e0e23f0e065d5f
+2022-04-17T01:51:45.4861959Z Cleaning up orphan processes

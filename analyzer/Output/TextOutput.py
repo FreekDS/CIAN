@@ -4,7 +4,6 @@ import os
 class TextOutput:
     def __init__(self, data, repo_path, out_path='./output'):
         self.out_path = os.path.join(out_path, repo_path.replace('/', '-'))
-        self.repo_path = repo_path.split('/')[0]
         os.makedirs(self.out_path, exist_ok=True)
         self.data = data
 
@@ -30,10 +29,10 @@ class TextOutput:
             ma_classification = classification.get('missed activity', {})
             text += "MEDIUM SEVERITY\n"
             for branch in ma_classification.get('medium_severity', []):
-                text += f"Branch {branch}, {missed_activity.get('branch')} seconds\n"
+                text += f"Branch {branch}, {missed_activity.get(branch)} seconds\n"
                 text += "HIGH SEVERITY\n"
             for branch in ma_classification.get('high_severity', []):
-                text += f"Branch {branch}, {missed_activity.get('branch')} seconds\n"
+                text += f"Branch {branch}, {missed_activity.get(branch)} seconds\n"
 
         if branch_deviation:
             avg_deviation = sum(branch_deviation.values()) / float(len(list(branch_deviation.values())))
@@ -54,22 +53,22 @@ class TextOutput:
                 text += f"Branch {branch}, {branch_deviation.get(branch)} days\n"
 
         if unsynced_activity:
-            avg_unsynced = sum(unsynced_activity.values()) / float(len(list(branch_deviation.values())))
+            avg_unsynced = sum(unsynced_activity.values()) / float(len(list(unsynced_activity.values())))
 
             text += "\nUnsynced activity\n=========================\n"
             text += f"Average unsynced: {avg_unsynced} days\n"
             for branch, value in unsynced_activity.items():
                 if value > avg_unsynced:
-                    text += f"Branch {branch} is unsynced with {value} days, {value - avg_unsynced} more than" \
+                    text += f"Branch {branch} is unsynced with {value} days, {value - avg_unsynced} more than " \
                             f"average\n"
         if classification:
             ua_classification = classification.get('unsynced activity', {})
             text += "MEDIUM SEVERITY\n"
             for branch in ua_classification.get('medium_severity', []):
-                text += f"Branch {branch}, {unsynced_activity.get(branch)} days"
+                text += f"Branch {branch}, {unsynced_activity.get(branch)} days\n"
             text += "HIGH SEVERITY\n"
             for branch in ua_classification.get('high_severity'):
-                text += f"Branch {branch}, {unsynced_activity.get(branch)} days"
+                text += f"Branch {branch}, {unsynced_activity.get(branch)} days\n"
 
         with open(f'{self.out_path}/summary_late_merging.txt', 'w') as out:
             out.write(text)

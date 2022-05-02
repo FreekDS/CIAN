@@ -1,0 +1,28 @@
+Missed Activity
+=========================
+Branch branch2 has 58748 days of missed activity!
+Branch branch3 has -1 days of missed activity!
+Branch branch4 has 1 days of missed activity!
+Branch branch5 has -20 days of missed activity!
+MEDIUM SEVERITY
+Branch branch5, -20 seconds
+HIGH SEVERITY
+Branch branch2, 58748 seconds
+
+Branch Deviation
+=========================
+Average deviation: 211.0 days
+Branch branch5 moved away from main with 1000 days, 789.0 more than average
+MEDIUM SEVERITY
+Branch branch5, 1000 days
+HIGH SEVERITY
+Branch branch2, 20 days
+
+Unsynced activity
+=========================
+Average unsynced: 211.0 days
+Branch branch5 is unsynced with 1000 days, 789.0 more than average
+MEDIUM SEVERITY
+Branch branch5, 1000 days
+HIGH SEVERITY
+Branch branch2, 20 days
