@@ -5,12 +5,14 @@ from analyzer.utils.TestResultCommand import TestResultCommand
 class QUnitResults(TestResultCommand):
 
     def get_summary(self):
-        matches = re.findall(r">> \d+ tests completed with \d+ completed, \d+ skipped, and \d+ todo", self.log)
+        matches = re.findall(r">> \d+ tests completed with \d+ failed, \d+ skipped, and \d+ todo", self.log)
         if matches:
             return matches[0]
         return str()
 
     def _get_tests_of_type(self, ttype):
+        if not self.detect():
+            return 0
         s = self.get_summary()
         match = re.findall(rf"\d+ " + ttype, s)
         if match:
