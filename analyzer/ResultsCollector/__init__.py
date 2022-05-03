@@ -4,6 +4,7 @@ from analyzer.ResultsCollector.CTestResults import CTestResults
 from analyzer.ResultsCollector.GTestResults import GTestResults
 from analyzer.ResultsCollector.JUnitResults import JUnitResults
 from analyzer.ResultsCollector.JestResults import JestResults
+from analyzer.ResultsCollector.QUnitResults import QUnitResults
 
 
 result_collectors = [
@@ -11,7 +12,8 @@ result_collectors = [
     CTestResults,
     GTestResults,
     JUnitResults,
-    JestResults
+    JestResults,
+    QUnitResults
 ]
 
 
