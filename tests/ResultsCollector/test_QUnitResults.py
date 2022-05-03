@@ -44,7 +44,25 @@ def test_get_summary(qunit1, qunit2, invalid_qunit, invalid_qunit2):
 
 
 def test_get_tests_of_type(qunit1, qunit2, invalid_qunit, invalid_qunit2):
-    pass
+    assert invalid_qunit._get_tests_of_type('tests') == 0
+    assert invalid_qunit._get_tests_of_type('failed') == 0
+    assert invalid_qunit._get_tests_of_type('skipped') == 0
+    assert invalid_qunit._get_tests_of_type('hahahahahhahaaa') == 0
+
+    assert invalid_qunit2._get_tests_of_type('tests') == 0
+    assert invalid_qunit2._get_tests_of_type('failed') == 0
+    assert invalid_qunit2._get_tests_of_type('skipped') == 0
+    assert invalid_qunit2._get_tests_of_type('hahahahahhahaaa') == 0
+
+    assert qunit1._get_tests_of_type('tests') == 1678
+    assert qunit1._get_tests_of_type('failed') == 0
+    assert qunit1._get_tests_of_type('skipped') == 0
+    assert qunit1._get_tests_of_type('hohohohohohohoho') == 0
+
+    assert qunit2._get_tests_of_type('tests') == 5498
+    assert qunit2._get_tests_of_type('failed') == 17
+    assert qunit2._get_tests_of_type('skipped') == 90
+    assert qunit2._get_tests_of_type('hihihihihihiiihiii') == 0
 
 
 def test_skipped_failed_passed_count(qunit1, qunit2, invalid_qunit, invalid_qunit2):
