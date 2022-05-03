@@ -5,6 +5,7 @@ from analyzer.ResultsCollector.GTestResults import GTestResults
 from analyzer.ResultsCollector.JUnitResults import JUnitResults
 from analyzer.ResultsCollector.JestResults import JestResults
 from analyzer.ResultsCollector.QUnitResults import QUnitResults
+from analyzer.ResultsCollector.MochaResults import MochaResults
 
 
 result_collectors = [
@@ -13,7 +14,8 @@ result_collectors = [
     GTestResults,
     JUnitResults,
     JestResults,
-    QUnitResults
+    QUnitResults,
+    MochaResults
 ]
 
 
