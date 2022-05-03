@@ -3,9 +3,16 @@ from analyzer.ResultsCollector.PytestResults import PytestResult
 from analyzer.ResultsCollector.CTestResults import CTestResults
 from analyzer.ResultsCollector.GTestResults import GTestResults
 from analyzer.ResultsCollector.JUnitResults import JUnitResults
+from analyzer.ResultsCollector.JestResults import JestResults
 
 
-result_collectors = [PytestResult, CTestResults, GTestResults, JUnitResults]
+result_collectors = [
+    PytestResult,
+    CTestResults,
+    GTestResults,
+    JUnitResults,
+    JestResults
+]
 
 
 def collect_test_results(log_file) -> List[Dict[str, Any]]:
