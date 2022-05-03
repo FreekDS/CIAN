@@ -66,8 +66,29 @@ def test_get_tests_of_type(qunit1, qunit2, invalid_qunit, invalid_qunit2):
 
 
 def test_skipped_failed_passed_count(qunit1, qunit2, invalid_qunit, invalid_qunit2):
-    pass
+    assert qunit1.get_test_count() == 1678
+    assert qunit2.get_test_count() == 5498
+    assert invalid_qunit.get_test_count() == 0
+    assert invalid_qunit2.get_test_count() == 0
+
+    assert qunit1.get_successful_test_count() == 1678
+    assert qunit2.get_successful_test_count() == 5384
+    assert invalid_qunit.get_successful_test_count() == 0
+    assert invalid_qunit2.get_successful_test_count() == 0
+
+    assert qunit1.get_failed_test_count() == 0
+    assert qunit2.get_failed_test_count() == 17
+    assert invalid_qunit.get_failed_test_count() == 0
+    assert invalid_qunit2.get_failed_test_count() == 0
+
+    assert qunit1.get_skipped_test_count() == 0
+    assert qunit2.get_skipped_test_count() == 90
+    assert invalid_qunit.get_skipped_test_count() == 0
+    assert invalid_qunit2.get_skipped_test_count() == 0
 
 
 def test_detect(qunit1, qunit2, invalid_qunit, invalid_qunit2):
-    pass
+    assert qunit1.detect()
+    assert qunit2.detect()
+    assert not invalid_qunit.detect()
+    assert not invalid_qunit2.detect()
