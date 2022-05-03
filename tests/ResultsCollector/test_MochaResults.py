@@ -57,23 +57,23 @@ def test_get_tests_of_type(mocha1, mocha2, invalid_mocha, invalid_mocha2):
 
 
 def test_skipped_failed_passed_count(mocha1, mocha2, invalid_mocha, invalid_mocha2):
-    assert mocha1.get_test_count() == 1678
-    assert mocha2.get_test_count() == 5498
+    assert mocha1.get_test_count() == 43
+    assert mocha2.get_test_count() == 102
     assert invalid_mocha.get_test_count() == 0
     assert invalid_mocha2.get_test_count() == 0
 
-    assert mocha1.get_successful_test_count() == 1678
-    assert mocha2.get_successful_test_count() == 5384
+    assert mocha1.get_successful_test_count() == 43
+    assert mocha2.get_successful_test_count() == 43
     assert invalid_mocha.get_successful_test_count() == 0
     assert invalid_mocha2.get_successful_test_count() == 0
 
     assert mocha1.get_failed_test_count() == 0
-    assert mocha2.get_failed_test_count() == 17
+    assert mocha2.get_failed_test_count() == 36
     assert invalid_mocha.get_failed_test_count() == 0
     assert invalid_mocha2.get_failed_test_count() == 0
 
     assert mocha1.get_skipped_test_count() == 0
-    assert mocha2.get_skipped_test_count() == 90
+    assert mocha2.get_skipped_test_count() == 23
     assert invalid_mocha.get_skipped_test_count() == 0
     assert invalid_mocha2.get_skipped_test_count() == 0
 
