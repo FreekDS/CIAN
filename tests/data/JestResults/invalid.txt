@@ -668,7 +668,7 @@
 2022-04-19T22:45:29.1525423Z PASS __tests__/transform/property.test.js
 2022-04-19T22:45:29.5873055Z PASS __tests__/cleanAllPlatforms.test.js
 2022-04-19T22:45:29.6606449Z
-2022-04-19T22:45:29.6618289Z Test Suites: 76 passed, 76 total
+2022-04-19T22:45:29.6618289Z Test Sweetes: 76 passed, 76 total
 2022-04-19T22:45:29.6618963Z Tests:      537 passed, 537 total
 2022-04-19T22:45:29.6619769Z Snapshots:   119 passed, 119 total
 2022-04-19T22:45:29.6620467Z Time:        14.206 s

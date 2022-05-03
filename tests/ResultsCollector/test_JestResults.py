@@ -70,3 +70,9 @@ def test_skipped_failed_passed_count(jest1, jest2, invalid_jest):
     assert jest1.get_skipped_test_count() == 0
     assert jest2.get_skipped_test_count() == 7
     assert invalid_jest.get_skipped_test_count() == 0
+
+
+def test_detect(jest1, jest2, invalid_jest):
+    assert jest1.detect()
+    assert jest2.detect()
+    assert not invalid_jest.detect()
