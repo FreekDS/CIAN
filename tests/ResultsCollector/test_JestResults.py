@@ -52,3 +52,21 @@ def test_get_tests_of_type(jest1, jest2, invalid_jest):
     assert jest2._get_test_of_type('failed') == 121
     assert jest2._get_test_of_type('skipped') == 7
     assert jest2._get_test_of_type('hihihihihihiiihiii') == 0
+
+
+def test_skipped_failed_passed_count(jest1, jest2, invalid_jest):
+    assert jest1.get_test_count() == 537
+    assert jest2.get_test_count() == 665
+    assert invalid_jest.get_test_count() == 0
+
+    assert jest1.get_successful_test_count() == 537
+    assert jest2.get_successful_test_count() == 537
+    assert invalid_jest.get_successful_test_count() == 0
+
+    assert jest1.get_failed_test_count() == 0
+    assert jest2.get_failed_test_count() == 121
+    assert invalid_jest.get_failed_test_count() == 0
+
+    assert jest1.get_skipped_test_count() == 0
+    assert jest2.get_skipped_test_count() == 7
+    assert invalid_jest.get_skipped_test_count() == 0
