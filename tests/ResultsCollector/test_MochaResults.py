@@ -1,7 +1,7 @@
 import pytest
 import os
 
-from analyzer.ResultsCollector.QUnitResults import QUnitResults
+from analyzer.ResultsCollector.MochaResults import MochaResults
 
 
 @pytest.fixture(scope='module')
@@ -16,47 +16,43 @@ def text(p):
 
 @pytest.fixture(scope='module')
 def mocha1(data):
-    return QUnitResults(text(f"{data}/valid.txt"))
+    return MochaResults(text(f"{data}/valid.txt"))
 
 
 @pytest.fixture(scope='module')
 def mocha2(data):
-    return QUnitResults(text(f"{data}/valid2.txt"))
+    return MochaResults(text(f"{data}/valid2.txt"))
 
 
 @pytest.fixture(scope='module')
 def invalid_mocha(data):
-    return QUnitResults(text(f"{data}/invalid.txt"))
+    return MochaResults(text(f"{data}/invalid.txt"))
 
 
 @pytest.fixture(scope='module')
 def invalid_mocha2(data):
-    return QUnitResults(text(f"{data}/invalid2.txt"))
-
-
-def test_get_summary(mocha1, mocha2, invalid_mocha, invalid_mocha2):
-    pass
+    return MochaResults(text(f"{data}/invalid2.txt"))
 
 
 def test_get_tests_of_type(mocha1, mocha2, invalid_mocha, invalid_mocha2):
-    assert invalid_mocha._get_tests_of_type('tests') == 0
-    assert invalid_mocha._get_tests_of_type('failed') == 0
-    assert invalid_mocha._get_tests_of_type('skipped') == 0
+    assert invalid_mocha._get_tests_of_type('passing') == 0
+    assert invalid_mocha._get_tests_of_type('failing') == 0
+    assert invalid_mocha._get_tests_of_type('skipping') == 0
     assert invalid_mocha._get_tests_of_type('hahahahahhahaaa') == 0
 
-    assert invalid_mocha2._get_tests_of_type('tests') == 0
-    assert invalid_mocha2._get_tests_of_type('failed') == 0
-    assert invalid_mocha2._get_tests_of_type('skipped') == 0
+    assert invalid_mocha2._get_tests_of_type('failing') == 0
+    assert invalid_mocha2._get_tests_of_type('passing') == 0
+    assert invalid_mocha2._get_tests_of_type('skipping') == 0
     assert invalid_mocha2._get_tests_of_type('hahahahahhahaaa') == 0
 
-    assert mocha1._get_tests_of_type('tests') == 1678
-    assert mocha1._get_tests_of_type('failed') == 0
-    assert mocha1._get_tests_of_type('skipped') == 0
+    assert mocha1._get_tests_of_type('failing') == 0
+    assert mocha1._get_tests_of_type('passing') == 43
+    assert mocha1._get_tests_of_type('skipping') == 0
     assert mocha1._get_tests_of_type('hohohohohohohoho') == 0
 
-    assert mocha2._get_tests_of_type('tests') == 5498
-    assert mocha2._get_tests_of_type('failed') == 17
-    assert mocha2._get_tests_of_type('skipped') == 90
+    assert mocha2._get_tests_of_type('failing') == 36
+    assert mocha2._get_tests_of_type('passing') == 43
+    assert mocha2._get_tests_of_type('skipping') == 23
     assert mocha2._get_tests_of_type('hihihihihihiiihiii') == 0
 
 
