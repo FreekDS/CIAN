@@ -1,0 +1,61 @@
+repo;ci;start;end
+6to5/karma-6to5-preprocessor;Travis;30/10/2015 15:05;28/11/2020 15:09
+6to5/karma-6to5-preprocessor;GHA;28/11/2020 15:09;#NAME?
+alephdata/followthemoney;Travis;20/10/2017 12:07;29/11/2019 08:24
+alephdata/followthemoney;GHA;11/09/2019 18:54;#NAME?
+alfredosalzillo/rollup-plugin-multi-input;Travis;27/03/2019 16:24;10/02/2020 22:21
+alfredosalzillo/rollup-plugin-multi-input;GHA;10/02/2020 21:21;#NAME?
+asyncapi/generator;Travis;05/12/2018 10:07;18/03/2020 19:15
+asyncapi/generator;GHA;11/02/2020 09:43;#NAME?
+Belphemur/node-json-db;Travis;12/07/2014 15:30;08/04/2021 23:43
+Belphemur/node-json-db;GHA;18/03/2021 15:29;#NAME?
+browserify/resolve;Travis;13/04/2012 00:18;09/11/2020 23:51
+browserify/resolve;GHA;08/11/2020 13:56;#NAME?
+caseywebdev/pave;Travis;16/02/2016 02:15;26/08/2020 21:38
+caseywebdev/pave;GHA;26/08/2020 21:38;#NAME?
+desktop/git-kitchen-sink;Travis;16/09/2016 22:22;05/11/2020 17:45
+desktop/git-kitchen-sink;GHA;05/11/2020 17:28;#NAME?
+evcohen/eslint-plugin-jsx-a11y;Travis;18/02/2016 00:57;30/03/2021 20:14
+evcohen/eslint-plugin-jsx-a11y;GHA;11/07/2020 15:52;#NAME?
+firebase/firebase-js-sdk;Travis;18/05/2017 01:19;17/01/2020 20:43
+firebase/firebase-js-sdk;GHA;17/01/2020 20:43;#NAME?
+formidablelabs/victory;Travis;30/07/2015 20:24;12/04/2021 23:15
+formidablelabs/victory;GHA;12/04/2021 23:13;#NAME?
+googleapis/gax-nodejs;Travis;12/05/2016 00:26;05/01/2018 16:19
+googleapis/gax-nodejs;GHA;13/02/2020 17:13;#NAME?
+keenwon/eazydict-youdao;Travis;23/06/2017 03:20;10/11/2019 08:06
+keenwon/eazydict-youdao;GHA;10/11/2019 08:06;#NAME?
+KnisterPeter/tsdi;Travis;09/01/2016 15:52;07/10/2020 17:11
+KnisterPeter/tsdi;GHA;13/10/2019 18:55;#NAME?
+kpfefferle/ember-cli-octicons;Travis;15/11/2015 19:54;18/09/2016 22:18
+kpfefferle/ember-cli-octicons;GHA;22/02/2020 21:04;#NAME?
+meltedspark/angular-builders;Travis;06/07/2018 14:43;14/12/2020 14:10
+meltedspark/angular-builders;GHA;19/04/2020 21:10;#NAME?
+mishoo/UglifyJS;Travis;09/05/2013 05:42;14/11/2019 03:48
+mishoo/UglifyJS;GHA;20/10/2019 22:11;#NAME?
+newdash/newdash;Travis;30/09/2012 01:05;06/01/2017 16:51
+newdash/newdash;GHA;26/05/2020 07:42;#NAME?
+ngageoint/eslint-config-opensphere;Travis;26/12/2017 23:21;16/02/2021 13:56
+ngageoint/eslint-config-opensphere;GHA;16/02/2021 13:56;#NAME?
+nordnet/ui;Travis;21/03/2019 10:28;08/12/2020 11:19
+nordnet/ui;GHA;02/12/2020 16:17;#NAME?
+pmb0/express-sharp;Travis;28/11/2015 11:20;05/05/2020 00:05
+pmb0/express-sharp;GHA;04/05/2020 23:21;#NAME?
+podium-lib/client;Travis;14/10/2017 17:39;13/11/2019 01:42
+podium-lib/client;GHA;13/11/2019 01:28;#NAME?
+podium-lib/layout;Travis;29/01/2018 11:25;13/11/2019 22:21
+podium-lib/layout;GHA;13/11/2019 22:21;#NAME?
+radiofrance/rab-q;Travis;19/09/2017 17:56;04/01/2021 17:35
+radiofrance/rab-q;GHA;04/01/2021 17:35;#NAME?
+react-component/pagination;Travis;10/07/2015 11:00;06/11/2020 03:27
+react-component/pagination;GHA;06/11/2020 03:27;#NAME?
+rooseveltframework/teddy;Travis;05/02/2017 11:35;23/05/2020 18:22
+rooseveltframework/teddy;GHA;23/05/2020 18:22;#NAME?
+SimenB/add-asset-html-webpack-plugin;Travis;19/07/2016 17:44;20/02/2021 10:55
+SimenB/add-asset-html-webpack-plugin;GHA;20/02/2021 10:55;#NAME?
+square/misk;Travis;05/12/2017 20:48;02/04/2019 16:40
+square/misk;GHA;11/12/2020 20:41;#NAME?
+tclindner/eslint-config-react-tc;Travis;02/06/2018 18:44;28/04/2019 21:36
+tclindner/eslint-config-react-tc;GHA;09/05/2020 04:46;#NAME?
+Wandalen/wFilesEncoders;Travis;01/12/2018 16:39;05/07/2020 09:49
+Wandalen/wFilesEncoders;GHA;05/07/2020 09:49;#NAME?

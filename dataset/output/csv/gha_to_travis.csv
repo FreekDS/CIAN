@@ -1,0 +1,41 @@
+repo;ci;start;end
+airbnb/lunar;GHA;20/08/2019 22:43;14/11/2019 20:37
+airbnb/lunar;Travis;28/03/2019 21:13;#NAME?
+auth0/node-xml-encryption;GHA;08/07/2020 09:55;08/02/2021 23:39
+auth0/node-xml-encryption;Travis;09/10/2013 21:06;#NAME?
+billchurch/WebSSH2;GHA;17/09/2020 12:39;19/05/2021 16:58
+billchurch/WebSSH2;Travis;18/05/2017 21:54;#NAME?
+deniskyashif/ssfst;GHA;27/12/2019 11:14;12/02/2020 22:03
+deniskyashif/ssfst;Travis;23/06/2017 20:49;#NAME?
+eddyverbruggen/nativescript-plugin-firebase;GHA;27/08/2019 19:46;08/11/2019 20:53
+eddyverbruggen/nativescript-plugin-firebase;Travis;20/06/2017 15:03;#NAME?
+electrode-io/xarc-run;GHA;28/04/2020 08:58;18/07/2020 18:33
+electrode-io/xarc-run;Travis;29/05/2017 10:47;#NAME?
+ghaiklor/sails-hook-cron;GHA;05/02/2020 20:09;27/06/2020 07:35
+ghaiklor/sails-hook-cron;Travis;13/08/2015 15:03;#NAME?
+gluons/vue-thailand-address;GHA;09/08/2020 20:35;29/11/2020 11:55
+gluons/vue-thailand-address;Travis;14/08/2017 13:18;#NAME?
+jshttp/mime-db;GHA;21/12/2020 06:59;20/05/2021 01:33
+jshttp/mime-db;Travis;15/08/2014 00:18;#NAME?
+ketherchau/-kcscope-simple-ai-chatbot;GHA;26/11/2019 05:36;31/03/2021 12:17
+ketherchau/-kcscope-simple-ai-chatbot;Travis;14/04/2017 17:10;#NAME?
+kukhariev/ngx-uploadx;GHA;29/08/2019 11:47;14/04/2020 21:47
+kukhariev/ngx-uploadx;Travis;04/02/2018 08:30;#NAME?
+messagebird/messagebird-nodejs;GHA;04/05/2020 16:58;01/03/2021 17:05
+messagebird/messagebird-nodejs;Travis;04/12/2015 12:54;#NAME?
+mollie/mollie-api-node;GHA;21/08/2019 12:00;13/11/2019 20:49
+mollie/mollie-api-node;Travis;09/08/2018 16:35;#NAME?
+oliverroick/Leaflet.Deflate;GHA;23/08/2020 15:40;24/10/2020 19:49
+oliverroick/Leaflet.Deflate;Travis;16/04/2015 10:01;#NAME?
+peers/peerjs-server;GHA;16/12/2019 17:02;20/03/2020 01:24
+peers/peerjs-server;Travis;07/07/2013 07:48;#NAME?
+sachinchoolur/lightGallery;GHA;18/01/2021 13:14;17/05/2021 07:02
+sachinchoolur/lightGallery;Travis;26/08/2015 08:03;#NAME?
+t-rekttt/tinchi-api;GHA;15/08/2019 06:04;05/04/2021 17:28
+t-rekttt/tinchi-api;Travis;14/08/2019 21:13;#NAME?
+TiagoDanin/Gen-README;GHA;30/12/2019 21:38;24/05/2020 18:27
+TiagoDanin/Gen-README;Travis;03/01/2019 20:15;#NAME?
+Typeform/js-api-client;GHA;21/05/2020 12:59;30/07/2020 09:56
+Typeform/js-api-client;Travis;24/04/2018 11:09;#NAME?
+WICG/webpackage;GHA;07/07/2020 00:46;19/02/2021 01:34
+WICG/webpackage;Travis;01/07/2017 01:05;#NAME?
