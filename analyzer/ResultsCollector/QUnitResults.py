@@ -14,7 +14,7 @@ class QUnitResults(TestResultCommand):
         if not self.detect():
             return 0
         s = self.get_summary()
-        match = re.findall(rf"\d+ " + ttype, s)
+        match = re.findall(r"\d+ " + ttype, s)
         if match:
             return int(match[0].split(' ')[0])
         return 0

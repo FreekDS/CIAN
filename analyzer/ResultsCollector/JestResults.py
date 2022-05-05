@@ -10,7 +10,7 @@ class JestResults(TestResultCommand):
 
     def _get_test_of_type(self, ttype):
         s = self.get_summary()
-        match = re.findall(rf"\d+ " + ttype, s)
+        match = re.findall(r"\d+ " + ttype, s)
         if match:
             return int(match[0].split(' ')[0])
         return 0
