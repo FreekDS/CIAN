@@ -1,0 +1,1176 @@
+2022-04-25T10:21:15.1281750Z Requested labels: ubuntu-latest
+2022-04-25T10:21:15.1281800Z Job defined at: accordproject/concerto/.github/workflows/build.yml@refs/pull/419/merge
+2022-04-25T10:21:15.1281820Z Waiting for a runner to pick up this job...
+2022-04-25T10:21:17.3311999Z Job is waiting for a hosted runner to come online.
+2022-04-25T10:21:20.9341154Z Job is about to start running on the hosted runner: GitHub Actions 2 (hosted)
+2022-04-25T10:21:25.2366805Z Current runner version: '2.290.1'
+2022-04-25T10:21:25.2397172Z ##[group]Operating System
+2022-04-25T10:21:25.2397893Z Ubuntu
+2022-04-25T10:21:25.2398262Z 20.04.4
+2022-04-25T10:21:25.2398540Z LTS
+2022-04-25T10:21:25.2398887Z ##[endgroup]
+2022-04-25T10:21:25.2399278Z ##[group]Virtual Environment
+2022-04-25T10:21:25.2399774Z Environment: ubuntu-20.04
+2022-04-25T10:21:25.2400119Z Version: 20220410.2
+2022-04-25T10:21:25.2400748Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu20/20220410.2/images/linux/Ubuntu2004-Readme.md
+2022-04-25T10:21:25.2401548Z Image Release: https://github.com/actions/virtual-environments/releases/tag/ubuntu20%2F20220410.2
+2022-04-25T10:21:25.2402048Z ##[endgroup]
+2022-04-25T10:21:25.2402515Z ##[group]Virtual Environment Provisioner
+2022-04-25T10:21:25.2402956Z 1.0.0.0-main-20220406-1
+2022-04-25T10:21:25.2403276Z ##[endgroup]
+2022-04-25T10:21:25.2404426Z ##[group]GITHUB_TOKEN Permissions
+2022-04-25T10:21:25.2405163Z Actions: read
+2022-04-25T10:21:25.2405696Z Checks: read
+2022-04-25T10:21:25.2406081Z Contents: read
+2022-04-25T10:21:25.2406520Z Deployments: read
+2022-04-25T10:21:25.2406916Z Discussions: read
+2022-04-25T10:21:25.2407237Z Issues: read
+2022-04-25T10:21:25.2407601Z Metadata: read
+2022-04-25T10:21:25.2407985Z Packages: read
+2022-04-25T10:21:25.2408331Z Pages: read
+2022-04-25T10:21:25.2408709Z PullRequests: read
+2022-04-25T10:21:25.2409173Z RepositoryProjects: read
+2022-04-25T10:21:25.2409541Z SecurityEvents: read
+2022-04-25T10:21:25.2409939Z Statuses: read
+2022-04-25T10:21:25.2410333Z ##[endgroup]
+2022-04-25T10:21:25.2414962Z Secret source: None
+2022-04-25T10:21:25.2415562Z Prepare workflow directory
+2022-04-25T10:21:25.3397855Z Prepare all required actions
+2022-04-25T10:21:25.3614078Z Getting action download info
+2022-04-25T10:21:25.6518793Z Download action repository 'actions/checkout@v2' (SHA:7884fcad6b5d53d10323aee724dc68d8b9096a2e)
+2022-04-25T10:21:26.3083076Z Download action repository 'actions/setup-node@v1' (SHA:f1f314fca9dfce2769ece7d933488f076716723e)
+2022-04-25T10:21:26.7812959Z Download action repository 'coverallsapp/github-action@master' (SHA:9ba913c152ae4be1327bfb9085dc806cedb44057)
+2022-04-25T10:21:29.4313134Z ##[group]Run actions/checkout@v2
+2022-04-25T10:21:29.4313478Z with:
+2022-04-25T10:21:29.4313756Z   repository: accordproject/concerto
+2022-04-25T10:21:29.4314306Z   token: ***
+2022-04-25T10:21:29.4314537Z   ssh-strict: true
+2022-04-25T10:21:29.4314817Z   persist-credentials: true
+2022-04-25T10:21:29.4315084Z   clean: true
+2022-04-25T10:21:29.4315306Z   fetch-depth: 1
+2022-04-25T10:21:29.4315547Z   lfs: false
+2022-04-25T10:21:29.4315778Z   submodules: false
+2022-04-25T10:21:29.4316051Z   set-safe-directory: true
+2022-04-25T10:21:29.4316329Z ##[endgroup]
+2022-04-25T10:21:29.7272117Z Syncing repository: accordproject/concerto
+2022-04-25T10:21:29.7274283Z ##[group]Getting Git version info
+2022-04-25T10:21:29.7274910Z Working directory is '/home/runner/work/concerto/concerto'
+2022-04-25T10:21:29.7275499Z [command]/usr/bin/git version
+2022-04-25T10:21:29.7416271Z git version 2.35.1
+2022-04-25T10:21:29.7417388Z ##[endgroup]
+2022-04-25T10:21:29.7435206Z Temporarily overriding HOME='/home/runner/work/_temp/77422009-481c-43cd-a8dc-71a260670f9c' before making global git config changes
+2022-04-25T10:21:29.7435784Z Adding repository directory to the temporary git global config as a safe directory
+2022-04-25T10:21:29.7436420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/concerto/concerto
+2022-04-25T10:21:29.7485064Z Deleting the contents of '/home/runner/work/concerto/concerto'
+2022-04-25T10:21:29.7490106Z ##[group]Initializing the repository
+2022-04-25T10:21:29.7535679Z [command]/usr/bin/git init /home/runner/work/concerto/concerto
+2022-04-25T10:21:29.7608765Z hint: Using 'master' as the name for the initial branch. This default branch name
+2022-04-25T10:21:29.7609545Z hint: is subject to change. To configure the initial branch name to use in all
+2022-04-25T10:21:29.7610862Z hint: of your new repositories, which will suppress this warning, call:
+2022-04-25T10:21:29.7611598Z hint:
+2022-04-25T10:21:29.7612585Z hint: 	git config --global init.defaultBranch <name>
+2022-04-25T10:21:29.7613005Z hint:
+2022-04-25T10:21:29.7614044Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2022-04-25T10:21:29.7614723Z hint: 'development'. The just-created branch can be renamed via this command:
+2022-04-25T10:21:29.7615162Z hint:
+2022-04-25T10:21:29.7615955Z hint: 	git branch -m <name>
+2022-04-25T10:21:29.7624929Z Initialized empty Git repository in /home/runner/work/concerto/concerto/.git/
+2022-04-25T10:21:29.7634884Z [command]/usr/bin/git remote add origin https://github.com/accordproject/concerto
+2022-04-25T10:21:29.7679755Z ##[endgroup]
+2022-04-25T10:21:29.7680718Z ##[group]Disabling automatic garbage collection
+2022-04-25T10:21:29.7685269Z [command]/usr/bin/git config --local gc.auto 0
+2022-04-25T10:21:29.7720575Z ##[endgroup]
+2022-04-25T10:21:29.7721414Z ##[group]Setting up auth
+2022-04-25T10:21:29.7729913Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2022-04-25T10:21:29.7769000Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2022-04-25T10:21:29.8157607Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2022-04-25T10:21:29.8187848Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2022-04-25T10:21:29.8454744Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2022-04-25T10:21:29.8508448Z ##[endgroup]
+2022-04-25T10:21:29.8509363Z ##[group]Fetching the repository
+2022-04-25T10:21:29.8518613Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +968f3066834c80df2be590d75bd59cf2d52d7a84:refs/remotes/pull/419/merge
+2022-04-25T10:21:30.2492417Z remote: Enumerating objects: 819, done.
+2022-04-25T10:21:30.2492920Z remote: Counting objects:   0% (1/819)
+2022-04-25T10:21:30.2493444Z remote: Counting objects:   1% (9/819)
+2022-04-25T10:21:30.2493751Z remote: Counting objects:   2% (17/819)
+2022-04-25T10:21:30.2494070Z remote: Counting objects:   3% (25/819)
+2022-04-25T10:21:30.2494383Z remote: Counting objects:   4% (33/819)
+2022-04-25T10:21:30.2494696Z remote: Counting objects:   5% (41/819)
+2022-04-25T10:21:30.2494991Z remote: Counting objects:   6% (50/819)
+2022-04-25T10:21:30.2495295Z remote: Counting objects:   7% (58/819)
+2022-04-25T10:21:30.2495604Z remote: Counting objects:   8% (66/819)
+2022-04-25T10:21:30.2495900Z remote: Counting objects:   9% (74/819)
+2022-04-25T10:21:30.2496199Z remote: Counting objects:  10% (82/819)
+2022-04-25T10:21:30.2502416Z remote: Counting objects:  11% (91/819)
+2022-04-25T10:21:30.2583667Z remote: Counting objects:  12% (99/819)
+2022-04-25T10:21:30.2584593Z remote: Counting objects:  13% (107/819)
+2022-04-25T10:21:30.2585223Z remote: Counting objects:  14% (115/819)
+2022-04-25T10:21:30.2586104Z remote: Counting objects:  15% (123/819)
+2022-04-25T10:21:30.2586745Z remote: Counting objects:  16% (132/819)
+2022-04-25T10:21:30.2587344Z remote: Counting objects:  17% (140/819)
+2022-04-25T10:21:30.2587857Z remote: Counting objects:  18% (148/819)
+2022-04-25T10:21:30.2589209Z remote: Counting objects:  19% (156/819)
+2022-04-25T10:21:30.2589711Z remote: Counting objects:  20% (164/819)
+2022-04-25T10:21:30.2590299Z remote: Counting objects:  21% (172/819)
+2022-04-25T10:21:30.2590851Z remote: Counting objects:  22% (181/819)
+2022-04-25T10:21:30.2591556Z remote: Counting objects:  23% (189/819)
+2022-04-25T10:21:30.2592224Z remote: Counting objects:  24% (197/819)
+2022-04-25T10:21:30.2592919Z remote: Counting objects:  25% (205/819)
+2022-04-25T10:21:30.2593698Z remote: Counting objects:  26% (213/819)
+2022-04-25T10:21:30.2598901Z remote: Counting objects:  27% (222/819)
+2022-04-25T10:21:30.2599377Z remote: Counting objects:  28% (230/819)
+2022-04-25T10:21:30.2600013Z remote: Counting objects:  29% (238/819)
+2022-04-25T10:21:30.2600642Z remote: Counting objects:  30% (246/819)
+2022-04-25T10:21:30.2601419Z remote: Counting objects:  31% (254/819)
+2022-04-25T10:21:30.2602043Z remote: Counting objects:  32% (263/819)
+2022-04-25T10:21:30.2602783Z remote: Counting objects:  33% (271/819)
+2022-04-25T10:21:30.2603567Z remote: Counting objects:  34% (279/819)
+2022-04-25T10:21:30.2604245Z remote: Counting objects:  35% (287/819)
+2022-04-25T10:21:30.2604865Z remote: Counting objects:  36% (295/819)
+2022-04-25T10:21:30.2605510Z remote: Counting objects:  37% (304/819)
+2022-04-25T10:21:30.2606267Z remote: Counting objects:  38% (312/819)
+2022-04-25T10:21:30.2606989Z remote: Counting objects:  39% (320/819)
+2022-04-25T10:21:30.2607597Z remote: Counting objects:  40% (328/819)
+2022-04-25T10:21:30.2608210Z remote: Counting objects:  41% (336/819)
+2022-04-25T10:21:30.2608886Z remote: Counting objects:  42% (344/819)
+2022-04-25T10:21:30.2609633Z remote: Counting objects:  43% (353/819)
+2022-04-25T10:21:30.2610362Z remote: Counting objects:  44% (361/819)
+2022-04-25T10:21:30.2611444Z remote: Counting objects:  45% (369/819)
+2022-04-25T10:21:30.2611859Z remote: Counting objects:  46% (377/819)
+2022-04-25T10:21:30.2612523Z remote: Counting objects:  47% (385/819)
+2022-04-25T10:21:30.2613337Z remote: Counting objects:  48% (394/819)
+2022-04-25T10:21:30.2614366Z remote: Counting objects:  49% (402/819)
+2022-04-25T10:21:30.2615225Z remote: Counting objects:  50% (410/819)
+2022-04-25T10:21:30.2615578Z remote: Counting objects:  51% (418/819)
+2022-04-25T10:21:30.2647501Z remote: Counting objects:  52% (426/819)
+2022-04-25T10:21:30.2648187Z remote: Counting objects:  53% (435/819)
+2022-04-25T10:21:30.2648511Z remote: Counting objects:  54% (443/819)
+2022-04-25T10:21:30.2651395Z remote: Counting objects:  55% (451/819)
+2022-04-25T10:21:30.2651911Z remote: Counting objects:  56% (459/819)
+2022-04-25T10:21:30.2652231Z remote: Counting objects:  57% (467/819)
+2022-04-25T10:21:30.2652550Z remote: Counting objects:  58% (476/819)
+2022-04-25T10:21:30.2654432Z remote: Counting objects:  59% (484/819)
+2022-04-25T10:21:30.2654899Z remote: Counting objects:  60% (492/819)
+2022-04-25T10:21:30.2655219Z remote: Counting objects:  61% (500/819)
+2022-04-25T10:21:30.2655542Z remote: Counting objects:  62% (508/819)
+2022-04-25T10:21:30.2657273Z remote: Counting objects:  63% (516/819)
+2022-04-25T10:21:30.2657718Z remote: Counting objects:  64% (525/819)
+2022-04-25T10:21:30.2658042Z remote: Counting objects:  65% (533/819)
+2022-04-25T10:21:30.2658389Z remote: Counting objects:  66% (541/819)
+2022-04-25T10:21:30.2658683Z remote: Counting objects:  67% (549/819)
+2022-04-25T10:21:30.2658990Z remote: Counting objects:  68% (557/819)
+2022-04-25T10:21:30.2659299Z remote: Counting objects:  69% (566/819)
+2022-04-25T10:21:30.2659596Z remote: Counting objects:  70% (574/819)
+2022-04-25T10:21:30.2659903Z remote: Counting objects:  71% (582/819)
+2022-04-25T10:21:30.2660206Z remote: Counting objects:  72% (590/819)
+2022-04-25T10:21:30.2660508Z remote: Counting objects:  73% (598/819)
+2022-04-25T10:21:30.2660796Z remote: Counting objects:  74% (607/819)
+2022-04-25T10:21:30.2661101Z remote: Counting objects:  75% (615/819)
+2022-04-25T10:21:30.2661412Z remote: Counting objects:  76% (623/819)
+2022-04-25T10:21:30.2661899Z remote: Counting objects:  77% (631/819)
+2022-04-25T10:21:30.2662199Z remote: Counting objects:  78% (639/819)
+2022-04-25T10:21:30.2662510Z remote: Counting objects:  79% (648/819)
+2022-04-25T10:21:30.2662820Z remote: Counting objects:  80% (656/819)
+2022-04-25T10:21:30.2663112Z remote: Counting objects:  81% (664/819)
+2022-04-25T10:21:30.2663419Z remote: Counting objects:  82% (672/819)
+2022-04-25T10:21:30.2663726Z remote: Counting objects:  83% (680/819)
+2022-04-25T10:21:30.2664018Z remote: Counting objects:  84% (688/819)
+2022-04-25T10:21:30.2664330Z remote: Counting objects:  85% (697/819)
+2022-04-25T10:21:30.2664636Z remote: Counting objects:  86% (705/819)
+2022-04-25T10:21:30.2664943Z remote: Counting objects:  87% (713/819)
+2022-04-25T10:21:30.2665236Z remote: Counting objects:  88% (721/819)
+2022-04-25T10:21:30.2665541Z remote: Counting objects:  89% (729/819)
+2022-04-25T10:21:30.2665851Z remote: Counting objects:  90% (738/819)
+2022-04-25T10:21:30.2666141Z remote: Counting objects:  91% (746/819)
+2022-04-25T10:21:30.2666442Z remote: Counting objects:  92% (754/819)
+2022-04-25T10:21:30.2666750Z remote: Counting objects:  93% (762/819)
+2022-04-25T10:21:30.2667041Z remote: Counting objects:  94% (770/819)
+2022-04-25T10:21:30.2667342Z remote: Counting objects:  95% (779/819)
+2022-04-25T10:21:30.2667648Z remote: Counting objects:  96% (787/819)
+2022-04-25T10:21:30.2667941Z remote: Counting objects:  97% (795/819)
+2022-04-25T10:21:30.2668254Z remote: Counting objects:  98% (803/819)
+2022-04-25T10:21:30.2668566Z remote: Counting objects:  99% (811/819)
+2022-04-25T10:21:30.2668873Z remote: Counting objects: 100% (819/819)
+2022-04-25T10:21:30.2669178Z remote: Counting objects: 100% (819/819), done.
+2022-04-25T10:21:30.2669524Z remote: Compressing objects:   0% (1/631)
+2022-04-25T10:21:30.2669862Z remote: Compressing objects:   1% (7/631)
+2022-04-25T10:21:30.2670257Z remote: Compressing objects:   2% (13/631)
+2022-04-25T10:21:30.2670595Z remote: Compressing objects:   3% (19/631)
+2022-04-25T10:21:30.2670923Z remote: Compressing objects:   4% (26/631)
+2022-04-25T10:21:30.2671235Z remote: Compressing objects:   5% (32/631)
+2022-04-25T10:21:30.2671566Z remote: Compressing objects:   6% (38/631)
+2022-04-25T10:21:30.2671897Z remote: Compressing objects:   7% (45/631)
+2022-04-25T10:21:30.2672221Z remote: Compressing objects:   8% (51/631)
+2022-04-25T10:21:30.2672530Z remote: Compressing objects:   9% (57/631)
+2022-04-25T10:21:30.2672856Z remote: Compressing objects:  10% (64/631)
+2022-04-25T10:21:30.2673183Z remote: Compressing objects:  11% (70/631)
+2022-04-25T10:21:30.2673490Z remote: Compressing objects:  12% (76/631)
+2022-04-25T10:21:30.2673814Z remote: Compressing objects:  13% (83/631)
+2022-04-25T10:21:30.2674139Z remote: Compressing objects:  14% (89/631)
+2022-04-25T10:21:30.2674448Z remote: Compressing objects:  15% (95/631)
+2022-04-25T10:21:30.2674774Z remote: Compressing objects:  16% (101/631)
+2022-04-25T10:21:30.2675106Z remote: Compressing objects:  17% (108/631)
+2022-04-25T10:21:30.2675421Z remote: Compressing objects:  18% (114/631)
+2022-04-25T10:21:30.2675748Z remote: Compressing objects:  19% (120/631)
+2022-04-25T10:21:30.2676079Z remote: Compressing objects:  20% (127/631)
+2022-04-25T10:21:30.2680638Z remote: Compressing objects:  21% (133/631)
+2022-04-25T10:21:30.2681165Z remote: Compressing objects:  22% (139/631)
+2022-04-25T10:21:30.2681587Z remote: Compressing objects:  23% (146/631)
+2022-04-25T10:21:30.2681998Z remote: Compressing objects:  24% (152/631)
+2022-04-25T10:21:30.2682417Z remote: Compressing objects:  25% (158/631)
+2022-04-25T10:21:30.2682832Z remote: Compressing objects:  26% (165/631)
+2022-04-25T10:21:30.2683435Z remote: Compressing objects:  27% (171/631)
+2022-04-25T10:21:30.2683846Z remote: Compressing objects:  28% (177/631)
+2022-04-25T10:21:30.2684240Z remote: Compressing objects:  29% (183/631)
+2022-04-25T10:21:30.2813138Z remote: Compressing objects:  30% (190/631)
+2022-04-25T10:21:30.2813862Z remote: Compressing objects:  31% (196/631)
+2022-04-25T10:21:30.2814207Z remote: Compressing objects:  32% (202/631)
+2022-04-25T10:21:30.2814551Z remote: Compressing objects:  33% (209/631)
+2022-04-25T10:21:30.2814872Z remote: Compressing objects:  34% (215/631)
+2022-04-25T10:21:30.2815203Z remote: Compressing objects:  35% (221/631)
+2022-04-25T10:21:30.2815691Z remote: Compressing objects:  36% (228/631)
+2022-04-25T10:21:30.2816014Z remote: Compressing objects:  37% (234/631)
+2022-04-25T10:21:30.2819159Z remote: Compressing objects:  38% (240/631)
+2022-04-25T10:21:30.2844351Z remote: Compressing objects:  39% (247/631)
+2022-04-25T10:21:30.2882197Z remote: Compressing objects:  40% (253/631)
+2022-04-25T10:21:30.2941154Z remote: Compressing objects:  41% (259/631)
+2022-04-25T10:21:30.3008193Z remote: Compressing objects:  42% (266/631)
+2022-04-25T10:21:30.3154711Z remote: Compressing objects:  43% (272/631)
+2022-04-25T10:21:30.3174367Z remote: Compressing objects:  44% (278/631)
+2022-04-25T10:21:30.3174861Z remote: Compressing objects:  45% (284/631)
+2022-04-25T10:21:30.3175327Z remote: Compressing objects:  46% (291/631)
+2022-04-25T10:21:30.3175790Z remote: Compressing objects:  47% (297/631)
+2022-04-25T10:21:30.3196936Z remote: Compressing objects:  48% (303/631)
+2022-04-25T10:21:30.3206257Z remote: Compressing objects:  49% (310/631)
+2022-04-25T10:21:30.3237580Z remote: Compressing objects:  50% (316/631)
+2022-04-25T10:21:30.3268725Z remote: Compressing objects:  51% (322/631)
+2022-04-25T10:21:30.3288027Z remote: Compressing objects:  52% (329/631)
+2022-04-25T10:21:30.3291249Z remote: Compressing objects:  53% (335/631)
+2022-04-25T10:21:30.3302790Z remote: Compressing objects:  54% (341/631)
+2022-04-25T10:21:30.3309963Z remote: Compressing objects:  55% (348/631)
+2022-04-25T10:21:30.3320046Z remote: Compressing objects:  56% (354/631)
+2022-04-25T10:21:30.3348304Z remote: Compressing objects:  57% (360/631)
+2022-04-25T10:21:30.3350559Z remote: Compressing objects:  58% (366/631)
+2022-04-25T10:21:30.3366642Z remote: Compressing objects:  59% (373/631)
+2022-04-25T10:21:30.3386156Z remote: Compressing objects:  60% (379/631)
+2022-04-25T10:21:30.3436706Z remote: Compressing objects:  61% (385/631)
+2022-04-25T10:21:30.3437162Z remote: Compressing objects:  62% (392/631)
+2022-04-25T10:21:30.3437487Z remote: Compressing objects:  63% (398/631)
+2022-04-25T10:21:30.3437839Z remote: Compressing objects:  64% (404/631)
+2022-04-25T10:21:30.3451661Z remote: Compressing objects:  65% (411/631)
+2022-04-25T10:21:30.3469748Z remote: Compressing objects:  66% (417/631)
+2022-04-25T10:21:30.3483420Z remote: Compressing objects:  67% (423/631)
+2022-04-25T10:21:30.3494049Z remote: Compressing objects:  68% (430/631)
+2022-04-25T10:21:30.3497084Z remote: Compressing objects:  69% (436/631)
+2022-04-25T10:21:30.3499817Z remote: Compressing objects:  70% (442/631)
+2022-04-25T10:21:30.3502510Z remote: Compressing objects:  71% (449/631)
+2022-04-25T10:21:30.3503890Z remote: Compressing objects:  72% (455/631)
+2022-04-25T10:21:30.3506549Z remote: Compressing objects:  73% (461/631)
+2022-04-25T10:21:30.3506946Z remote: Compressing objects:  74% (467/631)
+2022-04-25T10:21:30.3508716Z remote: Compressing objects:  75% (474/631)
+2022-04-25T10:21:30.3511259Z remote: Compressing objects:  76% (480/631)
+2022-04-25T10:21:30.3522567Z remote: Compressing objects:  77% (486/631)
+2022-04-25T10:21:30.3522922Z remote: Compressing objects:  78% (493/631)
+2022-04-25T10:21:30.3523258Z remote: Compressing objects:  79% (499/631)
+2022-04-25T10:21:30.3523572Z remote: Compressing objects:  80% (505/631)
+2022-04-25T10:21:30.3523909Z remote: Compressing objects:  81% (512/631)
+2022-04-25T10:21:30.3524236Z remote: Compressing objects:  82% (518/631)
+2022-04-25T10:21:30.3540373Z remote: Compressing objects:  83% (524/631)
+2022-04-25T10:21:30.3540706Z remote: Compressing objects:  84% (531/631)
+2022-04-25T10:21:30.3541042Z remote: Compressing objects:  85% (537/631)
+2022-04-25T10:21:30.3541380Z remote: Compressing objects:  86% (543/631)
+2022-04-25T10:21:30.3541696Z remote: Compressing objects:  87% (549/631)
+2022-04-25T10:21:30.3542027Z remote: Compressing objects:  88% (556/631)
+2022-04-25T10:21:30.3542353Z remote: Compressing objects:  89% (562/631)
+2022-04-25T10:21:30.3542674Z remote: Compressing objects:  90% (568/631)
+2022-04-25T10:21:30.3543005Z remote: Compressing objects:  91% (575/631)
+2022-04-25T10:21:30.3543336Z remote: Compressing objects:  92% (581/631)
+2022-04-25T10:21:30.3543661Z remote: Compressing objects:  93% (587/631)
+2022-04-25T10:21:30.3580100Z remote: Compressing objects:  94% (594/631)
+2022-04-25T10:21:30.3580489Z remote: Compressing objects:  95% (600/631)
+2022-04-25T10:21:30.3580834Z remote: Compressing objects:  96% (606/631)
+2022-04-25T10:21:30.3581175Z remote: Compressing objects:  97% (613/631)
+2022-04-25T10:21:30.3581495Z remote: Compressing objects:  98% (619/631)
+2022-04-25T10:21:30.3581830Z remote: Compressing objects:  99% (625/631)
+2022-04-25T10:21:30.3582166Z remote: Compressing objects: 100% (631/631)
+2022-04-25T10:21:30.3582495Z remote: Compressing objects: 100% (631/631), done.
+2022-04-25T10:21:30.3618544Z Receiving objects:   0% (1/819)
+2022-04-25T10:21:30.3618892Z Receiving objects:   1% (9/819)
+2022-04-25T10:21:30.3619390Z Receiving objects:   2% (17/819)
+2022-04-25T10:21:30.3769507Z Receiving objects:   3% (25/819)
+2022-04-25T10:21:30.4151043Z Receiving objects:   4% (33/819)
+2022-04-25T10:21:30.4162126Z Receiving objects:   5% (41/819)
+2022-04-25T10:21:30.4165845Z Receiving objects:   6% (50/819)
+2022-04-25T10:21:30.4166129Z Receiving objects:   7% (58/819)
+2022-04-25T10:21:30.4166418Z Receiving objects:   8% (66/819)
+2022-04-25T10:21:30.4166708Z Receiving objects:   9% (74/819)
+2022-04-25T10:21:30.4171338Z Receiving objects:  10% (82/819)
+2022-04-25T10:21:30.4179622Z Receiving objects:  11% (91/819)
+2022-04-25T10:21:30.4179922Z Receiving objects:  12% (99/819)
+2022-04-25T10:21:30.4183426Z Receiving objects:  13% (107/819)
+2022-04-25T10:21:30.4186653Z Receiving objects:  14% (115/819)
+2022-04-25T10:21:30.4199746Z Receiving objects:  15% (123/819)
+2022-04-25T10:21:30.4255385Z Receiving objects:  16% (132/819)
+2022-04-25T10:21:30.4255726Z Receiving objects:  17% (140/819)
+2022-04-25T10:21:30.4256001Z Receiving objects:  18% (148/819)
+2022-04-25T10:21:30.4256302Z Receiving objects:  19% (156/819)
+2022-04-25T10:21:30.4256587Z Receiving objects:  20% (164/819)
+2022-04-25T10:21:30.4256850Z Receiving objects:  21% (172/819)
+2022-04-25T10:21:30.4257125Z Receiving objects:  22% (181/819)
+2022-04-25T10:21:30.4257400Z Receiving objects:  23% (189/819)
+2022-04-25T10:21:30.4257659Z Receiving objects:  24% (197/819)
+2022-04-25T10:21:30.4265397Z Receiving objects:  25% (205/819)
+2022-04-25T10:21:30.4265692Z Receiving objects:  26% (213/819)
+2022-04-25T10:21:30.4266239Z Receiving objects:  27% (222/819)
+2022-04-25T10:21:30.4266524Z Receiving objects:  28% (230/819)
+2022-04-25T10:21:30.4266806Z Receiving objects:  29% (238/819)
+2022-04-25T10:21:30.4267070Z Receiving objects:  30% (246/819)
+2022-04-25T10:21:30.4267353Z Receiving objects:  31% (254/819)
+2022-04-25T10:21:30.4267630Z Receiving objects:  32% (263/819)
+2022-04-25T10:21:30.4268109Z Receiving objects:  33% (271/819)
+2022-04-25T10:21:30.4268377Z Receiving objects:  34% (279/819)
+2022-04-25T10:21:30.4268660Z Receiving objects:  35% (287/819)
+2022-04-25T10:21:30.4269108Z Receiving objects:  36% (295/819)
+2022-04-25T10:21:30.4270192Z Receiving objects:  37% (304/819)
+2022-04-25T10:21:30.4270469Z Receiving objects:  38% (312/819)
+2022-04-25T10:21:30.4270749Z Receiving objects:  39% (320/819)
+2022-04-25T10:21:30.4271010Z Receiving objects:  40% (328/819)
+2022-04-25T10:21:30.4271285Z Receiving objects:  41% (336/819)
+2022-04-25T10:21:30.4271579Z Receiving objects:  42% (344/819)
+2022-04-25T10:21:30.4271835Z Receiving objects:  43% (353/819)
+2022-04-25T10:21:30.4272113Z Receiving objects:  44% (361/819)
+2022-04-25T10:21:30.4274941Z Receiving objects:  45% (369/819)
+2022-04-25T10:21:30.4275216Z Receiving objects:  46% (377/819)
+2022-04-25T10:21:30.4275494Z Receiving objects:  47% (385/819)
+2022-04-25T10:21:30.4275773Z Receiving objects:  48% (394/819)
+2022-04-25T10:21:30.4276056Z Receiving objects:  49% (402/819)
+2022-04-25T10:21:30.4276414Z Receiving objects:  50% (410/819)
+2022-04-25T10:21:30.4276697Z Receiving objects:  51% (418/819)
+2022-04-25T10:21:30.4348156Z Receiving objects:  52% (426/819)
+2022-04-25T10:21:30.4351058Z Receiving objects:  53% (435/819)
+2022-04-25T10:21:30.4357539Z Receiving objects:  54% (443/819)
+2022-04-25T10:21:30.4361838Z Receiving objects:  55% (451/819)
+2022-04-25T10:21:30.4369919Z Receiving objects:  56% (459/819)
+2022-04-25T10:21:30.4374300Z Receiving objects:  57% (467/819)
+2022-04-25T10:21:30.4383943Z Receiving objects:  58% (476/819)
+2022-04-25T10:21:30.4392664Z Receiving objects:  59% (484/819)
+2022-04-25T10:21:30.4403217Z Receiving objects:  60% (492/819)
+2022-04-25T10:21:30.4407958Z Receiving objects:  61% (500/819)
+2022-04-25T10:21:30.4419532Z Receiving objects:  62% (508/819)
+2022-04-25T10:21:30.4423765Z Receiving objects:  63% (516/819)
+2022-04-25T10:21:30.4427819Z Receiving objects:  64% (525/819)
+2022-04-25T10:21:30.4429082Z Receiving objects:  65% (533/819)
+2022-04-25T10:21:30.4431368Z Receiving objects:  66% (541/819)
+2022-04-25T10:21:30.4433722Z Receiving objects:  67% (549/819)
+2022-04-25T10:21:30.4436669Z Receiving objects:  68% (557/819)
+2022-04-25T10:21:30.4438833Z Receiving objects:  69% (566/819)
+2022-04-25T10:21:30.4442461Z Receiving objects:  70% (574/819)
+2022-04-25T10:21:30.4445514Z Receiving objects:  71% (582/819)
+2022-04-25T10:21:30.4468452Z Receiving objects:  72% (590/819)
+2022-04-25T10:21:30.4476920Z Receiving objects:  73% (598/819)
+2022-04-25T10:21:30.4480943Z Receiving objects:  74% (607/819)
+2022-04-25T10:21:30.4481242Z Receiving objects:  75% (615/819)
+2022-04-25T10:21:30.4518899Z Receiving objects:  76% (623/819)
+2022-04-25T10:21:30.4519251Z Receiving objects:  77% (631/819)
+2022-04-25T10:21:30.4519529Z Receiving objects:  78% (639/819)
+2022-04-25T10:21:30.4519815Z Receiving objects:  79% (648/819)
+2022-04-25T10:21:30.4520102Z Receiving objects:  80% (656/819)
+2022-04-25T10:21:30.4520367Z Receiving objects:  81% (664/819)
+2022-04-25T10:21:30.4520655Z Receiving objects:  82% (672/819)
+2022-04-25T10:21:30.4520932Z Receiving objects:  83% (680/819)
+2022-04-25T10:21:30.4521197Z Receiving objects:  84% (688/819)
+2022-04-25T10:21:30.4521480Z Receiving objects:  85% (697/819)
+2022-04-25T10:21:30.4521752Z Receiving objects:  86% (705/819)
+2022-04-25T10:21:30.4522458Z remote: Total 819 (delta 253), reused 441 (delta 122), pack-reused 0
+2022-04-25T10:21:30.4522800Z Receiving objects:  87% (713/819)
+2022-04-25T10:21:30.4523089Z Receiving objects:  88% (721/819)
+2022-04-25T10:21:30.4523373Z Receiving objects:  89% (729/819)
+2022-04-25T10:21:30.4523636Z Receiving objects:  90% (738/819)
+2022-04-25T10:21:30.4523920Z Receiving objects:  91% (746/819)
+2022-04-25T10:21:30.4529754Z Receiving objects:  92% (754/819)
+2022-04-25T10:21:30.4530057Z Receiving objects:  93% (762/819)
+2022-04-25T10:21:30.4530338Z Receiving objects:  94% (770/819)
+2022-04-25T10:21:30.4530619Z Receiving objects:  95% (779/819)
+2022-04-25T10:21:30.4531126Z Receiving objects:  96% (787/819)
+2022-04-25T10:21:30.4534816Z Receiving objects:  97% (795/819)
+2022-04-25T10:21:30.4537289Z Receiving objects:  98% (803/819)
+2022-04-25T10:21:30.4539910Z Receiving objects:  99% (811/819)
+2022-04-25T10:21:30.4551079Z Receiving objects: 100% (819/819)
+2022-04-25T10:21:30.4551418Z Receiving objects: 100% (819/819), 882.55 KiB | 9.29 MiB/s, done.
+2022-04-25T10:21:30.4551745Z Resolving deltas:   0% (0/253)
+2022-04-25T10:21:30.4552013Z Resolving deltas:   1% (3/253)
+2022-04-25T10:21:30.4552294Z Resolving deltas:   2% (6/253)
+2022-04-25T10:21:30.4552572Z Resolving deltas:   3% (8/253)
+2022-04-25T10:21:30.4552849Z Resolving deltas:   4% (11/253)
+2022-04-25T10:21:30.4553332Z Resolving deltas:   5% (13/253)
+2022-04-25T10:21:30.4553617Z Resolving deltas:   6% (16/253)
+2022-04-25T10:21:30.4600600Z Resolving deltas:   7% (18/253)
+2022-04-25T10:21:30.4600954Z Resolving deltas:   8% (21/253)
+2022-04-25T10:21:30.4601244Z Resolving deltas:   9% (23/253)
+2022-04-25T10:21:30.4601531Z Resolving deltas:  10% (26/253)
+2022-04-25T10:21:30.4601806Z Resolving deltas:  11% (28/253)
+2022-04-25T10:21:30.4602080Z Resolving deltas:  12% (31/253)
+2022-04-25T10:21:30.4602363Z Resolving deltas:  13% (33/253)
+2022-04-25T10:21:30.4616193Z Resolving deltas:  14% (36/253)
+2022-04-25T10:21:30.4616567Z Resolving deltas:  15% (38/253)
+2022-04-25T10:21:30.4616880Z Resolving deltas:  16% (41/253)
+2022-04-25T10:21:30.4617156Z Resolving deltas:  17% (44/253)
+2022-04-25T10:21:30.4617416Z Resolving deltas:  18% (46/253)
+2022-04-25T10:21:30.4617690Z Resolving deltas:  19% (49/253)
+2022-04-25T10:21:30.4617964Z Resolving deltas:  20% (51/253)
+2022-04-25T10:21:30.4618222Z Resolving deltas:  21% (54/253)
+2022-04-25T10:21:30.4618493Z Resolving deltas:  22% (56/253)
+2022-04-25T10:21:30.4618763Z Resolving deltas:  23% (59/253)
+2022-04-25T10:21:30.4631165Z Resolving deltas:  24% (61/253)
+2022-04-25T10:21:30.4631468Z Resolving deltas:  25% (64/253)
+2022-04-25T10:21:30.4631743Z Resolving deltas:  26% (66/253)
+2022-04-25T10:21:30.4632014Z Resolving deltas:  27% (69/253)
+2022-04-25T10:21:30.4632294Z Resolving deltas:  28% (71/253)
+2022-04-25T10:21:30.4632766Z Resolving deltas:  29% (74/253)
+2022-04-25T10:21:30.4633047Z Resolving deltas:  30% (76/253)
+2022-04-25T10:21:30.4633307Z Resolving deltas:  31% (79/253)
+2022-04-25T10:21:30.4633664Z Resolving deltas:  32% (81/253)
+2022-04-25T10:21:30.4633943Z Resolving deltas:  33% (84/253)
+2022-04-25T10:21:30.4634199Z Resolving deltas:  34% (87/253)
+2022-04-25T10:21:30.4634474Z Resolving deltas:  35% (89/253)
+2022-04-25T10:21:30.4634758Z Resolving deltas:  36% (92/253)
+2022-04-25T10:21:30.4635014Z Resolving deltas:  37% (94/253)
+2022-04-25T10:21:30.4635283Z Resolving deltas:  38% (97/253)
+2022-04-25T10:21:30.4635553Z Resolving deltas:  39% (99/253)
+2022-04-25T10:21:30.4635813Z Resolving deltas:  40% (102/253)
+2022-04-25T10:21:30.4636095Z Resolving deltas:  41% (104/253)
+2022-04-25T10:21:30.4656571Z Resolving deltas:  42% (107/253)
+2022-04-25T10:21:30.4656886Z Resolving deltas:  43% (109/253)
+2022-04-25T10:21:30.4657163Z Resolving deltas:  44% (112/253)
+2022-04-25T10:21:30.4657436Z Resolving deltas:  45% (114/253)
+2022-04-25T10:21:30.4657720Z Resolving deltas:  46% (117/253)
+2022-04-25T10:21:30.4657984Z Resolving deltas:  47% (119/253)
+2022-04-25T10:21:30.4658258Z Resolving deltas:  48% (122/253)
+2022-04-25T10:21:30.4658535Z Resolving deltas:  49% (124/253)
+2022-04-25T10:21:30.4658794Z Resolving deltas:  50% (127/253)
+2022-04-25T10:21:30.4659062Z Resolving deltas:  51% (130/253)
+2022-04-25T10:21:30.4659340Z Resolving deltas:  52% (132/253)
+2022-04-25T10:21:30.4659599Z Resolving deltas:  53% (135/253)
+2022-04-25T10:21:30.4659868Z Resolving deltas:  54% (137/253)
+2022-04-25T10:21:30.4660139Z Resolving deltas:  55% (140/253)
+2022-04-25T10:21:30.4660395Z Resolving deltas:  56% (142/253)
+2022-04-25T10:21:30.4660665Z Resolving deltas:  57% (145/253)
+2022-04-25T10:21:30.4660935Z Resolving deltas:  58% (147/253)
+2022-04-25T10:21:30.4661190Z Resolving deltas:  59% (150/253)
+2022-04-25T10:21:30.4661468Z Resolving deltas:  60% (152/253)
+2022-04-25T10:21:30.4661918Z Resolving deltas:  61% (155/253)
+2022-04-25T10:21:30.4662197Z Resolving deltas:  62% (157/253)
+2022-04-25T10:21:30.4662458Z Resolving deltas:  63% (160/253)
+2022-04-25T10:21:30.4662729Z Resolving deltas:  64% (162/253)
+2022-04-25T10:21:30.4663006Z Resolving deltas:  65% (165/253)
+2022-04-25T10:21:30.4663267Z Resolving deltas:  66% (167/253)
+2022-04-25T10:21:30.4663537Z Resolving deltas:  67% (170/253)
+2022-04-25T10:21:30.4663813Z Resolving deltas:  68% (173/253)
+2022-04-25T10:21:30.4664070Z Resolving deltas:  69% (175/253)
+2022-04-25T10:21:30.4664399Z Resolving deltas:  70% (178/253)
+2022-04-25T10:21:30.4664679Z Resolving deltas:  71% (180/253)
+2022-04-25T10:21:30.4664936Z Resolving deltas:  72% (183/253)
+2022-04-25T10:21:30.4665207Z Resolving deltas:  73% (185/253)
+2022-04-25T10:21:30.4665483Z Resolving deltas:  74% (188/253)
+2022-04-25T10:21:30.4665741Z Resolving deltas:  75% (190/253)
+2022-04-25T10:21:30.4666017Z Resolving deltas:  76% (193/253)
+2022-04-25T10:21:30.4675222Z Resolving deltas:  77% (195/253)
+2022-04-25T10:21:30.4675513Z Resolving deltas:  78% (198/253)
+2022-04-25T10:21:30.4675801Z Resolving deltas:  79% (200/253)
+2022-04-25T10:21:30.4676078Z Resolving deltas:  80% (203/253)
+2022-04-25T10:21:30.4676356Z Resolving deltas:  81% (205/253)
+2022-04-25T10:21:30.4676612Z Resolving deltas:  82% (208/253)
+2022-04-25T10:21:30.4676886Z Resolving deltas:  83% (210/253)
+2022-04-25T10:21:30.4677164Z Resolving deltas:  84% (213/253)
+2022-04-25T10:21:30.4677422Z Resolving deltas:  85% (216/253)
+2022-04-25T10:21:30.4677694Z Resolving deltas:  86% (218/253)
+2022-04-25T10:21:30.4677967Z Resolving deltas:  87% (221/253)
+2022-04-25T10:21:30.4678226Z Resolving deltas:  88% (223/253)
+2022-04-25T10:21:30.4678501Z Resolving deltas:  89% (226/253)
+2022-04-25T10:21:30.4678774Z Resolving deltas:  90% (228/253)
+2022-04-25T10:21:30.4679028Z Resolving deltas:  91% (231/253)
+2022-04-25T10:21:30.4691650Z Resolving deltas:  92% (233/253)
+2022-04-25T10:21:30.4691980Z Resolving deltas:  93% (236/253)
+2022-04-25T10:21:30.4692264Z Resolving deltas:  94% (238/253)
+2022-04-25T10:21:30.4692547Z Resolving deltas:  95% (241/253)
+2022-04-25T10:21:30.4692959Z Resolving deltas:  96% (243/253)
+2022-04-25T10:21:30.4693529Z Resolving deltas:  97% (246/253)
+2022-04-25T10:21:30.4693799Z Resolving deltas:  98% (248/253)
+2022-04-25T10:21:30.4694076Z Resolving deltas:  99% (251/253)
+2022-04-25T10:21:30.4694552Z Resolving deltas: 100% (253/253)
+2022-04-25T10:21:30.4694824Z Resolving deltas: 100% (253/253), done.
+2022-04-25T10:21:30.4923102Z From https://github.com/accordproject/concerto
+2022-04-25T10:21:30.4924046Z  * [new ref]         968f3066834c80df2be590d75bd59cf2d52d7a84 -> pull/419/merge
+2022-04-25T10:21:30.4954214Z ##[endgroup]
+2022-04-25T10:21:30.4954748Z ##[group]Determining the checkout info
+2022-04-25T10:21:30.4959453Z ##[endgroup]
+2022-04-25T10:21:30.4959921Z ##[group]Checking out the ref
+2022-04-25T10:21:30.4962067Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/419/merge
+2022-04-25T10:21:30.5499905Z Note: switching to 'refs/remotes/pull/419/merge'.
+2022-04-25T10:21:30.5500494Z
+2022-04-25T10:21:30.5501044Z You are in 'detached HEAD' state. You can look around, make experimental
+2022-04-25T10:21:30.5502414Z changes and commit them, and you can discard any commits you make in this
+2022-04-25T10:21:30.5503011Z state without impacting any branches by switching back to a branch.
+2022-04-25T10:21:30.5503365Z
+2022-04-25T10:21:30.5503647Z If you want to create a new branch to retain commits you create, you may
+2022-04-25T10:21:30.5504241Z do so (now or later) by using -c with the switch command. Example:
+2022-04-25T10:21:30.5504549Z
+2022-04-25T10:21:30.5504838Z   git switch -c <new-branch-name>
+2022-04-25T10:21:30.5505108Z
+2022-04-25T10:21:30.5505317Z Or undo this operation with:
+2022-04-25T10:21:30.5505572Z
+2022-04-25T10:21:30.5505756Z   git switch -
+2022-04-25T10:21:30.5505982Z
+2022-04-25T10:21:30.5506282Z Turn off this advice by setting config variable advice.detachedHead to false
+2022-04-25T10:21:30.5506847Z
+2022-04-25T10:21:30.5507219Z HEAD is now at 968f306 Merge 9724be13ac4dc534f28d9e6cbfa72ef912edc4d9 into 12c94aabdabd2f3e7c7b52ecfe720df39b959d21
+2022-04-25T10:21:30.5508209Z ##[endgroup]
+2022-04-25T10:21:30.5566274Z [command]/usr/bin/git log -1 --format='%H'
+2022-04-25T10:21:30.5599547Z '968f3066834c80df2be590d75bd59cf2d52d7a84'
+2022-04-25T10:21:30.5964360Z ##[group]Run actions/setup-node@v1
+2022-04-25T10:21:30.5964639Z with:
+2022-04-25T10:21:30.5964874Z   node-version: 14.x
+2022-04-25T10:21:30.5965113Z   always-auth: false
+2022-04-25T10:21:30.5965360Z ##[endgroup]
+2022-04-25T10:21:30.7069502Z [command]/opt/hostedtoolcache/node/14.19.1/x64/bin/node --version
+2022-04-25T10:21:30.7670293Z v14.19.1
+2022-04-25T10:21:30.7694938Z [command]/opt/hostedtoolcache/node/14.19.1/x64/bin/npm --version
+2022-04-25T10:21:31.0615081Z 6.14.16
+2022-04-25T10:21:31.0848390Z ##[group]Run npm ci
+2022-04-25T10:21:31.0848816Z [36;1mnpm ci[0m
+2022-04-25T10:21:31.0910113Z shell: /usr/bin/bash -e {0}
+2022-04-25T10:21:31.0910455Z ##[endgroup]
+2022-04-25T10:21:42.4437289Z
+2022-04-25T10:21:42.4446582Z > concerto@2.0.0 postinstall /home/runner/work/concerto/concerto
+2022-04-25T10:21:42.4447052Z > npm run bootstrap
+2022-04-25T10:21:42.4447219Z
+2022-04-25T10:21:42.6874675Z
+2022-04-25T10:21:42.6877011Z > concerto@2.0.0 bootstrap /home/runner/work/concerto/concerto
+2022-04-25T10:21:42.6877807Z > lerna bootstrap
+2022-04-25T10:21:42.6878284Z
+2022-04-25T10:21:43.0528820Z lerna notice cli v4.0.0
+2022-04-25T10:21:43.0546140Z lerna info ci enabled
+2022-04-25T10:21:43.2894652Z lerna info Bootstrapping 7 packages
+2022-04-25T10:21:43.3582548Z lerna info Installing external dependencies
+2022-04-25T10:21:43.3584439Z lerna info hoist Installing hoisted dependencies into root
+2022-04-25T10:21:43.3613498Z lerna info hoist Pruning hoisted dependencies
+2022-04-25T10:21:43.3853006Z lerna info hoist Finished pruning hoisted dependencies
+2022-04-25T10:21:56.8128094Z lerna info hoist Finished bootstrapping root
+2022-04-25T10:21:56.8134552Z lerna info Symlinking packages and binaries
+2022-04-25T10:21:56.8413727Z lerna success Bootstrapped 7 packages
+2022-04-25T10:21:56.8565340Z added 924 packages in 23.213s
+2022-04-25T10:21:56.8724769Z ##[group]Run npm run build --if-present
+2022-04-25T10:21:56.8725130Z [36;1mnpm run build --if-present[0m
+2022-04-25T10:21:56.8780232Z shell: /usr/bin/bash -e {0}
+2022-04-25T10:21:56.8780508Z ##[endgroup]
+2022-04-25T10:21:57.1150174Z ##[group]Run npm test
+2022-04-25T10:21:57.1150463Z [36;1mnpm test[0m
+2022-04-25T10:21:57.1213326Z shell: /usr/bin/bash -e {0}
+2022-04-25T10:21:57.1213620Z ##[endgroup]
+2022-04-25T10:21:57.3609707Z
+2022-04-25T10:21:57.3610656Z > concerto@2.0.0 pretest /home/runner/work/concerto/concerto
+2022-04-25T10:21:57.3611241Z > npm run licchk
+2022-04-25T10:21:57.3611520Z
+2022-04-25T10:21:57.6046645Z
+2022-04-25T10:21:57.6047859Z > concerto@2.0.0 licchk /home/runner/work/concerto/concerto
+2022-04-25T10:21:57.6048966Z > license-check-and-add
+2022-04-25T10:21:57.6049457Z
+2022-04-25T10:21:57.6737947Z Running using exclude exact_paths list
+2022-04-25T10:21:57.6743151Z Running using exclude file type list
+2022-04-25T10:21:57.6744325Z Trailing whitespace will be ignored in checking
+2022-04-25T10:21:57.6759398Z No default format specified using {"prepend":"/*","append":"*/"} as backup
+2022-04-25T10:21:57.6797553Z [32m✔[0m All files have licenses.
+2022-04-25T10:21:57.6921047Z
+2022-04-25T10:21:57.6922016Z > concerto@2.0.0 test /home/runner/work/concerto/concerto
+2022-04-25T10:21:57.6922393Z > lerna run test
+2022-04-25T10:21:57.6922555Z
+2022-04-25T10:21:58.0153064Z lerna notice cli v4.0.0
+2022-04-25T10:21:58.0170131Z lerna info ci enabled
+2022-04-25T10:21:58.0655313Z lerna info Executing command in 7 packages: "npm run test"
+2022-04-25T10:22:12.4336259Z lerna info run Ran npm script 'test' in '@accordproject/concerto-vocabulary' in 14.4s:
+2022-04-25T10:22:12.4342874Z
+2022-04-25T10:22:12.4343974Z > @accordproject/concerto-vocabulary@2.0.0 pretest /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4344999Z > npm run lint
+2022-04-25T10:22:12.4345227Z
+2022-04-25T10:22:12.4345331Z
+2022-04-25T10:22:12.4346019Z > @accordproject/concerto-vocabulary@2.0.0 lint /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4346507Z > eslint .
+2022-04-25T10:22:12.4346733Z
+2022-04-25T10:22:12.4346815Z
+2022-04-25T10:22:12.4347510Z > @accordproject/concerto-vocabulary@2.0.0 postlint /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4348041Z > npm run licchk
+2022-04-25T10:22:12.4348276Z
+2022-04-25T10:22:12.4348358Z
+2022-04-25T10:22:12.4349032Z > @accordproject/concerto-vocabulary@2.0.0 licchk /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4349637Z > license-check-and-add
+2022-04-25T10:22:12.4349894Z
+2022-04-25T10:22:12.4350176Z Running using exclude exact_paths list
+2022-04-25T10:22:12.4350643Z Running using exclude file type list
+2022-04-25T10:22:12.4351146Z Trailing whitespace will be ignored in checking
+2022-04-25T10:22:12.4351750Z [32m✔[0m All files have licenses.
+2022-04-25T10:22:12.4352030Z
+2022-04-25T10:22:12.4352719Z > @accordproject/concerto-vocabulary@2.0.0 postlicchk /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4353213Z > npm run doc
+2022-04-25T10:22:12.4353440Z
+2022-04-25T10:22:12.4353523Z
+2022-04-25T10:22:12.4354215Z > @accordproject/concerto-vocabulary@2.0.0 doc /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4354905Z > jsdoc --pedantic --recurse -c jsdoc.json
+2022-04-25T10:22:12.4355181Z
+2022-04-25T10:22:12.4355262Z
+2022-04-25T10:22:12.4355932Z > @accordproject/concerto-vocabulary@2.0.0 postdoc /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4356470Z > npm run build:types
+2022-04-25T10:22:12.4356696Z
+2022-04-25T10:22:12.4356794Z
+2022-04-25T10:22:12.4357477Z > @accordproject/concerto-vocabulary@2.0.0 build:types /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4358310Z > tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types
+2022-04-25T10:22:12.4358675Z
+2022-04-25T10:22:12.4358759Z
+2022-04-25T10:22:12.4359418Z > @accordproject/concerto-vocabulary@2.0.0 test /home/runner/work/concerto/concerto/packages/concerto-vocabulary
+2022-04-25T10:22:12.4360045Z > nyc mocha --recursive -t 10000
+2022-04-25T10:22:12.4360491Z
+2022-04-25T10:22:12.4360585Z
+2022-04-25T10:22:12.4360685Z
+2022-04-25T10:22:12.4360871Z   Vocabulary
+2022-04-25T10:22:12.4361372Z     ✓ constructor - missing vocabulary manager
+2022-04-25T10:22:12.4361922Z     ✓ constructor - missing vocabulary object
+2022-04-25T10:22:12.4362508Z     ✓ constructor - missing vocabulary declarations
+2022-04-25T10:22:12.4363044Z     ✓ constructor - missing vocabulary locale
+2022-04-25T10:22:12.4363601Z     ✓ constructor - missing vocabulary namespace
+2022-04-25T10:22:12.4364108Z     ✓ constructor - invalid locale
+2022-04-25T10:22:12.4364604Z     ✓ constructor - invalid locale case
+2022-04-25T10:22:12.4365033Z     ✓ constructor
+2022-04-25T10:22:12.4365396Z     ✓ toJSON
+2022-04-25T10:22:12.4365602Z
+2022-04-25T10:22:12.4365786Z   VocabularyManager
+2022-04-25T10:22:12.4366212Z     ✓ addVocabulary (null)
+2022-04-25T10:22:12.4366616Z     ✓ addVocabulary
+2022-04-25T10:22:12.4367065Z     ✓ addVocabulary (duplicate)
+2022-04-25T10:22:12.4367474Z     ✓ getVocabulary
+2022-04-25T10:22:12.4367926Z     ✓ getVocabulary - undefined
+2022-04-25T10:22:12.4368428Z     ✓ getVocabulary - missing locale
+2022-04-25T10:22:12.4368856Z     ✓ getVocabulary - lookup
+2022-04-25T10:22:12.4369373Z     ✓ getVocabulary - lookup fail case insensitive
+2022-04-25T10:22:12.4369903Z     ✓ getVocabulary - case insensitive
+2022-04-25T10:22:12.4370389Z     ✓ getVocabulary - lookup fail
+2022-04-25T10:22:12.4370879Z     ✓ getVocabulariesForNamespace
+2022-04-25T10:22:12.4371365Z     ✓ getVocabulariesForLocale
+2022-04-25T10:22:12.4371783Z     ✓ getTerms - en
+2022-04-25T10:22:12.4372151Z     ✓ getTerm - en
+2022-04-25T10:22:12.4372662Z     ✓ getTerm - fr
+2022-04-25T10:22:12.4373032Z     ✓ findVocabulary
+2022-04-25T10:22:12.4373954Z     ✓ getTerm - lookup declaration
+2022-04-25T10:22:12.4374351Z     ✓ getTerm - lookup declaration
+2022-04-25T10:22:12.4374731Z     ✓ getTerm - lookup property
+2022-04-25T10:22:12.4375088Z     ✓ getTerm - lookup unicode
+2022-04-25T10:22:12.4375496Z     ✓ getTerm - lookup unicode property
+2022-04-25T10:22:12.4375910Z     ✓ getTerm - lookup missing property
+2022-04-25T10:22:12.4376296Z     ✓ getTerm - lookup missing locale
+2022-04-25T10:22:12.4376700Z     ✓ getTerm - missingTermGenerator
+2022-04-25T10:22:12.4377113Z     ✓ resolveTerm - class
+2022-04-25T10:22:12.4377437Z     ✓ resolveTerm - property
+2022-04-25T10:22:12.4377851Z     ✓ resolveTerm - property on super type
+2022-04-25T10:22:12.4378265Z     ✓ resolveTerm - missing property
+2022-04-25T10:22:12.4378653Z     ✓ resolveTerm - missing class
+2022-04-25T10:22:12.4379035Z     ✓ resolveTerm - missing namespace
+2022-04-25T10:22:12.4379352Z     ✓ clear
+2022-04-25T10:22:12.4379653Z     ✓ removeVocabulary
+2022-04-25T10:22:12.4379933Z     ✓ validate
+2022-04-25T10:22:12.4380226Z     ✓ decorateModels
+2022-04-25T10:22:12.4380388Z
+2022-04-25T10:22:12.4380397Z
+2022-04-25T10:22:12.4380512Z   43 passing (488ms)
+2022-04-25T10:22:12.4380663Z
+2022-04-25T10:22:12.4380671Z
+2022-04-25T10:22:12.4380975Z =============================== Coverage summary ===============================
+2022-04-25T10:22:12.4381340Z Statements   : 100% ( 122/122 )
+2022-04-25T10:22:12.4381659Z Branches     : 93.24% ( 69/74 )
+2022-04-25T10:22:12.4381953Z Functions    : 100% ( 41/41 )
+2022-04-25T10:22:12.4382265Z Lines        : 100% ( 116/116 )
+2022-04-25T10:22:12.4382654Z ================================================================================
+2022-04-25T10:22:12.8015025Z lerna info run Ran npm script 'test' in '@accordproject/concerto-util' in 14.7s:
+2022-04-25T10:22:12.8015354Z
+2022-04-25T10:22:12.8016917Z > @accordproject/concerto-util@2.0.0 pretest /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8017575Z > npm run lint
+2022-04-25T10:22:12.8070089Z
+2022-04-25T10:22:12.8070101Z
+2022-04-25T10:22:12.8070856Z > @accordproject/concerto-util@2.0.0 lint /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8071262Z > eslint .
+2022-04-25T10:22:12.8071396Z
+2022-04-25T10:22:12.8071405Z
+2022-04-25T10:22:12.8072193Z > @accordproject/concerto-util@2.0.0 postlint /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8072624Z > npm run licchk
+2022-04-25T10:22:12.8072780Z
+2022-04-25T10:22:12.8072789Z
+2022-04-25T10:22:12.8073318Z > @accordproject/concerto-util@2.0.0 licchk /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8073807Z > license-check-and-add
+2022-04-25T10:22:12.8073984Z
+2022-04-25T10:22:12.8074180Z Running using exclude exact_paths list
+2022-04-25T10:22:12.8074543Z Running using exclude file type list
+2022-04-25T10:22:12.8074955Z Trailing whitespace will be ignored in checking
+2022-04-25T10:22:12.8075489Z [32m✔[0m All files have licenses.
+2022-04-25T10:22:12.8075673Z
+2022-04-25T10:22:12.8076216Z > @accordproject/concerto-util@2.0.0 postlicchk /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8076598Z > npm run doc
+2022-04-25T10:22:12.8076749Z
+2022-04-25T10:22:12.8076758Z
+2022-04-25T10:22:12.8077278Z > @accordproject/concerto-util@2.0.0 doc /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8077847Z > jsdoc --pedantic --recurse -c jsdoc.json
+2022-04-25T10:22:12.8078047Z
+2022-04-25T10:22:12.8078056Z
+2022-04-25T10:22:12.8078586Z > @accordproject/concerto-util@2.0.0 postdoc /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8080502Z > npm run build:types
+2022-04-25T10:22:12.8080673Z
+2022-04-25T10:22:12.8080682Z
+2022-04-25T10:22:12.8081276Z > @accordproject/concerto-util@2.0.0 build:types /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8082171Z > tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types
+2022-04-25T10:22:12.8082441Z
+2022-04-25T10:22:12.8082449Z
+2022-04-25T10:22:12.8082978Z > @accordproject/concerto-util@2.0.0 test /home/runner/work/concerto/concerto/packages/concerto-util
+2022-04-25T10:22:12.8083499Z > nyc mocha --recursive -t 10000
+2022-04-25T10:22:12.8083681Z
+2022-04-25T10:22:12.8083691Z
+2022-04-25T10:22:12.8083709Z
+2022-04-25T10:22:12.8083832Z   BaseException
+2022-04-25T10:22:12.8084087Z     #constructor
+2022-04-25T10:22:12.8084482Z       ✓ should return an instance of Error
+2022-04-25T10:22:12.8084990Z       ✓ should return an instance of Error for another component
+2022-04-25T10:22:12.8085384Z       ✓ should have a name
+2022-04-25T10:22:12.8085705Z       ✓ should have a message
+2022-04-25T10:22:12.8086075Z       ✓ should have a stack trace
+2022-04-25T10:22:12.8086544Z       ✓ should handle a lack of support for stack traces
+2022-04-25T10:22:12.8086758Z
+2022-04-25T10:22:12.8086878Z   BaseFileException
+2022-04-25T10:22:12.8087130Z     #constructor
+2022-04-25T10:22:12.8087566Z       ✓ should return an instance of BaseFileException
+2022-04-25T10:22:12.8088140Z       ✓ should return an instance of BaseFileException for another component
+2022-04-25T10:22:12.8088587Z       ✓ should have a fileLocation
+2022-04-25T10:22:12.8088971Z       ✓ should have a short message
+2022-04-25T10:22:12.8089361Z       ✓ should have a stack trace
+2022-04-25T10:22:12.8089713Z       ✓ should have a file name
+2022-04-25T10:22:12.8090127Z       ✓ should use message over fullMessage
+2022-04-25T10:22:12.8090599Z       ✓ should handle a lack of support for stack traces
+2022-04-25T10:22:12.8090809Z
+2022-04-25T10:22:12.8090920Z   FileDownloader
+2022-04-25T10:22:12.8091225Z     #downloadExternalDependencies
+2022-04-25T10:22:12.8091660Z       ✓ should return [] when nothing to do
+2022-04-25T10:22:12.8092170Z       ✓ should download a model file and its external dependencies
+2022-04-25T10:22:12.8092595Z       ✓ should handle loader errors
+2022-04-25T10:22:12.8093062Z       ✓ should handle loader error caused by DNS failure
+2022-04-25T10:22:12.8093475Z
+2022-04-25T10:22:12.8093574Z   FileWriter
+2022-04-25T10:22:12.8093816Z     #constructor
+2022-04-25T10:22:12.8094117Z       ✓ main code path
+2022-04-25T10:22:12.8094364Z     #openFile
+2022-04-25T10:22:12.8094664Z       ✓ main code path
+2022-04-25T10:22:12.8094914Z     #openRelativeFile
+2022-04-25T10:22:12.8095341Z       ✓ main code path
+2022-04-25T10:22:12.8095597Z     #writeLine
+2022-04-25T10:22:12.8095960Z       ✓ file not opened error code path
+2022-04-25T10:22:12.8096299Z       ✓ main code path
+2022-04-25T10:22:12.8096558Z     #writeBeforeLine
+2022-04-25T10:22:12.8096933Z       ✓ file not opened error code path
+2022-04-25T10:22:12.8097268Z       ✓ main code path
+2022-04-25T10:22:12.8097517Z     #closeFile
+2022-04-25T10:22:12.8097873Z       ✓ file not opened error code path
+2022-04-25T10:22:12.8098208Z       ✓ main code path
+2022-04-25T10:22:12.8098585Z       ✓ main code path - relativedir
+2022-04-25T10:22:12.8098772Z
+2022-04-25T10:22:12.8098864Z   Label
+2022-04-25T10:22:12.8099088Z     #labelToSentence
+2022-04-25T10:22:12.8099447Z       ✓ should create a sentence
+2022-04-25T10:22:12.8099886Z       ✓ should create a sentence for a longer label
+2022-04-25T10:22:12.8100238Z       ✓ should handle null
+2022-04-25T10:22:12.8100507Z     #sentenceToLabel
+2022-04-25T10:22:12.8100833Z       ✓ should create a label
+2022-04-25T10:22:12.8101256Z       ✓ should create a label for a longer sentence
+2022-04-25T10:22:12.8101616Z       ✓ should handle null
+2022-04-25T10:22:12.8101876Z     #roundtrip
+2022-04-25T10:22:12.8102208Z       ✓ should rountrip a label
+2022-04-25T10:22:12.8102476Z     #notroundtrip
+2022-04-25T10:22:12.8102876Z       ✓ should not always rountrip a sentence
+2022-04-25T10:22:12.8103069Z
+2022-04-25T10:22:12.8103196Z   CompositeFileLoader
+2022-04-25T10:22:12.8103444Z     #constructor
+2022-04-25T10:22:12.8103789Z       ✓ should have no loaders
+2022-04-25T10:22:12.8104056Z     #addFileLoader
+2022-04-25T10:22:12.8104559Z       ✓ should be able to add/get a model file loader
+2022-04-25T10:22:12.8104866Z     #clearFileLoader
+2022-04-25T10:22:12.8105293Z       ✓ should be able to add/get a model file loader
+2022-04-25T10:22:12.8105564Z     #accepts
+2022-04-25T10:22:12.8105996Z       ✓ should delegate accepts call to model file loader
+2022-04-25T10:22:12.8106290Z     #load
+2022-04-25T10:22:12.8106700Z       ✓ should delegate load call to model file loader
+2022-04-25T10:22:12.8106908Z
+2022-04-25T10:22:12.8107024Z   DefaultFileLoader
+2022-04-25T10:22:12.8107280Z     #constructor
+2022-04-25T10:22:12.8107689Z       ✓ should have two loaders (HTTP and GitHub)
+2022-04-25T10:22:12.8107873Z
+2022-04-25T10:22:12.8107990Z   GitHubFileLoader
+2022-04-25T10:22:12.8108233Z     #accept
+2022-04-25T10:22:12.8108582Z       ✓ should accept github URIs
+2022-04-25T10:22:12.8108953Z       ✓ should reject unknown URIs
+2022-04-25T10:22:12.8109214Z     #load
+2022-04-25T10:22:12.8109546Z       ✓ should load github URIs
+2022-04-25T10:22:12.8109725Z
+2022-04-25T10:22:12.8109834Z   HTTPModeFilelLoader
+2022-04-25T10:22:12.8110087Z     #accept
+2022-04-25T10:22:12.8110429Z       ✓ should accept http URIs
+2022-04-25T10:22:12.8110790Z       ✓ should accept https URIs
+2022-04-25T10:22:12.8111178Z       ✓ should reject unknown URIs
+2022-04-25T10:22:12.8111434Z     #load
+2022-04-25T10:22:12.8111764Z       ✓ should load https URIs
+2022-04-25T10:22:12.8111928Z
+2022-04-25T10:22:12.8112021Z   logger
+2022-04-25T10:22:12.8112254Z     #logger.error
+2022-04-25T10:22:12.8112610Z       ✓ should call logger.error
+2022-04-25T10:22:12.8112968Z       ✓ should call logger.error
+2022-04-25T10:22:12.8113385Z       ✓ should call logger.error with a stack
+2022-04-25T10:22:12.8113849Z       ✓ should call logger.error with some padding
+2022-04-25T10:22:12.8114135Z     #logger.warn
+2022-04-25T10:22:12.8114484Z       ✓ should call logger.warn
+2022-04-25T10:22:12.8114889Z       ✓ should call logger.warn with JSON
+2022-04-25T10:22:12.8115337Z       ✓ should call logger.warn with stringified JSON
+2022-04-25T10:22:12.8115647Z     #logger.info
+2022-04-25T10:22:12.8116160Z 10:22:12 AM - INFO: This is logging some useful information
+2022-04-25T10:22:12.8116582Z       ✓ should call logger.info
+2022-04-25T10:22:12.8116909Z 10:22:12 AM - INFO: {
+2022-04-25T10:22:12.8117222Z   "message": "This is a JSON message"
+2022-04-25T10:22:12.8117485Z }
+2022-04-25T10:22:12.8117913Z       ✓ should call logger.info with JSON
+2022-04-25T10:22:12.8118284Z 10:22:12 AM - INFO: {
+2022-04-25T10:22:12.8118593Z   "message": "This is a JSON message"
+2022-04-25T10:22:12.8118854Z }
+2022-04-25T10:22:12.8119255Z       ✓ should call logger.info with stringified JSON
+2022-04-25T10:22:12.8119559Z     #logger.debug
+2022-04-25T10:22:12.8119913Z       ✓ should call logger.debug
+2022-04-25T10:22:12.8120347Z       ✓ should call logger.debug with an Error object
+2022-04-25T10:22:12.8120844Z 10:22:12 AM - INFO: The proof is in the pudding
+2022-04-25T10:22:12.8121222Z Error: The proof is in the pudding
+2022-04-25T10:22:12.8121901Z     at Context.<anonymous> (/home/runner/work/concerto/concerto/packages/concerto-util/test/logger.js:89:26)
+2022-04-25T10:22:12.8122468Z     at callFn (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runnable.js:366:21)
+2022-04-25T10:22:12.8123052Z     at Test.Runnable.run (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runnable.js:354:5)
+2022-04-25T10:22:12.8123643Z     at Runner.runTest (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:677:10)
+2022-04-25T10:22:12.8124174Z     at /home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:801:12
+2022-04-25T10:22:12.8124682Z     at next (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:594:14)
+2022-04-25T10:22:12.8125190Z     at /home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:604:7
+2022-04-25T10:22:12.8125703Z     at next (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:486:14)
+2022-04-25T10:22:12.8126267Z     at Immediate._onImmediate (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:572:5)
+2022-04-25T10:22:12.8126828Z     at processImmediate (internal/timers.js:464:21)
+2022-04-25T10:22:12.8127371Z       ✓ should call logger.info with an Error object in the message
+2022-04-25T10:22:12.8127697Z     #logger.verbose
+2022-04-25T10:22:12.8128050Z       ✓ should call logger.verbose
+2022-04-25T10:22:12.8128714Z       ✓ should call logger.verbose with an Error object
+2022-04-25T10:22:12.8129033Z     #logger.silly
+2022-04-25T10:22:12.8129379Z       ✓ should call logger.silly
+2022-04-25T10:22:12.8129827Z       ✓ should call logger.silly with an Error object
+2022-04-25T10:22:12.8130130Z     #logger.http
+2022-04-25T10:22:12.8130472Z       ✓ should call logger.http
+2022-04-25T10:22:12.8130921Z       ✓ should call logger.http with an Error object
+2022-04-25T10:22:12.8131230Z     #logger.dispatch
+2022-04-25T10:22:12.8131609Z       ✓ should fail to call logger.foo
+2022-04-25T10:22:12.8132053Z       ✓ should call logger.http with an Error object
+2022-04-25T10:22:12.8132362Z     #logger.add
+2022-04-25T10:22:12.8132938Z 10:22:12 AM - INFO: This is logging to the default logger and my custom tranport
+2022-04-25T10:22:12.8137298Z 10:22:12 AM - INFO: This is some silly message
+2022-04-25T10:22:12.8137682Z Error: This is some silly message
+2022-04-25T10:22:12.8138359Z     at Context.<anonymous> (/home/runner/work/concerto/concerto/packages/concerto-util/test/logger.js:134:25)
+2022-04-25T10:22:12.8138941Z     at callFn (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runnable.js:366:21)
+2022-04-25T10:22:12.8139507Z     at Test.Runnable.run (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runnable.js:354:5)
+2022-04-25T10:22:12.8140093Z     at Runner.runTest (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:677:10)
+2022-04-25T10:22:12.8140622Z     at /home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:801:12
+2022-04-25T10:22:12.8141142Z     at next (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:594:14)
+2022-04-25T10:22:12.8141640Z     at /home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:604:7
+2022-04-25T10:22:12.8142155Z     at next (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:486:14)
+2022-04-25T10:22:12.8142724Z     at Immediate._onImmediate (/home/runner/work/concerto/concerto/node_modules/mocha/lib/runner.js:572:5)
+2022-04-25T10:22:12.8143352Z     at processImmediate (internal/timers.js:464:21)
+2022-04-25T10:22:12.8143800Z       ✓ should add a custom transport
+2022-04-25T10:22:12.8143990Z
+2022-04-25T10:22:12.8144092Z   modelwriter
+2022-04-25T10:22:12.8144366Z     #writeModelsToFileSystem
+2022-04-25T10:22:12.8144790Z       ✓ should write models to the file system
+2022-04-25T10:22:12.8145322Z       ✓ should write models to the file system, without external models
+2022-04-25T10:22:12.8145841Z       ✓ should throw an error if the path is not provided
+2022-04-25T10:22:12.8146051Z
+2022-04-25T10:22:12.8146151Z   TypedStack
+2022-04-25T10:22:12.8146378Z     #push
+2022-04-25T10:22:12.8146734Z       ✓ check push with wrong type
+2022-04-25T10:22:12.8146999Z     #pop
+2022-04-25T10:22:12.8149060Z       ✓ check pop with empty stack
+2022-04-25T10:22:12.8149459Z       ✓ check pop with wrong type
+2022-04-25T10:22:12.8149720Z     #peek
+2022-04-25T10:22:12.8150149Z       ✓ should throw an error if value given has wrong types
+2022-04-25T10:22:12.8150463Z     #clear
+2022-04-25T10:22:12.8150801Z       ✓ should clear the stack
+2022-04-25T10:22:12.8150973Z
+2022-04-25T10:22:12.8151052Z   Writer
+2022-04-25T10:22:12.8151285Z     #constructor
+2022-04-25T10:22:12.8151580Z       ✓ main path
+2022-04-25T10:22:12.8151821Z     #writeBeforeLine
+2022-04-25T10:22:12.8152120Z       ✓ main path
+2022-04-25T10:22:12.8152360Z     #writeLine
+2022-04-25T10:22:12.8152643Z       ✓ main path
+2022-04-25T10:22:12.8152874Z     #writeIndented
+2022-04-25T10:22:12.8153166Z       ✓ main path
+2022-04-25T10:22:12.8153391Z     #write
+2022-04-25T10:22:12.8153753Z       ✓ writes a line that is not a string
+2022-04-25T10:22:12.8154139Z
+2022-04-25T10:22:12.8154148Z
+2022-04-25T10:22:12.8154266Z   84 passing (124ms)
+2022-04-25T10:22:12.8154426Z
+2022-04-25T10:22:12.8154434Z
+2022-04-25T10:22:12.8154719Z =============================== Coverage summary ===============================
+2022-04-25T10:22:12.8155091Z Statements   : 100% ( 262/262 )
+2022-04-25T10:22:12.8155409Z Branches     : 95.4% ( 83/87 )
+2022-04-25T10:22:12.8155710Z Functions    : 100% ( 79/79 )
+2022-04-25T10:22:12.8156029Z Lines        : 100% ( 249/249 )
+2022-04-25T10:22:12.8156433Z ================================================================================
+2022-04-25T10:22:21.2581687Z lerna info run Ran npm script 'test' in '@accordproject/concerto-metamodel' in 8.5s:
+2022-04-25T10:22:21.2582395Z
+2022-04-25T10:22:21.2583215Z > @accordproject/concerto-metamodel@2.0.0 pretest /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2583776Z > npm run lint
+2022-04-25T10:22:21.2584023Z
+2022-04-25T10:22:21.2584125Z
+2022-04-25T10:22:21.2584782Z > @accordproject/concerto-metamodel@2.0.0 lint /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2585323Z > eslint .
+2022-04-25T10:22:21.2585598Z
+2022-04-25T10:22:21.2585690Z
+2022-04-25T10:22:21.2586373Z > @accordproject/concerto-metamodel@2.0.0 postlint /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2586910Z > npm run licchk
+2022-04-25T10:22:21.2587144Z
+2022-04-25T10:22:21.2587227Z
+2022-04-25T10:22:21.2587877Z > @accordproject/concerto-metamodel@2.0.0 licchk /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2588480Z > license-check-and-add
+2022-04-25T10:22:21.2588740Z
+2022-04-25T10:22:21.2589020Z Running using exclude exact_paths list
+2022-04-25T10:22:21.2589471Z Running using exclude file type list
+2022-04-25T10:22:21.2589971Z Trailing whitespace will be ignored in checking
+2022-04-25T10:22:21.2590580Z [32m✔[0m All files have licenses.
+2022-04-25T10:22:21.2590852Z
+2022-04-25T10:22:21.2591529Z > @accordproject/concerto-metamodel@2.0.0 postlicchk /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2592054Z > npm run doc
+2022-04-25T10:22:21.2592267Z
+2022-04-25T10:22:21.2592351Z
+2022-04-25T10:22:21.2593772Z > @accordproject/concerto-metamodel@2.0.0 doc /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2594838Z > jsdoc --pedantic --recurse -c jsdoc.json
+2022-04-25T10:22:21.2595176Z
+2022-04-25T10:22:21.2595269Z
+2022-04-25T10:22:21.2595935Z > @accordproject/concerto-metamodel@2.0.0 postdoc /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2596472Z > npm run build:types
+2022-04-25T10:22:21.2596720Z
+2022-04-25T10:22:21.2596802Z
+2022-04-25T10:22:21.2597480Z > @accordproject/concerto-metamodel@2.0.0 build:types /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2598315Z > tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types
+2022-04-25T10:22:21.2598680Z
+2022-04-25T10:22:21.2598778Z
+2022-04-25T10:22:21.2599431Z > @accordproject/concerto-metamodel@2.0.0 test /home/runner/work/concerto/concerto/packages/concerto-metamodel
+2022-04-25T10:22:21.2600062Z > nyc mocha --recursive -t 10000
+2022-04-25T10:22:21.2600323Z
+2022-04-25T10:22:21.2600405Z
+2022-04-25T10:22:21.2600486Z
+2022-04-25T10:22:21.2600696Z   MetaModel (Person)
+2022-04-25T10:22:21.2601042Z     #toMetaModel
+2022-04-25T10:22:21.2601628Z       ✓ should convert a CTO model to its metamodel with name resolution
+2022-04-25T10:22:21.2601942Z
+2022-04-25T10:22:21.2602139Z   MetaModel (Empty)
+2022-04-25T10:22:21.2602484Z     #toMetaModel
+2022-04-25T10:22:21.2603057Z       ✓ should convert a CTO model to its metamodel with name resolution
+2022-04-25T10:22:21.2603366Z
+2022-04-25T10:22:21.2603558Z   MetaModel (Car)
+2022-04-25T10:22:21.2603889Z     #toMetaModel
+2022-04-25T10:22:21.2604461Z       ✓ should convert a CTO model to its metamodel with name resolution
+2022-04-25T10:22:21.2604930Z
+2022-04-25T10:22:21.2605248Z   MetaModel (Car - wrong import)
+2022-04-25T10:22:21.2605575Z     #toMetaModel
+2022-04-25T10:22:21.2606145Z       ✓ should convert a CTO model to its metamodel with name resolution
+2022-04-25T10:22:21.2606450Z
+2022-04-25T10:22:21.2606752Z   MetaModel (Car - wrong extends)
+2022-04-25T10:22:21.2607107Z     #toMetaModel
+2022-04-25T10:22:21.2607681Z       ✓ should convert a CTO model to its metamodel with name resolution
+2022-04-25T10:22:21.2607991Z
+2022-04-25T10:22:21.2608075Z
+2022-04-25T10:22:21.2608270Z   5 passing (14ms)
+2022-04-25T10:22:21.2608504Z
+2022-04-25T10:22:21.2608587Z
+2022-04-25T10:22:21.2608948Z =============================== Coverage summary ===============================
+2022-04-25T10:22:21.2609371Z Statements   : 84% ( 63/75 )
+2022-04-25T10:22:21.2609782Z Branches     : 71.05% ( 27/38 )
+2022-04-25T10:22:21.2610186Z Functions    : 77.27% ( 17/22 )
+2022-04-25T10:22:21.2610581Z Lines        : 83.56% ( 61/73 )
+2022-04-25T10:22:21.2611070Z ================================================================================
+2022-04-25T10:22:32.8244569Z lerna info run Ran npm script 'test' in '@accordproject/concerto-cto' in 11.6s:
+2022-04-25T10:22:32.8245320Z
+2022-04-25T10:22:32.8245997Z > @accordproject/concerto-cto@2.0.0 pretest /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8246507Z > npm run lint
+2022-04-25T10:22:32.8246769Z
+2022-04-25T10:22:32.8246871Z
+2022-04-25T10:22:32.8247477Z > @accordproject/concerto-cto@2.0.0 lint /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8247944Z > eslint .
+2022-04-25T10:22:32.8248169Z
+2022-04-25T10:22:32.8248253Z
+2022-04-25T10:22:32.8248870Z > @accordproject/concerto-cto@2.0.0 postlint /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8249365Z > npm run licchk
+2022-04-25T10:22:32.8249595Z
+2022-04-25T10:22:32.8249678Z
+2022-04-25T10:22:32.8250284Z > @accordproject/concerto-cto@2.0.0 licchk /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8250871Z > license-check-and-add
+2022-04-25T10:22:32.8251132Z
+2022-04-25T10:22:32.8251411Z Running using exclude exact_paths list
+2022-04-25T10:22:32.8251904Z Running using exclude file type list
+2022-04-25T10:22:32.8252384Z Trailing whitespace will be ignored in checking
+2022-04-25T10:22:32.8252993Z [32m✔[0m All files have licenses.
+2022-04-25T10:22:32.8253859Z
+2022-04-25T10:22:32.8254546Z > @accordproject/concerto-cto@2.0.0 postlicchk /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8255032Z > npm run doc
+2022-04-25T10:22:32.8255260Z
+2022-04-25T10:22:32.8255343Z
+2022-04-25T10:22:32.8255930Z > @accordproject/concerto-cto@2.0.0 doc /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8256597Z > jsdoc --pedantic --recurse -c jsdoc.json
+2022-04-25T10:22:32.8256877Z
+2022-04-25T10:22:32.8256961Z
+2022-04-25T10:22:32.8257564Z > @accordproject/concerto-cto@2.0.0 postdoc /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8258059Z > npm run build:types
+2022-04-25T10:22:32.8258300Z
+2022-04-25T10:22:32.8258380Z
+2022-04-25T10:22:32.8258999Z > @accordproject/concerto-cto@2.0.0 build:types /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8259804Z > tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types
+2022-04-25T10:22:32.8260144Z
+2022-04-25T10:22:32.8260231Z
+2022-04-25T10:22:32.8260824Z > @accordproject/concerto-cto@2.0.0 test /home/runner/work/concerto/concerto/packages/concerto-cto
+2022-04-25T10:22:32.8261432Z > nyc mocha --recursive -t 10000
+2022-04-25T10:22:32.8261686Z
+2022-04-25T10:22:32.8261767Z
+2022-04-25T10:22:32.8261848Z
+2022-04-25T10:22:32.8262047Z   #resolveExternal
+2022-04-25T10:22:32.8262563Z     ✓ Should resolve external models in car.json
+2022-04-25T10:22:32.8263160Z     ✓ Should resolve external models in person.json (359ms)
+2022-04-25T10:22:32.8263444Z
+2022-04-25T10:22:32.8263639Z   ParseException
+2022-04-25T10:22:32.8264130Z     #constructor
+2022-04-25T10:22:32.8264664Z       ✓ should return an instance of BaseFileException
+2022-04-25T10:22:32.8265393Z       ✓ should return an instance of BaseFileException for another component
+2022-04-25T10:22:32.8266009Z       ✓ should cope without an file location or file name
+2022-04-25T10:22:32.8266570Z       ✓ should have a message with a file location
+2022-04-25T10:22:32.8267174Z       ✓ should have a message with a file location with offsets
+2022-04-25T10:22:32.8267837Z       ✓ should have a message with a file location with offsets greater than 1
+2022-04-25T10:22:32.8268396Z       ✓ should have a message with a file name
+2022-04-25T10:22:32.8269134Z       ✓ should have a message with a file location and file name
+2022-04-25T10:22:32.8270411Z       ✓ should have a stack trace
+2022-04-25T10:22:32.8270879Z       ✓ should handle a lack of support for stack traces
+2022-04-25T10:22:32.8271075Z
+2022-04-25T10:22:32.8271175Z   parser
+2022-04-25T10:22:32.8271541Z     ✓ Should parse decorators.cto
+2022-04-25T10:22:32.8271907Z     ✓ Should parse field.cto
+2022-04-25T10:22:32.8272276Z     ✓ Should parse identified.cto
+2022-04-25T10:22:32.8272633Z     ✓ Should parse person.cto
+2022-04-25T10:22:32.8273019Z     ✓ Should parse versionMeta.cto
+2022-04-25T10:22:32.8273202Z
+2022-04-25T10:22:32.8273356Z   parser-exception
+2022-04-25T10:22:32.8273773Z     ✓ should handle a normal parsing exception
+2022-04-25T10:22:32.8274290Z     ✓ should handle a normal parsing exception with a file name
+2022-04-25T10:22:32.8274767Z     ✓ should handle any other parsing exception
+2022-04-25T10:22:32.8274950Z
+2022-04-25T10:22:32.8275047Z   parser
+2022-04-25T10:22:32.8275405Z     ✓ Should print decorators.json
+2022-04-25T10:22:32.8275756Z     ✓ Should print field.json
+2022-04-25T10:22:32.8276127Z     ✓ Should print identified.json
+2022-04-25T10:22:32.8276507Z     ✓ Should print person.json
+2022-04-25T10:22:32.8276897Z     ✓ Should print versionMeta.json
+2022-04-25T10:22:32.8277082Z   23 skipping
+2022-04-25T10:22:32.8277091Z   36 failing
+2022-04-25T10:22:32.8277216Z   25 passing (431ms)
+2022-04-25T10:22:32.8277359Z
+2022-04-25T10:22:32.8277368Z
+2022-04-25T10:22:32.8277645Z =============================== Coverage summary ===============================
+2022-04-25T10:22:32.8278018Z Statements   : 96.37% ( 186/193 )
+2022-04-25T10:22:32.8278344Z Branches     : 95.9% ( 117/122 )
+2022-04-25T10:22:32.8278663Z Functions    : 88.88% ( 16/18 )
+2022-04-25T10:22:32.8279099Z Lines        : 96.37% ( 186/193 )
+2022-04-25T10:22:32.8279517Z ================================================================================
+2022-04-25T10:22:46.0364511Z lerna ERR! npm run test exited 1 in '@accordproject/concerto-core'
+2022-04-25T10:22:46.0365620Z lerna ERR! npm run test stdout:
+2022-04-25T10:22:46.0367702Z
+2022-04-25T10:22:46.0368490Z > @accordproject/concerto-core@2.0.0 pretest /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0369579Z > npm run lint
+2022-04-25T10:22:46.0419685Z
+2022-04-25T10:22:46.0419697Z
+2022-04-25T10:22:46.0420529Z > @accordproject/concerto-core@2.0.0 lint /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0420940Z > eslint .
+2022-04-25T10:22:46.0421088Z
+2022-04-25T10:22:46.0421099Z
+2022-04-25T10:22:46.0421527Z /home/runner/work/concerto/concerto/packages/concerto-core/test/demo.js
+2022-04-25T10:22:46.0507034Z ##[warning]  66:5  warning  Unexpected console statement  no-console
+2022-04-25T10:22:46.0517051Z ##[warning]  69:5  warning  Unexpected console statement  no-console
+2022-04-25T10:22:46.0517741Z
+2022-04-25T10:22:46.0518083Z ✖ 2 problems (0 errors, 2 warnings)
+2022-04-25T10:22:46.0518276Z
+2022-04-25T10:22:46.0518288Z
+2022-04-25T10:22:46.0518846Z > @accordproject/concerto-core@2.0.0 postlint /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0519275Z > npm run licchk
+2022-04-25T10:22:46.0519436Z
+2022-04-25T10:22:46.0519445Z
+2022-04-25T10:22:46.0519976Z > @accordproject/concerto-core@2.0.0 licchk /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0520754Z > license-check-and-add
+2022-04-25T10:22:46.0520934Z
+2022-04-25T10:22:46.0521136Z Running using exclude exact_paths list
+2022-04-25T10:22:46.0521507Z Running using exclude file type list
+2022-04-25T10:22:46.0521925Z Trailing whitespace will be ignored in checking
+2022-04-25T10:22:46.0522411Z [32m✔[0m All files have licenses.
+2022-04-25T10:22:46.0522596Z
+2022-04-25T10:22:46.0523152Z > @accordproject/concerto-core@2.0.0 postlicchk /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0523538Z > npm run doc
+2022-04-25T10:22:46.0523693Z
+2022-04-25T10:22:46.0523702Z
+2022-04-25T10:22:46.0524219Z > @accordproject/concerto-core@2.0.0 doc /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0524798Z > jsdoc --pedantic --recurse -c jsdoc.json
+2022-04-25T10:22:46.0525002Z
+2022-04-25T10:22:46.0525012Z
+2022-04-25T10:22:46.0525556Z > @accordproject/concerto-core@2.0.0 postdoc /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0525979Z > npm run build:types
+2022-04-25T10:22:46.0526144Z
+2022-04-25T10:22:46.0526153Z
+2022-04-25T10:22:46.0526703Z > @accordproject/concerto-core@2.0.0 build:types /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0527412Z > tsc index.js --declaration --allowJs --emitDeclarationOnly --outDir types
+2022-04-25T10:22:46.0527680Z
+2022-04-25T10:22:46.0527688Z
+2022-04-25T10:22:46.0528205Z > @accordproject/concerto-core@2.0.0 test /home/runner/work/concerto/concerto/packages/concerto-core
+2022-04-25T10:22:46.0528876Z > node ./scripts/api-changelog.js && nyc mocha --recursive -t 10000
+2022-04-25T10:22:46.0529115Z
+2022-04-25T10:22:46.0529604Z 10:22:45 AM - INFO: Input dir /home/runner/work/concerto/concerto/packages/concerto-core/lib
+2022-04-25T10:22:46.0530044Z lerna ERR! npm run test stderr:
+2022-04-25T10:22:46.0530549Z No default format specified using {"prepend":"/*","append":"*/"} as backup
+2022-04-25T10:22:46.0532475Z 10:22:45 AM - ERROR: Computed public API digest did not match the digest in the changelog for the most recent version. Increment the version number and add a new entry to the changelog (explaining your public API change) using the digest 62a8de0d35789bbe523269e4e29cd8e6. Run 'git diff api.txt' to understand the pubic API changes. Please ensure that TypeScript definitions are up to date by executing `npm run build:types`
+2022-04-25T10:22:46.0537989Z Error: Computed public API digest did not match the digest in the changelog for the most recent version. Increment the version number and add a new entry to the changelog (explaining your public API change) using the digest 62a8de0d35789bbe523269e4e29cd8e6. Run 'git diff api.txt' to understand the pubic API changes. Please ensure that TypeScript definitions are up to date by executing `npm run build:types`
+2022-04-25T10:22:46.0539231Z     at Function.check (/home/runner/work/concerto/concerto/packages/concerto-core/scripts/versionchecker.js:77:31)
+2022-04-25T10:22:46.0540037Z     at Object.<anonymous> (/home/runner/work/concerto/concerto/packages/concerto-core/scripts/changelog.js:41:20)
+2022-04-25T10:22:46.0540569Z     at Module._compile (internal/modules/cjs/loader.js:1085:14)
+2022-04-25T10:22:46.0541038Z     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+2022-04-25T10:22:46.0541502Z     at Module.load (internal/modules/cjs/loader.js:950:32)
+2022-04-25T10:22:46.0541953Z     at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+2022-04-25T10:22:46.0542480Z     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:75:12)
+2022-04-25T10:22:46.0542922Z     at internal/main/run_main_module.js:17:47
+2022-04-25T10:22:46.0543253Z npm ERR! code ELIFECYCLE
+2022-04-25T10:22:46.0543544Z npm ERR! errno 1
+2022-04-25T10:22:46.0544278Z npm ERR! @accordproject/concerto-core@2.0.0 test: `node ./scripts/api-changelog.js && nyc mocha --recursive -t 10000`
+2022-04-25T10:22:46.0544701Z npm ERR! Exit status 1
+2022-04-25T10:22:46.0544958Z npm ERR!
+2022-04-25T10:22:46.0545599Z npm ERR! Failed at the @accordproject/concerto-core@2.0.0 test script.
+2022-04-25T10:22:46.0546208Z npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2022-04-25T10:22:46.0546485Z
+2022-04-25T10:22:46.0546714Z npm ERR! A complete log of this run can be found in:
+2022-04-25T10:22:46.0547303Z npm ERR!     /home/runner/.npm/_logs/2022-04-25T10_22_46_026Z-debug.log
+2022-04-25T10:22:46.0547905Z lerna ERR! npm run test exited 1 in '@accordproject/concerto-core'
+2022-04-25T10:22:46.0548371Z npm ERR! Test failed.  See above for more details.
+2022-04-25T10:22:46.0550670Z ##[error]Process completed with exit code 1.
+2022-04-25T10:22:46.0611097Z Post job cleanup.
+2022-04-25T10:22:46.2060066Z [command]/usr/bin/git version
+2022-04-25T10:22:46.2125622Z git version 2.35.1
+2022-04-25T10:22:46.2172077Z Temporarily overriding HOME='/home/runner/work/_temp/f80dd6ce-cc37-455b-aae5-21f826daee6a' before making global git config changes
+2022-04-25T10:22:46.2173060Z Adding repository directory to the temporary git global config as a safe directory
+2022-04-25T10:22:46.2177405Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/concerto/concerto
+2022-04-25T10:22:46.2226657Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2022-04-25T10:22:46.2268237Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2022-04-25T10:22:46.2615024Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2022-04-25T10:22:46.2682911Z http.https://github.com/.extraheader
+2022-04-25T10:22:46.2705684Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2022-04-25T10:22:46.2757261Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2022-04-25T10:22:46.3312234Z Cleaning up orphan processes
