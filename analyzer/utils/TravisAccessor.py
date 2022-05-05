@@ -25,7 +25,7 @@ class TravisAccessor:
             self._url_base = 'https://api.travis-ci.com'
         else:
             raise TravisAccessorError(
-                "Could not initialize TravisAccessor, check whether env variable TRAVIS_CI exists")
+                "Could not initialize TravisAccessor, check whether env variable TRAVIS_CI exists", -1)
 
     @staticmethod
     def initialize():
@@ -47,9 +47,10 @@ class TravisAccessor:
         raise TravisAccessorError(f"Could not make request to '{url}', got response code '{response.status_code}'",
                                   response.status_code)
 
+    # TODO: parallelize
     def get_builds(self, repo: Repo) -> List[Dict[Any, Any]]:
         repo_name = repo.path.replace('/', '%2F')
-        response = self._make_request('repo', repo_name, 'builds')
+        response = self._make_request('repo', repo_name, 'builds', query="limit=100")
         response = json.loads(response)
         return response.get('builds')
 

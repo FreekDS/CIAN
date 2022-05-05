@@ -15,7 +15,7 @@ def collect_builds(repo: Repo, use_cache=True, create_cache=True, from_date=None
 
     collectors = [
         GithubActionsCollector(repo, from_date=from_date),
-        TravisCollector(repo)
+        TravisCollector(repo, from_date=from_date)
     ]
 
     builds = []

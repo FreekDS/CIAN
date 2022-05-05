@@ -67,8 +67,7 @@ class GithubActionsCollector(Command):
                 continue
             jobs = all_jobs_data[i]
             for job in jobs.get('jobs', []):
-                if 'test' in job.get('name', '').lower():
-                    job_ids.append(job.get('id'))
+                job_ids.append(job.get('id'))
 
         # print(f"There are {len(job_ids)} job ids to check")
         all_job_logs = self._gh_access.batch_collect_job_logs(self.repo, job_ids)

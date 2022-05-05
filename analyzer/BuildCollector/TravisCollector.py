@@ -12,10 +12,11 @@ from analyzer.ResultsCollector import collect_test_results
 
 class TravisCollector(Command):
 
-    def __init__(self, repo: Repo):
+    def __init__(self, repo: Repo, from_date=None):
         super().__init__()
         self.repo: Repo = repo
         self.travis_access = TravisAccessor()
+        self.from_date = from_date
 
     def get_test_results(self, raw_build):
         test_results = defaultdict(list)
@@ -37,7 +38,8 @@ class TravisCollector(Command):
             builds = list()
             for raw_build in raw_builds:
                 build = Build.from_dict(raw_build, [('finished_at', 'ended_at')])
-                build.created_by = build.created_by.get('login')
+                if build.created_by:
+                    build.created_by = build.created_by.get('login')
                 if build.duration:
                     build.duration *= 1000  # Convert to milliseconds
                 else:
