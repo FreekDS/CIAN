@@ -63,7 +63,7 @@ class TravisAccessor:
             async with session.get(url) as response:
                 resp = await response.read()
                 await asyncio.sleep(0)
-                if response.status_code == 404:
+                if response.status == 404:
                     return str()
                 return resp
         except ClientResponseError as e:
@@ -83,7 +83,7 @@ class TravisAccessor:
         pagination_info = first_response.get('@pagination', False)
         if not pagination_info or pagination_info.get('is_last') is True:
             return builds
-        c = float(pagination_info.get('count', 0))
+        c = float(pagination_info.get('count', 0)) - len(builds)
         requests_to_perform = math.ceil(c / limit)
 
         loop = asyncio.get_event_loop()
