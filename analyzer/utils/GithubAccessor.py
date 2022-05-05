@@ -282,7 +282,7 @@ class GithubAccessor:
         try:
             async with session.get(url, headers=self._make_header()) as response:
                 resp = await response.read()
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0)
         except ClientResponseError as e:
             if e.status != 404:
                 print("Client error", e.status)

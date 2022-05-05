@@ -1,8 +1,14 @@
+import math
+
 import requests
 import os
 import json
 from typing import Dict, Any, List
+
+from aiohttp import ClientResponseError, TCPConnector, ClientSession
+
 from analyzer.Repository import Repo
+import asyncio
 
 
 class TravisAccessorError(Exception):
@@ -36,23 +42,75 @@ class TravisAccessor:
     def initialized():
         return TravisAccessor.TOKEN is not None
 
-    def _make_request(self, *args: str, query: str = "") -> str:
+    def make_url(self, *args, query):
         endpoint = '/'.join(args)
         url = f'{self._url_base}/{endpoint}'
         if query:
             url = url + f'?{query}'
+        return url
+
+    def _make_request(self, *args: str, query: str = "") -> str:
+        url = self.make_url(*args, query=query)
         response = requests.get(url, headers=self._headers)
         if response.status_code == 200:
             return response.text
         raise TravisAccessorError(f"Could not make request to '{url}', got response code '{response.status_code}'",
                                   response.status_code)
 
-    # TODO: parallelize
+    async def _make_request_async(self, session, *args: str, query: str = "") -> str:
+        url = self.make_url(*args, query=query)
+        try:
+            async with session.get(url) as response:
+                resp = await response.read()
+                await asyncio.sleep(0)
+                if response.status_code == 404:
+                    return str()
+                return resp
+        except ClientResponseError as e:
+            if e.status == 404:
+                return str()
+        except asyncio.TimeoutError:
+            print("Timeout with url", url)
+            return str()
+
     def get_builds(self, repo: Repo) -> List[Dict[Any, Any]]:
+        limit = 100.0
         repo_name = repo.path.replace('/', '%2F')
-        response = self._make_request('repo', repo_name, 'builds', query="limit=100")
-        response = json.loads(response)
-        return response.get('builds')
+        first_response = self._make_request('repo', repo_name, 'builds', query=f"limit={int(limit)}")
+        first_response = json.loads(first_response)
+        builds = first_response.get('builds', [])
+
+        pagination_info = first_response.get('@pagination', False)
+        if not pagination_info or pagination_info.get('is_last') is True:
+            return builds
+        c = float(pagination_info.get('count', 0))
+        requests_to_perform = math.ceil(c / limit)
+
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._multi_collect_builds(requests_to_perform, repo_name, limit)
+        )
+        loop.run_until_complete(future)
+
+        builds += future.result()
+        return builds
+
+    async def _multi_collect_builds(self, requests_to_perform, repo_name, limit):
+        tasks = list()
+        conn = TCPConnector(limit=20)
+        async with ClientSession(connector=conn, headers=self._headers) as session:
+            for i in range(1, requests_to_perform+1):
+                q = f"limit={int(limit)}&offset={int(i * limit)}"
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'repo', repo_name, 'builds', query=q)
+                )
+                tasks.append(task)
+            resp = await asyncio.gather(*tasks)
+        resp = [json.loads(r) for r in resp]
+        builds = list()
+        for r in resp:
+            builds += r.get('builds', [])
+        return builds
 
     def get_repo(self, repo: Repo):
         try:
