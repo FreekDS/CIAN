@@ -158,7 +158,7 @@ class TravisAccessor:
             results = await asyncio.gather(*tasks)
         res = dict()
         for i, j_id in enumerate(job_ids):
-            res[j_id] = json.loads(results[i])
+            res[j_id] = str(results[i])
         return res
 
     def collect_jobs(self, job_ids):
@@ -181,5 +181,5 @@ class TravisAccessor:
             results = await asyncio.gather(*tasks)
         res = dict()
         for i, j_id in enumerate(job_ids):
-            res[j_id] = json.loads(results[i])
+            res[j_id] = json.loads(results[i]) if results[i] else []
         return res

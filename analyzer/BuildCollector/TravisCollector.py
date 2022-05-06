@@ -26,17 +26,37 @@ class TravisCollector(Command):
                 continue
             job_name = raw_job.get('name')
             log = self.travis_access.get_job_log(job.get('id'))
+            if log:
+                print("found log")
             tests = collect_test_results(log)
             if tests:
                 test_results[job_name].append(tests)
         return dict(test_results)
 
+    def attach_test_results(self, jobs_per_build, builds):
+        job_ids = list()
+        for jl in jobs_per_build:
+            job_ids += [j.get('id', "-1") for j in jl]
+        jobs = self.travis_access.collect_jobs(job_ids)
+        logs = self.travis_access.collect_logs(job_ids)
+
+        test_results = {j_id: collect_test_results(log) for j_id, log in logs.items()}
+        for i, jobs_list in enumerate(jobs_per_build):
+            results_for_build = defaultdict(list)
+            for j_o in jobs_list:
+                j_i = j_o.get('id', '')
+                results_for_build[jobs.get(j_i, {}).get('name', "")].append(test_results.get(j_i, []))
+            builds[i].test_results = dict(results_for_build)
+        return builds
+
     # @timing
     def execute(self, *args, **kwargs) -> List[Build]:
+        builds = list()
+        jobs = list()
         try:
             raw_builds = self.travis_access.get_builds(self.repo)
-            builds = list()
             for raw_build in raw_builds:
+                jobs.append(raw_build.get('jobs', []))
                 build = Build.from_dict(raw_build, [('finished_at', 'ended_at')])
                 if build.created_by:
                     build.created_by = build.created_by.get('login')
@@ -47,8 +67,8 @@ class TravisCollector(Command):
                 build.workflow = raw_build.get('repository').get('name')
                 build.branch = build.branch.get('name')
                 build.used_tool = TRAVIS_CI
-                build.test_results = self.get_test_results(raw_build)
+                # build.test_results = self.get_test_results(raw_build)
                 builds.append(build)
-            return builds
-        except TravisAccessorError:
-            return []
+            return self.attach_test_results(jobs, builds)
+        except TravisAccessorError as err:
+            return self.attach_test_results(jobs, builds)
