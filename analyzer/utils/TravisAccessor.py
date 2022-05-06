@@ -123,9 +123,63 @@ class TravisAccessor:
             raise e
 
     def get_job(self, job_id) -> Dict[Any, Any]:
-        response = self._make_request('job', str(job_id))
-        return json.loads(response)
+        try:
+            response = self._make_request('job', str(job_id))
+            return json.loads(response)
+        except TravisAccessorError as err:
+            if err.status_code == 404:
+                return {}
 
     def get_job_log(self, job_id) -> str:
-        response = self._make_request('job', str(job_id), 'log.txt')
-        return response
+        try:
+            response = self._make_request('job', str(job_id), 'log.txt')
+            return response
+        except TravisAccessorError as err:
+            if err.status_code == 404:
+                return ""
+
+    def collect_logs(self, job_ids):
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._multi_collect_logs(job_ids)
+        )
+        loop.run_until_complete(future)
+        return future.result()
+
+    async def _multi_collect_logs(self, job_ids):
+        tasks = list()
+        conn = TCPConnector(limit=20)
+        async with ClientSession(connector=conn, headers=self._headers) as session:
+            for job_id in job_ids:
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'job', str(job_id), 'log.txt')
+                )
+                tasks.append(task)
+            results = await asyncio.gather(*tasks)
+        res = dict()
+        for i, j_id in enumerate(job_ids):
+            res[j_id] = json.loads(results[i])
+        return res
+
+    def collect_jobs(self, job_ids):
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(
+            self._multi_collect_jobs(job_ids)
+        )
+        loop.run_until_complete(future)
+        return future.result()
+
+    async def _multi_collect_jobs(self, job_ids):
+        tasks = list()
+        conn = TCPConnector(limit=20)
+        async with ClientSession(connector=conn, headers=self._headers) as session:
+            for job_id in job_ids:
+                task = asyncio.ensure_future(
+                    self._make_request_async(session, 'job', str(job_id))
+                )
+                tasks.append(task)
+            results = await asyncio.gather(*tasks)
+        res = dict()
+        for i, j_id in enumerate(job_ids):
+            res[j_id] = json.loads(results[i])
+        return res
