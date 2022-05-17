@@ -53,11 +53,15 @@ token_mgr = TokenMgr()
 
 # DATA PREPROCESSING
 
+latest_commit = datetime.datetime(1, 1, 1)
 with open(DATA_FILE) as f:
     cs = csv.reader(f, delimiter=';')
     next(cs)
     repos = defaultdict(list)
     for repo_url, fc, lc, ci, start, end, interval, gap, nb_gaps, max_gap_size, diff in cs:
+        lc_date = datetime.datetime.strptime(lc, "%d/%m/%Y %H:%M")
+        if lc_date > latest_commit:
+            latest_commit = lc_date
         repo = '/'.join(repo_url.split('/')[-2:])
         repos[repo].append(
             {
