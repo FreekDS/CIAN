@@ -37,7 +37,7 @@ class BrokenRelease(AntiPattern):
         for wf, builds in release_builds.items():
             filtered = list(
                 filter(
-                    lambda build: build.state == 'failure',
+                    lambda build: build.state in ['failure', 'errored', 'failed'],
                     builds
                 )
             )
