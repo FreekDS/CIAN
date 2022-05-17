@@ -194,7 +194,7 @@ class GithubAccessor:
         data = self._make_request('repos', repo.path, 'actions', 'workflows')
         return json.loads(data)
 
-    def get_workflow_runs(self, repo: Repo, start_date=None, query: str = str()) -> Dict[str, Any]:
+    def get_workflow_runs(self, repo: Repo, start_date=None, query: str = str(), to_date=None) -> Dict[str, Any]:
         """
         First get total count (1 sync call), also get first 100 runs
         while count < total_count
@@ -205,7 +205,10 @@ class GithubAccessor:
         if query:
             query += '&'
         if start_date:
-            query += f'created=>={start_date}&'
+            if to_date:
+                query += f'created={start_date}..{to_date}&'
+            else:
+                query += f'created=>={start_date}&'
         query += 'per_page=100'
         first_response = json.loads(
             self._make_request('repos', repo.path, 'actions', 'runs', query=query, unfold_pagination=False)
@@ -288,7 +291,7 @@ class GithubAccessor:
                 print("Client error", e.status)
             return {}
         except asyncio.TimeoutError:
-            print("Timeout")
+            # print("Timeout")
             return {}
         return json.loads(resp) if not as_text else resp.decode()
 
