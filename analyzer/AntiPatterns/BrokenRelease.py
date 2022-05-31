@@ -45,7 +45,8 @@ class BrokenRelease(AntiPattern):
         return failing_builds
 
     def detect(self) -> dict:
-        failing_releases = self.get_failing(self.get_release_branch_builds())
+        all_release_builds = self.get_release_branch_builds()
+        failing_releases = self.get_failing(all_release_builds)
         results = {}
         for wf, builds in failing_releases.items():
             results[wf] = {}
@@ -60,4 +61,5 @@ class BrokenRelease(AntiPattern):
                 )
             if builds:
                 results[wf]["tool"] = builds[0].used_tool
+            results[wf]["release_build_count"] = len(all_release_builds.get(wf, 0))
         return results
