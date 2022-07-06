@@ -11,6 +11,6 @@ class TravisDetector(Command):
 
     def execute(self, repo: Repo) -> Union[None or str]:
         repo_data = self.travis_access.get_repo(repo)
-        if repo_data:
+        if repo_data and repo_data.get('active', False) is True:
             return TRAVIS_CI
         return None
