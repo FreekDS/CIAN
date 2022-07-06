@@ -89,7 +89,7 @@ class TravisCollector(Command):
                     )
                 )
             return builds
-        except TravisAccessorError as err:
+        except TravisAccessorError:
             builds = self.attach_test_results(jobs, builds)
             if self.from_date:
                 from_date = format_date(self.from_date)

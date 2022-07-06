@@ -20,8 +20,8 @@ class AntipatternGraphics:
     @staticmethod
     def linreg(x, y):
         """
-            return a,b in solution to y = ax + b such that root-mean-square distance between trend line and original points
-            is minimized
+            return a,b in solution to y = ax + b such that root-mean-square distance between trend line and original
+            points is minimized
             https://stackoverflow.com/questions/10048571/python-finding-a-trend-in-a-set-of-numbers
         """
         N = len(x)
