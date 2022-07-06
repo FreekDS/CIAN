@@ -1,61 +1,61 @@
 repo;ci;start;end
-6to5/karma-6to5-preprocessor;Travis;30/10/2015 15:05;28/11/2020 15:09
-6to5/karma-6to5-preprocessor;GHA;28/11/2020 15:09;#NAME?
-alephdata/followthemoney;Travis;20/10/2017 12:07;29/11/2019 08:24
-alephdata/followthemoney;GHA;11/09/2019 18:54;#NAME?
-alfredosalzillo/rollup-plugin-multi-input;Travis;27/03/2019 16:24;10/02/2020 22:21
-alfredosalzillo/rollup-plugin-multi-input;GHA;10/02/2020 21:21;#NAME?
-asyncapi/generator;Travis;05/12/2018 10:07;18/03/2020 19:15
-asyncapi/generator;GHA;11/02/2020 09:43;#NAME?
-Belphemur/node-json-db;Travis;12/07/2014 15:30;08/04/2021 23:43
-Belphemur/node-json-db;GHA;18/03/2021 15:29;#NAME?
-browserify/resolve;Travis;13/04/2012 00:18;09/11/2020 23:51
-browserify/resolve;GHA;08/11/2020 13:56;#NAME?
-caseywebdev/pave;Travis;16/02/2016 02:15;26/08/2020 21:38
-caseywebdev/pave;GHA;26/08/2020 21:38;#NAME?
-desktop/git-kitchen-sink;Travis;16/09/2016 22:22;05/11/2020 17:45
-desktop/git-kitchen-sink;GHA;05/11/2020 17:28;#NAME?
-evcohen/eslint-plugin-jsx-a11y;Travis;18/02/2016 00:57;30/03/2021 20:14
-evcohen/eslint-plugin-jsx-a11y;GHA;11/07/2020 15:52;#NAME?
-firebase/firebase-js-sdk;Travis;18/05/2017 01:19;17/01/2020 20:43
-firebase/firebase-js-sdk;GHA;17/01/2020 20:43;#NAME?
-formidablelabs/victory;Travis;30/07/2015 20:24;12/04/2021 23:15
-formidablelabs/victory;GHA;12/04/2021 23:13;#NAME?
-googleapis/gax-nodejs;Travis;12/05/2016 00:26;05/01/2018 16:19
-googleapis/gax-nodejs;GHA;13/02/2020 17:13;#NAME?
-keenwon/eazydict-youdao;Travis;23/06/2017 03:20;10/11/2019 08:06
-keenwon/eazydict-youdao;GHA;10/11/2019 08:06;#NAME?
+anttiviljami/openapicmd;Travis;26/01/2019 08:57;23/10/2019 17:09
+anttiviljami/openapicmd;GHA;23/10/2019 17:09;#NAME?
+arlac77/bitbucket-repository-provider;Travis;16/11/2017 18:11;20/11/2020 18:40
+arlac77/bitbucket-repository-provider;GHA;04/06/2020 11:16;#NAME?
+arlac77/bocf;Travis;24/01/2017 21:54;22/11/2020 01:05
+arlac77/bocf;GHA;04/06/2020 11:16;#NAME?
+arlac77/github-repository-provider;Travis;16/11/2017 18:12;21/11/2020 01:12
+arlac77/github-repository-provider;GHA;04/06/2020 11:21;#NAME?
+arlac77/rtsp-archive;Travis;23/01/2017 18:44;25/08/2020 10:35
+arlac77/rtsp-archive;GHA;09/05/2020 13:32;#NAME?
+bhovhannes/additween;Travis;13/12/2016 09:04;23/11/2020 15:03
+bhovhannes/additween;GHA;23/11/2020 15:03;#NAME?
+Brightspace/d2l-license-checker;Travis;17/01/2017 16:38;04/03/2021 16:34
+Brightspace/d2l-license-checker;GHA;04/02/2021 18:03;#NAME?
+ccnmtl/elderissuesdresser-pack;Travis;26/07/2016 21:08;13/01/2021 01:53
+ccnmtl/elderissuesdresser-pack;GHA;13/01/2021 01:53;#NAME?
+chrisguttandin/array-buffer-cache;Travis;14/05/2017 04:03;12/05/2021 01:21
+chrisguttandin/array-buffer-cache;GHA;30/12/2020 09:18;#NAME?
+chrisguttandin/extendable-media-recorder-wav-encoder-worker;Travis;01/12/2016 06:15;11/05/2021 15:05
+chrisguttandin/extendable-media-recorder-wav-encoder-worker;GHA;01/01/2021 13:56;#NAME?
+chrisguttandin/timing-object;Travis;22/10/2017 07:57;13/05/2021 23:01
+chrisguttandin/timing-object;GHA;29/12/2020 12:21;#NAME?
+dpogue/seymour;Travis;29/10/2018 18:20;08/07/2019 07:50
+dpogue/seymour;GHA;02/01/2020 10:59;#NAME?
+erik-perri/twig-asset-webpack-plugin;Travis;13/03/2019 17:46;25/11/2020 07:54
+erik-perri/twig-asset-webpack-plugin;GHA;25/11/2020 07:50;#NAME?
+eXist-db/generator-exist;Travis;04/07/2018 01:28;09/12/2020 16:01
+eXist-db/generator-exist;GHA;08/12/2020 10:42;#NAME?
+Flexberry/ember-flexberry;Travis;06/04/2015 16:12;15/01/2021 09:00
+Flexberry/ember-flexberry;GHA;06/12/2020 08:43;#NAME?
+hudovisk/react-optimize;Travis;17/04/2019 03:40;09/12/2019 02:06
+hudovisk/react-optimize;GHA;09/12/2019 02:06;#NAME?
+jazz-soft/JZZ-gui-Player;Travis;27/07/2019 03:12;11/04/2021 06:22
+jazz-soft/JZZ-gui-Player;GHA;11/04/2021 06:22;#NAME?
 KnisterPeter/tsdi;Travis;09/01/2016 15:52;07/10/2020 17:11
 KnisterPeter/tsdi;GHA;13/10/2019 18:55;#NAME?
-kpfefferle/ember-cli-octicons;Travis;15/11/2015 19:54;18/09/2016 22:18
-kpfefferle/ember-cli-octicons;GHA;22/02/2020 21:04;#NAME?
-meltedspark/angular-builders;Travis;06/07/2018 14:43;14/12/2020 14:10
-meltedspark/angular-builders;GHA;19/04/2020 21:10;#NAME?
-mishoo/UglifyJS;Travis;09/05/2013 05:42;14/11/2019 03:48
-mishoo/UglifyJS;GHA;20/10/2019 22:11;#NAME?
-newdash/newdash;Travis;30/09/2012 01:05;06/01/2017 16:51
-newdash/newdash;GHA;26/05/2020 07:42;#NAME?
-ngageoint/eslint-config-opensphere;Travis;26/12/2017 23:21;16/02/2021 13:56
-ngageoint/eslint-config-opensphere;GHA;16/02/2021 13:56;#NAME?
-nordnet/ui;Travis;21/03/2019 10:28;08/12/2020 11:19
-nordnet/ui;GHA;02/12/2020 16:17;#NAME?
-pmb0/express-sharp;Travis;28/11/2015 11:20;05/05/2020 00:05
-pmb0/express-sharp;GHA;04/05/2020 23:21;#NAME?
-podium-lib/client;Travis;14/10/2017 17:39;13/11/2019 01:42
-podium-lib/client;GHA;13/11/2019 01:28;#NAME?
-podium-lib/layout;Travis;29/01/2018 11:25;13/11/2019 22:21
-podium-lib/layout;GHA;13/11/2019 22:21;#NAME?
-radiofrance/rab-q;Travis;19/09/2017 17:56;04/01/2021 17:35
-radiofrance/rab-q;GHA;04/01/2021 17:35;#NAME?
-react-component/pagination;Travis;10/07/2015 11:00;06/11/2020 03:27
-react-component/pagination;GHA;06/11/2020 03:27;#NAME?
-rooseveltframework/teddy;Travis;05/02/2017 11:35;23/05/2020 18:22
-rooseveltframework/teddy;GHA;23/05/2020 18:22;#NAME?
-SimenB/add-asset-html-webpack-plugin;Travis;19/07/2016 17:44;20/02/2021 10:55
-SimenB/add-asset-html-webpack-plugin;GHA;20/02/2021 10:55;#NAME?
-square/misk;Travis;05/12/2017 20:48;02/04/2019 16:40
-square/misk;GHA;11/12/2020 20:41;#NAME?
+mendix/widgets-resources;Travis;03/05/2019 10:42;15/01/2021 14:06
+mendix/widgets-resources;GHA;07/11/2020 22:32;#NAME?
+mike182uk/tmpdl;Travis;15/02/2016 00:33;16/05/2020 16:39
+mike182uk/tmpdl;GHA;16/05/2020 16:39;#NAME?
+mkwtys/selenic-webpack-plugin;Travis;07/01/2019 08:58;09/12/2019 04:19
+mkwtys/selenic-webpack-plugin;GHA;02/12/2019 09:36;#NAME?
+neovici/cosmoz-utils;Travis;26/02/2016 16:21;08/10/2019 13:21
+neovici/cosmoz-utils;GHA;08/10/2019 13:21;#NAME?
+nfroidure/gulp-ttf2woff2;Travis;20/06/2015 17:47;15/01/2021 16:36
+nfroidure/gulp-ttf2woff2;GHA;15/01/2021 16:33;#NAME?
+octokit/app.js;Travis;24/11/2018 04:17;13/02/2020 06:56
+octokit/app.js;GHA;13/02/2020 06:56;#NAME?
+pulumi/pulumi-datadog;Travis;22/06/2019 00:20;11/06/2020 21:18
+pulumi/pulumi-datadog;GHA;16/06/2020 18:06;#NAME?
+qiwi/pijma;Travis;06/07/2018 00:53;05/04/2021 12:53
+qiwi/pijma;GHA;11/03/2021 10:21;#NAME?
+sindresorhus/fast-cli;Travis;18/05/2016 23:30;02/12/2020 17:52
+sindresorhus/fast-cli;GHA;02/12/2020 17:52;#NAME?
+softwareventures/dictionary-types;Travis;02/01/2019 03:38;03/02/2020 18:26
+softwareventures/dictionary-types;GHA;03/02/2020 18:26;#NAME?
+tanem/generator-typescript-react-lib;Travis;06/08/2018 20:20;03/12/2020 23:34
+tanem/generator-typescript-react-lib;GHA;03/12/2020 23:34;#NAME?
 tclindner/eslint-config-react-tc;Travis;02/06/2018 18:44;28/04/2019 21:36
 tclindner/eslint-config-react-tc;GHA;09/05/2020 04:46;#NAME?
-Wandalen/wFilesEncoders;Travis;01/12/2018 16:39;05/07/2020 09:49
-Wandalen/wFilesEncoders;GHA;05/07/2020 09:49;#NAME?

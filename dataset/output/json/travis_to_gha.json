@@ -1,208 +1,272 @@
 {
-  "6to5/karma-6to5-preprocessor": [
+  "anttiviljami/openapicmd": [
     {
-      "first_commit": "30/10/2014 12:16",
-      "last_commit": "28/05/2021 20:36",
-      "start": "30/10/2015 15:05",
-      "end": "28/11/2020 15:09",
+      "first_commit": "26/01/2019 07:57",
+      "last_commit": "18/04/2021 18:01",
+      "start": "26/01/2019 08:57",
+      "end": "23/10/2019 17:09",
       "ci": "Travis"
     },
     {
-      "first_commit": "30/10/2014 12:16",
-      "last_commit": "28/05/2021 20:36",
-      "start": "28/11/2020 15:09",
+      "first_commit": "26/01/2019 07:57",
+      "last_commit": "18/04/2021 18:01",
+      "start": "23/10/2019 17:09",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "alephdata/followthemoney": [
+  "arlac77/bitbucket-repository-provider": [
     {
-      "first_commit": "20/10/2017 09:01",
-      "last_commit": "05/05/2021 18:52",
-      "start": "20/10/2017 12:07",
-      "end": "29/11/2019 08:24",
+      "first_commit": "16/11/2017 17:11",
+      "last_commit": "24/05/2021 08:14",
+      "start": "16/11/2017 18:11",
+      "end": "20/11/2020 18:40",
       "ci": "Travis"
     },
     {
-      "first_commit": "20/10/2017 09:01",
-      "last_commit": "05/05/2021 18:52",
-      "start": "11/09/2019 18:54",
+      "first_commit": "16/11/2017 17:11",
+      "last_commit": "24/05/2021 08:14",
+      "start": "04/06/2020 11:16",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "alfredosalzillo/rollup-plugin-multi-input": [
+  "arlac77/bocf": [
     {
-      "first_commit": "13/12/2018 03:00",
-      "last_commit": "07/06/2021 17:15",
-      "start": "27/03/2019 16:24",
-      "end": "10/02/2020 22:21",
+      "first_commit": "24/01/2017 20:54",
+      "last_commit": "24/05/2021 08:47",
+      "start": "24/01/2017 21:54",
+      "end": "22/11/2020 01:05",
       "ci": "Travis"
     },
     {
-      "first_commit": "13/12/2018 03:00",
-      "last_commit": "07/06/2021 17:15",
-      "start": "10/02/2020 21:21",
+      "first_commit": "24/01/2017 20:54",
+      "last_commit": "24/05/2021 08:47",
+      "start": "04/06/2020 11:16",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "asyncapi/generator": [
+  "arlac77/github-repository-provider": [
     {
-      "first_commit": "24/07/2018 14:09",
-      "last_commit": "20/05/2021 08:17",
-      "start": "05/12/2018 10:07",
-      "end": "18/03/2020 19:15",
+      "first_commit": "16/11/2017 17:10",
+      "last_commit": "13/05/2021 14:45",
+      "start": "16/11/2017 18:12",
+      "end": "21/11/2020 01:12",
       "ci": "Travis"
     },
     {
-      "first_commit": "24/07/2018 14:09",
-      "last_commit": "20/05/2021 08:17",
-      "start": "11/02/2020 09:43",
+      "first_commit": "16/11/2017 17:10",
+      "last_commit": "13/05/2021 14:45",
+      "start": "04/06/2020 11:21",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "Belphemur/node-json-db": [
+  "arlac77/rtsp-archive": [
     {
-      "first_commit": "12/07/2014 07:47",
-      "last_commit": "29/05/2021 03:15",
-      "start": "12/07/2014 15:30",
-      "end": "08/04/2021 23:43",
+      "first_commit": "23/01/2017 17:44",
+      "last_commit": "24/06/2021 14:40",
+      "start": "23/01/2017 18:44",
+      "end": "25/08/2020 10:35",
       "ci": "Travis"
     },
     {
-      "first_commit": "12/07/2014 07:47",
-      "last_commit": "29/05/2021 03:15",
-      "start": "18/03/2021 15:29",
+      "first_commit": "23/01/2017 17:44",
+      "last_commit": "24/06/2021 14:40",
+      "start": "09/05/2020 13:32",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "browserify/resolve": [
+  "bhovhannes/additween": [
     {
-      "first_commit": "18/06/2011 08:49",
-      "last_commit": "26/05/2021 04:30",
-      "start": "13/04/2012 00:18",
-      "end": "09/11/2020 23:51",
+      "first_commit": "12/12/2016 07:34",
+      "last_commit": "22/05/2021 02:56",
+      "start": "13/12/2016 09:04",
+      "end": "23/11/2020 15:03",
       "ci": "Travis"
     },
     {
-      "first_commit": "18/06/2011 08:49",
-      "last_commit": "26/05/2021 04:30",
-      "start": "08/11/2020 13:56",
+      "first_commit": "12/12/2016 07:34",
+      "last_commit": "22/05/2021 02:56",
+      "start": "23/11/2020 15:03",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "caseywebdev/pave": [
+  "Brightspace/d2l-license-checker": [
     {
-      "first_commit": "16/02/2016 01:15",
-      "last_commit": "27/05/2021 20:15",
-      "start": "16/02/2016 02:15",
-      "end": "26/08/2020 21:38",
+      "first_commit": "17/01/2017 15:38",
+      "last_commit": "25/05/2021 15:25",
+      "start": "17/01/2017 16:38",
+      "end": "04/03/2021 16:34",
       "ci": "Travis"
     },
     {
-      "first_commit": "16/02/2016 01:15",
-      "last_commit": "27/05/2021 20:15",
-      "start": "26/08/2020 21:38",
+      "first_commit": "17/01/2017 15:38",
+      "last_commit": "25/05/2021 15:25",
+      "start": "04/02/2021 18:03",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "desktop/git-kitchen-sink": [
+  "ccnmtl/elderissuesdresser-pack": [
     {
-      "first_commit": "24/08/2016 04:59",
-      "last_commit": "10/05/2021 07:32",
-      "start": "16/09/2016 22:22",
-      "end": "05/11/2020 17:45",
+      "first_commit": "22/07/2016 20:07",
+      "last_commit": "25/05/2021 15:58",
+      "start": "26/07/2016 21:08",
+      "end": "13/01/2021 01:53",
       "ci": "Travis"
     },
     {
-      "first_commit": "24/08/2016 04:59",
-      "last_commit": "10/05/2021 07:32",
-      "start": "05/11/2020 17:28",
+      "first_commit": "22/07/2016 20:07",
+      "last_commit": "25/05/2021 15:58",
+      "start": "13/01/2021 01:53",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "evcohen/eslint-plugin-jsx-a11y": [
+  "chrisguttandin/array-buffer-cache": [
     {
-      "first_commit": "17/02/2016 23:57",
-      "last_commit": "07/04/2021 21:00",
-      "start": "18/02/2016 00:57",
-      "end": "30/03/2021 20:14",
+      "first_commit": "14/05/2017 02:03",
+      "last_commit": "25/05/2021 06:42",
+      "start": "14/05/2017 04:03",
+      "end": "12/05/2021 01:21",
       "ci": "Travis"
     },
     {
-      "first_commit": "17/02/2016 23:57",
-      "last_commit": "07/04/2021 21:00",
-      "start": "11/07/2020 15:52",
+      "first_commit": "14/05/2017 02:03",
+      "last_commit": "25/05/2021 06:42",
+      "start": "30/12/2020 09:18",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "firebase/firebase-js-sdk": [
+  "chrisguttandin/extendable-media-recorder-wav-encoder-worker": [
     {
-      "first_commit": "24/04/2017 21:52",
-      "last_commit": "22/05/2021 02:21",
-      "start": "18/05/2017 01:19",
-      "end": "17/01/2020 20:43",
+      "first_commit": "01/12/2016 05:15",
+      "last_commit": "27/05/2021 12:46",
+      "start": "01/12/2016 06:15",
+      "end": "11/05/2021 15:05",
       "ci": "Travis"
     },
     {
-      "first_commit": "24/04/2017 21:52",
-      "last_commit": "22/05/2021 02:21",
-      "start": "17/01/2020 20:43",
+      "first_commit": "01/12/2016 05:15",
+      "last_commit": "27/05/2021 12:46",
+      "start": "01/01/2021 13:56",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "formidablelabs/victory": [
+  "chrisguttandin/timing-object": [
     {
-      "first_commit": "17/07/2015 03:46",
-      "last_commit": "19/05/2021 17:52",
-      "start": "30/07/2015 20:24",
-      "end": "12/04/2021 23:15",
+      "first_commit": "22/10/2017 05:57",
+      "last_commit": "19/06/2021 13:02",
+      "start": "22/10/2017 07:57",
+      "end": "13/05/2021 23:01",
       "ci": "Travis"
     },
     {
-      "first_commit": "17/07/2015 03:46",
-      "last_commit": "19/05/2021 17:52",
-      "start": "12/04/2021 23:13",
+      "first_commit": "22/10/2017 05:57",
+      "last_commit": "19/06/2021 13:02",
+      "start": "29/12/2020 12:21",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "googleapis/gax-nodejs": [
+  "dpogue/seymour": [
     {
-      "first_commit": "14/04/2016 19:36",
-      "last_commit": "21/05/2021 17:06",
-      "start": "12/05/2016 00:26",
-      "end": "05/01/2018 16:19",
+      "first_commit": "13/11/2015 07:00",
+      "last_commit": "03/05/2021 05:19",
+      "start": "29/10/2018 18:20",
+      "end": "08/07/2019 07:50",
       "ci": "Travis"
     },
     {
-      "first_commit": "14/04/2016 19:36",
-      "last_commit": "21/05/2021 17:06",
-      "start": "13/02/2020 17:13",
+      "first_commit": "13/11/2015 07:00",
+      "last_commit": "03/05/2021 05:19",
+      "start": "02/01/2020 10:59",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "keenwon/eazydict-youdao": [
+  "erik-perri/twig-asset-webpack-plugin": [
     {
-      "first_commit": "21/06/2017 13:55",
-      "last_commit": "25/05/2021 07:56",
-      "start": "23/06/2017 03:20",
-      "end": "10/11/2019 08:06",
+      "first_commit": "10/03/2019 22:10",
+      "last_commit": "08/05/2021 18:45",
+      "start": "13/03/2019 17:46",
+      "end": "25/11/2020 07:54",
       "ci": "Travis"
     },
     {
-      "first_commit": "21/06/2017 13:55",
-      "last_commit": "25/05/2021 07:56",
-      "start": "10/11/2019 08:06",
+      "first_commit": "10/03/2019 22:10",
+      "last_commit": "08/05/2021 18:45",
+      "start": "25/11/2020 07:50",
+      "end": "#NAME?",
+      "ci": "GHA"
+    }
+  ],
+  "eXist-db/generator-exist": [
+    {
+      "first_commit": "01/08/2017 17:02",
+      "last_commit": "18/05/2021 06:28",
+      "start": "04/07/2018 01:28",
+      "end": "09/12/2020 16:01",
+      "ci": "Travis"
+    },
+    {
+      "first_commit": "01/08/2017 17:02",
+      "last_commit": "18/05/2021 06:28",
+      "start": "08/12/2020 10:42",
+      "end": "#NAME?",
+      "ci": "GHA"
+    }
+  ],
+  "Flexberry/ember-flexberry": [
+    {
+      "first_commit": "06/04/2015 14:12",
+      "last_commit": "24/05/2021 11:02",
+      "start": "06/04/2015 16:12",
+      "end": "15/01/2021 09:00",
+      "ci": "Travis"
+    },
+    {
+      "first_commit": "06/04/2015 14:12",
+      "last_commit": "24/05/2021 11:02",
+      "start": "06/12/2020 08:43",
+      "end": "#NAME?",
+      "ci": "GHA"
+    }
+  ],
+  "hudovisk/react-optimize": [
+    {
+      "first_commit": "09/11/2018 19:44",
+      "last_commit": "22/06/2021 10:00",
+      "start": "17/04/2019 03:40",
+      "end": "09/12/2019 02:06",
+      "ci": "Travis"
+    },
+    {
+      "first_commit": "09/11/2018 19:44",
+      "last_commit": "22/06/2021 10:00",
+      "start": "09/12/2019 02:06",
+      "end": "#NAME?",
+      "ci": "GHA"
+    }
+  ],
+  "jazz-soft/JZZ-gui-Player": [
+    {
+      "first_commit": "05/05/2018 02:19",
+      "last_commit": "24/05/2021 04:23",
+      "start": "27/07/2019 03:12",
+      "end": "11/04/2021 06:22",
+      "ci": "Travis"
+    },
+    {
+      "first_commit": "05/05/2018 02:19",
+      "last_commit": "24/05/2021 04:23",
+      "start": "11/04/2021 06:22",
       "end": "#NAME?",
       "ci": "GHA"
     }
@@ -223,226 +287,178 @@
       "ci": "GHA"
     }
   ],
-  "kpfefferle/ember-cli-octicons": [
+  "mendix/widgets-resources": [
     {
-      "first_commit": "15/11/2015 18:54",
-      "last_commit": "26/05/2021 18:16",
-      "start": "15/11/2015 19:54",
-      "end": "18/09/2016 22:18",
+      "first_commit": "04/08/2015 12:45",
+      "last_commit": "21/05/2021 12:04",
+      "start": "03/05/2019 10:42",
+      "end": "15/01/2021 14:06",
       "ci": "Travis"
     },
     {
-      "first_commit": "15/11/2015 18:54",
-      "last_commit": "26/05/2021 18:16",
-      "start": "22/02/2020 21:04",
+      "first_commit": "04/08/2015 12:45",
+      "last_commit": "21/05/2021 12:04",
+      "start": "07/11/2020 22:32",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "meltedspark/angular-builders": [
+  "mike182uk/tmpdl": [
     {
-      "first_commit": "03/07/2018 14:17",
-      "last_commit": "21/05/2021 17:35",
-      "start": "06/07/2018 14:43",
-      "end": "14/12/2020 14:10",
+      "first_commit": "14/02/2016 14:11",
+      "last_commit": "10/06/2021 09:02",
+      "start": "15/02/2016 00:33",
+      "end": "16/05/2020 16:39",
       "ci": "Travis"
     },
     {
-      "first_commit": "03/07/2018 14:17",
-      "last_commit": "21/05/2021 17:35",
-      "start": "19/04/2020 21:10",
+      "first_commit": "14/02/2016 14:11",
+      "last_commit": "10/06/2021 09:02",
+      "start": "16/05/2020 16:39",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "mishoo/UglifyJS": [
+  "mkwtys/selenic-webpack-plugin": [
     {
-      "first_commit": "27/05/2012 11:09",
-      "last_commit": "24/05/2021 01:56",
-      "start": "09/05/2013 05:42",
-      "end": "14/11/2019 03:48",
+      "first_commit": "07/01/2019 07:46",
+      "last_commit": "16/04/2021 10:13",
+      "start": "07/01/2019 08:58",
+      "end": "09/12/2019 04:19",
       "ci": "Travis"
     },
     {
-      "first_commit": "27/05/2012 11:09",
-      "last_commit": "24/05/2021 01:56",
-      "start": "20/10/2019 22:11",
+      "first_commit": "07/01/2019 07:46",
+      "last_commit": "16/04/2021 10:13",
+      "start": "02/12/2019 09:36",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "newdash/newdash": [
+  "neovici/cosmoz-utils": [
     {
-      "first_commit": "25/10/2009 18:36",
-      "last_commit": "21/05/2021 09:32",
-      "start": "30/09/2012 01:05",
-      "end": "06/01/2017 16:51",
+      "first_commit": "26/11/2015 21:30",
+      "last_commit": "14/04/2021 08:37",
+      "start": "26/02/2016 16:21",
+      "end": "08/10/2019 13:21",
       "ci": "Travis"
     },
     {
-      "first_commit": "25/10/2009 18:36",
-      "last_commit": "21/05/2021 09:32",
-      "start": "26/05/2020 07:42",
+      "first_commit": "26/11/2015 21:30",
+      "last_commit": "14/04/2021 08:37",
+      "start": "08/10/2019 13:21",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "ngageoint/eslint-config-opensphere": [
+  "nfroidure/gulp-ttf2woff2": [
     {
-      "first_commit": "06/12/2017 22:37",
-      "last_commit": "10/05/2021 19:02",
-      "start": "26/12/2017 23:21",
-      "end": "16/02/2021 13:56",
+      "first_commit": "20/06/2015 15:47",
+      "last_commit": "28/05/2021 16:40",
+      "start": "20/06/2015 17:47",
+      "end": "15/01/2021 16:36",
       "ci": "Travis"
     },
     {
-      "first_commit": "06/12/2017 22:37",
-      "last_commit": "10/05/2021 19:02",
-      "start": "16/02/2021 13:56",
+      "first_commit": "20/06/2015 15:47",
+      "last_commit": "28/05/2021 16:40",
+      "start": "15/01/2021 16:33",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "nordnet/ui": [
+  "octokit/app.js": [
     {
-      "first_commit": "13/03/2019 11:38",
-      "last_commit": "17/05/2021 13:27",
-      "start": "21/03/2019 10:28",
-      "end": "08/12/2020 11:19",
+      "first_commit": "13/06/2018 18:32",
+      "last_commit": "17/05/2021 14:31",
+      "start": "24/11/2018 04:17",
+      "end": "13/02/2020 06:56",
       "ci": "Travis"
     },
     {
-      "first_commit": "13/03/2019 11:38",
-      "last_commit": "17/05/2021 13:27",
-      "start": "02/12/2020 16:17",
+      "first_commit": "13/06/2018 18:32",
+      "last_commit": "17/05/2021 14:31",
+      "start": "13/02/2020 06:56",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "pmb0/express-sharp": [
+  "pulumi/pulumi-datadog": [
     {
-      "first_commit": "24/11/2015 10:33",
-      "last_commit": "22/05/2021 12:26",
-      "start": "28/11/2015 11:20",
-      "end": "05/05/2020 00:05",
+      "first_commit": "06/11/2018 21:48",
+      "last_commit": "21/05/2021 11:30",
+      "start": "22/06/2019 00:20",
+      "end": "11/06/2020 21:18",
       "ci": "Travis"
     },
     {
-      "first_commit": "24/11/2015 10:33",
-      "last_commit": "22/05/2021 12:26",
-      "start": "04/05/2020 23:21",
+      "first_commit": "06/11/2018 21:48",
+      "last_commit": "21/05/2021 11:30",
+      "start": "16/06/2020 18:06",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "podium-lib/client": [
+  "qiwi/pijma": [
     {
-      "first_commit": "02/08/2017 14:09",
-      "last_commit": "24/05/2021 09:44",
-      "start": "14/10/2017 17:39",
-      "end": "13/11/2019 01:42",
+      "first_commit": "04/07/2018 06:12",
+      "last_commit": "22/04/2021 08:40",
+      "start": "06/07/2018 00:53",
+      "end": "05/04/2021 12:53",
       "ci": "Travis"
     },
     {
-      "first_commit": "02/08/2017 14:09",
-      "last_commit": "24/05/2021 09:44",
-      "start": "13/11/2019 01:28",
+      "first_commit": "04/07/2018 06:12",
+      "last_commit": "22/04/2021 08:40",
+      "start": "11/03/2021 10:21",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "podium-lib/layout": [
+  "sindresorhus/fast-cli": [
     {
-      "first_commit": "16/01/2018 16:52",
-      "last_commit": "24/05/2021 11:35",
-      "start": "29/01/2018 11:25",
-      "end": "13/11/2019 22:21",
+      "first_commit": "18/05/2016 21:24",
+      "last_commit": "08/05/2021 05:26",
+      "start": "18/05/2016 23:30",
+      "end": "02/12/2020 17:52",
       "ci": "Travis"
     },
     {
-      "first_commit": "16/01/2018 16:52",
-      "last_commit": "24/05/2021 11:35",
-      "start": "13/11/2019 22:21",
+      "first_commit": "18/05/2016 21:24",
+      "last_commit": "08/05/2021 05:26",
+      "start": "02/12/2020 17:52",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "radiofrance/rab-q": [
+  "softwareventures/dictionary-types": [
     {
-      "first_commit": "19/09/2017 15:56",
-      "last_commit": "19/04/2021 13:39",
-      "start": "19/09/2017 17:56",
-      "end": "04/01/2021 17:35",
+      "first_commit": "06/11/2018 09:48",
+      "last_commit": "26/05/2021 18:02",
+      "start": "02/01/2019 03:38",
+      "end": "03/02/2020 18:26",
       "ci": "Travis"
     },
     {
-      "first_commit": "19/09/2017 15:56",
-      "last_commit": "19/04/2021 13:39",
-      "start": "04/01/2021 17:35",
+      "first_commit": "06/11/2018 09:48",
+      "last_commit": "26/05/2021 18:02",
+      "start": "03/02/2020 18:26",
       "end": "#NAME?",
       "ci": "GHA"
     }
   ],
-  "react-component/pagination": [
+  "tanem/generator-typescript-react-lib": [
     {
-      "first_commit": "10/07/2015 09:00",
-      "last_commit": "08/05/2021 02:41",
-      "start": "10/07/2015 11:00",
-      "end": "06/11/2020 03:27",
+      "first_commit": "06/08/2018 18:20",
+      "last_commit": "26/05/2021 15:00",
+      "start": "06/08/2018 20:20",
+      "end": "03/12/2020 23:34",
       "ci": "Travis"
     },
     {
-      "first_commit": "10/07/2015 09:00",
-      "last_commit": "08/05/2021 02:41",
-      "start": "06/11/2020 03:27",
-      "end": "#NAME?",
-      "ci": "GHA"
-    }
-  ],
-  "rooseveltframework/teddy": [
-    {
-      "first_commit": "15/01/2013 21:45",
-      "last_commit": "16/06/2021 23:42",
-      "start": "05/02/2017 11:35",
-      "end": "23/05/2020 18:22",
-      "ci": "Travis"
-    },
-    {
-      "first_commit": "15/01/2013 21:45",
-      "last_commit": "16/06/2021 23:42",
-      "start": "23/05/2020 18:22",
-      "end": "#NAME?",
-      "ci": "GHA"
-    }
-  ],
-  "SimenB/add-asset-html-webpack-plugin": [
-    {
-      "first_commit": "27/02/2016 15:03",
-      "last_commit": "25/05/2021 07:26",
-      "start": "19/07/2016 17:44",
-      "end": "20/02/2021 10:55",
-      "ci": "Travis"
-    },
-    {
-      "first_commit": "27/02/2016 15:03",
-      "last_commit": "25/05/2021 07:26",
-      "start": "20/02/2021 10:55",
-      "end": "#NAME?",
-      "ci": "GHA"
-    }
-  ],
-  "square/misk": [
-    {
-      "first_commit": "05/12/2017 00:38",
-      "last_commit": "24/05/2021 06:12",
-      "start": "05/12/2017 20:48",
-      "end": "02/04/2019 16:40",
-      "ci": "Travis"
-    },
-    {
-      "first_commit": "05/12/2017 00:38",
-      "last_commit": "24/05/2021 06:12",
-      "start": "11/12/2020 20:41",
+      "first_commit": "06/08/2018 18:20",
+      "last_commit": "26/05/2021 15:00",
+      "start": "03/12/2020 23:34",
       "end": "#NAME?",
       "ci": "GHA"
     }
@@ -459,22 +475,6 @@
       "first_commit": "02/06/2018 15:31",
       "last_commit": "26/05/2021 12:45",
       "start": "09/05/2020 04:46",
-      "end": "#NAME?",
-      "ci": "GHA"
-    }
-  ],
-  "Wandalen/wFilesEncoders": [
-    {
-      "first_commit": "01/12/2018 15:39",
-      "last_commit": "09/06/2021 04:33",
-      "start": "01/12/2018 16:39",
-      "end": "05/07/2020 09:49",
-      "ci": "Travis"
-    },
-    {
-      "first_commit": "01/12/2018 15:39",
-      "last_commit": "09/06/2021 04:33",
-      "start": "05/07/2020 09:49",
       "end": "#NAME?",
       "ci": "GHA"
     }

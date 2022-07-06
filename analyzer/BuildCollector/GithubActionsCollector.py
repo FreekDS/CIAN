@@ -12,12 +12,13 @@ from analyzer.config import GH_ACTIONS
 
 
 class GithubActionsCollector(Command):
-    def __init__(self, repo: Repo, from_date=None):
+    def __init__(self, repo: Repo, from_date=None, to_date=None):
         super(GithubActionsCollector, self).__init__()
         self.repo = repo
         self._gh_access = GithubAccessor()
 
         self.from_date = from_date
+        self.to_date = to_date
 
     @staticmethod
     def calculate_timing(workflow_runs):
@@ -45,7 +46,13 @@ class GithubActionsCollector(Command):
             start_from = datetime.datetime.now() - datetime.timedelta(days=90)  # only last three months
         start_from = start_from.strftime("%Y-%m-%d")
 
-        runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from)
+        if self.to_date:
+            until = format_date(self.to_date)
+            until = until.strftime("%Y-%m-%d")
+        else:
+            until = None
+
+        runs_json = self._gh_access.get_workflow_runs(self.repo, start_date=start_from, to_date=until)
         # print(f"Fetched {len(runs_json)} runs")
         workflows_json = self._gh_access.get_workflows(self.repo)
         # print(f"Fetched {len(workflows_json)} workflows")
@@ -67,8 +74,7 @@ class GithubActionsCollector(Command):
                 continue
             jobs = all_jobs_data[i]
             for job in jobs.get('jobs', []):
-                if 'test' in job.get('name', '').lower():
-                    job_ids.append(job.get('id'))
+                job_ids.append(job.get('id'))
 
         # print(f"There are {len(job_ids)} job ids to check")
         all_job_logs = self._gh_access.batch_collect_job_logs(self.repo, job_ids)

@@ -88,7 +88,8 @@ def analyze_repo(
         create_cache=True,
         verbose=False,
         out_dir=None,
-        start_date=None
+        start_date=None,
+        to_date=None
 ):
     start = time()
     print(f"===============\nStarting analysis on '{repo.path}'\n===============")
@@ -102,7 +103,7 @@ def analyze_repo(
         return detected
 
     print("Collecting builds...", end='') if verbose else None
-    builds = collect_builds(repo, use_cache, create_cache, start_date)
+    builds = collect_builds(repo, use_cache, create_cache, start_date, to_date)
     print(f"Done ({round(time() - start, 2)}s)") if verbose else None
 
     print("Gathering branch information...", end='') if verbose else None

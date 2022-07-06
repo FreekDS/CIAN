@@ -91,4 +91,5 @@ class LateMerging(AntiPattern):
             result['unsynced activity'][b_name] = self.unsynced_activity(info)
 
         result['classification'] = self.classify(result)
+        result['build_count'] = len(self.builds)
         return result

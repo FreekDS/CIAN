@@ -1,5 +1,6 @@
 import datetime
 
+import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MaxNLocator
 import os
@@ -14,6 +15,25 @@ class AntipatternGraphics:
         self.out_path = os.path.join(out_path, repo_path.replace('/', '-'))
         os.makedirs(self.out_path, exist_ok=True)
         self.data = data
+        self.repo_name = repo_name
+
+    @staticmethod
+    def linreg(x, y):
+        """
+            return a,b in solution to y = ax + b such that root-mean-square distance between trend line and original
+            points is minimized
+            https://stackoverflow.com/questions/10048571/python-finding-a-trend-in-a-set-of-numbers
+        """
+        N = len(x)
+        Sx = Sy = Sxx = Syy = Sxy = 0.0
+        for x, y in zip(x, y):
+            Sx = Sx + x
+            Sy = Sy + y
+            Sxx = Sxx + x * x
+            Syy = Syy + y * y
+            Sxy = Sxy + x * y
+        det = Sxx * N - Sx * Sx
+        return (Sxy * N - Sy * Sx) / det, (Sxx * Sy - Sx * Sxy) / det
 
     def slow_builds_graphic(self):
         slow_build = self.data.get('slow_build')
@@ -34,10 +54,21 @@ class AntipatternGraphics:
             values = [float(v) / 1000 for v in data.values()]  # Convert to seconds
 
             plt.bar(dates, values)
-            plt.plot(dates, values, '-o', color='red')
+            plt.gca().set_ylim(bottom=0.)
+
+            if len(values) > 1:
+                x = np.linspace(0, len(dates), 100)
+                a, b = self.linreg(
+                    list(range(0, len(values))),
+                    values
+                )
+                y = a * x + b
+                c = 'green' if a < 0 else 'red'
+                plt.plot(x, y, color=c)
+
             plt.xlabel("Start date of week")
             plt.ylabel("Average build time of that week (s)")
-            plt.suptitle(f"Slow build for '{ci_workflow}'")
+            plt.suptitle(f"Slow build for {self.repo_name} ({ci_workflow})")
             plt.title(f"Tool: '{tool}' avg duration: {avg}s")
             plt.xticks(rotation='vertical')
 
@@ -97,7 +128,18 @@ class AntipatternGraphics:
                 values = [0]
 
             plt.bar(dates, values)
-            plt.plot(dates, values, '-o', color='red')
+
+            if len(values) > 1:
+                x = np.linspace(0, len(dates), 100)
+                a, b = self.linreg(
+                    list(range(0, len(values))),
+                    values
+                )
+                y = a * x + b
+                c = 'green' if a < 0 else 'red'
+                plt.plot(x, y, color=c)
+
+            # plt.plot(dates, values, '-o', color='red')
             plt.xlabel("Start date of week")
 
             # import matplotlib.dates as mdates
@@ -107,7 +149,8 @@ class AntipatternGraphics:
 
             plt.ylabel("Amount of failing release builds")
             plt.xticks(rotation='vertical')
-            plt.suptitle(f"Broken Release for '{ci_workflow}'")
+            ax.set_ylim(bottom=0.)
+            plt.suptitle(f"Broken Release for {self.repo_name} ({ci_workflow})")
             plt.title(f"Tool: '{tool}'")
 
             plt.savefig(f"{self.out_path}/broken-release_{tool}_{tool_counter[tool]}.png", bbox_inches='tight')

@@ -10,7 +10,7 @@ def data(data_dir):
 
 
 def text(p):
-    with open(p) as f:
+    with open(p, 'r', encoding='utf-8') as f:
         return '\n'.join(f.readlines())
 
 

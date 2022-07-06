@@ -9,7 +9,7 @@ import random
 from dotenv import load_dotenv
 from typing import Union
 from pathlib import Path
-
+import platform
 
 # PARAMETERS
 SAMPLE_SIZE = 30
@@ -22,6 +22,8 @@ CURRENT_DIR = Path(__file__).resolve().parent
 # INITIALIZATION
 load_dotenv()
 random.seed(SEED)  # Seed, to be reproducible
+if platform.system() == 'Windows':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 
 # GITHUB TOKEN MANAGER CLASS
@@ -38,6 +40,7 @@ class TokenMgr:
             if token:
                 tokens_l.append(token)
         self.TOKENS = tokens_l
+        self.travis_token = os.getenv('TRAVIS_CI')
 
     def __call__(self, *args, **kwargs):
         t = self.TOKENS[self.T_PTR]
@@ -48,14 +51,17 @@ class TokenMgr:
 
 token_mgr = TokenMgr()
 
-
 # DATA PREPROCESSING
 
+latest_commit = datetime.datetime(1, 1, 1)
 with open(DATA_FILE) as f:
     cs = csv.reader(f, delimiter=';')
     next(cs)
     repos = defaultdict(list)
     for repo_url, fc, lc, ci, start, end, interval, gap, nb_gaps, max_gap_size, diff in cs:
+        lc_date = datetime.datetime.strptime(lc, "%d/%m/%Y %H:%M")
+        if lc_date > latest_commit:
+            latest_commit = lc_date
         repo = '/'.join(repo_url.split('/')[-2:])
         repos[repo].append(
             {
@@ -103,7 +109,8 @@ async def async_request(url, session, token) -> Union[bool or dict or list]:
     try:
         async with session.get(url, headers={
             'Authorization': f'token {token}',
-            'User-Agent': 'FreekDS/git-ci-analyzer'
+            'User-Agent': 'FreekDS/git-ci-analyzer',
+            'Travis-API-Version': '3'
         }) as response:
             rt = await response.read()
             if response.status == 404:
@@ -191,7 +198,46 @@ def filter_active_repos(repo_names, tokens):
     return fu.result()
 
 
-def create_sample(size, repos_dict, tokens):
+def filter_has_travis_builds(repo_names, tokens):
+    a_loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(a_loop)
+    fu = asyncio.ensure_future(
+        do_repos_have_travis_builds(repo_names, tokens)
+    )
+    a_loop.run_until_complete(fu)
+    return fu.result()
+
+
+async def do_repos_have_travis_builds(repo_names, tokens):
+    tasks = list()
+    conn = TCPConnector(limit=20)
+    async with ClientSession(connector=conn) as session:
+        for r in repo_names:
+            task = asyncio.ensure_future(
+                repo_has_travis_builds(r, session, tokens.travis_token)
+            )
+            tasks.append(task)
+        build_or_not = await asyncio.gather(*tasks)
+    repos_with_builds = list()
+    for index, r in enumerate(repo_names):
+        if build_or_not[index]:
+            repos_with_builds.append(r)
+    return repos_with_builds
+
+
+async def repo_has_travis_builds(r, session, token):
+    rep = r.replace('/', '%2F')
+    url = f"https://api.travis-ci.com/repo/{rep.replace('/', '%2F')}/builds?limit=1"
+    r = await async_request(url, session, token)
+    if r is False or not isinstance(r, dict):
+        return False
+    pagination_info = r.get('@pagination', {})
+    if not pagination_info:
+        return False
+    return int(pagination_info.get('count', 0)) > 0
+
+
+def create_sample(size, repos_dict, tokens, filter_travis=False):
     possible_repos = list(repos_dict.keys())
 
     selected = list()
@@ -200,6 +246,8 @@ def create_sample(size, repos_dict, tokens):
 
         selected_sample = random.sample(possible_repos, min(required_count, len(possible_repos)))
         active_sample = filter_active_repos(selected_sample, tokens)
+        if filter_travis:
+            active_sample = filter_has_travis_builds(active_sample, tokens)
         selected += active_sample
 
         possible_repos = [r for r in possible_repos if r not in selected_sample]
@@ -209,11 +257,11 @@ def create_sample(size, repos_dict, tokens):
 
 # SAMPLE FROM TRAVIS -> GHA
 
-travis_to_gha_sample = create_sample(SAMPLE_SIZE, travis_to_gha, token_mgr)
+travis_to_gha_sample = create_sample(SAMPLE_SIZE, travis_to_gha, token_mgr, filter_travis=True)
 
 # SAMPLE FROM SINGLE CI REPOSITORIES
 
-single_ci_repos_travis = create_sample(SAMPLE_SIZE, repos_without_change_travis, token_mgr)
+single_ci_repos_travis = create_sample(SAMPLE_SIZE, repos_without_change_travis, token_mgr, filter_travis=True)
 single_ci_repos_gha = create_sample(SAMPLE_SIZE, repos_without_change_gha, token_mgr)
 
 
