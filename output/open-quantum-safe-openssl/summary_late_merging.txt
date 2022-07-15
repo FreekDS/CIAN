@@ -1,0 +1,18 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 467.4 days
+Branch OQS-OpenSSL_1_0_2-stable moved away from main with 774 days, 306.6 more than average
+Branch oqs-ossl-111-optimized moved away from main with 840 days, 372.6 more than average
+MEDIUM SEVERITY
+Branch oqs-ossl-111-optimized, 840 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

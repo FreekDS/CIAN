@@ -1,0 +1,25 @@
+Missed Activity
+=========================
+Branch debug_parser-fix has 1601 days of missed activity!
+MEDIUM SEVERITY
+Branch debug_parser-fix, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 1832.4285714285713 days
+Branch version_6_1 moved away from main with 2221 days, 388.57142857142867 more than average
+Branch version_60 moved away from main with 2557 days, 724.5714285714287 more than average
+Branch version_61_premerge moved away from main with 2888 days, 1055.5714285714287 more than average
+Branch version_593 moved away from main with 2833 days, 1000.5714285714287 more than average
+MEDIUM SEVERITY
+Branch version_61_premerge, 2888 days
+Branch version_593, 2833 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 1.0 days
+Branch debug_parser-fix is unsynced with 7 days, 6.0 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch debug_parser-fix, 7 days

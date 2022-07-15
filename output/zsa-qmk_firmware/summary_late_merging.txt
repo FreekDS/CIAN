@@ -1,0 +1,30 @@
+Missed Activity
+=========================
+Branch fix/rgb_matrix_init has 996 days of missed activity!
+MEDIUM SEVERITY
+Branch fix/rgb_matrix_init, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 429.5 days
+Branch feat/rgb_sleep moved away from main with 525 days, 95.5 more than average
+Branch feat/webusb moved away from main with 801 days, 371.5 more than average
+Branch firmware17 moved away from main with 650 days, 220.5 more than average
+Branch firmware18 moved away from main with 492 days, 62.5 more than average
+Branch fix/lto_issues moved away from main with 456 days, 26.5 more than average
+Branch fix/rgb_matrix_init moved away from main with 534 days, 104.5 more than average
+Branch keyboard/planck_ez_custom_animation moved away from main with 679 days, 249.5 more than average
+Branch revert-289-fix/change-ergodox-default-debounce moved away from main with 688 days, 258.5 more than average
+MEDIUM SEVERITY
+Branch feat/webusb, 801 days
+Branch keyboard/planck_ez_custom_animation, 679 days
+Branch revert-289-fix/change-ergodox-default-debounce, 688 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 38.416666666666664 days
+Branch fix/rgb_matrix_init is unsynced with 461 days, 422.5833333333333 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch fix/rgb_matrix_init, 461 days

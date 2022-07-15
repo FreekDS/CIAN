@@ -1,0 +1,24 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 294.84615384615387 days
+Branch 4.6.x moved away from main with 483 days, 188.15384615384613 more than average
+Branch 5.3.x moved away from main with 784 days, 489.15384615384613 more than average
+Branch 5.4.x moved away from main with 649 days, 354.15384615384613 more than average
+Branch 6.0.x moved away from main with 546 days, 251.15384615384613 more than average
+Branch 6.1.x moved away from main with 500 days, 205.15384615384613 more than average
+Branch wip_fix_capfd moved away from main with 330 days, 35.15384615384613 more than average
+MEDIUM SEVERITY
+Branch 5.3.x, 784 days
+Branch 5.4.x, 649 days
+Branch 6.0.x, 546 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

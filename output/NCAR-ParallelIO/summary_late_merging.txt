@@ -1,0 +1,41 @@
+Missed Activity
+=========================
+Branch ejh_versions has 373 days of missed activity!
+MEDIUM SEVERITY
+Branch ejh_versions, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 1002.1538461538462 days
+Branch add_2GiB_local_contig_data_limit moved away from main with 1557 days, 554.8461538461538 more than average
+Branch isolate_netcdf4_issue moved away from main with 1373 days, 370.8461538461538 more than average
+Branch jpe_ctest_update moved away from main with 1822 days, 819.8461538461538 more than average
+Branch mv_needsflush moved away from main with 1553 days, 550.8461538461538 more than average
+Branch pio1_0_cime_merge moved away from main with 1619 days, 616.8461538461538 more than average
+Branch pio1_0 moved away from main with 1105 days, 102.84615384615381 more than average
+Branch pio1_5_branch moved away from main with 1066 days, 63.84615384615381 more than average
+Branch pio1_7_branch moved away from main with 1064 days, 61.84615384615381 more than average
+Branch pio1_8_branch moved away from main with 1098 days, 95.84615384615381 more than average
+MEDIUM SEVERITY
+Branch add_2GiB_local_contig_data_limit, 1557 days
+Branch jpe_ctest_update, 1822 days
+Branch pio1_0_cime_merge, 1619 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: -0.07692307692307693 days
+Branch add_2GiB_local_contig_data_limit is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch ejh_d1 is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch gh-pages is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch isolate_netcdf4_issue is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch jpe_ctest_update is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch master is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch mv_needsflush is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch pio1_0_cime_merge is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch pio1_0 is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch pio1_5_branch is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch pio1_7_branch is unsynced with 0 days, 0.07692307692307693 more thanaverage
+Branch pio1_8_branch is unsynced with 0 days, 0.07692307692307693 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

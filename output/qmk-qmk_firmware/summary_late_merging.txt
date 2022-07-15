@@ -1,0 +1,68 @@
+Missed Activity
+=========================
+Branch develop has 28 days of missed activity!
+Branch fix_template_bootmagic has 20 days of missed activity!
+Branch keymap_folders has 2254 days of missed activity!
+MEDIUM SEVERITY
+Branch develop, None seconds
+Branch fix_template_bootmagic, None seconds
+Branch keymap_folders, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 837.8653846153846 days
+Branch arm-dac-work moved away from main with 1024 days, 186.13461538461536 more than average
+Branch audio_out moved away from main with 1529 days, 691.1346153846154 more than average
+Branch b6_b7_audio moved away from main with 1701 days, 863.1346153846154 more than average
+Branch better_chibios_wait moved away from main with 884 days, 46.13461538461536 more than average
+Branch clockworkpi moved away from main with 1170 days, 332.13461538461536 more than average
+Branch edez2 moved away from main with 1339 days, 501.13461538461536 more than average
+Branch eeprom_update moved away from main with 1695 days, 857.1346153846154 more than average
+Branch encoder_matrix moved away from main with 877 days, 39.13461538461536 more than average
+Branch gb_port moved away from main with 1538 days, 700.1346153846154 more than average
+Branch keymap_folders moved away from main with 1384 days, 546.1346153846154 more than average
+Branch led_matrix_direct moved away from main with 883 days, 45.13461538461536 more than average
+Branch muon_light_dc moved away from main with 1382 days, 544.1346153846154 more than average
+Branch muon_light moved away from main with 1343 days, 505.13461538461536 more than average
+Branch peasy moved away from main with 1115 days, 277.13461538461536 more than average
+Branch peb moved away from main with 1287 days, 449.13461538461536 more than average
+Branch pjrc_hid moved away from main with 1548 days, 710.1346153846154 more than average
+Branch planck_ez_wdg moved away from main with 1067 days, 229.13461538461536 more than average
+Branch planck_ez_with_5372 moved away from main with 1088 days, 250.13461538461536 more than average
+Branch planck_light_rev2 moved away from main with 1390 days, 552.1346153846154 more than average
+Branch planck_thk moved away from main with 967 days, 129.13461538461536 more than average
+Branch planck-ez-a5-high moved away from main with 1053 days, 215.13461538461536 more than average
+Branch qwiic_hub moved away from main with 1369 days, 531.1346153846154 more than average
+Branch qwiic_hud moved away from main with 1268 days, 430.13461538461536 more than average
+Branch qwiic_joystiic moved away from main with 1261 days, 423.13461538461536 more than average
+Branch rgb7seg moved away from main with 1104 days, 266.13461538461536 more than average
+Branch subatomic_encoders moved away from main with 871 days, 33.13461538461536 more than average
+Branch subatomic moved away from main with 1215 days, 377.13461538461536 more than average
+Branch subvendor_ids moved away from main with 871 days, 33.13461538461536 more than average
+Branch titmlb moved away from main with 1053 days, 215.13461538461536 more than average
+Branch unorthodox moved away from main with 1227 days, 389.13461538461536 more than average
+Branch xmega_support moved away from main with 1527 days, 689.1346153846154 more than average
+MEDIUM SEVERITY
+Branch audio_out, 1529 days
+Branch b6_b7_audio, 1701 days
+Branch edez2, 1339 days
+Branch eeprom_update, 1695 days
+Branch gb_port, 1538 days
+Branch keymap_folders, 1384 days
+Branch muon_light_dc, 1382 days
+Branch muon_light, 1343 days
+Branch peb, 1287 days
+Branch pjrc_hid, 1548 days
+Branch planck_light_rev2, 1390 days
+Branch qwiic_hub, 1369 days
+Branch xmega_support, 1527 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 17.25 days
+Branch develop is unsynced with 28 days, 10.75 more thanaverage
+Branch keymap_folders is unsynced with 870 days, 852.75 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch develop, 28 daysBranch keymap_folders, 870 days

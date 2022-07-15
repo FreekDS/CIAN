@@ -1,0 +1,28 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 580.7894736842105 days
+Branch 1.16 moved away from main with 1936 days, 1355.2105263157896 more than average
+Branch 1.17 moved away from main with 1462 days, 881.2105263157895 more than average
+Branch 1.18 moved away from main with 1462 days, 881.2105263157895 more than average
+Branch 2.0 moved away from main with 805 days, 224.21052631578948 more than average
+Branch 2.1 moved away from main with 805 days, 224.21052631578948 more than average
+Branch 2.2 moved away from main with 805 days, 224.21052631578948 more than average
+Branch 2.3 moved away from main with 805 days, 224.21052631578948 more than average
+Branch 2.4 moved away from main with 805 days, 224.21052631578948 more than average
+Branch auth-shakeup moved away from main with 1421 days, 840.2105263157895 more than average
+MEDIUM SEVERITY
+Branch 1.17, 1462 days
+Branch 1.18, 1462 days
+Branch auth-shakeup, 1421 days
+HIGH SEVERITY
+Branch 1.16, 1936 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

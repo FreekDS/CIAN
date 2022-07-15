@@ -1,0 +1,19 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 793.5 days
+Branch api moved away from main with 1145 days, 351.5 more than average
+Branch mkrmotorcarrier moved away from main with 1134 days, 340.5 more than average
+Branch muxto moved away from main with 895 days, 101.5 more than average
+MEDIUM SEVERITY
+Branch api, 1145 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

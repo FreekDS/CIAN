@@ -1,0 +1,107 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 726.5714285714286 days
+Branch F401 moved away from main with 893 days, 166.42857142857144 more than average
+Branch PytestPdbWrapper moved away from main with 1004 days, 277.42857142857144 more than average
+Branch abspath moved away from main with 748 days, 21.428571428571445 more than average
+Branch appveyor-xdist moved away from main with 1080 days, 353.42857142857144 more than average
+Branch assert-display-verbose moved away from main with 828 days, 101.42857142857144 more than average
+Branch av moved away from main with 1068 days, 341.42857142857144 more than average
+Branch az-split moved away from main with 1044 days, 317.42857142857144 more than average
+Branch branch moved away from main with 1245 days, 518.4285714285714 more than average
+Branch cap moved away from main with 822 days, 95.42857142857144 more than average
+Branch ci-skip-without-coverage moved away from main with 1044 days, 317.42857142857144 more than average
+Branch ci-verbose moved away from main with 828 days, 101.42857142857144 more than average
+Branch codecov moved away from main with 1069 days, 342.42857142857144 more than average
+Branch codecov-master moved away from main with 1250 days, 523.4285714285714 more than average
+Branch codecov-remove-flags moved away from main with 1063 days, 336.42857142857144 more than average
+Branch collect-tbstyle-repr_failure moved away from main with 1038 days, 311.42857142857144 more than average
+Branch colorama moved away from main with 807 days, 80.42857142857144 more than average
+Branch compare-len-diff moved away from main with 1028 days, 301.42857142857144 more than average
+Branch cov-terminal moved away from main with 1017 days, 290.42857142857144 more than average
+Branch deploy-pytest-dev moved away from main with 742 days, 15.428571428571445 more than average
+Branch doc-fix-filterwarnings moved away from main with 1651 days, 924.4285714285714 more than average
+Branch doc-nit-picky moved away from main with 1048 days, 321.42857142857144 more than average
+Branch doc-pdb moved away from main with 1038 days, 311.42857142857144 more than average
+Branch docs moved away from main with 793 days, 66.42857142857144 more than average
+Branch encodedfile-write-typerror moved away from main with 1063 days, 336.42857142857144 more than average
+Branch exit-from-from_assertrepr_compare moved away from main with 1038 days, 311.42857142857144 more than average
+Branch fast-K moved away from main with 748 days, 21.428571428571445 more than average
+Branch features moved away from main with 828 days, 101.42857142857144 more than average
+Branch fix-ZeroDivisionError moved away from main with 1520 days, 793.4285714285714 more than average
+Branch fix-assert-generic-verbose moved away from main with 828 days, 101.42857142857144 more than average
+Branch fix-cov-win moved away from main with 966 days, 239.42857142857144 more than average
+Branch fix-lf-collect moved away from main with 797 days, 70.42857142857144 more than average
+Branch fix-rootdir-common-ancestor moved away from main with 2000 days, 1273.4285714285716 more than average
+Branch fix-sym moved away from main with 1173 days, 446.42857142857144 more than average
+Branch fix-tbstyle moved away from main with 742 days, 15.428571428571445 more than average
+Branch less-cov moved away from main with 1065 days, 338.42857142857144 more than average
+Branch lf-dont-update-with-failures moved away from main with 803 days, 76.42857142857144 more than average
+Branch parametrized-kwargs moved away from main with 807 days, 80.42857142857144 more than average
+Branch pdb-do_debug-quit moved away from main with 1035 days, 308.42857142857144 more than average
+Branch pdb-set_trace-capture-msg moved away from main with 1183 days, 456.42857142857144 more than average
+Branch perf moved away from main with 1172 days, 445.42857142857144 more than average
+Branch pin-shinx moved away from main with 1051 days, 324.42857142857144 more than average
+Branch pytest_collect_file-called-multiple-times moved away from main with 822 days, 95.42857142857144 more than average
+Branch remove-node_cache moved away from main with 1066 days, 339.42857142857144 more than average
+Branch remove-silence_logging_at_shutdown moved away from main with 1031 days, 304.42857142857144 more than average
+Branch revert-py350 moved away from main with 874 days, 147.42857142857144 more than average
+Branch should-fail-summary-upstream moved away from main with 793 days, 66.42857142857144 more than average
+Branch startdir moved away from main with 1011 days, 284.42857142857144 more than average
+Branch summary moved away from main with 1018 days, 291.42857142857144 more than average
+Branch sys-stdout-encoding moved away from main with 1079 days, 352.42857142857144 more than average
+Branch tbreportdemo moved away from main with 1022 days, 295.42857142857144 more than average
+Branch test_capture_with_testdir_parseconfig moved away from main with 965 days, 238.42857142857144 more than average
+Branch test_fileimport moved away from main with 1175 days, 448.42857142857144 more than average
+Branch test_report_collect_after_half_a_second moved away from main with 1043 days, 316.42857142857144 more than average
+Branch tox-no-platform moved away from main with 823 days, 96.42857142857144 more than average
+Branch travis-cron moved away from main with 1077 days, 350.42857142857144 more than average
+Branch verbose-fixes moved away from main with 1038 days, 311.42857142857144 more than average
+Branch xenial moved away from main with 1173 days, 446.42857142857144 more than average
+MEDIUM SEVERITY
+Branch appveyor-xdist, 1080 days
+Branch av, 1068 days
+Branch az-split, 1044 days
+Branch branch, 1245 days
+Branch ci-skip-without-coverage, 1044 days
+Branch codecov, 1069 days
+Branch codecov-master, 1250 days
+Branch codecov-remove-flags, 1063 days
+Branch collect-tbstyle-repr_failure, 1038 days
+Branch compare-len-diff, 1028 days
+Branch cov-terminal, 1017 days
+Branch doc-fix-filterwarnings, 1651 days
+Branch doc-nit-picky, 1048 days
+Branch doc-pdb, 1038 days
+Branch encodedfile-write-typerror, 1063 days
+Branch exit-from-from_assertrepr_compare, 1038 days
+Branch fix-ZeroDivisionError, 1520 days
+Branch fix-sym, 1173 days
+Branch less-cov, 1065 days
+Branch pdb-do_debug-quit, 1035 days
+Branch pdb-set_trace-capture-msg, 1183 days
+Branch perf, 1172 days
+Branch pin-shinx, 1051 days
+Branch remove-node_cache, 1066 days
+Branch remove-silence_logging_at_shutdown, 1031 days
+Branch startdir, 1011 days
+Branch summary, 1018 days
+Branch sys-stdout-encoding, 1079 days
+Branch tbreportdemo, 1022 days
+Branch test_fileimport, 1175 days
+Branch test_report_collect_after_half_a_second, 1043 days
+Branch travis-cron, 1077 days
+Branch verbose-fixes, 1038 days
+Branch xenial, 1173 days
+HIGH SEVERITY
+Branch fix-rootdir-common-ancestor, 2000 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

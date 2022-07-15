@@ -1,0 +1,36 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 560.1388888888889 days
+Branch add-zendesk-hook moved away from main with 1702 days, 1141.861111111111 more than average
+Branch airbnb_rb1.7.1_4 moved away from main with 1968 days, 1407.861111111111 more than average
+Branch broker-opts moved away from main with 1497 days, 936.8611111111111 more than average
+Branch celery-config moved away from main with 1496 days, 935.8611111111111 more than average
+Branch cherry-pick-zerodivision-execption-fix-from-airflow-master moved away from main with 749 days, 188.8611111111111 more than average
+Branch fix-show-paused-search-bug moved away from main with 760 days, 199.8611111111111 more than average
+Branch gh-1.9.0 moved away from main with 1211 days, 650.8611111111111 more than average
+Branch gh-1.10.9-approach1 moved away from main with 597 days, 36.861111111111086 more than average
+Branch master moved away from main with 756 days, 195.8611111111111 more than average
+Branch remove-broken-links moved away from main with 597 days, 36.861111111111086 more than average
+Branch v1-8-test moved away from main with 1715 days, 1154.861111111111 more than average
+Branch workflow moved away from main with 1477 days, 916.8611111111111 more than average
+MEDIUM SEVERITY
+Branch broker-opts, 1497 days
+Branch celery-config, 1496 days
+Branch fix-show-paused-search-bug, 760 days
+Branch gh-1.9.0, 1211 days
+Branch master, 756 days
+Branch workflow, 1477 days
+HIGH SEVERITY
+Branch add-zendesk-hook, 1702 days
+Branch airbnb_rb1.7.1_4, 1968 days
+Branch v1-8-test, 1715 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

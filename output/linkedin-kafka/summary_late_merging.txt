@@ -1,0 +1,67 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 850.7142857142857 days
+Branch 0.7 moved away from main with 3165 days, 2314.285714285714 more than average
+Branch 0.7.0 moved away from main with 3402 days, 2551.285714285714 more than average
+Branch 0.7.1 moved away from main with 3402 days, 2551.285714285714 more than average
+Branch 0.7.2 moved away from main with 3402 days, 2551.285714285714 more than average
+Branch 0.8 moved away from main with 3040 days, 2189.285714285714 more than average
+Branch 0.8.0-beta1-candidate1 moved away from main with 3204 days, 2353.285714285714 more than average
+Branch 0.8.1 moved away from main with 2828 days, 1977.2857142857142 more than average
+Branch 0.8.2 moved away from main with 2077 days, 1226.2857142857142 more than average
+Branch 0.9.0 moved away from main with 1375 days, 524.2857142857143 more than average
+Branch 0.10.0 moved away from main with 1375 days, 524.2857142857143 more than average
+Branch 0.10.1 moved away from main with 1329 days, 478.28571428571433 more than average
+Branch 0.10.2 moved away from main with 1329 days, 478.28571428571433 more than average
+Branch 0.11-li moved away from main with 1107 days, 256.28571428571433 more than average
+Branch 0.11.0 moved away from main with 1310 days, 459.28571428571433 more than average
+Branch 1.0 moved away from main with 1310 days, 459.28571428571433 more than average
+Branch 1.1 moved away from main with 1300 days, 449.28571428571433 more than average
+Branch 2.0 moved away from main with 1302 days, 451.28571428571433 more than average
+Branch 2.2-li-pre moved away from main with 1015 days, 164.28571428571433 more than average
+Branch 2.3-li-pre moved away from main with 980 days, 129.28571428571433 more than average
+Branch 2.3-li-travis moved away from main with 893 days, 42.285714285714334 more than average
+Branch cache-serialized-struct moved away from main with 898 days, 47.285714285714334 more than average
+Branch cherry_pick_to_2_3 moved away from main with 863 days, 12.285714285714334 more than average
+Branch consumer_redesign moved away from main with 3402 days, 2551.285714285714 more than average
+Branch fix-flush moved away from main with 1063 days, 212.28571428571433 more than average
+Branch fix-flush2 moved away from main with 1005 days, 154.28571428571433 more than average
+Branch legacy_client_libraries moved away from main with 3402 days, 2551.285714285714 more than average
+Branch llc-make-atc-configurable moved away from main with 924 days, 73.28571428571433 more than average
+Branch memory-records-builder-hotfix moved away from main with 929 days, 78.28571428571433 more than average
+Branch revert-8-broker-side-observer-interface-v2 moved away from main with 1089 days, 238.28571428571433 more than average
+Branch transactional_messaging moved away from main with 2777 days, 1926.2857142857142 more than average
+Branch trunk moved away from main with 1111 days, 260.28571428571433 more than average
+Branch update-tests-not-to-use-scala-consumers moved away from main with 1380 days, 529.2857142857143 more than average
+Branch weak-memory-pool moved away from main with 905 days, 54.285714285714334 more than average
+MEDIUM SEVERITY
+Branch 0.8, 3040 days
+Branch 0.8.1, 2828 days
+Branch 0.8.2, 2077 days
+Branch 0.9.0, 1375 days
+Branch 0.10.0, 1375 days
+Branch 0.10.1, 1329 days
+Branch 0.10.2, 1329 days
+Branch 0.11.0, 1310 days
+Branch 1.0, 1310 days
+Branch 2.0, 1302 days
+Branch transactional_messaging, 2777 days
+Branch update-tests-not-to-use-scala-consumers, 1380 days
+HIGH SEVERITY
+Branch 0.7, 3165 days
+Branch 0.7.0, 3402 days
+Branch 0.7.1, 3402 days
+Branch 0.7.2, 3402 days
+Branch 0.8.0-beta1-candidate1, 3204 days
+Branch consumer_redesign, 3402 days
+Branch legacy_client_libraries, 3402 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

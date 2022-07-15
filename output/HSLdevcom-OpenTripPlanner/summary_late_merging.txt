@@ -1,0 +1,56 @@
+Missed Activity
+=========================
+Branch fix-accept-header has 834 days of missed activity!
+Branch mqtt-gtfs-rt has 1500 days of missed activity!
+Branch nearest has 1963 days of missed activity!
+MEDIUM SEVERITY
+Branch fix-accept-header, None seconds
+Branch mqtt-gtfs-rt, None seconds
+Branch nearest, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 954.725 days
+Branch DT-1843 moved away from main with 1798 days, 843.275 more than average
+Branch DT-3008 moved away from main with 986 days, 31.274999999999977 more than average
+Branch elevation-units moved away from main with 1135 days, 180.27499999999998 more than average
+Branch island-pruning-improvements moved away from main with 1163 days, 208.27499999999998 more than average
+Branch kml-bike-rental-upstream moved away from main with 2262 days, 1307.275 more than average
+Branch mqtt-gtfs-rt moved away from main with 1075 days, 120.27499999999998 more than average
+Branch multipolygon moved away from main with 1472 days, 517.275 more than average
+Branch nearest moved away from main with 1969 days, 1014.275 more than average
+Branch realtime-configuration-fix-upstream moved away from main with 2246 days, 1291.275 more than average
+Branch reset-enteredNoThroughTrafficArea moved away from main with 1533 days, 578.275 more than average
+Branch reverse-optimization-fix moved away from main with 1071 days, 116.27499999999998 more than average
+Branch routes-in-future moved away from main with 2053 days, 1098.275 more than average
+Branch smoove-citybikes moved away from main with 1249 days, 294.275 more than average
+Branch smoove-citybikes-upstream moved away from main with 2114 days, 1159.275 more than average
+Branch snyk-fix-44rpbd moved away from main with 1128 days, 173.27499999999998 more than average
+Branch snyk-fix-a0wkdd moved away from main with 1147 days, 192.27499999999998 more than average
+Branch snyk-fix-crouvz moved away from main with 1148 days, 193.27499999999998 more than average
+Branch snyk-fix-lroyv0 moved away from main with 1136 days, 181.27499999999998 more than average
+Branch snyk-fix-ndzma1 moved away from main with 1113 days, 158.27499999999998 more than average
+Branch snyk-fix-nyw1se moved away from main with 1149 days, 194.27499999999998 more than average
+Branch timestamp_graphql_type moved away from main with 1163 days, 208.27499999999998 more than average
+Branch timetable-api moved away from main with 2389 days, 1434.275 more than average
+Branch update-outdated-link moved away from main with 1095 days, 140.27499999999998 more than average
+MEDIUM SEVERITY
+Branch DT-1843, 1798 days
+Branch kml-bike-rental-upstream, 2262 days
+Branch multipolygon, 1472 days
+Branch nearest, 1969 days
+Branch realtime-configuration-fix-upstream, 2246 days
+Branch reset-enteredNoThroughTrafficArea, 1533 days
+Branch routes-in-future, 2053 days
+Branch smoove-citybikes, 1249 days
+Branch smoove-citybikes-upstream, 2114 days
+Branch timetable-api, 2389 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 10.575 days
+Branch mqtt-gtfs-rt is unsynced with 424 days, 413.425 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch fix-accept-header, 5 daysBranch mqtt-gtfs-rt, 424 days

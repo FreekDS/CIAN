@@ -1,0 +1,21 @@
+Missed Activity
+=========================
+Branch beta has 540 days of missed activity!
+MEDIUM SEVERITY
+Branch beta, None seconds
+HIGH SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: -13.5 days
+Branch master moved away from main with 0 days, 13.5 more than average
+MEDIUM SEVERITY
+Branch master, 0 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 283.5 days
+Branch beta is unsynced with 567 days, 283.5 more thanaverage
+MEDIUM SEVERITY
+Branch beta, 567 daysHIGH SEVERITY

@@ -1,0 +1,38 @@
+Missed Activity
+=========================
+Branch dm-gc has 1203 days of missed activity!
+Branch pb-spi has 1020 days of missed activity!
+MEDIUM SEVERITY
+Branch dm-gc, None seconds
+Branch pb-spi, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 1005.2727272727273 days
+Branch atsamr moved away from main with 1275 days, 269.72727272727275 more than average
+Branch dm-gc moved away from main with 1203 days, 197.72727272727275 more than average
+Branch dm-mega moved away from main with 1285 days, 279.72727272727275 more than average
+Branch dm-samr21 moved away from main with 1327 days, 321.72727272727275 more than average
+Branch dm-spi moved away from main with 1287 days, 281.72727272727275 more than average
+Branch pb-spi moved away from main with 1020 days, 14.727272727272748 more than average
+Branch samd10 moved away from main with 2107 days, 1101.7272727272727 more than average
+MEDIUM SEVERITY
+Branch dm-samr21, 1327 days
+Branch dm-spi, 1287 days
+Branch samd10, 2107 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: -0.18181818181818182 days
+Branch atsamr is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch catchup_2019_10_26 is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch dm-mega is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch dm-samr21 is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch dm-spi is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch master is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch pb-variant is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch samd10 is unsynced with 0 days, 0.18181818181818182 more thanaverage
+Branch stemmafriend is unsynced with 0 days, 0.18181818181818182 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

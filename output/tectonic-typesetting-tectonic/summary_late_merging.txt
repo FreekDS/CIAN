@@ -1,0 +1,17 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 13.333333333333334 days
+Branch rc moved away from main with 20 days, 6.666666666666666 more than average
+Branch release moved away from main with 20 days, 6.666666666666666 more than average
+MEDIUM SEVERITY
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

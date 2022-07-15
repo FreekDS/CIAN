@@ -1,0 +1,71 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 1493.6625 days
+Branch 2.2 moved away from main with 3812 days, 2318.3375 more than average
+Branch 2.4 moved away from main with 3404 days, 1910.3375 more than average
+Branch 2.6 moved away from main with 2950 days, 1456.3375 more than average
+Branch 3.0 moved away from main with 1878 days, 384.3375000000001 more than average
+Branch antiaffinity moved away from main with 1558 days, 64.33750000000009 more than average
+Branch aofrdb moved away from main with 2039 days, 545.3375000000001 more than average
+Branch arm moved away from main with 1860 days, 366.3375000000001 more than average
+Branch cow-pipe moved away from main with 2013 days, 519.3375000000001 more than average
+Branch current-client-fix moved away from main with 2584 days, 1090.3375 more than average
+Branch dict-clustered-entries moved away from main with 2025 days, 531.3375000000001 more than average
+Branch dictc moved away from main with 2599 days, 1105.3375 more than average
+Branch freelist moved away from main with 2878 days, 1384.3375 more than average
+Branch issue_2175 moved away from main with 2669 days, 1175.3375 more than average
+Branch latency moved away from main with 2816 days, 1322.3375 more than average
+Branch lazyfree moved away from main with 2363 days, 869.3375000000001 more than average
+Branch ldb moved away from main with 2319 days, 825.3375000000001 more than average
+Branch less-mstime moved away from main with 2517 days, 1023.3375000000001 more than average
+Branch less-mstime-28 moved away from main with 2517 days, 1023.3375000000001 more than average
+Branch memsync moved away from main with 2704 days, 1210.3375 more than average
+Branch module-blocking-commands moved away from main with 1995 days, 501.3375000000001 more than average
+Branch module-io-context moved away from main with 1996 days, 502.3375000000001 more than average
+Branch modules-replication moved away from main with 1583 days, 89.33750000000009 more than average
+Branch multi-if moved away from main with 2576 days, 1082.3375 more than average
+Branch nosync moved away from main with 2597 days, 1103.3375 more than average
+Branch onepass-bulk moved away from main with 2893 days, 1399.3375 more than average
+Branch rdb9 moved away from main with 1577 days, 83.33750000000009 more than average
+Branch rdb-script-aux moved away from main with 1577 days, 83.33750000000009 more than average
+Branch rdbchanges moved away from main with 2633 days, 1139.3375 more than average
+Branch rssmaxmemory moved away from main with 2685 days, 1191.3375 more than average
+Branch siphash moved away from main with 1858 days, 364.3375000000001 more than average
+Branch slave-diskless moved away from main with 2438 days, 944.3375000000001 more than average
+Branch strcompr moved away from main with 2912 days, 1418.3375 more than average
+Branch waitpid-fix moved away from main with 2307 days, 813.3375000000001 more than average
+Branch zaddnx moved away from main with 2492 days, 998.3375000000001 more than average
+Branch ziplist-improvements moved away from main with 1883 days, 389.3375000000001 more than average
+Branch zunion moved away from main with 2849 days, 1355.3375 more than average
+MEDIUM SEVERITY
+Branch 2.2, 3812 days
+Branch 2.4, 3404 days
+Branch 2.6, 2950 days
+Branch current-client-fix, 2584 days
+Branch dictc, 2599 days
+Branch freelist, 2878 days
+Branch issue_2175, 2669 days
+Branch latency, 2816 days
+Branch less-mstime, 2517 days
+Branch less-mstime-28, 2517 days
+Branch memsync, 2704 days
+Branch multi-if, 2576 days
+Branch nosync, 2597 days
+Branch onepass-bulk, 2893 days
+Branch rdbchanges, 2633 days
+Branch rssmaxmemory, 2685 days
+Branch slave-diskless, 2438 days
+Branch strcompr, 2912 days
+Branch zaddnx, 2492 days
+Branch zunion, 2849 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

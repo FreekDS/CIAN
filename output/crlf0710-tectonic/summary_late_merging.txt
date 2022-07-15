@@ -1,0 +1,25 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 465.0 days
+Branch bugfix moved away from main with 487 days, 22.0 more than average
+Branch ci_adjust moved away from main with 564 days, 99.0 more than average
+Branch macos_support moved away from main with 562 days, 97.0 more than average
+Branch manual_cfront moved away from main with 548 days, 83.0 more than average
+Branch rollback_backup moved away from main with 497 days, 32.0 more than average
+Branch typefix moved away from main with 483 days, 18.0 more than average
+Branch win_build moved away from main with 547 days, 82.0 more than average
+Branch win_ci moved away from main with 497 days, 32.0 more than average
+MEDIUM SEVERITY
+Branch ci_adjust, 564 days
+Branch macos_support, 562 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

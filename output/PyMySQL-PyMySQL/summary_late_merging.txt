@@ -1,0 +1,18 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 303.3333333333333 days
+Branch 0.10 moved away from main with 467 days, 163.66666666666669 more than average
+Branch remove-old-password moved away from main with 443 days, 139.66666666666669 more than average
+MEDIUM SEVERITY
+Branch 0.10, 467 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

@@ -1,0 +1,31 @@
+Missed Activity
+=========================
+Branch feature/cli has 143 days of missed activity!
+Branch feature/collect-test-results has 106 days of missed activity!
+Branch feature/readme has 112 days of missed activity!
+Branch late-merging has 42 days of missed activity!
+MEDIUM SEVERITY
+Branch feature/cli, None seconds
+HIGH SEVERITY
+Branch feature/readme, None seconds
+HIGH SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 65.0 days
+Branch feature/collect-test-results moved away from main with 106 days, 41.0 more than average
+Branch feature/evolution-analysis moved away from main with 75 days, 10.0 more than average
+Branch feature/output-formatter moved away from main with 120 days, 55.0 more than average
+Branch feature/readme moved away from main with 113 days, 48.0 more than average
+MEDIUM SEVERITY
+Branch feature/output-formatter, 120 days
+Branch feature/readme, 113 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 20.0 days
+Branch feature/cli is unsynced with 143 days, 123.0 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch feature/cli, 143 days

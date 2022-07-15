@@ -1,0 +1,29 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 519.0434782608696 days
+Branch ENG-152_finalized moved away from main with 722 days, 202.95652173913038 more than average
+Branch develop-backup moved away from main with 1820 days, 1300.9565217391305 more than average
+Branch feature/ember-osf moved away from main with 1991 days, 1471.9565217391305 more than average
+Branch feature/file-metadata moved away from main with 1250 days, 730.9565217391304 more than average
+Branch feature/identifiers-on-tombstone moved away from main with 1105 days, 585.9565217391304 more than average
+Branch feature/norm_education_employment moved away from main with 907 days, 387.9565217391304 more than average
+Branch feature/registries_submission_backend moved away from main with 904 days, 384.9565217391304 more than average
+Branch release/next-platform moved away from main with 1136 days, 616.9565217391304 more than average
+MEDIUM SEVERITY
+Branch develop-backup, 1820 days
+Branch feature/ember-osf, 1991 days
+Branch feature/file-metadata, 1250 days
+Branch feature/identifiers-on-tombstone, 1105 days
+Branch feature/norm_education_employment, 907 days
+Branch release/next-platform, 1136 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

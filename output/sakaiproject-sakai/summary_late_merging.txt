@@ -1,0 +1,22 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 399.09090909090907 days
+Branch 11.x moved away from main with 812 days, 412.90909090909093 more than average
+Branch 12.x moved away from main with 496 days, 96.90909090909093 more than average
+Branch SAK-43201-integration-tests moved away from main with 773 days, 373.90909090909093 more than average
+Branch gh-pages moved away from main with 2090 days, 1690.909090909091 more than average
+MEDIUM SEVERITY
+Branch 11.x, 812 days
+Branch SAK-43201-integration-tests, 773 days
+HIGH SEVERITY
+Branch gh-pages, 2090 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

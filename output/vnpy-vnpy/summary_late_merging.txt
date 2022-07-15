@@ -1,0 +1,20 @@
+Missed Activity
+=========================
+Branch dev has -1 days of missed activity!
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 82.33333333333333 days
+Branch dev-ga moved away from main with 247 days, 164.66666666666669 more than average
+MEDIUM SEVERITY
+Branch dev-ga, 247 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: -0.3333333333333333 days
+Branch dev-ga is unsynced with 0 days, 0.3333333333333333 more thanaverage
+Branch master is unsynced with 0 days, 0.3333333333333333 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

@@ -1,0 +1,56 @@
+Missed Activity
+=========================
+Branch xinbinhuang-patch-1 has 95 days of missed activity!
+MEDIUM SEVERITY
+Branch xinbinhuang-patch-1, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 326.10714285714283 days
+Branch v1-8-stable moved away from main with 1556 days, 1229.892857142857 more than average
+Branch v1-8-test moved away from main with 1556 days, 1229.892857142857 more than average
+Branch v1-9-stable moved away from main with 1556 days, 1229.892857142857 more than average
+Branch v1-9-test moved away from main with 1556 days, 1229.892857142857 more than average
+Branch v2-0-stable moved away from main with 337 days, 10.892857142857167 more than average
+MEDIUM SEVERITY
+Branch constraints-2-0, 321 days
+Branch v2-0-stable, 337 days
+Branch v2-0-test, 320 days
+HIGH SEVERITY
+Branch v1-8-stable, 1556 days
+Branch v1-8-test, 1556 days
+Branch v1-9-stable, 1556 days
+Branch v1-9-test, 1556 days
+
+Unsynced activity
+=========================
+Average unsynced: -0.6071428571428571 days
+Branch autorefresh-w-basedate is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-1-10 is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-0 is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-1-fixed is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-1 is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-2-2-fixed is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-2-3-fixed is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-2-2 is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch constraints-main is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch forked_suprocess_log is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch main is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch mapped-task-drawer is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch optimize-direct-push-workflows is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch optimize-multiplatform-builds is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch revert-20730-ikholopov/url_single_path_dag_page is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-8-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-8-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-9-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-9-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-10-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v1-10-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-0-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-0-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-1-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-1-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-2-stable is unsynced with 0 days, 0.6071428571428571 more thanaverage
+Branch v2-2-test is unsynced with 0 days, 0.6071428571428571 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
