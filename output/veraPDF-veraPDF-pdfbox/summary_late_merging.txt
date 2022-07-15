@@ -1,0 +1,29 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 3158.6470588235293 days
+Branch 1.1.x moved away from main with 4340 days, 1181.3529411764707 more than average
+Branch 1.2.x moved away from main with 4238 days, 1079.3529411764707 more than average
+Branch 1.2 moved away from main with 4238 days, 1079.3529411764707 more than average
+Branch 1.3 moved away from main with 4131 days, 972.3529411764707 more than average
+Branch 1.4 moved away from main with 4070 days, 911.3529411764707 more than average
+Branch 1.5 moved away from main with 4006 days, 847.3529411764707 more than average
+Branch 1.6 moved away from main with 3876 days, 717.3529411764707 more than average
+Branch 1.7 moved away from main with 3495 days, 336.3529411764707 more than average
+Branch before-apache-packages moved away from main with 4468 days, 1309.3529411764707 more than average
+Branch before-maven-layout moved away from main with 4468 days, 1309.3529411764707 more than average
+Branch xmpbox-refactoring moved away from main with 3392 days, 233.35294117647072 more than average
+MEDIUM SEVERITY
+Branch 1.1.x, 4340 days
+Branch before-apache-packages, 4468 days
+Branch before-maven-layout, 4468 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

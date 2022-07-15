@@ -1,0 +1,25 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 3380.6923076923076 days
+Branch roller_1.x moved away from main with 5381 days, 2000.3076923076924 more than average
+Branch roller_2.x moved away from main with 5381 days, 2000.3076923076924 more than average
+Branch roller_2.3 moved away from main with 5377 days, 1996.3076923076924 more than average
+Branch roller_3.0 moved away from main with 5369 days, 1988.3076923076924 more than average
+Branch roller_3.1 moved away from main with 5204 days, 1823.3076923076924 more than average
+Branch roller_3.2 moved away from main with 5381 days, 2000.3076923076924 more than average
+Branch roller_4.0 moved away from main with 3983 days, 602.3076923076924 more than average
+MEDIUM SEVERITY
+Branch roller_1.x, 5381 days
+Branch roller_2.x, 5381 days
+Branch roller_3.2, 5381 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

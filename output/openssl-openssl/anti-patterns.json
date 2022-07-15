@@ -1,0 +1,19 @@
+{
+  "skip_failing_tests": {
+    "GitHub CI": [
+      {
+        "build_number": 10034,
+        "build_date": "2022-03-04T07:49:41Z",
+        "used_tool": "Github Actions",
+        "external-test-pyca (1.51.0, 3.9)": {
+          "pytest-7.0.1": {
+            "delta_breaks": -1861,
+            "delta_skip": 0,
+            "delta_run": -1662,
+            "skipped": true
+          }
+        }
+      }
+    ]
+  }
+}

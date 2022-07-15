@@ -1,0 +1,62 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 977.2962962962963 days
+Branch auxpow-3.2.x moved away from main with 1124 days, 146.7037037037037 more than average
+Branch auxpow-3.2.2 moved away from main with 1264 days, 286.7037037037037 more than average
+Branch auxpow-3.2.3 moved away from main with 1243 days, 265.7037037037037 more than average
+Branch auxpow-3.2.4 moved away from main with 1124 days, 146.7037037037037 more than average
+Branch auxpow-3.3.0 moved away from main with 1124 days, 146.7037037037037 more than average
+Branch auxpow-3.3.1 moved away from main with 1123 days, 145.7037037037037 more than average
+Branch auxpow-3.3.2 moved away from main with 1122 days, 144.7037037037037 more than average
+Branch auxpow-3.3.3 moved away from main with 1114 days, 136.7037037037037 more than average
+Branch auxpow-3.3.3.1 moved away from main with 1101 days, 123.7037037037037 more than average
+Branch auxpow-3.3.4 moved away from main with 1064 days, 86.7037037037037 more than average
+Branch auxpow-3.3.5 moved away from main with 1008 days, 30.703703703703695 more than average
+Branch auxpow-3.3.6 moved away from main with 1006 days, 28.703703703703695 more than average
+Branch auxpow-cp-height-checkpoints-needs-rebase moved away from main with 1060 days, 82.7037037037037 more than average
+Branch bitcoin-3.2.x moved away from main with 1124 days, 146.7037037037037 more than average
+Branch bitcoin-3.2.2 moved away from main with 1264 days, 286.7037037037037 more than average
+Branch bitcoin-3.2.3 moved away from main with 1243 days, 265.7037037037037 more than average
+Branch bitcoin-3.2.4 moved away from main with 1124 days, 146.7037037037037 more than average
+Branch bitcoin-3.3.0 moved away from main with 1125 days, 147.7037037037037 more than average
+Branch bitcoin-3.3.1 moved away from main with 1123 days, 145.7037037037037 more than average
+Branch bitcoin-3.3.2 moved away from main with 1122 days, 144.7037037037037 more than average
+Branch bitcoin-3.3.3 moved away from main with 1114 days, 136.7037037037037 more than average
+Branch bitcoin-3.3.3.1 moved away from main with 1101 days, 123.7037037037037 more than average
+Branch bitcoin-3.3.4 moved away from main with 1064 days, 86.7037037037037 more than average
+Branch bitcoin-3.3.5 moved away from main with 1010 days, 32.703703703703695 more than average
+Branch bitcoin-3.3.6 moved away from main with 1006 days, 28.703703703703695 more than average
+Branch master-3.2.x moved away from main with 1124 days, 146.7037037037037 more than average
+Branch master-3.2.2 moved away from main with 1264 days, 286.7037037037037 more than average
+Branch master-3.2.3 moved away from main with 1243 days, 265.7037037037037 more than average
+Branch master-3.2.4b1 moved away from main with 1159 days, 181.7037037037037 more than average
+Branch master-3.2.4 moved away from main with 1124 days, 146.7037037037037 more than average
+Branch master-3.3.0 moved away from main with 1124 days, 146.7037037037037 more than average
+Branch master-3.3.1 moved away from main with 1122 days, 144.7037037037037 more than average
+Branch master-3.3.2 moved away from main with 1115 days, 137.7037037037037 more than average
+Branch master-3.3.3 moved away from main with 1107 days, 129.7037037037037 more than average
+Branch master-3.3.3.1 moved away from main with 1101 days, 123.7037037037037 more than average
+Branch master-3.3.4 moved away from main with 1063 days, 85.7037037037037 more than average
+Branch master-3.3.5 moved away from main with 1007 days, 29.703703703703695 more than average
+Branch master-3.3.6 moved away from main with 1002 days, 24.703703703703695 more than average
+Branch master-cp-height-checkpoints-needs-rebase moved away from main with 1043 days, 65.7037037037037 more than average
+MEDIUM SEVERITY
+Branch auxpow-3.2.2, 1264 days
+Branch auxpow-3.2.3, 1243 days
+Branch bitcoin-3.2.2, 1264 days
+Branch bitcoin-3.2.3, 1243 days
+Branch bitcoin-3.3.0, 1125 days
+Branch master-3.2.2, 1264 days
+Branch master-3.2.3, 1243 days
+Branch master-3.2.4b1, 1159 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

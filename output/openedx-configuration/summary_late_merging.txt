@@ -1,0 +1,468 @@
+Missed Activity
+=========================
+Branch BOM-1958 has 588 days of missed activity!
+Branch McKenzieW/learner-3052 has 1606 days of missed activity!
+Branch adzuci/devops-88886-new-sandbox-ami has 997 days of missed activity!
+Branch aed/registrar-celery-queue-name has 1021 days of missed activity!
+Branch ammar/veda-sandbox has 1485 days of missed activity!
+Branch asadiqbal08/ENT-322 has 1701 days of missed activity!
+Branch bbeggs/go-agent-pip3 has 1876 days of missed activity!
+Branch bfiller/disable-journals has 1358 days of missed activity!
+Branch diana/remove-nodeenv-prospetus has 226 days of missed activity!
+Branch e0d/fix-xqueue has 2271 days of missed activity!
+Branch estute/HRIS-233 has 1225 days of missed activity!
+Branch estute/HRIS-246 has 1220 days of missed activity!
+Branch estute/TE-2563 has 1317 days of missed activity!
+Branch estute/TE-2603 has 1357 days of missed activity!
+Branch estute/TE-2618 has 1349 days of missed activity!
+Branch estute/TE-2651 has 1317 days of missed activity!
+Branch estute/TE-2678 has 1295 days of missed activity!
+Branch estute/TE-2698 has 1309 days of missed activity!
+Branch estute/TE-2881 has 1065 days of missed activity!
+Branch estute/add-android-label-to-jenkins-container has 1315 days of missed activity!
+Branch estute/add-jenkins-to-docker-group has 1151 days of missed activity!
+Branch estute/add-play-for-android-sdk has 1315 days of missed activity!
+Branch estute/cache-npm-packages-for-jenkins-workers has 1283 days of missed activity!
+Branch estute/clean-up-groovy-script has 1059 days of missed activity!
+Branch estute/correct-branch-in-codejail-worker has 965 days of missed activity!
+Branch estute/docker-on-it-jenkins has 1154 days of missed activity!
+Branch estute/fix-analytics-container has 982 days of missed activity!
+Branch estute/fix-dev-jenkins-container-permissions has 1277 days of missed activity!
+Branch estute/fix-jenkins-codejail-sudoers has 972 days of missed activity!
+Branch estute/increase-it-jenkins-executors has 1147 days of missed activity!
+Branch estute/index-ironwood-jobs-to-splunk has 1008 days of missed activity!
+Branch estute/insights-devstack-script has 982 days of missed activity!
+Branch estute/install-docker-on-jenkins-workers has 1100 days of missed activity!
+Branch estute/install-libaio-for-it-jenkins has 1126 days of missed activity!
+Branch estute/install-oracle-library-on-it-jenkins has 1136 days of missed activity!
+Branch estute/it-jenkins-plugin-bump has 1114 days of missed activity!
+Branch estute/jenkins-container-local-security-config has 1353 days of missed activity!
+Branch estute/load-credentials-on-it-jenkins has 1212 days of missed activity!
+Branch estute/remove-job-config-history-script has 1353 days of missed activity!
+Branch estute/revert-warnings-plugin has 990 days of missed activity!
+Branch estute/stop-clobbering-oracle-install has 1126 days of missed activity!
+Branch estute/update-jenkins-build-container has 1316 days of missed activity!
+Branch gabe/fix-analyticstack-rename has 1854 days of missed activity!
+Branch jdmulloy/fix_retirement_4 has 259 days of missed activity!
+Branch jmyatt/fix-enrollment-api-config-var has 1275 days of missed activity!
+Branch jmyatt/fix-vars-for-build-and-runtime-api-calls has 1275 days of missed activity!
+Branch matthugs/create-ecommerce-worker-the-old-fashioned-way has 104 days of missed activity!
+Branch nadeem/update_mongo_agent has 1330 days of missed activity!
+Branch named-release/dogwood.rc has 2283 days of missed activity!
+Branch naveed/android_sdk has 1122 days of missed activity!
+Branch naveed/android has 1157 days of missed activity!
+Branch naveed/install_zip has 1007 days of missed activity!
+Branch naveed/node has 1156 days of missed activity!
+Branch naveed/update_android has 1008 days of missed activity!
+Branch noraiz/EDUCATOR-3074 has 1325 days of missed activity!
+Branch open-release/ficus.master has 1877 days of missed activity!
+Branch ormsbee/remove_officemix has 1073 days of missed activity!
+Branch rir/ws-1232 has 553 days of missed activity!
+Branch robrap/ARCH-275-update-jwt-issuers has 1226 days of missed activity!
+Branch shrlyhe/ENT-433 has 1716 days of missed activity!
+Branch zafft/jenkins_data_eng_retain_openedx_role has 1269 days of missed activity!
+MEDIUM SEVERITY
+Branch BOM-1958, None seconds
+Branch McKenzieW/learner-3052, None seconds
+Branch adzuci/devops-88886-new-sandbox-ami, None seconds
+Branch aed/registrar-celery-queue-name, None seconds
+Branch ammar/veda-sandbox, None seconds
+Branch asadiqbal08/ENT-322, None seconds
+Branch bbeggs/go-agent-pip3, None seconds
+Branch bfiller/disable-journals, None seconds
+Branch diana/remove-nodeenv-prospetus, None seconds
+Branch e0d/fix-xqueue, None seconds
+Branch estute/HRIS-233, None seconds
+Branch estute/HRIS-246, None seconds
+Branch estute/TE-2563, None seconds
+Branch estute/TE-2603, None seconds
+Branch estute/TE-2618, None seconds
+Branch estute/TE-2651, None seconds
+Branch estute/TE-2678, None seconds
+Branch estute/TE-2698, None seconds
+Branch estute/TE-2881, None seconds
+Branch estute/add-android-label-to-jenkins-container, None seconds
+Branch estute/add-jenkins-to-docker-group, None seconds
+Branch estute/add-play-for-android-sdk, None seconds
+Branch estute/cache-npm-packages-for-jenkins-workers, None seconds
+Branch estute/clean-up-groovy-script, None seconds
+Branch estute/correct-branch-in-codejail-worker, None seconds
+Branch estute/docker-on-it-jenkins, None seconds
+Branch estute/fix-analytics-container, None seconds
+Branch estute/fix-dev-jenkins-container-permissions, None seconds
+Branch estute/fix-jenkins-codejail-sudoers, None seconds
+Branch estute/increase-it-jenkins-executors, None seconds
+Branch estute/index-ironwood-jobs-to-splunk, None seconds
+Branch estute/insights-devstack-script, None seconds
+Branch estute/install-docker-on-jenkins-workers, None seconds
+Branch estute/install-libaio-for-it-jenkins, None seconds
+Branch estute/install-oracle-library-on-it-jenkins, None seconds
+Branch estute/it-jenkins-plugin-bump, None seconds
+Branch estute/jenkins-container-local-security-config, None seconds
+Branch estute/load-credentials-on-it-jenkins, None seconds
+Branch estute/remove-job-config-history-script, None seconds
+Branch estute/revert-warnings-plugin, None seconds
+Branch estute/stop-clobbering-oracle-install, None seconds
+Branch estute/update-jenkins-build-container, None seconds
+Branch gabe/fix-analyticstack-rename, None seconds
+Branch jdmulloy/fix_retirement_4, None seconds
+Branch jmyatt/fix-enrollment-api-config-var, None seconds
+Branch jmyatt/fix-vars-for-build-and-runtime-api-calls, None seconds
+Branch matthugs/create-ecommerce-worker-the-old-fashioned-way, None seconds
+Branch nadeem/update_mongo_agent, None seconds
+Branch named-release/dogwood.rc, None seconds
+Branch naveed/android_sdk, None seconds
+Branch naveed/android, None seconds
+Branch naveed/install_zip, None seconds
+Branch naveed/node, None seconds
+Branch naveed/update_android, None seconds
+Branch noraiz/EDUCATOR-3074, None seconds
+Branch open-release/ficus.master, None seconds
+Branch ormsbee/remove_officemix, None seconds
+Branch rir/ws-1232, None seconds
+Branch robrap/ARCH-275-update-jwt-issuers, None seconds
+Branch shrlyhe/ENT-433, None seconds
+Branch zafft/jenkins_data_eng_retain_openedx_role, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 1166.5456621004566 days
+Branch JoyceZhu/add_ecommerce_payment_support_email moved away from main with 2066 days, 899.4543378995434 more than average
+Branch McKenzieW/learner-3052 moved away from main with 1606 days, 439.45433789954336 more than average
+Branch aamishbaloch/YONK-829B moved away from main with 1554 days, 387.45433789954336 more than average
+Branch aamishbaloch/update_phantomjs moved away from main with 1756 days, 589.4543378995434 more than average
+Branch aed/random moved away from main with 1480 days, 313.45433789954336 more than average
+Branch amannan/enable_spark_logging_in_analytics moved away from main with 1389 days, 222.45433789954336 more than average
+Branch ammar/veda-sandbox moved away from main with 1498 days, 331.45433789954336 more than average
+Branch ammar/video-pipeline-role moved away from main with 1619 days, 452.45433789954336 more than average
+Branch ammar/video-worker-role moved away from main with 1619 days, 452.45433789954336 more than average
+Branch andya/move-edxmako moved away from main with 1994 days, 827.4543378995434 more than average
+Branch appneta-OPS1096 moved away from main with 2163 days, 996.4543378995434 more than average
+Branch arbab/testing moved away from main with 2097 days, 930.4543378995434 more than average
+Branch arbab/xqueue-tmp-fix moved away from main with 2156 days, 989.4543378995434 more than average
+Branch asadiqbal08/ENT-322 moved away from main with 1699 days, 532.4543378995434 more than average
+Branch asadiqbal-test moved away from main with 1723 days, 556.4543378995434 more than average
+Branch awais786/ECOM-6770-contact-us-email moved away from main with 1900 days, 733.4543378995434 more than average
+Branch awais786/revert-ECOM-6262-images-s3-issue moved away from main with 1969 days, 802.4543378995434 more than average
+Branch bbeggs/cd-build-pipeline moved away from main with 2178 days, 1011.4543378995434 more than average
+Branch bbeggs/fix_insights moved away from main with 2012 days, 845.4543378995434 more than average
+Branch bbeggs/go-agent-pip3 moved away from main with 1876 days, 709.4543378995434 more than average
+Branch bbeggs/go-agent-test moved away from main with 2156 days, 989.4543378995434 more than average
+Branch bbeggs/gocd-test moved away from main with 2163 days, 996.4543378995434 more than average
+Branch bbeggs/mcka moved away from main with 1703 days, 536.4543378995434 more than average
+Branch bbeggs/queue_versioning moved away from main with 1638 days, 471.45433789954336 more than average
+Branch bbeggs/update-go-agent moved away from main with 1877 days, 710.4543378995434 more than average
+Branch bbeggs/virtualenv moved away from main with 2163 days, 996.4543378995434 more than average
+Branch bd/cd-jwt moved away from main with 2150 days, 983.4543378995434 more than average
+Branch bdero/aws-before-edxapp moved away from main with 1812 days, 645.4543378995434 more than average
+Branch bdero/opencraft-rabbitmq-vhost-config moved away from main with 1952 days, 785.4543378995434 more than average
+Branch bderusha/asymmetric-jwt moved away from main with 2157 days, 990.4543378995434 more than average
+Branch benp/chrome-48 moved away from main with 2161 days, 994.4543378995434 more than average
+Branch benp/chrome-hangs-fix moved away from main with 1844 days, 677.4543378995434 more than average
+Branch benp/fix-prereqs-install moved away from main with 2248 days, 1081.4543378995434 more than average
+Branch benp/more-details-build-server moved away from main with 2353 days, 1186.4543378995434 more than average
+Branch benp/revert-2566 moved away from main with 2276 days, 1109.4543378995434 more than average
+Branch benp/sitespeed-fix moved away from main with 2353 days, 1186.4543378995434 more than average
+Branch benp/skip-tests-packer moved away from main with 2353 days, 1186.4543378995434 more than average
+Branch benp/triage-issue moved away from main with 2367 days, 1200.4543378995434 more than average
+Branch benp/try-2317 moved away from main with 2334 days, 1167.4543378995434 more than average
+Branch benp/update-simple moved away from main with 2294 days, 1127.4543378995434 more than average
+Branch benp/upgrade_python_rebase moved away from main with 2332 days, 1165.4543378995434 more than average
+Branch benp/upgrade-firefox moved away from main with 2293 days, 1126.4543378995434 more than average
+Branch better-defaults-for-ace moved away from main with 1620 days, 453.45433789954336 more than average
+Branch bfiller/deps-again moved away from main with 1395 days, 228.45433789954336 more than average
+Branch bfiller/disable-journals moved away from main with 1359 days, 192.45433789954336 more than average
+Branch bfiller/es5-role moved away from main with 1402 days, 235.45433789954336 more than average
+Branch bmedx/add_devpi_consumer_role moved away from main with 1512 days, 345.45433789954336 more than average
+Branch bmedx/fix_sqlite_segfault_PLAT-1637 moved away from main with 1703 days, 536.4543378995434 more than average
+Branch cale/harprofiler moved away from main with 2214 days, 1047.4543378995434 more than average
+Branch cale/timer-logging-debug moved away from main with 1956 days, 789.4543378995434 more than average
+Branch cdyer/uninstall-python-packages moved away from main with 2180 days, 1013.4543378995434 more than average
+Branch clintonb/docker-devstack-idas moved away from main with 1736 days, 569.4543378995434 more than average
+Branch clintonb/edxapp-docker-devstack moved away from main with 1786 days, 619.4543378995434 more than average
+Branch cms-base-defaults moved away from main with 2267 days, 1100.4543378995434 more than average
+Branch comprehensive-theming-compatibility-edx moved away from main with 2304 days, 1137.4543378995434 more than average
+Branch comprehensive-theming-default moved away from main with 2304 days, 1137.4543378995434 more than average
+Branch derf/DEVOPS-3450_add_CONTACT_MAILING_ADDRESS_setting moved away from main with 2275 days, 1108.4543378995434 more than average
+Branch derf/add_discovery_to_sandboxes moved away from main with 1618 days, 451.45433789954336 more than average
+Branch derf/eucalyptus-abbey-updates moved away from main with 1870 days, 703.4543378995434 more than average
+Branch derf/increase_sshd_security moved away from main with 1743 days, 576.4543378995434 more than average
+Branch derf/lets-encrypt moved away from main with 1967 days, 800.4543378995434 more than average
+Branch derf/mcka_ficus moved away from main with 1646 days, 479.45433789954336 more than average
+Branch derf/symlink_pip moved away from main with 2059 days, 892.4543378995434 more than average
+Branch django18-support moved away from main with 2323 days, 1156.4543378995434 more than average
+Branch dropdown-field moved away from main with 2332 days, 1165.4543378995434 more than average
+Branch dsjen/bump-analytics-api moved away from main with 1678 days, 511.45433789954336 more than average
+Branch e0d/common-refactor-hackathon moved away from main with 2353 days, 1186.4543378995434 more than average
+Branch e0d/docker-cleanup moved away from main with 2281 days, 1114.4543378995434 more than average
+Branch e0d/dockerfile-improvements moved away from main with 2352 days, 1185.4543378995434 more than average
+Branch e0d/faster-provision moved away from main with 1856 days, 689.4543378995434 more than average
+Branch e0d/fix-heartbeat moved away from main with 2268 days, 1101.4543378995434 more than average
+Branch e0d/fix-xqueue moved away from main with 2271 days, 1104.4543378995434 more than average
+Branch e0d/hack2015/docker moved away from main with 2353 days, 1186.4543378995434 more than average
+Branch e0d/har-hacking moved away from main with 2181 days, 1014.4543378995434 more than average
+Branch e0d/harstorage-fixes moved away from main with 2179 days, 1012.4543378995434 more than average
+Branch e0d/more-aws moved away from main with 2352 days, 1185.4543378995434 more than average
+Branch e0d/override-instance moved away from main with 2114 days, 947.4543378995434 more than average
+Branch e0d/remove-swap moved away from main with 2288 days, 1121.4543378995434 more than average
+Branch e0d/test-targets-tests moved away from main with 2116 days, 949.4543378995434 more than average
+Branch edx-edge-theme moved away from main with 2297 days, 1130.4543378995434 more than average
+Branch estute/HRIS-233 moved away from main with 1226 days, 59.45433789954336 more than average
+Branch estute/HRIS-246 moved away from main with 1220 days, 53.45433789954336 more than average
+Branch estute/TE-2563 moved away from main with 1319 days, 152.45433789954336 more than average
+Branch estute/TE-2603 moved away from main with 1365 days, 198.45433789954336 more than average
+Branch estute/TE-2618 moved away from main with 1349 days, 182.45433789954336 more than average
+Branch estute/TE-2651 moved away from main with 1317 days, 150.45433789954336 more than average
+Branch estute/TE-2678 moved away from main with 1295 days, 128.45433789954336 more than average
+Branch estute/TE-2698 moved away from main with 1309 days, 142.45433789954336 more than average
+Branch estute/add-a11y-test-to-packer-script moved away from main with 1750 days, 583.4543378995434 more than average
+Branch estute/add-android-label-to-jenkins-container moved away from main with 1316 days, 149.45433789954336 more than average
+Branch estute/add-key-to-other-packer-jobs moved away from main with 1577 days, 410.45433789954336 more than average
+Branch estute/add-play-for-android-sdk moved away from main with 1315 days, 148.45433789954336 more than average
+Branch estute/cache-npm-packages-for-jenkins-workers moved away from main with 1283 days, 116.45433789954336 more than average
+Branch estute/cherry-pick-npm-cache-loading moved away from main with 1273 days, 106.45433789954336 more than average
+Branch estute/cherrypick-packer-xenial-script moved away from main with 1850 days, 683.4543378995434 more than average
+Branch estute/create-android-worker-ubuntu-16 moved away from main with 2046 days, 879.4543378995434 more than average
+Branch estute/debug-jenkins-key-failure moved away from main with 1392 days, 225.45433789954336 more than average
+Branch estute/define-plugins-for-build-jenkins moved away from main with 1722 days, 555.4543378995434 more than average
+Branch estute/enable-rpc-stat-service moved away from main with 1869 days, 702.4543378995434 more than average
+Branch estute/fix-dev-jenkins-container-permissions moved away from main with 1277 days, 110.45433789954336 more than average
+Branch estute/fix-ff-test moved away from main with 1848 days, 681.4543378995434 more than average
+Branch estute/install-chromium-for-lettuce-testing moved away from main with 1882 days, 715.4543378995434 more than average
+Branch estute/jenkins-container-local-security-config moved away from main with 1353 days, 186.45433789954336 more than average
+Branch estute/load-credentials-on-it-jenkins moved away from main with 1212 days, 45.45433789954336 more than average
+Branch estute/pin-google-chrome-v56 moved away from main with 1879 days, 712.4543378995434 more than average
+Branch estute/poc-spigot-server moved away from main with 1835 days, 668.4543378995434 more than average
+Branch estute/reduce-build-jenkins-instance-cap moved away from main with 1620 days, 453.45433789954336 more than average
+Branch estute/remove-job-config-history-script moved away from main with 1357 days, 190.45433789954336 more than average
+Branch estute/test-google-chrome-beta moved away from main with 1884 days, 717.4543378995434 more than average
+Branch estute/testing-packer-scripts moved away from main with 1884 days, 717.4543378995434 more than average
+Branch estute/update-jenkins-build-container moved away from main with 1316 days, 149.45433789954336 more than average
+Branch experimental/pypy moved away from main with 2157 days, 990.4543378995434 more than average
+Branch feanil/django_1.8_branch moved away from main with 2319 days, 1152.4543378995434 more than average
+Branch feanil/downgrade_ansible moved away from main with 1710 days, 543.4543378995434 more than average
+Branch feanil/edxapp_16.04_ami moved away from main with 1960 days, 793.4543378995434 more than average
+Branch feanil/mysql_edxlocal moved away from main with 2151 days, 984.4543378995434 more than average
+Branch feanil/open-craft-mtyaka/optional-aws-opencraft-roles moved away from main with 1882 days, 715.4543378995434 more than average
+Branch feanil/pipline_hackathon moved away from main with 2099 days, 932.4543378995434 more than average
+Branch feanil/update-mckinsey-release moved away from main with 1728 days, 561.4543378995434 more than average
+Branch gabe/fix-analyticstack-rename moved away from main with 1854 days, 687.4543378995434 more than average
+Branch gbabey/portal moved away from main with 1366 days, 199.45433789954336 more than average
+Branch george/install-course-discovery-image moved away from main with 1911 days, 744.4543378995434 more than average
+Branch george/xenial-devstack-ff42 moved away from main with 1925 days, 758.4543378995434 more than average
+Branch hack2015/e0d/add-consul moved away from main with 2324 days, 1157.4543378995434 more than average
+Branch hack2015/gabe/analytics-hadoop moved away from main with 2253 days, 1086.4543378995434 more than average
+Branch ibrahimahmed443/es-update moved away from main with 1618 days, 451.45433789954336 more than average
+Branch ibrahimahmed443/sandbox-test-branch moved away from main with 1519 days, 352.45433789954336 more than average
+Branch ibrahimahmed443/test moved away from main with 1445 days, 278.45433789954336 more than average
+Branch jdmulloy/jill_merge_2017_12_18 moved away from main with 1557 days, 390.45433789954336 more than average
+Branch jdmulloy/nadeem/OPS2489 moved away from main with 1566 days, 399.45433789954336 more than average
+Branch jdmulloy/oc/jill/edxapp-mongo-replica-set moved away from main with 1561 days, 394.45433789954336 more than average
+Branch jdmulloy/oc/mtyaka/custom-error-pages moved away from main with 1325 days, 158.45433789954336 more than average
+Branch jdmulloy/open-craft/adam/maintenance-pages-master moved away from main with 1359 days, 192.45433789954336 more than average
+Branch jdmulloy/open-craft/bdero/fallback-dns moved away from main with 1645 days, 478.45433789954336 more than average
+Branch jdmulloy/rabbit_typo moved away from main with 1598 days, 431.45433789954336 more than average
+Branch jdmulloy/redis_monitoring_discovery moved away from main with 1568 days, 401.45433789954336 more than average
+Branch jdmulloy/update_mong_rs moved away from main with 1561 days, 394.45433789954336 more than average
+Branch jibsheet/ansible-provision-AWS-creds moved away from main with 2044 days, 877.4543378995434 more than average
+Branch jibsheet/backwards-compatible-minos moved away from main with 2080 days, 913.4543378995434 more than average
+Branch jibsheet/dear-ansible-wat moved away from main with 1714 days, 547.4543378995434 more than average
+Branch jibsheet/extra-git-debugging moved away from main with 2005 days, 838.4543378995434 more than average
+Branch jibsheet/force-reinstall-minos moved away from main with 1799 days, 632.4543378995434 more than average
+Branch jibsheet/mongo-log-collection-stats moved away from main with 2213 days, 1046.4543378995434 more than average
+Branch jibsheet/more-ansible-vs moved away from main with 2024 days, 857.4543378995434 more than average
+Branch jibsheet/verbose moved away from main with 1800 days, 633.4543378995434 more than average
+Branch jibsheet/wat-mysql moved away from main with 1955 days, 788.4543378995434 more than average
+Branch jmbowman/PLAT-1590 moved away from main with 1693 days, 526.4543378995434 more than average
+Branch jmyatt/fix-enrollment-api-config-var moved away from main with 1276 days, 109.45433789954336 more than average
+Branch jmyatt/fix-vars-for-build-and-runtime-api-calls moved away from main with 1275 days, 108.45433789954336 more than average
+Branch jsa/test-manifest moved away from main with 2200 days, 1033.4543378995434 more than average
+Branch loadtest moved away from main with 1224 days, 57.45433789954336 more than average
+Branch loadtest-analyticsapi moved away from main with 1371 days, 204.45433789954336 more than average
+Branch loadtest-credentials moved away from main with 1379 days, 212.45433789954336 more than average
+Branch loadtest-discovery moved away from main with 1371 days, 204.45433789954336 more than average
+Branch loadtest-ecommerce moved away from main with 1224 days, 57.45433789954336 more than average
+Branch loadtest-ecomworker moved away from main with 1371 days, 204.45433789954336 more than average
+Branch loadtest-forum moved away from main with 1186 days, 19.45433789954336 more than average
+Branch loadtest-insights moved away from main with 1379 days, 212.45433789954336 more than average
+Branch loadtest-journals moved away from main with 1330 days, 163.45433789954336 more than average
+Branch loadtest-notes moved away from main with 1379 days, 212.45433789954336 more than average
+Branch loadtest-prospectus moved away from main with 1283 days, 116.45433789954336 more than average
+Branch loadtest-xqueue moved away from main with 1371 days, 204.45433789954336 more than average
+Branch loadtest-xserver moved away from main with 1172 days, 5.454337899543361 more than average
+Branch max/credentials-custom-s3-backend moved away from main with 2222 days, 1055.4543378995434 more than average
+Branch max/debug-abbey moved away from main with 2156 days, 989.4543378995434 more than average
+Branch max/idempotent-mongodb-cluster-config moved away from main with 2289 days, 1122.4543378995434 more than average
+Branch max/refactor-edxapp-env moved away from main with 2343 days, 1176.4543378995434 more than average
+Branch max/xqwatcher-testing moved away from main with 2051 days, 884.4543378995434 more than average
+Branch mckinsey-ficus moved away from main with 1534 days, 367.45433789954336 more than average
+Branch mckinsey-ginko moved away from main with 1296 days, 129.45433789954336 more than average
+Branch michael/testing moved away from main with 2051 days, 884.4543378995434 more than average
+Branch michael/travis moved away from main with 2060 days, 893.4543378995434 more than average
+Branch mikix/complexity-rollback moved away from main with 1464 days, 297.45433789954336 more than average
+Branch mikix/password-test moved away from main with 1477 days, 310.45433789954336 more than average
+Branch mjfrey/config-test moved away from main with 2058 days, 891.4543378995434 more than average
+Branch mjfrey/test moved away from main with 1828 days, 661.4543378995434 more than average
+Branch mrehan/experiment-with-rate-limiting moved away from main with 2211 days, 1044.4543378995434 more than average
+Branch mroytman/test-webhooks moved away from main with 1686 days, 519.4543378995434 more than average
+Branch naa/monitor-grade-reports-on-stage moved away from main with 1632 days, 465.45433789954336 more than average
+Branch named-release/birch.rc moved away from main with 2424 days, 1257.4543378995434 more than average
+Branch named-release/birch/rc moved away from main with 2585 days, 1418.4543378995434 more than average
+Branch named-release/cypress.rc moved away from main with 2415 days, 1248.4543378995434 more than average
+Branch named-release/dogwood.rc moved away from main with 2051 days, 884.4543378995434 more than average
+Branch noraiz/EDUCATOR-3074 moved away from main with 1329 days, 162.45433789954336 more than average
+Branch open-release/eucalyptus.master moved away from main with 1874 days, 707.4543378995434 more than average
+Branch open-release/ficus.master moved away from main with 1606 days, 439.45433789954336 more than average
+Branch open-release/hawthorn.beta1 moved away from main with 1434 days, 267.45433789954336 more than average
+Branch openedx-releases/cypress-develop moved away from main with 2373 days, 1206.4543378995434 more than average
+Branch platform/update-forums-to-ruby23-coordinated moved away from main with 2051 days, 884.4543378995434 more than average
+Branch pwnage101/changes-for-running-build-jenkins-locally moved away from main with 1458 days, 291.45433789954336 more than average
+Branch pwnage101/jenkins-build-update-job-dsl-plugin moved away from main with 1442 days, 275.45433789954336 more than average
+Branch revert-2566-arbab/ops-241 moved away from main with 2276 days, 1109.4543378995434 more than average
+Branch revert-2660-arbab/modified-user-role moved away from main with 2271 days, 1104.4543378995434 more than average
+Branch robrap/ARCH-275-update-jwt-issuers moved away from main with 1226 days, 59.45433789954336 more than average
+Branch robrap/use-safer-clean moved away from main with 1835 days, 668.4543378995434 more than average
+Branch roux/rollback moved away from main with 1392 days, 225.45433789954336 more than average
+Branch saleem-latif/MAYN-198-permission-issue moved away from main with 2144 days, 977.4543378995434 more than average
+Branch saleem-latif/SOL-1789 moved away from main with 2004 days, 837.4543378995434 more than average
+Branch saleem-latif/WL-300 moved away from main with 2079 days, 912.4543378995434 more than average
+Branch shrlyhe/ENT-433 moved away from main with 1716 days, 549.4543378995434 more than average
+Branch shrlyhe/ENT-574 moved away from main with 1679 days, 512.4543378995434 more than average
+Branch shrlyhe/pre-reg-fix moved away from main with 1687 days, 520.4543378995434 more than average
+Branch thallada/vagrant-analytics-fix moved away from main with 2038 days, 871.4543378995434 more than average
+Branch tuchfarber/journal_post_migrate moved away from main with 1409 days, 242.45433789954336 more than average
+Branch update-cache-numbers moved away from main with 1717 days, 550.4543378995434 more than average
+Branch whitelabel/journal moved away from main with 1333 days, 166.45433789954336 more than average
+Branch youngstrom/pipelines moved away from main with 1511 days, 344.45433789954336 more than average
+Branch youngstrom/testing moved away from main with 1204 days, 37.45433789954336 more than average
+Branch zafft/jenkins_data_eng_retain_openedx_role moved away from main with 1269 days, 102.45433789954336 more than average
+Branch zafft/jenkins_data_engineering moved away from main with 1288 days, 121.45433789954336 more than average
+Branch ziafazal/added-AGGREGATION_EXCLUDE_ROLES moved away from main with 1617 days, 450.45433789954336 more than average
+Branch zoldak/PERF-186 moved away from main with 2247 days, 1080.4543378995434 more than average
+Branch zoldak/ansible-timing moved away from main with 2067 days, 900.4543378995434 more than average
+Branch zoldak/ansible-timing-2 moved away from main with 2064 days, 897.4543378995434 more than average
+Branch zoldak/easier-packer-troubleshooting moved away from main with 1568 days, 401.45433789954336 more than average
+Branch zoldak/optimize-flow-workers moved away from main with 1569 days, 402.45433789954336 more than average
+Branch zoldak/troubleshooting moved away from main with 1563 days, 396.45433789954336 more than average
+MEDIUM SEVERITY
+Branch JoyceZhu/add_ecommerce_payment_support_email, 2066 days
+Branch andya/move-edxmako, 1994 days
+Branch appneta-OPS1096, 2163 days
+Branch arbab/testing, 2097 days
+Branch arbab/xqueue-tmp-fix, 2156 days
+Branch awais786/ECOM-6770-contact-us-email, 1900 days
+Branch awais786/revert-ECOM-6262-images-s3-issue, 1969 days
+Branch bbeggs/cd-build-pipeline, 2178 days
+Branch bbeggs/fix_insights, 2012 days
+Branch bbeggs/go-agent-pip3, 1876 days
+Branch bbeggs/go-agent-test, 2156 days
+Branch bbeggs/gocd-test, 2163 days
+Branch bbeggs/update-go-agent, 1877 days
+Branch bbeggs/virtualenv, 2163 days
+Branch bd/cd-jwt, 2150 days
+Branch bdero/aws-before-edxapp, 1812 days
+Branch bdero/opencraft-rabbitmq-vhost-config, 1952 days
+Branch bderusha/asymmetric-jwt, 2157 days
+Branch benp/chrome-48, 2161 days
+Branch benp/chrome-hangs-fix, 1844 days
+Branch benp/fix-prereqs-install, 2248 days
+Branch benp/more-details-build-server, 2353 days
+Branch benp/revert-2566, 2276 days
+Branch benp/sitespeed-fix, 2353 days
+Branch benp/skip-tests-packer, 2353 days
+Branch benp/triage-issue, 2367 days
+Branch benp/try-2317, 2334 days
+Branch benp/update-simple, 2294 days
+Branch benp/upgrade_python_rebase, 2332 days
+Branch benp/upgrade-firefox, 2293 days
+Branch cale/harprofiler, 2214 days
+Branch cale/timer-logging-debug, 1956 days
+Branch cdyer/uninstall-python-packages, 2180 days
+Branch cms-base-defaults, 2267 days
+Branch comprehensive-theming-compatibility-edx, 2304 days
+Branch comprehensive-theming-default, 2304 days
+Branch derf/DEVOPS-3450_add_CONTACT_MAILING_ADDRESS_setting, 2275 days
+Branch derf/eucalyptus-abbey-updates, 1870 days
+Branch derf/lets-encrypt, 1967 days
+Branch derf/symlink_pip, 2059 days
+Branch django18-support, 2323 days
+Branch dropdown-field, 2332 days
+Branch e0d/common-refactor-hackathon, 2353 days
+Branch e0d/docker-cleanup, 2281 days
+Branch e0d/dockerfile-improvements, 2352 days
+Branch e0d/faster-provision, 1856 days
+Branch e0d/fix-heartbeat, 2268 days
+Branch e0d/fix-xqueue, 2271 days
+Branch e0d/hack2015/docker, 2353 days
+Branch e0d/har-hacking, 2181 days
+Branch e0d/harstorage-fixes, 2179 days
+Branch e0d/more-aws, 2352 days
+Branch e0d/override-instance, 2114 days
+Branch e0d/remove-swap, 2288 days
+Branch e0d/test-targets-tests, 2116 days
+Branch edx-edge-theme, 2297 days
+Branch estute/cherrypick-packer-xenial-script, 1850 days
+Branch estute/create-android-worker-ubuntu-16, 2046 days
+Branch estute/enable-rpc-stat-service, 1869 days
+Branch estute/fix-ff-test, 1848 days
+Branch estute/install-chromium-for-lettuce-testing, 1882 days
+Branch estute/pin-google-chrome-v56, 1879 days
+Branch estute/poc-spigot-server, 1835 days
+Branch estute/test-google-chrome-beta, 1884 days
+Branch estute/testing-packer-scripts, 1884 days
+Branch experimental/pypy, 2157 days
+Branch feanil/django_1.8_branch, 2319 days
+Branch feanil/edxapp_16.04_ami, 1960 days
+Branch feanil/mysql_edxlocal, 2151 days
+Branch feanil/open-craft-mtyaka/optional-aws-opencraft-roles, 1882 days
+Branch feanil/pipline_hackathon, 2099 days
+Branch gabe/fix-analyticstack-rename, 1854 days
+Branch george/install-course-discovery-image, 1911 days
+Branch george/xenial-devstack-ff42, 1925 days
+Branch hack2015/e0d/add-consul, 2324 days
+Branch hack2015/gabe/analytics-hadoop, 2253 days
+Branch jibsheet/ansible-provision-AWS-creds, 2044 days
+Branch jibsheet/backwards-compatible-minos, 2080 days
+Branch jibsheet/extra-git-debugging, 2005 days
+Branch jibsheet/mongo-log-collection-stats, 2213 days
+Branch jibsheet/more-ansible-vs, 2024 days
+Branch jibsheet/wat-mysql, 1955 days
+Branch jsa/test-manifest, 2200 days
+Branch max/credentials-custom-s3-backend, 2222 days
+Branch max/debug-abbey, 2156 days
+Branch max/idempotent-mongodb-cluster-config, 2289 days
+Branch max/refactor-edxapp-env, 2343 days
+Branch max/xqwatcher-testing, 2051 days
+Branch michael/testing, 2051 days
+Branch michael/travis, 2060 days
+Branch mjfrey/config-test, 2058 days
+Branch mjfrey/test, 1828 days
+Branch mrehan/experiment-with-rate-limiting, 2211 days
+Branch named-release/birch.rc, 2424 days
+Branch named-release/birch/rc, 2585 days
+Branch named-release/cypress.rc, 2415 days
+Branch named-release/dogwood.rc, 2051 days
+Branch open-release/eucalyptus.master, 1874 days
+Branch openedx-releases/cypress-develop, 2373 days
+Branch platform/update-forums-to-ruby23-coordinated, 2051 days
+Branch revert-2566-arbab/ops-241, 2276 days
+Branch revert-2660-arbab/modified-user-role, 2271 days
+Branch robrap/use-safer-clean, 1835 days
+Branch saleem-latif/MAYN-198-permission-issue, 2144 days
+Branch saleem-latif/SOL-1789, 2004 days
+Branch saleem-latif/WL-300, 2079 days
+Branch thallada/vagrant-analytics-fix, 2038 days
+Branch zoldak/PERF-186, 2247 days
+Branch zoldak/ansible-timing, 2067 days
+Branch zoldak/ansible-timing-2, 2064 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 3.9474885844748857 days
+Branch nadeem/update_mongo_agent is unsynced with 1329 days, 1325.052511415525 more thanaverage
+Branch named-release/dogwood.rc is unsynced with 232 days, 228.05251141552512 more thanaverage
+Branch open-release/ficus.master is unsynced with 270 days, 266.0525114155251 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch asadiqbal08/ENT-322, 1 daysBranch diana/remove-nodeenv-prospetus, 2 daysBranch nadeem/update_mongo_agent, 1329 daysBranch named-release/dogwood.rc, 232 daysBranch open-release/ficus.master, 270 days

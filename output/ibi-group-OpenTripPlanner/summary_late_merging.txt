@@ -1,0 +1,71 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 374.2926829268293 days
+Branch 2019-05-23 moved away from main with 958 days, 583.7073170731708 more than average
+Branch add-agency-id-to-route-short moved away from main with 515 days, 140.7073170731707 more than average
+Branch add-route-sort-order moved away from main with 959 days, 584.7073170731708 more than average
+Branch assign-feed-id-alphabetically moved away from main with 757 days, 382.7073170731707 more than average
+Branch bike-gbfs-url-fix-more-tolerant moved away from main with 823 days, 448.7073170731707 more than average
+Branch bike-rental-edge-split-refactor moved away from main with 865 days, 490.7073170731707 more than average
+Branch camsys-mta-master moved away from main with 574 days, 199.7073170731707 more than average
+Branch dev1x-catch-interpolation-exceptions moved away from main with 628 days, 253.7073170731707 more than average
+Branch dev-1.x moved away from main with 761 days, 386.7073170731707 more than average
+Branch dev-1.x-no-boarding-stop-transfer-fix moved away from main with 671 days, 296.7073170731707 more than average
+Branch drag-as-request-option moved away from main with 811 days, 436.7073170731707 more than average
+Branch edges-with-feed-id moved away from main with 672 days, 297.7073170731707 more than average
+Branch gbfs-tolerance-fixes moved away from main with 860 days, 485.7073170731707 more than average
+Branch make-feed-id-deterministic moved away from main with 619 days, 244.7073170731707 more than average
+Branch make-feed-id-deterministic-eas moved away from main with 544 days, 169.7073170731707 more than average
+Branch master moved away from main with 1029 days, 654.7073170731708 more than average
+Branch mbta-master moved away from main with 574 days, 199.7073170731707 more than average
+Branch micromobility-turn-cost-refactor moved away from main with 992 days, 617.7073170731708 more than average
+Branch osm-progress-logging moved away from main with 522 days, 147.7073170731707 more than average
+Branch pdx-fares moved away from main with 958 days, 583.7073170731708 more than average
+Branch planned-way-filter-dev-1x moved away from main with 565 days, 190.7073170731707 more than average
+Branch realtime-tests moved away from main with 531 days, 156.7073170731707 more than average
+Branch retry-turn-restrictions-while-walking-biking moved away from main with 915 days, 540.7073170731708 more than average
+Branch same-gps-stop-transfer-fix moved away from main with 881 days, 506.7073170731707 more than average
+Branch single-thread-elevation-optimization moved away from main with 669 days, 294.7073170731707 more than average
+Branch snapping-fixes moved away from main with 1001 days, 626.7073170731708 more than average
+Branch splitter-refactor moved away from main with 865 days, 490.7073170731707 more than average
+Branch temp-unmerged-branches moved away from main with 544 days, 169.7073170731707 more than average
+Branch tnc-api-failure-tolerance moved away from main with 965 days, 590.7073170731708 more than average
+Branch tnc-improvements moved away from main with 742 days, 367.7073170731707 more than average
+Branch transportation-network-company-routing moved away from main with 802 days, 427.7073170731707 more than average
+Branch trimet-dev moved away from main with 852 days, 477.7073170731707 more than average
+Branch walk-comfort moved away from main with 1006 days, 631.7073170731708 more than average
+Branch waypropertyset-optimization moved away from main with 524 days, 149.7073170731707 more than average
+Branch waypropertyset-optimization-dev1x moved away from main with 524 days, 149.7073170731707 more than average
+MEDIUM SEVERITY
+Branch 2019-05-23, 958 days
+Branch add-route-sort-order, 959 days
+Branch assign-feed-id-alphabetically, 757 days
+Branch bike-gbfs-url-fix-more-tolerant, 823 days
+Branch bike-rental-edge-split-refactor, 865 days
+Branch dev-1.x, 761 days
+Branch drag-as-request-option, 811 days
+Branch edges-with-feed-id, 672 days
+Branch gbfs-tolerance-fixes, 860 days
+Branch master, 1029 days
+Branch micromobility-turn-cost-refactor, 992 days
+Branch pdx-fares, 958 days
+Branch retry-turn-restrictions-while-walking-biking, 915 days
+Branch same-gps-stop-transfer-fix, 881 days
+Branch snapping-fixes, 1001 days
+Branch splitter-refactor, 865 days
+Branch tnc-api-failure-tolerance, 965 days
+Branch tnc-improvements, 742 days
+Branch transportation-network-company-routing, 802 days
+Branch trimet-dev, 852 days
+Branch walk-comfort, 1006 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

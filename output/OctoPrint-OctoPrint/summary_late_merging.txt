@@ -1,0 +1,55 @@
+Missed Activity
+=========================
+Branch meta/fix-4160 has 287 days of missed activity!
+Branch meta/issue-bundle-reminder has 146 days of missed activity!
+Branch meta/rephrase-bundle-reminder has 146 days of missed activity!
+MEDIUM SEVERITY
+Branch meta/fix-4160, None seconds
+Branch meta/issue-bundle-reminder, None seconds
+Branch meta/rephrase-bundle-reminder, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 778.0434782608696 days
+Branch commRefactoring moved away from main with 2650 days, 1871.9565217391305 more than average
+Branch commRefactoring-commandTracking moved away from main with 2638 days, 1859.9565217391305 more than average
+Branch dev/cR_connectionProfiles moved away from main with 1020 days, 241.95652173913038 more than average
+Branch dev/reloadGcodeViewUponProfileChange moved away from main with 2662 days, 1883.9565217391305 more than average
+Branch fix/betterPluginDependencyTracking moved away from main with 1721 days, 942.9565217391304 more than average
+Branch improve/blockingHeatupDetection moved away from main with 1238 days, 459.9565217391304 more than average
+Branch improve/commUnitTests moved away from main with 2198 days, 1419.9565217391305 more than average
+Branch improve/serverSideSessions moved away from main with 1727 days, 948.9565217391304 more than average
+MEDIUM SEVERITY
+Branch commRefactoring, 2650 days
+Branch commRefactoring-commandTracking, 2638 days
+Branch dev/reloadGcodeViewUponProfileChange, 2662 days
+Branch fix/betterPluginDependencyTracking, 1721 days
+Branch improve/commUnitTests, 2198 days
+Branch improve/serverSideSessions, 1727 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: -0.13043478260869565 days
+Branch bug/issue_4115 is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch commRefactoring is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch commRefactoring-commandTracking is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch dev/cR_connectionProfiles is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch dev/commRefactoringNG is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch dev/reloadGcodeViewUponProfileChange is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch devel is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch fix/betterPluginDependencyTracking is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch fix/issue-4216 is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch improve/blockingHeatupDetection is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch improve/commUnitTests is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch improve/port_detection_refactoring is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch improve/serverSideSessions is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch maintenance is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch master is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch rc/devel is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch rc/maintenance is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch staging/bugfix is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch staging/devel is unsynced with 0 days, 0.13043478260869565 more thanaverage
+Branch staging/maintenance is unsynced with 0 days, 0.13043478260869565 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

@@ -1,0 +1,73 @@
+Missed Activity
+=========================
+Branch channel_send_signal has 41 days of missed activity!
+Branch client_handshake_timeout has 34 days of missed activity!
+Branch fingerprint_sha256 has 41 days of missed activity!
+Branch gssapi_cleanup has 27 days of missed activity!
+Branch key_eq_none has 10 days of missed activity!
+Branch packet_debug_fixup has 9 days of missed activity!
+Branch pkey_hash_str has 38 days of missed activity!
+Branch use_poll_v2 has 26 days of missed activity!
+MEDIUM SEVERITY
+Branch channel_send_signal, None seconds
+Branch client_handshake_timeout, None seconds
+Branch fingerprint_sha256, None seconds
+Branch gssapi_cleanup, None seconds
+Branch key_eq_none, None seconds
+Branch packet_debug_fixup, None seconds
+Branch pkey_hash_str, None seconds
+Branch use_poll_v2, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 295.72727272727275 days
+Branch 2.1 moved away from main with 1215 days, 919.2727272727273 more than average
+Branch 2.2 moved away from main with 1215 days, 919.2727272727273 more than average
+Branch 2.3 moved away from main with 1215 days, 919.2727272727273 more than average
+Branch 2.4 moved away from main with 1215 days, 919.2727272727273 more than average
+Branch fix_pkey_comment_upstream moved away from main with 726 days, 430.27272727272725 more than average
+Branch fix_pkey_type_check_upstream moved away from main with 506 days, 210.27272727272725 more than average
+Branch gh-pages moved away from main with 655 days, 359.27272727272725 more than average
+Branch rsa_sha2 moved away from main with 670 days, 374.27272727272725 more than average
+Branch transport_badhostkey_upstream moved away from main with 929 days, 633.2727272727273 more than average
+Branch use_poll moved away from main with 930 days, 634.2727272727273 more than average
+MEDIUM SEVERITY
+Branch 2.1, 1215 days
+Branch 2.2, 1215 days
+Branch 2.3, 1215 days
+Branch 2.4, 1215 days
+Branch fix_pkey_comment_upstream, 726 days
+Branch rsa_sha2, 670 days
+Branch transport_badhostkey_upstream, 929 days
+Branch use_poll, 930 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: -0.2727272727272727 days
+Branch 2.1 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.2 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.3 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.4 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.5 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.6 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.7 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch 2.8 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch client_connect_kwonly is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch client_security_options is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch fix_pkey_comment_upstream is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch fix_pkey_type_check_upstream is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch gh-pages is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch key_eq_none_27 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch key_eq_none_28 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch master is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch packet_debug_fixup_28 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch prefer_etm is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch proxycommand_setsid is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch rm_generate_progress is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch rsa_sha2 is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch test_listdir_locale is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch transport_badhostkey_upstream is unsynced with 0 days, 0.2727272727272727 more thanaverage
+Branch use_poll is unsynced with 0 days, 0.2727272727272727 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

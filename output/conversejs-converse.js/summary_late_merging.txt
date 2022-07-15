@@ -1,0 +1,104 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 692.3432835820895 days
+Branch 0.6.x moved away from main with 3092 days, 2399.6567164179105 more than average
+Branch 0.7.x moved away from main with 2852 days, 2159.6567164179105 more than average
+Branch 1.0.x moved away from main with 1919 days, 1226.6567164179105 more than average
+Branch 2.0.x moved away from main with 1907 days, 1214.6567164179105 more than average
+Branch 3.0 moved away from main with 1934 days, 1241.6567164179105 more than average
+Branch 3.1.x moved away from main with 1757 days, 1064.6567164179105 more than average
+Branch 5.x.x moved away from main with 897 days, 204.6567164179105 more than average
+Branch 5.0.x moved away from main with 898 days, 205.6567164179105 more than average
+Branch 5.0.0-hotfix moved away from main with 995 days, 302.6567164179105 more than average
+Branch afuggini/make-nickname-great-again moved away from main with 709 days, 16.656716417910502 more than average
+Branch api-sendiq moved away from main with 1288 days, 595.6567164179105 more than average
+Branch appsettings moved away from main with 1435 days, 742.6567164179105 more than average
+Branch bookmarks-pep-node-settings moved away from main with 1233 days, 540.6567164179105 more than average
+Branch clearsession-options moved away from main with 952 days, 259.6567164179105 more than average
+Branch clickable-image-component moved away from main with 790 days, 97.6567164179105 more than average
+Branch componentized-nickname-form moved away from main with 709 days, 16.656716417910502 more than average
+Branch contenteditable moved away from main with 1075 days, 382.6567164179105 more than average
+Branch converse-chats moved away from main with 913 days, 220.6567164179105 more than average
+Branch converse-model-promise moved away from main with 1273 days, 580.6567164179105 more than average
+Branch cwpin moved away from main with 723 days, 30.656716417910502 more than average
+Branch declarative-chatroom-area moved away from main with 798 days, 105.6567164179105 more than average
+Branch henry/chat-pop moved away from main with 1001 days, 308.6567164179105 more than average
+Branch insert-message-profiling moved away from main with 1042 days, 349.6567164179105 more than average
+Branch jcbrand/lit-html-message-form moved away from main with 737 days, 44.6567164179105 more than average
+Branch jxt moved away from main with 917 days, 224.6567164179105 more than average
+Branch localforage moved away from main with 1124 days, 431.6567164179105 more than average
+Branch localforage-rebased moved away from main with 1167 days, 474.6567164179105 more than average
+Branch localforage-rebased2 moved away from main with 1167 days, 474.6567164179105 more than average
+Branch login-landing moved away from main with 1220 days, 527.6567164179105 more than average
+Branch mailbox moved away from main with 1269 days, 576.6567164179105 more than average
+Branch marker-updates moved away from main with 1177 days, 484.6567164179105 more than average
+Branch match-media moved away from main with 1436 days, 743.6567164179105 more than average
+Branch message_history_size moved away from main with 801 days, 108.6567164179105 more than average
+Branch messageSend moved away from main with 1010 days, 317.6567164179105 more than average
+Branch move-modals moved away from main with 720 days, 27.656716417910502 more than average
+Branch muc-session-connection-status moved away from main with 877 days, 184.6567164179105 more than average
+Branch multi-session-nicks moved away from main with 1324 days, 631.6567164179105 more than average
+Branch nickname-vdom moved away from main with 1106 days, 413.6567164179105 more than average
+Branch occupants-avatar moved away from main with 882 days, 189.6567164179105 more than average
+Branch omemo-improvements moved away from main with 1131 days, 438.6567164179105 more than average
+Branch production moved away from main with 1091 days, 398.6567164179105 more than average
+Branch rpin-2020-06-02 moved away from main with 701 days, 8.656716417910502 more than average
+Branch selenium moved away from main with 1500 days, 807.6567164179105 more than average
+Branch service-admin moved away from main with 839 days, 146.6567164179105 more than average
+Branch settings moved away from main with 764 days, 71.6567164179105 more than average
+Branch share-muc moved away from main with 1264 days, 571.6567164179105 more than average
+Branch smacks-received-msgs moved away from main with 806 days, 113.6567164179105 more than average
+Branch snapshot-2020-03-10 moved away from main with 786 days, 93.6567164179105 more than average
+Branch split-muc-views moved away from main with 1486 days, 793.6567164179105 more than average
+Branch tests-global-_converse moved away from main with 955 days, 262.6567164179105 more than average
+Branch unread-flag-only-on-message moved away from main with 716 days, 23.656716417910502 more than average
+Branch vcard-refactor moved away from main with 974 days, 281.6567164179105 more than average
+Branch wait-for-save moved away from main with 784 days, 91.6567164179105 more than average
+Branch webpack-tests moved away from main with 1230 days, 537.6567164179105 more than average
+Branch xep-0333 moved away from main with 1189 days, 496.6567164179105 more than average
+MEDIUM SEVERITY
+Branch 3.1.x, 1757 days
+Branch 5.0.0-hotfix, 995 days
+Branch api-sendiq, 1288 days
+Branch appsettings, 1435 days
+Branch bookmarks-pep-node-settings, 1233 days
+Branch clearsession-options, 952 days
+Branch contenteditable, 1075 days
+Branch converse-model-promise, 1273 days
+Branch henry/chat-pop, 1001 days
+Branch insert-message-profiling, 1042 days
+Branch localforage, 1124 days
+Branch localforage-rebased, 1167 days
+Branch localforage-rebased2, 1167 days
+Branch login-landing, 1220 days
+Branch mailbox, 1269 days
+Branch marker-updates, 1177 days
+Branch match-media, 1436 days
+Branch messageSend, 1010 days
+Branch multi-session-nicks, 1324 days
+Branch nickname-vdom, 1106 days
+Branch omemo-improvements, 1131 days
+Branch production, 1091 days
+Branch selenium, 1500 days
+Branch share-muc, 1264 days
+Branch split-muc-views, 1486 days
+Branch tests-global-_converse, 955 days
+Branch vcard-refactor, 974 days
+Branch webpack-tests, 1230 days
+Branch xep-0333, 1189 days
+HIGH SEVERITY
+Branch 0.6.x, 3092 days
+Branch 0.7.x, 2852 days
+Branch 1.0.x, 1919 days
+Branch 2.0.x, 1907 days
+Branch 3.0, 1934 days
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

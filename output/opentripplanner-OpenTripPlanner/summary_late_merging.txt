@@ -1,0 +1,142 @@
+Missed Activity
+=========================
+Branch add-lines has 2459 days of missed activity!
+Branch cluster-mods has 2661 days of missed activity!
+Branch gtfswrite has 2666 days of missed activity!
+Branch histograms has 2633 days of missed activity!
+Branch isochrones has 2494 days of missed activity!
+Branch issue894 has 3425 days of missed activity!
+Branch nyc-fare-bug has 2466 days of missed activity!
+Branch osmreaderfields has 2668 days of missed activity!
+Branch public-command-line-parameters has 2635 days of missed activity!
+Branch raptor-new has 2507 days of missed activity!
+Branch scenarios has 2459 days of missed activity!
+Branch serializable-routing-requests has 2635 days of missed activity!
+Branch summing has 2633 days of missed activity!
+Branch timezone has 2668 days of missed activity!
+Branch traffic has 2406 days of missed activity!
+MEDIUM SEVERITY
+Branch add-lines, None seconds
+Branch cluster-mods, None seconds
+Branch gtfswrite, None seconds
+Branch histograms, None seconds
+Branch isochrones, None seconds
+Branch issue894, None seconds
+Branch nyc-fare-bug, None seconds
+Branch osmreaderfields, None seconds
+Branch public-command-line-parameters, None seconds
+Branch raptor-new, None seconds
+Branch scenarios, None seconds
+Branch serializable-routing-requests, None seconds
+Branch summing, None seconds
+Branch timezone, None seconds
+Branch traffic, None seconds
+
+Branch Deviation
+=========================
+Average deviation: 1907.782258064516 days
+Branch 0.10.x moved away from main with 2555 days, 647.2177419354839 more than average
+Branch 0.11.x moved away from main with 2663 days, 755.2177419354839 more than average
+Branch 0.13.x moved away from main with 2578 days, 670.2177419354839 more than average
+Branch 0.19-nysdot moved away from main with 2162 days, 254.2177419354839 more than average
+Branch WeakHashMap moved away from main with 2677 days, 769.2177419354839 more than average
+Branch abyrdCompaction moved away from main with 2726 days, 818.2177419354839 more than average
+Branch add-lines moved away from main with 2466 days, 558.2177419354839 more than average
+Branch analystOperator moved away from main with 3430 days, 1522.217741935484 more than average
+Branch berlin-bike moved away from main with 3433 days, 1525.217741935484 more than average
+Branch bikeParking moved away from main with 3374 days, 1466.217741935484 more than average
+Branch brokerRedelivery moved away from main with 2437 days, 529.2177419354839 more than average
+Branch byte-packing moved away from main with 2701 days, 793.2177419354839 more than average
+Branch bytes moved away from main with 2701 days, 793.2177419354839 more than average
+Branch cars moved away from main with 3441 days, 1533.217741935484 more than average
+Branch cluster moved away from main with 2417 days, 509.2177419354839 more than average
+Branch cluster-mods moved away from main with 2661 days, 753.2177419354839 more than average
+Branch edgeUnwrap moved away from main with 3503 days, 1595.217741935484 more than average
+Branch faster-profile-routing moved away from main with 2542 days, 634.2177419354839 more than average
+Branch frequentize moved away from main with 2435 days, 527.2177419354839 more than average
+Branch gh-pages moved away from main with 3180 days, 1272.217741935484 more than average
+Branch gtfswrite moved away from main with 2670 days, 762.2177419354839 more than average
+Branch hackidf2030 moved away from main with 3227 days, 1319.217741935484 more than average
+Branch histograms moved away from main with 2634 days, 726.2177419354839 more than average
+Branch index_freq moved away from main with 3227 days, 1319.217741935484 more than average
+Branch isochrone-grid moved away from main with 2473 days, 565.2177419354839 more than average
+Branch isochrone-simplification moved away from main with 2437 days, 529.2177419354839 more than average
+Branch isochrones moved away from main with 2494 days, 586.2177419354839 more than average
+Branch issue894 moved away from main with 3426 days, 1518.217741935484 more than average
+Branch jersey_inject moved away from main with 3225 days, 1317.217741935484 more than average
+Branch leaflet-backbone moved away from main with 3417 days, 1509.217741935484 more than average
+Branch leaflet-ui moved away from main with 3229 days, 1321.217741935484 more than average
+Branch lessInterfaces moved away from main with 2684 days, 776.2177419354839 more than average
+Branch linbin moved away from main with 3507 days, 1599.217741935484 more than average
+Branch logback moved away from main with 3226 days, 1318.217741935484 more than average
+Branch longdistanceretry moved away from main with 2677 days, 769.2177419354839 more than average
+Branch merge_modules moved away from main with 3137 days, 1229.217741935484 more than average
+Branch new-graph moved away from main with 2400 days, 492.2177419354839 more than average
+Branch nyc-fare-bug moved away from main with 2466 days, 558.2177419354839 more than average
+Branch nyspeed moved away from main with 2666 days, 758.2177419354839 more than average
+Branch obaa moved away from main with 2705 days, 797.2177419354839 more than average
+Branch osm-linking moved away from main with 2525 days, 617.2177419354839 more than average
+Branch osmLoader moved away from main with 2532 days, 624.2177419354839 more than average
+Branch osmreaderfields moved away from main with 2669 days, 761.2177419354839 more than average
+Branch profile-propagation moved away from main with 2659 days, 751.2177419354839 more than average
+Branch profile-routing-distributions moved away from main with 2554 days, 646.2177419354839 more than average
+Branch public-command-line-parameters moved away from main with 2635 days, 727.2177419354839 more than average
+Branch raptor moved away from main with 3494 days, 1586.217741935484 more than average
+Branch raptor-new moved away from main with 2508 days, 600.2177419354839 more than average
+Branch removeHardcodedArrayLengths moved away from main with 2633 days, 725.2177419354839 more than average
+Branch rootbeer moved away from main with 3492 days, 1584.217741935484 more than average
+Branch scenarios moved away from main with 2479 days, 571.2177419354839 more than average
+Branch serializable-routing-requests moved away from main with 2654 days, 746.2177419354839 more than average
+Branch startMode moved away from main with 3270 days, 1362.217741935484 more than average
+Branch startSpotWorkers moved away from main with 2438 days, 530.2177419354839 more than average
+Branch summing moved away from main with 2634 days, 726.2177419354839 more than average
+Branch testFeedIds moved away from main with 2285 days, 377.2177419354839 more than average
+Branch thinRaptorWorkers moved away from main with 2524 days, 616.2177419354839 more than average
+Branch threadedHeuristic moved away from main with 3369 days, 1461.217741935484 more than average
+Branch timezone moved away from main with 2670 days, 762.2177419354839 more than average
+Branch traffic moved away from main with 2293 days, 385.2177419354839 more than average
+Branch transfer-rules moved away from main with 2425 days, 517.2177419354839 more than average
+Branch use-triptimes-subsets-for-modeify moved away from main with 2534 days, 626.2177419354839 more than average
+Branch vizdebugger moved away from main with 2788 days, 880.2177419354839 more than average
+Branch zmqUpdateStreamer moved away from main with 3320 days, 1412.217741935484 more than average
+MEDIUM SEVERITY
+Branch WeakHashMap, 2677 days
+Branch abyrdCompaction, 2726 days
+Branch analystOperator, 3430 days
+Branch berlin-bike, 3433 days
+Branch bikeParking, 3374 days
+Branch byte-packing, 2701 days
+Branch bytes, 2701 days
+Branch cars, 3441 days
+Branch edgeUnwrap, 3503 days
+Branch gh-pages, 3180 days
+Branch gtfswrite, 2670 days
+Branch hackidf2030, 3227 days
+Branch index_freq, 3227 days
+Branch issue894, 3426 days
+Branch jersey_inject, 3225 days
+Branch leaflet-backbone, 3417 days
+Branch leaflet-ui, 3229 days
+Branch lessInterfaces, 2684 days
+Branch linbin, 3507 days
+Branch logback, 3226 days
+Branch longdistanceretry, 2677 days
+Branch merge_modules, 3137 days
+Branch obaa, 2705 days
+Branch osmreaderfields, 2669 days
+Branch raptor, 3494 days
+Branch rootbeer, 3492 days
+Branch startMode, 3270 days
+Branch threadedHeuristic, 3369 days
+Branch timezone, 2670 days
+Branch vizdebugger, 2788 days
+Branch zmqUpdateStreamer, 3320 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.3951612903225806 days
+Branch traffic is unsynced with 113 days, 112.60483870967742 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY
+Branch traffic, 113 days

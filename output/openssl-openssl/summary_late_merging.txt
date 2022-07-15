@@ -1,0 +1,29 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 3185.5238095238096 days
+Branch OpenSSL_0_9_6-stable moved away from main with 6170 days, 2984.4761904761904 more than average
+Branch OpenSSL_0_9_7-stable moved away from main with 4918 days, 1732.4761904761904 more than average
+Branch OpenSSL_0_9_8fg-stable moved away from main with 5271 days, 2085.4761904761904 more than average
+Branch OpenSSL-engine-0_9_6-stable moved away from main with 6465 days, 3279.4761904761904 more than average
+Branch OpenSSL-fips2-0_9_7-stable moved away from main with 5509 days, 2323.4761904761904 more than average
+Branch OpenSSL-fips-0_9_7-stable moved away from main with 6532 days, 3346.4761904761904 more than average
+Branch OpenSSL-fips-0_9_8-stable moved away from main with 4700 days, 1514.4761904761904 more than average
+Branch OpenSSL-fips-1_2-stable moved away from main with 3834 days, 648.4761904761904 more than average
+Branch SSLeay moved away from main with 8495 days, 5309.476190476191 more than average
+MEDIUM SEVERITY
+Branch OpenSSL_0_9_6-stable, 6170 days
+Branch OpenSSL-engine-0_9_6-stable, 6465 days
+Branch OpenSSL-fips2-0_9_7-stable, 5509 days
+Branch OpenSSL-fips-0_9_7-stable, 6532 days
+Branch SSLeay, 8495 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

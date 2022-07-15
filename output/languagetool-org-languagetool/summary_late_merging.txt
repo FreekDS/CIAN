@@ -1,0 +1,191 @@
+Missed Activity
+=========================
+Branch SL-29 has 4 days of missed activity!
+Branch atd-verbs-collocation-rework has 907 days of missed activity!
+Branch de-case-exception has 906 days of missed activity!
+Branch de-christopher has 907 days of missed activity!
+Branch de-hm has 907 days of missed activity!
+Branch de-token has 906 days of missed activity!
+Branch dict-phrases has 38 days of missed activity!
+Branch en-better-suggestion-for-ys has 969 days of missed activity!
+Branch en-improvements has 906 days of missed activity!
+Branch en-polish-portuguese has 906 days of missed activity!
+Branch en-profanity has 906 days of missed activity!
+Branch en-rules-and-pos has 906 days of missed activity!
+Branch en-synthdict has 483 days of missed activity!
+Branch en-tokenizer has 389 days of missed activity!
+Branch es-wikipedia-rule has 890 days of missed activity!
+Branch filter-repeated-patterns has 115 days of missed activity!
+Branch fix-1808 has 957 days of missed activity!
+Branch fix-1809 has 957 days of missed activity!
+Branch fr-determiner-syn has 451 days of missed activity!
+Branch grpcWhitespace has 81 days of missed activity!
+Branch hydraleo-rule-ids has 40 days of missed activity!
+Branch improve-de-agreement has 890 days of missed activity!
+Branch jaumeortola-patch-1 has 308 days of missed activity!
+Branch log-cleanup has 81 days of missed activity!
+Branch log-format has 29 days of missed activity!
+Branch merchandize has 813 days of missed activity!
+Branch phrases has 54 days of missed activity!
+Branch pl-new-words has 896 days of missed activity!
+Branch pl-words has 908 days of missed activity!
+Branch pt-no-verb has 865 days of missed activity!
+Branch remote-rule-errors has 37 days of missed activity!
+Branch remote-rule-filter-regexp has 58 days of missed activity!
+Branch remoteRuleCircuitbreakerFix has 81 days of missed activity!
+Branch repeatedPattern has 95 days of missed activity!
+Branch resorting has 8 days of missed activity!
+Branch revert-2139-pt-no-verb has 865 days of missed activity!
+Branch ruleTransformer has 93 days of missed activity!
+Branch specificRuleIds has 150 days of missed activity!
+Branch sync-english-java has 29 days of missed activity!
+Branch tab-semicolon has 145 days of missed activity!
+Branch unify_apostrophe has 892 days of missed activity!
+Branch zws has 906 days of missed activity!
+MEDIUM SEVERITY
+Branch atd-verbs-collocation-rework, None seconds
+HIGH SEVERITY
+Branch de-case-exception, None seconds
+HIGH SEVERITY
+Branch de-christopher, None seconds
+HIGH SEVERITY
+Branch de-hm, None seconds
+HIGH SEVERITY
+Branch de-token, None seconds
+HIGH SEVERITY
+Branch en-better-suggestion-for-ys, None seconds
+HIGH SEVERITY
+Branch en-improvements, None seconds
+HIGH SEVERITY
+Branch en-polish-portuguese, None seconds
+HIGH SEVERITY
+Branch en-profanity, None seconds
+HIGH SEVERITY
+Branch en-rules-and-pos, None seconds
+HIGH SEVERITY
+Branch es-wikipedia-rule, None seconds
+HIGH SEVERITY
+Branch fix-1808, None seconds
+HIGH SEVERITY
+Branch fix-1809, None seconds
+HIGH SEVERITY
+Branch improve-de-agreement, None seconds
+HIGH SEVERITY
+Branch pl-new-words, None seconds
+HIGH SEVERITY
+Branch pl-words, None seconds
+HIGH SEVERITY
+Branch pt-no-verb, None seconds
+HIGH SEVERITY
+Branch revert-2139-pt-no-verb, None seconds
+HIGH SEVERITY
+Branch unify_apostrophe, None seconds
+HIGH SEVERITY
+Branch zws, None seconds
+HIGH SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 587.2 days
+Branch 7e38a72 moved away from main with 1659 days, 1071.8 more than average
+Branch atd-verbs-collocation-rework moved away from main with 907 days, 319.79999999999995 more than average
+Branch childish_language_exceptions moved away from main with 922 days, 334.79999999999995 more than average
+Branch confusion-rule moved away from main with 2524 days, 1936.8 more than average
+Branch de-case-exception moved away from main with 906 days, 318.79999999999995 more than average
+Branch de-christopher moved away from main with 907 days, 319.79999999999995 more than average
+Branch de-government moved away from main with 2571 days, 1983.8 more than average
+Branch de-hm moved away from main with 907 days, 319.79999999999995 more than average
+Branch de-token moved away from main with 906 days, 318.79999999999995 more than average
+Branch diff moved away from main with 841 days, 253.79999999999995 more than average
+Branch dl4j moved away from main with 2149 days, 1561.8 more than average
+Branch en-better-suggestion-for-ys moved away from main with 969 days, 381.79999999999995 more than average
+Branch en-improvements moved away from main with 907 days, 319.79999999999995 more than average
+Branch en-polish-portuguese moved away from main with 906 days, 318.79999999999995 more than average
+Branch en-profanity moved away from main with 906 days, 318.79999999999995 more than average
+Branch en-rules-and-pos moved away from main with 906 days, 318.79999999999995 more than average
+Branch es-wikipedia-rule moved away from main with 890 days, 302.79999999999995 more than average
+Branch fix-1808 moved away from main with 957 days, 369.79999999999995 more than average
+Branch fix-1809 moved away from main with 957 days, 369.79999999999995 more than average
+Branch forkjoinpool moved away from main with 1217 days, 629.8 more than average
+Branch fr-improvements moved away from main with 710 days, 122.79999999999995 more than average
+Branch fr-new-speller moved away from main with 630 days, 42.799999999999955 more than average
+Branch fr-tokenizer moved away from main with 654 days, 66.79999999999995 more than average
+Branch google-nnp moved away from main with 957 days, 369.79999999999995 more than average
+Branch hunspell-update moved away from main with 861 days, 273.79999999999995 more than average
+Branch improve-de-agreement moved away from main with 890 days, 302.79999999999995 more than average
+Branch lucene-update moved away from main with 892 days, 304.79999999999995 more than average
+Branch merchandize moved away from main with 813 days, 225.79999999999995 more than average
+Branch multilingual moved away from main with 1087 days, 499.79999999999995 more than average
+Branch ngram-lang-id moved away from main with 598 days, 10.799999999999955 more than average
+Branch pl-new-words moved away from main with 896 days, 308.79999999999995 more than average
+Branch pl-words moved away from main with 911 days, 323.79999999999995 more than average
+Branch pt-no-verb moved away from main with 869 days, 281.79999999999995 more than average
+Branch readable-pos-tags moved away from main with 2888 days, 2300.8 more than average
+Branch revert-2139-pt-no-verb moved away from main with 865 days, 277.79999999999995 more than average
+Branch unify_apostrophe moved away from main with 892 days, 304.79999999999995 more than average
+Branch webassembly moved away from main with 1184 days, 596.8 more than average
+Branch zws moved away from main with 906 days, 318.79999999999995 more than average
+MEDIUM SEVERITY
+Branch 7e38a72, 1659 days
+Branch atd-verbs-collocation-rework, 907 days
+Branch childish_language_exceptions, 922 days
+Branch de-christopher, 907 days
+Branch de-hm, 907 days
+Branch dl4j, 2149 days
+Branch en-better-suggestion-for-ys, 969 days
+Branch en-improvements, 907 days
+Branch fix-1808, 957 days
+Branch fix-1809, 957 days
+Branch forkjoinpool, 1217 days
+Branch google-nnp, 957 days
+Branch multilingual, 1087 days
+Branch pl-words, 911 days
+Branch webassembly, 1184 days
+HIGH SEVERITY
+Branch confusion-rule, 2524 days
+Branch de-government, 2571 days
+Branch readable-pos-tags, 2888 days
+
+Unsynced activity
+=========================
+Average unsynced: -0.85 days
+Branch 7e38a72 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-20 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-25 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-33 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-36 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-37 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-38 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-41 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-42 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-43 is unsynced with 0 days, 0.85 more thanaverage
+Branch SL-44 is unsynced with 0 days, 0.85 more thanaverage
+Branch add_deploy_snapshot_in_ci_script is unsynced with 0 days, 0.85 more thanaverage
+Branch childish_language_exceptions is unsynced with 0 days, 0.85 more thanaverage
+Branch confusion-rule is unsynced with 0 days, 0.85 more thanaverage
+Branch de-government is unsynced with 0 days, 0.85 more thanaverage
+Branch diff is unsynced with 0 days, 0.85 more thanaverage
+Branch dl4j is unsynced with 0 days, 0.85 more thanaverage
+Branch forkjoinpool is unsynced with 0 days, 0.85 more thanaverage
+Branch fr-improvements is unsynced with 0 days, 0.85 more thanaverage
+Branch fr-new-speller is unsynced with 0 days, 0.85 more thanaverage
+Branch fr-tokenizer is unsynced with 0 days, 0.85 more thanaverage
+Branch google-nnp is unsynced with 0 days, 0.85 more thanaverage
+Branch hunspell-update is unsynced with 0 days, 0.85 more thanaverage
+Branch issue-2738-case-sorting is unsynced with 0 days, 0.85 more thanaverage
+Branch long-sentence-rule is unsynced with 0 days, 0.85 more thanaverage
+Branch lucene-update is unsynced with 0 days, 0.85 more thanaverage
+Branch master is unsynced with 0 days, 0.85 more thanaverage
+Branch modularization-diff is unsynced with 0 days, 0.85 more thanaverage
+Branch multilingual is unsynced with 0 days, 0.85 more thanaverage
+Branch ngram-lang-id is unsynced with 0 days, 0.85 more thanaverage
+Branch readable-pos-tags is unsynced with 0 days, 0.85 more thanaverage
+Branch sent_end is unsynced with 0 days, 0.85 more thanaverage
+Branch threadPoolMonitoring is unsynced with 0 days, 0.85 more thanaverage
+Branch udomai-um-praepakk is unsynced with 0 days, 0.85 more thanaverage
+Branch v5.1.x-branch is unsynced with 0 days, 0.85 more thanaverage
+Branch v5.2.1-branch is unsynced with 0 days, 0.85 more thanaverage
+Branch v5.5.1 is unsynced with 0 days, 0.85 more thanaverage
+Branch webassembly is unsynced with 0 days, 0.85 more thanaverage
+MEDIUM SEVERITY
+HIGH SEVERITY

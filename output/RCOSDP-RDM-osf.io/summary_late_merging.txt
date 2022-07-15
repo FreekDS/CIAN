@@ -1,0 +1,298 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 796.603076923077 days
+Branch 0.25 moved away from main with 1115 days, 318.39692307692303 more than average
+Branch cos/master-w-coverage moved away from main with 1241 days, 444.39692307692303 more than average
+Branch def-ex moved away from main with 1097 days, 300.39692307692303 more than average
+Branch develop-backup moved away from main with 1819 days, 1022.396923076923 more than average
+Branch develop-backup-20181228 moved away from main with 1174 days, 377.39692307692303 more than average
+Branch develop-backup-20190610 moved away from main with 1097 days, 300.39692307692303 more than average
+Branch feature/Admin-Add-ons-control moved away from main with 1316 days, 519.396923076923 more than average
+Branch feature/add-contributor-201907 moved away from main with 932 days, 135.39692307692303 more than average
+Branch feature/aggregate-batch-processing moved away from main with 1042 days, 245.39692307692303 more than average
+Branch feature/apply-custom-storage moved away from main with 1069 days, 272.39692307692303 more than average
+Branch feature/attiribute_entitlement_Administrator moved away from main with 1228 days, 431.39692307692303 more than average
+Branch feature/box-institutional-folderid moved away from main with 950 days, 153.39692307692303 more than average
+Branch feature/build-for-k8s moved away from main with 1232 days, 435.39692307692303 more than average
+Branch feature/change_file_size_unit_update moved away from main with 1038 days, 241.39692307692303 more than average
+Branch feature/dbxbiz-201910 moved away from main with 810 days, 13.39692307692303 more than average
+Branch feature/debug-send_email moved away from main with 980 days, 183.39692307692303 more than average
+Branch feature/default_storage_flag moved away from main with 1063 days, 266.39692307692303 more than average
+Branch feature/default-storage-list moved away from main with 1055 days, 258.39692307692303 more than average
+Branch feature/ember-osf moved away from main with 1989 days, 1192.396923076923 more than average
+Branch feature/ember-osf-web moved away from main with 1498 days, 701.396923076923 more than average
+Branch feature/external-data-acquisiton-interface_widget-drawer-nii-mergework-201901 moved away from main with 1091 days, 294.39692307692303 more than average
+Branch feature/ftp moved away from main with 1217 days, 420.39692307692303 more than average
+Branch feature/h-staging-201906-docker-curl moved away from main with 953 days, 156.39692307692303 more than average
+Branch feature/h-staging-201906-temporary-20190808 moved away from main with 951 days, 154.39692307692303 more than average
+Branch feature/h-staging-201906-time_stamp_verification moved away from main with 947 days, 150.39692307692303 more than average
+Branch feature/h-staging-201906-time_stamp_verification-develop-merge moved away from main with 883 days, 86.39692307692303 more than average
+Branch feature/h-staging-201906_stg4 moved away from main with 931 days, 134.39692307692303 more than average
+Branch feature/h-staging-201906_update_stg4 moved away from main with 887 days, 90.39692307692303 more than average
+Branch feature/h-staging-201906_update2_stg4 moved away from main with 888 days, 91.39692307692303 more than average
+Branch feature/h-staging-201906_update3_stg4 moved away from main with 911 days, 114.39692307692303 more than average
+Branch feature/h-staging-201906_update4_stg4 moved away from main with 884 days, 87.39692307692303 more than average
+Branch feature/h-staging-201906 moved away from main with 895 days, 98.39692307692303 more than average
+Branch feature/hide_login_form_and_enable_send_mail_on_admin moved away from main with 1225 days, 428.39692307692303 more than average
+Branch feature/i18n-19115 moved away from main with 850 days, 53.39692307692303 more than average
+Branch feature/i18n-201911-02 moved away from main with 842 days, 45.39692307692303 more than average
+Branch feature/i18n-201911-N moved away from main with 842 days, 45.39692307692303 more than average
+Branch feature/i18n-201911-n2 moved away from main with 799 days, 2.3969230769230307 more than average
+Branch feature/i18n-201911 moved away from main with 842 days, 45.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict_staging_test_changes moved away from main with 1001 days, 204.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict_staging moved away from main with 954 days, 157.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict moved away from main with 1022 days, 225.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict-def-external moved away from main with 1017 days, 220.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict-def-external-crontab-testcode moved away from main with 1011 days, 214.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict-def-external-saving-data moved away from main with 1024 days, 227.39692307692303 more than average
+Branch feature/inst-sto_quota-restrict-menu moved away from main with 1066 days, 269.39692307692303 more than average
+Branch feature/inst-sto-quota moved away from main with 1057 days, 260.39692307692303 more than average
+Branch feature/language-201911 moved away from main with 846 days, 49.39692307692303 more than average
+Branch feature/mapcore moved away from main with 950 days, 153.39692307692303 more than average
+Branch feature/mapcore-201908 moved away from main with 931 days, 134.39692307692303 more than average
+Branch feature/mapcore-addcontrib-usermerge-invite-201908 moved away from main with 884 days, 87.39692307692303 more than average
+Branch feature/new-addons moved away from main with 1219 days, 422.39692307692303 more than average
+Branch feature/nii-storage-statistics moved away from main with 1058 days, 261.39692307692303 more than average
+Branch feature/quota-api moved away from main with 1071 days, 274.39692307692303 more than average
+Branch feature/quota-message moved away from main with 1065 days, 268.39692307692303 more than average
+Branch feature/quota-v18.2.7-calc moved away from main with 1094 days, 297.39692307692303 more than average
+Branch feature/quota-v18.2.7-calc-rdm-12 moved away from main with 1099 days, 302.39692307692303 more than average
+Branch feature/quota-v18.2.7-calc-rdm-dev11-merged-dev12-sorting moved away from main with 1094 days, 297.39692307692303 more than average
+Branch feature/quota-v18.2.7-calc-rdm-dev11-merged-dev12 moved away from main with 1098 days, 301.39692307692303 more than average
+Branch feature/quota-v18.2.7-calc-rdm-dev11 moved away from main with 1099 days, 302.39692307692303 more than average
+Branch feature/quota-v18.2.7-dashboard moved away from main with 1084 days, 287.39692307692303 more than average
+Branch feature/quota-v18.2.7-max moved away from main with 1098 days, 301.39692307692303 more than average
+Branch feature/quota-v18.2.7-merged moved away from main with 1074 days, 277.39692307692303 more than average
+Branch feature/quota-v18.2.7-merged-cov moved away from main with 1086 days, 289.39692307692303 more than average
+Branch feature/quota-v18.2.7-merged-dev11 moved away from main with 1092 days, 295.39692307692303 more than average
+Branch feature/quota-v18.2.7-profile moved away from main with 1099 days, 302.39692307692303 more than average
+Branch feature/quota-v18.2.7-userlist moved away from main with 1098 days, 301.39692307692303 more than average
+Branch feature/quota-v18.2.7 moved away from main with 1102 days, 305.39692307692303 more than average
+Branch feature/rdm-statistics-tests moved away from main with 1079 days, 282.39692307692303 more than average
+Branch feature/restfulapi moved away from main with 1216 days, 419.39692307692303 more than average
+Branch feature/s3compat-institutional moved away from main with 953 days, 156.39692307692303 more than average
+Branch feature/save-used-quota moved away from main with 1073 days, 276.39692307692303 more than average
+Branch feature/search-201909 moved away from main with 852 days, 55.39692307692303 more than average
+Branch feature/search-201910 moved away from main with 818 days, 21.39692307692303 more than average
+Branch feature/sparql moved away from main with 1217 days, 420.39692307692303 more than average
+Branch feature/stg4 moved away from main with 1205 days, 408.39692307692303 more than average
+Branch feature/storage-management-prototype1 moved away from main with 1135 days, 338.39692307692303 more than average
+Branch feature/test-for-k8s moved away from main with 1196 days, 399.39692307692303 more than average
+Branch feature/timestamp_list-filtering_nii-mergework-201901 moved away from main with 1100 days, 303.39692307692303 more than average
+Branch feature/timestamp_pagination_css moved away from main with 1042 days, 245.39692307692303 more than average
+Branch feature/timestamp_updateveriftResult-disconnect-remove-rename_nii-mergework-201901-wCov moved away from main with 1086 days, 289.39692307692303 more than average
+Branch feature/timestamp_updateveriftResult-disconnect-remove-rename_nii-mergework-201901 moved away from main with 1080 days, 283.39692307692303 more than average
+Branch feature/timestamp_upki_nii-mergework-201901 moved away from main with 1097 days, 300.39692307692303 more than average
+Branch feature/timestamp moved away from main with 1139 days, 342.39692307692303 more than average
+Branch feature/timestamp-async-nii-mergework-201901 moved away from main with 1083 days, 286.39692307692303 more than average
+Branch feature/timestamp-nii-mergework-201901 moved away from main with 1107 days, 310.39692307692303 more than average
+Branch feature/timestamp-upki-v18.2.7_add_errorType moved away from main with 1106 days, 309.39692307692303 more than average
+Branch feature/timestamp-upki-v18.2.7 moved away from main with 1113 days, 316.39692307692303 more than average
+Branch feature/timestamp-v18.2.7-async moved away from main with 1106 days, 309.39692307692303 more than average
+Branch feature/timestamp-v18.2.7-backoff moved away from main with 1106 days, 309.39692307692303 more than average
+Branch feature/timestamp-v18.2.7 moved away from main with 1114 days, 317.39692307692303 more than average
+Branch feature/ts-no-verify-user moved away from main with 1039 days, 242.39692307692303 more than average
+Branch feature/used-quota-func-fix moved away from main with 1057 days, 260.39692307692303 more than average
+Branch feature/usermerge-and-invite-201907 moved away from main with 932 days, 135.39692307692303 more than average
+Branch feature/widget-drawer moved away from main with 1084 days, 287.39692307692303 more than average
+Branch feature/widget-drawer-layout-for-drag-and-drop moved away from main with 1106 days, 309.39692307692303 more than average
+Branch feature/widget-drawer-layout-for-drag-and-drop-link-with-J moved away from main with 1094 days, 297.39692307692303 more than average
+Branch feature/widget-drawer-merge_rdm-dev11_12 moved away from main with 1101 days, 304.39692307692303 more than average
+Branch feature/widget-drawer-rdm-dev11 moved away from main with 1106 days, 309.39692307692303 more than average
+Branch feature/xattr_addon moved away from main with 1227 days, 430.39692307692303 more than average
+Branch hotfix/admin-request moved away from main with 1183 days, 386.39692307692303 more than average
+Branch hotfix/code-style-jshint moved away from main with 1366 days, 569.396923076923 more than average
+Branch hotfix/code-style-nii moved away from main with 1365 days, 568.396923076923 more than average
+Branch hotfix/dropbox-oauth moved away from main with 926 days, 129.39692307692303 more than average
+Branch hotfix/fix_multibyte-filename-TST-failed moved away from main with 1093 days, 296.39692307692303 more than average
+Branch hotfix/fix-travis-errors moved away from main with 936 days, 139.39692307692303 more than average
+Branch hotfix/hgc_develop moved away from main with 959 days, 162.39692307692303 more than average
+Branch hotfix/hgc moved away from main with 961 days, 164.39692307692303 more than average
+Branch hotfix/institutional-storage moved away from main with 980 days, 183.39692307692303 more than average
+Branch hotfix/nextcloud-institutional-ssl-true moved away from main with 943 days, 146.39692307692303 more than average
+Branch hotfix/normalize-unicode moved away from main with 1034 days, 237.39692307692303 more than average
+Branch hotfix/notification moved away from main with 1192 days, 395.39692307692303 more than average
+Branch hotfix/oauth-message moved away from main with 957 days, 160.39692307692303 more than average
+Branch hotfix/oauth-redirect moved away from main with 959 days, 162.39692307692303 more than average
+Branch hotfix/pr60-code-review moved away from main with 1094 days, 297.39692307692303 more than average
+Branch hotfix/profile-counts moved away from main with 1493 days, 696.396923076923 more than average
+Branch hotfix/quota-set moved away from main with 958 days, 161.39692307692303 more than average
+Branch hotfix/recent-activity-storage-name moved away from main with 959 days, 162.39692307692303 more than average
+Branch hotfix/timestamp-ajax moved away from main with 1184 days, 387.39692307692303 more than average
+Branch hotfix/timestamp-list-utc moved away from main with 1031 days, 234.39692307692303 more than average
+Branch hotfix/timestamp-list-utc-2 moved away from main with 1013 days, 216.39692307692303 more than average
+Branch hotfix/timestamp-redirect moved away from main with 1199 days, 402.39692307692303 more than average
+Branch hotfix/timestamp-sort-color moved away from main with 1042 days, 245.39692307692303 more than average
+Branch hotfix/timestamp-task-ready-exception moved away from main with 989 days, 192.39692307692303 more than average
+Branch hotfix/ts-duplicate-files moved away from main with 1037 days, 240.39692307692303 more than average
+Branch hotfix/ts-interval-osfstorage moved away from main with 1029 days, 232.39692307692303 more than average
+Branch hotfix/ts-timeout moved away from main with 1024 days, 227.39692307692303 more than average
+Branch hotfix/4669-travis-ci-error moved away from main with 1245 days, 448.39692307692303 more than average
+Branch hotfix/4669 moved away from main with 1286 days, 489.39692307692303 more than average
+Branch hotfix/5438 moved away from main with 1324 days, 527.396923076923 more than average
+Branch hotfix/6675 moved away from main with 1195 days, 398.39692307692303 more than average
+Branch hotfix/6898 moved away from main with 1199 days, 402.39692307692303 more than average
+Branch hotfix/6898,6901 moved away from main with 1196 days, 399.39692307692303 more than average
+Branch hotfix/6901 moved away from main with 1198 days, 401.39692307692303 more than average
+Branch hotfix/6979 moved away from main with 1196 days, 399.39692307692303 more than average
+Branch hotfix/7027-passed-over-yottabyte moved away from main with 1184 days, 387.39692307692303 more than average
+Branch hotfix/7027 moved away from main with 1190 days, 393.39692307692303 more than average
+Branch hotfix/7117 moved away from main with 1183 days, 386.39692307692303 more than average
+Branch hotfix/7155 moved away from main with 1143 days, 346.39692307692303 more than average
+Branch hotfix/7162 moved away from main with 1144 days, 347.39692307692303 more than average
+Branch hotfix/7225 moved away from main with 1150 days, 353.39692307692303 more than average
+Branch hotfix/7226 moved away from main with 1162 days, 365.39692307692303 more than average
+Branch hotfix/7281 moved away from main with 1162 days, 365.39692307692303 more than average
+Branch hotfix/7283 moved away from main with 1153 days, 356.39692307692303 more than average
+Branch hotfix/7284 moved away from main with 1147 days, 350.39692307692303 more than average
+Branch hotfix/7286 moved away from main with 1146 days, 349.39692307692303 more than average
+Branch hotfix/7433 moved away from main with 1154 days, 357.39692307692303 more than average
+Branch hotfix/7442 moved away from main with 1154 days, 357.39692307692303 more than average
+Branch hotfix/7473 moved away from main with 1136 days, 339.39692307692303 more than average
+Branch hotfix/8149-2 moved away from main with 1258 days, 461.39692307692303 more than average
+Branch hotfix/8149-3 moved away from main with 1115 days, 318.39692307692303 more than average
+Branch hotfix/8149-4 moved away from main with 1108 days, 311.39692307692303 more than average
+Branch hotfix/8149 moved away from main with 1106 days, 309.39692307692303 more than average
+Branch hotfix/8291 moved away from main with 1111 days, 314.39692307692303 more than average
+Branch hotfix/8752 moved away from main with 1070 days, 273.39692307692303 more than average
+Branch hotfix/8847 moved away from main with 1071 days, 274.39692307692303 more than average
+Branch hotfix/9153-2 moved away from main with 1066 days, 269.39692307692303 more than average
+Branch hotfix/9153 moved away from main with 1065 days, 268.39692307692303 more than average
+Branch hotfix/10067 moved away from main with 1072 days, 275.39692307692303 more than average
+Branch hotfix/10068 moved away from main with 1072 days, 275.39692307692303 more than average
+Branch hotfix/10329 moved away from main with 1072 days, 275.39692307692303 more than average
+Branch hotfix/10334 moved away from main with 1071 days, 274.39692307692303 more than average
+Branch hotfix/10546 moved away from main with 1069 days, 272.39692307692303 more than average
+Branch hotfix/10639 moved away from main with 1041 days, 244.39692307692303 more than average
+Branch hotfix/10709 moved away from main with 1034 days, 237.39692307692303 more than average
+Branch hotfix/10841 moved away from main with 1056 days, 259.39692307692303 more than average
+Branch hotfix/10845 moved away from main with 1055 days, 258.39692307692303 more than average
+Branch hotfix/10849 moved away from main with 1041 days, 244.39692307692303 more than average
+Branch hotfix/11027 moved away from main with 1041 days, 244.39692307692303 more than average
+Branch hotfix/11184 moved away from main with 838 days, 41.39692307692303 more than average
+Branch hotfix/11252 moved away from main with 1029 days, 232.39692307692303 more than average
+Branch hotfix/11294 moved away from main with 1013 days, 216.39692307692303 more than average
+Branch hotfix/11405 moved away from main with 800 days, 3.3969230769230307 more than average
+Branch hotfix/11704 moved away from main with 1008 days, 211.39692307692303 more than average
+Branch hotfix/12228 moved away from main with 968 days, 171.39692307692303 more than average
+Branch hotfix/12511 moved away from main with 988 days, 191.39692307692303 more than average
+Branch hotfix/13125-fix-travis-errors moved away from main with 937 days, 140.39692307692303 more than average
+Branch hotfix/13125 moved away from main with 925 days, 128.39692307692303 more than average
+Branch hotfix/13549 moved away from main with 954 days, 157.39692307692303 more than average
+Branch hotfix/13727 moved away from main with 933 days, 136.39692307692303 more than average
+Branch hotfix/14551 moved away from main with 911 days, 114.39692307692303 more than average
+Branch hotfix/14553 moved away from main with 903 days, 106.39692307692303 more than average
+Branch hotfix/15190 moved away from main with 873 days, 76.39692307692303 more than average
+Branch hotfix/16280 moved away from main with 846 days, 49.39692307692303 more than average
+Branch hotfix/16648 moved away from main with 833 days, 36.39692307692303 more than average
+Branch language-201910 moved away from main with 853 days, 56.39692307692303 more than average
+Branch mapcore moved away from main with 1097 days, 300.39692307692303 more than average
+Branch master moved away from main with 1183 days, 386.39692307692303 more than average
+Branch nii-mergework-201802 moved away from main with 1115 days, 318.39692307692303 more than average
+Branch nii-mergework-201901 moved away from main with 1011 days, 214.39692307692303 more than average
+Branch release/next-interfaces moved away from main with 1478 days, 681.396923076923 more than average
+Branch release/next-next-platform moved away from main with 1479 days, 682.396923076923 more than average
+Branch release/next-platform moved away from main with 1479 days, 682.396923076923 more than average
+Branch release/rcos moved away from main with 951 days, 154.39692307692303 more than average
+Branch release/stg1 moved away from main with 1155 days, 358.39692307692303 more than average
+Branch release/0.133.0 moved away from main with 1498 days, 701.396923076923 more than average
+Branch sanity-nii-mergework-201901 moved away from main with 1011 days, 214.39692307692303 more than average
+Branch search-201909 moved away from main with 900 days, 103.39692307692303 more than average
+Branch temporary/external-data-acquisiton-interface moved away from main with 1192 days, 395.39692307692303 more than average
+Branch temporary/hide_forceToUse,hide_FacebookAnnouncement moved away from main with 1189 days, 392.39692307692303 more than average
+Branch temporary/7117-disable_some_timestamp-features moved away from main with 1183 days, 386.39692307692303 more than average
+Branch test/travisci moved away from main with 951 days, 154.39692307692303 more than average
+Branch test-develop moved away from main with 1011 days, 214.39692307692303 more than average
+Branch user-profile-from-idp-201909 moved away from main with 910 days, 113.39692307692303 more than average
+MEDIUM SEVERITY
+Branch 0.25, 1115 days
+Branch cos/master-w-coverage, 1241 days
+Branch develop-backup, 1819 days
+Branch develop-backup-20181228, 1174 days
+Branch feature/Admin-Add-ons-control, 1316 days
+Branch feature/attiribute_entitlement_Administrator, 1228 days
+Branch feature/build-for-k8s, 1232 days
+Branch feature/ember-osf, 1989 days
+Branch feature/ember-osf-web, 1498 days
+Branch feature/ftp, 1217 days
+Branch feature/hide_login_form_and_enable_send_mail_on_admin, 1225 days
+Branch feature/new-addons, 1219 days
+Branch feature/quota-v18.2.7-calc-rdm-12, 1099 days
+Branch feature/quota-v18.2.7-calc-rdm-dev11-merged-dev12, 1098 days
+Branch feature/quota-v18.2.7-calc-rdm-dev11, 1099 days
+Branch feature/quota-v18.2.7-max, 1098 days
+Branch feature/quota-v18.2.7-profile, 1099 days
+Branch feature/quota-v18.2.7-userlist, 1098 days
+Branch feature/quota-v18.2.7, 1102 days
+Branch feature/restfulapi, 1216 days
+Branch feature/sparql, 1217 days
+Branch feature/stg4, 1205 days
+Branch feature/storage-management-prototype1, 1135 days
+Branch feature/test-for-k8s, 1196 days
+Branch feature/timestamp_list-filtering_nii-mergework-201901, 1100 days
+Branch feature/timestamp, 1139 days
+Branch feature/timestamp-nii-mergework-201901, 1107 days
+Branch feature/timestamp-upki-v18.2.7_add_errorType, 1106 days
+Branch feature/timestamp-upki-v18.2.7, 1113 days
+Branch feature/timestamp-v18.2.7-async, 1106 days
+Branch feature/timestamp-v18.2.7-backoff, 1106 days
+Branch feature/timestamp-v18.2.7, 1114 days
+Branch feature/widget-drawer-layout-for-drag-and-drop, 1106 days
+Branch feature/widget-drawer-merge_rdm-dev11_12, 1101 days
+Branch feature/widget-drawer-rdm-dev11, 1106 days
+Branch feature/xattr_addon, 1227 days
+Branch hotfix/admin-request, 1183 days
+Branch hotfix/code-style-jshint, 1366 days
+Branch hotfix/code-style-nii, 1365 days
+Branch hotfix/notification, 1192 days
+Branch hotfix/profile-counts, 1493 days
+Branch hotfix/timestamp-ajax, 1184 days
+Branch hotfix/timestamp-redirect, 1199 days
+Branch hotfix/4669-travis-ci-error, 1245 days
+Branch hotfix/4669, 1286 days
+Branch hotfix/5438, 1324 days
+Branch hotfix/6675, 1195 days
+Branch hotfix/6898, 1199 days
+Branch hotfix/6898,6901, 1196 days
+Branch hotfix/6901, 1198 days
+Branch hotfix/6979, 1196 days
+Branch hotfix/7027-passed-over-yottabyte, 1184 days
+Branch hotfix/7027, 1190 days
+Branch hotfix/7117, 1183 days
+Branch hotfix/7155, 1143 days
+Branch hotfix/7162, 1144 days
+Branch hotfix/7225, 1150 days
+Branch hotfix/7226, 1162 days
+Branch hotfix/7281, 1162 days
+Branch hotfix/7283, 1153 days
+Branch hotfix/7284, 1147 days
+Branch hotfix/7286, 1146 days
+Branch hotfix/7433, 1154 days
+Branch hotfix/7442, 1154 days
+Branch hotfix/7473, 1136 days
+Branch hotfix/8149-2, 1258 days
+Branch hotfix/8149-3, 1115 days
+Branch hotfix/8149-4, 1108 days
+Branch hotfix/8149, 1106 days
+Branch hotfix/8291, 1111 days
+Branch master, 1183 days
+Branch nii-mergework-201802, 1115 days
+Branch release/next-interfaces, 1478 days
+Branch release/next-next-platform, 1479 days
+Branch release/next-platform, 1479 days
+Branch release/stg1, 1155 days
+Branch release/0.133.0, 1498 days
+Branch temporary/external-data-acquisiton-interface, 1192 days
+Branch temporary/hide_forceToUse,hide_FacebookAnnouncement, 1189 days
+Branch temporary/7117-disable_some_timestamp-features, 1183 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

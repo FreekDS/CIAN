@@ -1,0 +1,25 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 726.3846153846154 days
+Branch hotfix-v4.4.1 moved away from main with 1299 days, 572.6153846153846 more than average
+Branch hotfix-v7.1.1 moved away from main with 794 days, 67.61538461538464 more than average
+Branch v1 moved away from main with 1655 days, 928.6153846153846 more than average
+Branch v2 moved away from main with 1466 days, 739.6153846153846 more than average
+Branch v4 moved away from main with 1275 days, 548.6153846153846 more than average
+Branch v5 moved away from main with 1086 days, 359.61538461538464 more than average
+Branch v6 moved away from main with 799 days, 72.61538461538464 more than average
+MEDIUM SEVERITY
+Branch hotfix-v4.4.1, 1299 days
+Branch v1, 1655 days
+Branch v2, 1466 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

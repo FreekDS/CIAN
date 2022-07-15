@@ -1,0 +1,17 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 1043.5 days
+Branch max_allowed_packet moved away from main with 2087 days, 1043.5 more than average
+MEDIUM SEVERITY
+Branch max_allowed_packet, 2087 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

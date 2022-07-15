@@ -1,0 +1,28 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 1697.8 days
+Branch dspace-1_2_2-patches moved away from main with 4700 days, 3002.2 more than average
+Branch dspace-1_2_2-update moved away from main with 4700 days, 3002.2 more than average
+Branch dspace-1_4_x moved away from main with 4700 days, 3002.2 more than average
+Branch dspace-1_5_x moved away from main with 4635 days, 2937.2 more than average
+Branch dspace-1_6_x moved away from main with 4247 days, 2549.2 more than average
+Branch dspace-1_7_x moved away from main with 3165 days, 1467.2 more than average
+Branch dspace-1_8_x moved away from main with 2979 days, 1281.2 more than average
+Branch dspace-3_x moved away from main with 1957 days, 259.20000000000005 more than average
+MEDIUM SEVERITY
+Branch dspace-1_2_2-patches, 4700 days
+Branch dspace-1_2_2-update, 4700 days
+Branch dspace-1_4_x, 4700 days
+Branch dspace-1_5_x, 4635 days
+Branch dspace-1_6_x, 4247 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

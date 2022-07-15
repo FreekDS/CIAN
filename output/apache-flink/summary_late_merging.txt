@@ -1,0 +1,117 @@
+Missed Activity
+=========================
+MEDIUM SEVERITY
+
+Branch Deviation
+=========================
+Average deviation: 1696.5833333333333 days
+Branch release-0.4-alpha.0 moved away from main with 3068 days, 1371.4166666666667 more than average
+Branch release-0.4-alpha.1 moved away from main with 3059 days, 1362.4166666666667 more than average
+Branch release-0.4-alpha.2 moved away from main with 3054 days, 1357.4166666666667 more than average
+Branch release-0.4-alpha.3 moved away from main with 3024 days, 1327.4166666666667 more than average
+Branch release-0.4-rc1 moved away from main with 2999 days, 1302.4166666666667 more than average
+Branch release-0.4 moved away from main with 2580 days, 883.4166666666667 more than average
+Branch release-0.5-rc1 moved away from main with 2869 days, 1172.4166666666667 more than average
+Branch release-0.5 moved away from main with 2580 days, 883.4166666666667 more than average
+Branch release-0.5.1 moved away from main with 2580 days, 883.4166666666667 more than average
+Branch release-0.6-rc7 moved away from main with 2779 days, 1082.4166666666667 more than average
+Branch release-0.6 moved away from main with 1936 days, 239.41666666666674 more than average
+Branch release-0.6.1-rc0 moved away from main with 2752 days, 1055.4166666666667 more than average
+Branch release-0.6.1 moved away from main with 2754 days, 1057.4166666666667 more than average
+Branch release-0.6.2 moved away from main with 2738 days, 1041.4166666666667 more than average
+Branch release-0.7 moved away from main with 1936 days, 239.41666666666674 more than average
+Branch release-0.7.0 moved away from main with 2715 days, 1018.4166666666667 more than average
+Branch release-0.8-rc3 moved away from main with 2626 days, 929.4166666666667 more than average
+Branch release-0.8 moved away from main with 1873 days, 176.41666666666674 more than average
+Branch release-0.8.1-rc1 moved away from main with 2597 days, 900.4166666666667 more than average
+Branch release-0.8.1-rc2 moved away from main with 2594 days, 897.4166666666667 more than average
+Branch release-0.9 moved away from main with 1873 days, 176.41666666666674 more than average
+Branch release-0.9.0-milestone-1-rc1 moved away from main with 2543 days, 846.4166666666667 more than average
+Branch release-0.9.0-milestone-1 moved away from main with 2543 days, 846.4166666666667 more than average
+Branch release-0.9.0-rc1 moved away from main with 2482 days, 785.4166666666667 more than average
+Branch release-0.9.0-rc2 moved away from main with 2478 days, 781.4166666666667 more than average
+Branch release-0.9.0-rc3 moved away from main with 2474 days, 777.4166666666667 more than average
+Branch release-0.9.0-rc4 moved away from main with 2472 days, 775.4166666666667 more than average
+Branch release-0.9.1-rc0 moved away from main with 2402 days, 705.4166666666667 more than average
+Branch release-0.9.1-rc1 moved away from main with 2402 days, 705.4166666666667 more than average
+Branch release-0.10 moved away from main with 1873 days, 176.41666666666674 more than average
+Branch release-0.10.0-milestone-1-rc1 moved away from main with 2376 days, 679.4166666666667 more than average
+Branch release-0.10.0-milestone-1 moved away from main with 2376 days, 679.4166666666667 more than average
+Branch release-0.10.0-rc0 moved away from main with 2347 days, 650.4166666666667 more than average
+Branch release-0.10.0-rc1 moved away from main with 2342 days, 645.4166666666667 more than average
+Branch release-0.10.0-rc2 moved away from main with 2341 days, 644.4166666666667 more than average
+Branch release-0.10.0-rc3 moved away from main with 2339 days, 642.4166666666667 more than average
+Branch release-0.10.0-rc4 moved away from main with 2338 days, 641.4166666666667 more than average
+Branch release-0.10.0-rc5 moved away from main with 2335 days, 638.4166666666667 more than average
+Branch release-0.10.0-rc6 moved away from main with 2333 days, 636.4166666666667 more than average
+Branch release-0.10.0-rc7 moved away from main with 2328 days, 631.4166666666667 more than average
+Branch release-0.10.0-rc8 moved away from main with 2327 days, 630.4166666666667 more than average
+Branch release-0.10.1-rc1 moved away from main with 2315 days, 618.4166666666667 more than average
+Branch release-0.10.2-rc1 moved away from main with 2242 days, 545.4166666666667 more than average
+Branch release-0.10.2-rc2 moved away from main with 2237 days, 540.4166666666667 more than average
+Branch release-1.0.0-rc1 moved away from main with 2221 days, 524.4166666666667 more than average
+Branch release-1.0.0-rc2 moved away from main with 2219 days, 522.4166666666667 more than average
+Branch release-1.0.0-rc3 moved away from main with 2216 days, 519.4166666666667 more than average
+Branch release-1.0.0-rc4 moved away from main with 2215 days, 518.4166666666667 more than average
+Branch release-1.0.0-rc5 moved away from main with 2213 days, 516.4166666666667 more than average
+Branch release-1.0.1-rc1 moved away from main with 2185 days, 488.41666666666674 more than average
+Branch release-1.0.2-rc1 moved away from main with 2171 days, 474.41666666666674 more than average
+Branch release-1.0.2-rc2 moved away from main with 2171 days, 474.41666666666674 more than average
+Branch release-1.0.2-rc3 moved away from main with 2167 days, 470.41666666666674 more than average
+Branch release-1.0.3-rc1 moved away from main with 2157 days, 460.41666666666674 more than average
+Branch release-1.0.3-rc2 moved away from main with 2156 days, 459.41666666666674 more than average
+Branch release-1.0.3-rc3 moved away from main with 2149 days, 452.41666666666674 more than average
+Branch release-1.1.0-rc1 moved away from main with 2068 days, 371.41666666666674 more than average
+Branch release-1.1.0-rc2 moved away from main with 2061 days, 364.41666666666674 more than average
+Branch release-1.1.1-rc1 moved away from main with 2054 days, 357.41666666666674 more than average
+Branch release-1.1.2-rc1 moved away from main with 2033 days, 336.41666666666674 more than average
+Branch release-1.1.3-rc1 moved away from main with 1997 days, 300.41666666666674 more than average
+Branch release-1.1.3-rc2 moved away from main with 1992 days, 295.41666666666674 more than average
+Branch release-1.1.4-rc1 moved away from main with 1961 days, 264.41666666666674 more than average
+Branch release-1.1.4-rc2 moved away from main with 1932 days, 235.41666666666674 more than average
+Branch release-1.1.4-rc3 moved away from main with 1928 days, 231.41666666666674 more than average
+Branch release-1.1.4-rc4 moved away from main with 1922 days, 225.41666666666674 more than average
+Branch release-1.1.5-rc1 moved away from main with 1834 days, 137.41666666666674 more than average
+Branch release-1.2.0-rc3 moved away from main with 1881 days, 184.41666666666674 more than average
+Branch release-1.2.1-rc1 moved away from main with 1827 days, 130.41666666666674 more than average
+Branch release-1.2.1-rc2 moved away from main with 1810 days, 113.41666666666674 more than average
+Branch release-1.3.0-rc3 moved away from main with 1764 days, 67.41666666666674 more than average
+Branch release-1.3.1-rc1 moved away from main with 1745 days, 48.41666666666674 more than average
+Branch release-1.3.1-rc2 moved away from main with 1739 days, 42.41666666666674 more than average
+Branch release-1.3.2-rc1 moved away from main with 1701 days, 4.4166666666667425 more than average
+Branch release-1.3.2-rc2 moved away from main with 1700 days, 3.4166666666667425 more than average
+MEDIUM SEVERITY
+Branch release-0.4-alpha.0, 3068 days
+Branch release-0.4-alpha.1, 3059 days
+Branch release-0.4-alpha.2, 3054 days
+Branch release-0.4-alpha.3, 3024 days
+Branch release-0.4-rc1, 2999 days
+Branch release-0.4, 2580 days
+Branch release-0.5-rc1, 2869 days
+Branch release-0.5, 2580 days
+Branch release-0.5.1, 2580 days
+Branch release-0.6-rc7, 2779 days
+Branch release-0.6.1-rc0, 2752 days
+Branch release-0.6.1, 2754 days
+Branch release-0.6.2, 2738 days
+Branch release-0.7.0, 2715 days
+Branch release-0.8-rc3, 2626 days
+Branch release-0.8.1-rc1, 2597 days
+Branch release-0.8.1-rc2, 2594 days
+Branch release-0.9.0-milestone-1-rc1, 2543 days
+Branch release-0.9.0-milestone-1, 2543 days
+Branch release-0.9.0-rc1, 2482 days
+Branch release-0.9.0-rc2, 2478 days
+Branch release-0.9.0-rc3, 2474 days
+Branch release-0.9.0-rc4, 2472 days
+Branch release-0.9.1-rc0, 2402 days
+Branch release-0.9.1-rc1, 2402 days
+Branch release-0.10.0-milestone-1-rc1, 2376 days
+Branch release-0.10.0-milestone-1, 2376 days
+HIGH SEVERITY
+
+Unsynced activity
+=========================
+Average unsynced: 0.0 days
+MEDIUM SEVERITY
+HIGH SEVERITY

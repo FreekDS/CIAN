@@ -1,0 +1,148 @@
+{
+  "slow_build": {
+    "Git Analyzer CI": {
+      "data": {
+        "2021-10-06T10:23:34Z": 39857.142857142855,
+        "2021-11-01T12:10:33Z": 34600.0,
+        "2021-11-12T15:21:17Z": 93000.0,
+        "2021-11-22T09:49:36Z": 32000.0,
+        "2022-01-14T09:13:11Z": 442500.0,
+        "2022-02-17T09:02:34Z": 69500.0,
+        "2022-02-28T12:05:02Z": 74000.0,
+        "2022-04-15T09:01:21Z": 73800.0
+      },
+      "tool": "Github Actions",
+      "total avg": 107407.14285714286,
+      "quartiles": {
+        "q1": 38542.857142857145,
+        "q3": 78750.0,
+        "iqr": 40207.142857142855
+      },
+      "classification": {
+        "high_severity": {
+          "20": 219000,
+          "41": 759000
+        },
+        "medium_severity": {
+          "42": 126000,
+          "43": 83000,
+          "58": 86000,
+          "59": 100000
+        }
+      }
+    },
+    "git-ci-analyzer": {
+      "data": {
+        "2021-11-05T08:46:19Z": 70200.0,
+        "2021-11-12T15:21:52Z": 70000.0,
+        "2021-11-22T09:47:48Z": 63000.0
+      },
+      "tool": "TravisCI",
+      "total avg": 67733.33333333333,
+      "quartiles": {
+        "q1": 66500.0,
+        "q3": 70100.0,
+        "iqr": 3600.0
+      },
+      "classification": {
+        "high_severity": {
+          "7": 81000,
+          "9": 80000,
+          "12": 76000,
+          "14": 76000,
+          "17": 82000,
+          "18": 81000
+        },
+        "medium_severity": {
+          "1": 71000,
+          "2": 71000,
+          "8": 75000,
+          "10": 74000,
+          "16": 74000
+        }
+      }
+    }
+  },
+  "late_merging": {
+    "missed activity": {
+      "feature/cli": 143,
+      "feature/collect-test-results": 106,
+      "feature/evolution-analysis": 0,
+      "feature/output-formatter": 0,
+      "feature/readme": 112,
+      "late-merging": 42,
+      "main": 0
+    },
+    "branch deviation": {
+      "feature/cli": -1,
+      "feature/collect-test-results": 106,
+      "feature/evolution-analysis": 75,
+      "feature/output-formatter": 120,
+      "feature/readme": 113,
+      "late-merging": 42,
+      "main": 0
+    },
+    "unsynced activity": {
+      "feature/cli": 143,
+      "feature/collect-test-results": -1,
+      "feature/evolution-analysis": 0,
+      "feature/output-formatter": 0,
+      "feature/readme": -1,
+      "late-merging": -1,
+      "main": 0
+    },
+    "classification": {
+      "missed activity": {
+        "medium_severity": [
+          "feature/cli",
+          "feature/readme"
+        ],
+        "high_severity": []
+      },
+      "branch deviation": {
+        "medium_severity": [
+          "feature/output-formatter",
+          "feature/readme"
+        ],
+        "high_severity": []
+      },
+      "unsynced activity": {
+        "medium_severity": [],
+        "high_severity": [
+          "feature/cli"
+        ]
+      }
+    }
+  },
+  "broken_release": {
+    "Git Analyzer CI": {
+      "data": [
+        {
+          "started_at": "2021-10-06T10:23:34Z",
+          "used_tool": "Github Actions",
+          "number": 1
+        },
+        {
+          "started_at": "2021-10-06T10:32:31Z",
+          "used_tool": "Github Actions",
+          "number": 2
+        },
+        {
+          "started_at": "2021-10-08T11:59:19Z",
+          "used_tool": "Github Actions",
+          "number": 4
+        },
+        {
+          "started_at": "2021-10-08T12:14:45Z",
+          "used_tool": "Github Actions",
+          "number": 6
+        }
+      ],
+      "tool": "Github Actions"
+    },
+    "git-ci-analyzer": {
+      "data": []
+    }
+  },
+  "skip_failing_tests": {}
+}
