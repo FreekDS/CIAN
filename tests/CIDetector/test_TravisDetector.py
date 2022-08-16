@@ -3,7 +3,7 @@ from analyzer.CIDetector.TravisDetector import TravisDetector, TRAVIS_CI
 
 
 def test_execute_happyday():
-    repo = TestRepo('FreekDS/CIAN')
+    repo = TestRepo('FreekDS/git-ci-analyzer')
     detector = TravisDetector()
 
     res = detector.execute(repo)
