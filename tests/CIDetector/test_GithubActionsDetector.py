@@ -4,7 +4,7 @@ from analyzer.CIDetector.GithubActionsDectector import GH_ACTIONS, GithubActions
 
 
 def test_execute_happyday():
-    repo = GithubRepo('FreekDS/git-ci-analyzer')
+    repo = GithubRepo('FreekDS/CIAN')
     detector = GithubActionsDetector()
     res = detector.execute(repo)
     assert res is not None

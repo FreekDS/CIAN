@@ -4,7 +4,7 @@ from analyzer.Repository.GithubRepo import GithubRepo
 
 @pytest.fixture(scope='module')
 def default_repo():
-    return GithubRepo("FreekDS/git-ci-analyzer")
+    return GithubRepo("FreekDS/CIAN")
 
 
 def test_constructor(default_repo):

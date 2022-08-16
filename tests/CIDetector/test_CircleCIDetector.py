@@ -13,7 +13,7 @@ def test_constructor():
 
 def test_execute_happyday():
     # Fill in 'github as repo type to trick detector that it is a GithubRepo object
-    repo = TestRepo("FreekDS/git-ci-analyzer", repo_type='github')
+    repo = TestRepo("FreekDS/CIAN", repo_type='github')
 
     detector = CircleCIDetector()
 
@@ -24,7 +24,7 @@ def test_execute_happyday():
 
 def test_execute_unknown_repo_type():
     # TestRepo has 'test' as repo_type which is not recognized by the detector
-    repo = TestRepo("FreekDS/git-ci-analyzer")
+    repo = TestRepo("FreekDS/CIAN")
     detector = CircleCIDetector()
     res = detector.execute(repo)
     assert res != CIRCLE_CI
