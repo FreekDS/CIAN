@@ -1,6 +1,5 @@
 # CIAN
-[![Git Analyzer CI](https://github.com/FreekDS/git-ci-analyzer/actions/workflows/ci-main.yml/badge.svg)](https://github.com/FreekDS/git-ci-analyzer/actions/workflows/ci-main.yml) [![Circle CI](https://circleci.com/gh/FreekDS/git-ci-analyzer.svg?style=svg)](https://app.circleci.com/pipelines/github/FreekDS/git-ci-analyzer)
-
+[![Git Analyzer CI](https://github.com/FreekDS/git-ci-analyzer/actions/workflows/ci-main.yml/badge.svg)](https://github.com/FreekDS/git-ci-analyzer/actions/workflows/ci-main.yml) [![CircleCI](https://dl.circleci.com/status-badge/img/gh/FreekDS/CIAN/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/FreekDS/CIAN/tree/main)
 > Continuous Integration Antipattern aNalyzer: a command line tool to analyze CI workflows in git repositories written in Python 3.10.
 
 ---
